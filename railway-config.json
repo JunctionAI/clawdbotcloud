@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.1.24-3"
+  },
+  "auth": {
+    "profiles": {
+      "openai:manual": {
+        "provider": "openai",
+        "mode": "env",
+        "envVar": "OPENAI_API_KEY"
+      },
+      "anthropic:manual": {
+        "provider": "anthropic",
+        "mode": "env",
+        "envVar": "ANTHROPIC_API_KEY"
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "workspace": "/app/workspace",
+      "maxConcurrent": 4,
+      "model": {
+        "primary": "anthropic/claude-sonnet-4-5"
+      },
+      "models": {
+        "anthropic/claude-sonnet-4-5": {
+          "alias": "sonnet"
+        }
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "channels": {
+    "discord": {
+      "enabled": true,
+      "token": "${DISCORD_BOT_TOKEN}",
+      "dmPolicy": "allowlist",
+      "groupPolicy": "allowlist"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "cloud",
+    "bind": "0.0.0.0",
+    "auth": {
+      "mode": "token",
+      "token": "39acef75057b2fa3c59410e155c49bb3526f831ee31ea5f0"
+    },
+    "tailscale": {
+      "mode": "off"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "discord": {
+        "enabled": true
+      }
+    }
+  }
+}

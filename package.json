@@ -1,0 +1,15 @@
+{
+  "name": "clawdbot-railway",
+  "version": "1.0.0",
+  "description": "Clawdbot deployment for Railway",
+  "main": "index.js",
+  "scripts": {
+    "start": "node start.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "clawdbot": "latest"
+  }
+}

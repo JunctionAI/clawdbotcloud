@@ -1,0 +1,27 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Clawdbot runtime (don't commit these)
+.clawdbot/
+*.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# PM2
+ecosystem.config.js
+.pm2/
+
+# Temp
+temp/
+tmp/
