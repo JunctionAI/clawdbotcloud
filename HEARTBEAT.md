@@ -17,13 +17,21 @@
 - Review: What shipped today?
 - Tomorrow: What's the #1 priority?
 - Memory: Anything significant to document?
+- **SPENDING CHECK (9pm):** Run `.\scripts\wise-daily-tracker.ps1` to auto-log Wise transactions
 
 ### Weekly Review (Sunday 8pm)
 - Read daily files from past week (memory/YYYY-MM-DD.md)
 - Extract significant events/decisions
+- **Update STATE.json** with current operational state:
+  - Verify connectedServices still accurate
+  - Update activeProjects (completed → archive, new → add)
+  - Update pendingItems (resolved → remove, new → add)
+  - Add significant recentDecisions
+  - Update lastChecks if needed
 - Update MEMORY.md with key learnings
 - Remove outdated info from MEMORY.md
 - Review goal progress (compare to USER.md targets)
+- **Commit changes:** `git add . && git commit -m "Weekly review YYYY-MM-DD"`
 
 ## When to Reach Out (Proactive)
 - Important email arrived (high-priority sender or urgent subject)
