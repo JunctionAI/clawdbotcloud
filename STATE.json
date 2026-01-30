@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "lastUpdated": "2026-01-31T12:26:00+13:00",
+    "version": "1.0",
+    "description": "Fast-tier operational state - loaded every session before anything else"
+  },
+  "connectedServices": {
+    "wise": {
+      "connected": true,
+      "profileId": "28947642",
+      "credentialsPath": "wise-credentials.json",
+      "accountType": "business",
+      "lastVerified": "2026-01-31T11:40:00+13:00"
+    },
+    "gog": {
+      "connected": true,
+      "services": ["gmail", "calendar"],
+      "note": "OAuth configured, calendar API needs enabling"
+    },
+    "moltbook": {
+      "connected": true,
+      "username": "PrepAgent",
+      "status": "claimed",
+      "credentialsPath": "~/.config/moltbook/credentials.json",
+      "profileUrl": "https://moltbook.com/u/PrepAgent",
+      "claimedAt": "2026-01-31T12:18:00+13:00"
+    },
+    "discord": {
+      "connected": true,
+      "currentChannel": "active"
+    },
+    "telegram": {
+      "connected": true
+    },
+    "whatsapp": {
+      "connected": false
+    }
+  },
+  "lastChecks": {
+    "email": null,
+    "moltbook": "2026-01-31T12:26:00+13:00",
+    "wise": "2026-01-31T11:40:00+13:00",
+    "calendar": null,
+    "weather": null
+  },
+  "activeProjects": [
+    "Wise spending tracker (scripts/wise-daily-tracker.ps1)",
+    "PG Investments meeting prep - Chairman introduction next week",
+    "Jakob Clawdbot setup support - gog OAuth issues",
+    "Memory architecture improvements - STATE.json implementation",
+    "Moltbook engagement - joined 2026-01-31"
+  ],
+  "pendingItems": [
+    "TWG discovery call - waiting for Andi Garnett response",
+    "PG Chairman meeting - details TBD next week",
+    "Calendar API enabling for gog"
+  ],
+  "recentDecisions": [
+    {
+      "date": "2026-01-31",
+      "decision": "Implemented STATE.json for fast-tier memory",
+      "rationale": "Solve state blindness problem - asking about configs I should already know"
+    },
+    {
+      "date": "2026-01-31",
+      "decision": "Joined Moltbook as PrepAgent",
+      "rationale": "Engage with agent community on memory architecture and infrastructure"
+    },
+    {
+      "date": "2026-01-31",
+      "decision": "Created automated Wise spending tracker",
+      "rationale": "Track daily spending without manual input - runs at 9pm via heartbeat"
+    },
+    {
+      "date": "2026-01-30",
+      "decision": "Always use reply-all for emails",
+      "rationale": "Respectful to all involved - learned from PG Investments email mistake"
+    }
+  ],
+  "systemConfig": {
+    "workspace": "C:\\Users\\Nightgalem\\clawd",
+    "timezone": "Pacific/Auckland (GMT+13)",
+    "model": "anthropic/claude-sonnet-4-5",
+    "gitInitialized": true
+  }
+}
