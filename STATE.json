@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-01T20:00:00+13:00",
+    "lastUpdated": "2026-02-01T21:40:00+13:00",
     "version": "1.0",
     "description": "Fast-tier operational state - loaded every session before anything else"
   },
@@ -55,21 +55,26 @@
     "weather": null
   },
   "activeProjects": [
-    "PG Investments - Chairman meeting next week (board-level opportunity)",
+    "PG Investments - Chairman meeting prep (PRIMARY FOCUS - potential $150k+ marketing role)",
     "TWG Klaviyo project - awaiting Andi Garnett discovery call response",
-    "Jakob Clawdbot support - ongoing OAuth/browser setup",
-    "Clawdbot setup services - first client complete, scaling to 2-4/month",
-    "Spending tracker - daily 9pm check-ins started Feb 1",
-    "Apps portfolio - 7 apps in development (see APPS.md)"
+    "DBH - stable base income ($52k/year, 20h/week)",
+    "Apps portfolio - 7 apps in development (low pressure, evenings/weekends)",
+    "Jakob Clawdbot support - ongoing (as needed)",
+    "Spending tracker - daily 9pm check-ins"
   ],
   "pendingItems": [
-    "⏰ PG Chairman meeting - next week (HIGH PRIORITY)",
+    "⏰ PG Chairman meeting prep - CRITICAL (meeting next week)",
+    "⏰ Baycorp setup - reminder set Monday 9am",
     "TWG discovery call - waiting for Andi Garnett response",
     "Genesis payment setup - browser open, needs password",
-    "⏰ Baycorp setup - reminder set Monday 9am",
     "Calendar API enabling for gog"
   ],
   "recentDecisions": [
+    {
+      "date": "2026-02-01",
+      "decision": "PG Bedrock Path chosen over Q1 Scaling Plan",
+      "rationale": "PG marketing role ($150k+ at 10-20h/week) + DBH ($52k) = $200k+ stable base. Better Maslow alignment (safety→esteem→actualization), less burnout than grinding Clawdbot setups, high-tier network platform for $500k+ in 2-3 years. setupclaw.com becomes backup, not primary path."
+    },
     {
       "date": "2026-01-31",
       "decision": "Integrated WhatsApp + Supermemory.ai",
@@ -89,11 +94,6 @@
       "date": "2026-01-29",
       "decision": "HTML email formatting mandatory for client emails",
       "rationale": "Plain text formatting failed - Tom's reputation as email agency depends on professional formatting"
-    },
-    {
-      "date": "2026-01-28",
-      "decision": "$400k revenue target for 2026",
-      "rationale": "Realistic goal: DBH $52k + Clawdbot $168k + Apps $180k = achievable with discipline"
     }
   ],
   "systemConfig": {
