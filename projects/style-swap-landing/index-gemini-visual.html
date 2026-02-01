@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Swap | AI-Powered Fashion Transformation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        :root {
+            --purple-main: #8B5CF6;
+            --purple-mid: #A855F7;
+            --purple-light: #C084FC;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712;
+            color: #f9fafb;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, var(--purple-main), var(--purple-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-purple-gradient {
+            background: linear-gradient(135deg, var(--purple-main), var(--purple-mid), var(--purple-light));
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+        }
+
+        .nav-link:hover {
+            color: var(--purple-light);
+            transition: 0.3s ease;
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 glass mt-4 mx-auto max-w-6xl left-0 right-0 px-6 py-4 flex justify-between items-center">
+        <div class="text-2xl font-bold gradient-text">Style Swap</div>
+        <div class="hidden md:flex gap-8 items-center">
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#how-it-works" class="nav-link">How it Works</a>
+            <a href="#pricing" class="nav-link">Pricing</a>
+            <button class="bg-purple-gradient px-6 py-2 rounded-full font-semibold hover:opacity-90 transition">Get Started</button>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20">
+        <div class="hero-glow top-20 left-10"></div>
+        <div class="hero-glow bottom-20 right-10"></div>
+        
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">
+            Transform Your Style <br><span class="gradient-text">with AI</span>
+        </h1>
+        <p class="text-gray-400 text-lg md:text-xl max-w-2xl mb-10">
+            Upload a photo and instantly visualize yourself in any outfit or aesthetic. 
+            The future of fashion is here, powered by advanced neural style transfer.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4">
+            <button class="bg-purple-gradient px-8 py-4 rounded-xl text-lg font-bold shadow-lg shadow-purple-500/20 hover:scale-105 transition transform">
+                Get Started Free
+            </button>
+            <button class="glass px-8 py-4 rounded-xl text-lg font-bold hover:bg-white/10 transition">
+                View Gallery
+            </button>
+        </div>
+
+        <div class="mt-16 animate-float">
+            <div class="glass p-2 rounded-2xl">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800" alt="App Preview" class="rounded-xl w-full max-w-3xl shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Cutting-Edge <span class="gradient-text">AI Features</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="glass p-8 hover:border-purple-500/50 transition">
+                <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-magic text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">AI Style Transfer</h3>
+                <p class="text-gray-400">Seamlessly blend your photos with trending fashion aesthetics using our proprietary engine.</p>
+            </div>
+            <div class="glass p-8 hover:border-purple-500/50 transition">
+                <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-bolt text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Instant Results</h3>
+                <p class="text-gray-400">No more waiting. Get your transformed high-resolution fashion shots in under 5 seconds.</p>
+            </div>
+            <div class="glass p-8 hover:border-purple-500/50 transition">
+                <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-tshirt text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Multiple Styles</h3>
+                <p class="text-gray-400">From Streetwear to High Couture, choose from over 500+ curated style presets.</p>
+            </div>
+            <div class="glass p-8 hover:border-purple-500/50 transition">
+                <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-smile text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Easy to Use</h3>
+                <p class="text-gray-400">A simple, intuitive interface designed for everyone. No technical skills required.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="py-24 bg-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">How It Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div class="relative">
+                    <div class="text-6xl font-black text-white/10 absolute -top-10 left-1/2 -translate-x-1/2">01</div>
+                    <div class="glass w-20 h-20 mx-auto flex items-center justify-center mb-6 relative z-10">
+                        <i class="fas fa-upload text-2xl text-purple-400"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Upload Photo</h4>
+                    <p class="text-gray-400">Upload a clear photo of yourself or any item of clothing.</p>
+                </div>
+                <div class="relative">
+                    <div class="text-6xl font-black text-white/10 absolute -top-10 left-1/2 -translate-x-1/2">02</div>
+                    <div class="glass w-20 h-20 mx-auto flex items-center justify-center mb-6 relative z-10">
+                        <i class="fas fa-palette text-2xl text-purple-400"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Choose Style</h4>
+                    <p class="text-gray-400">Select a style or upload a reference image to mimic.</p>
+                </div>
+                <div class="relative">
+                    <div class="text-6xl font-black text-white/10 absolute -top-10 left-1/2 -translate-x-1/2">03</div>
+                    <div class="glass w-20 h-20 mx-auto flex items-center justify-center mb-6 relative z-10">
+                        <i class="fas fa-download text-2xl text-purple-400"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Download Result</h4>
+                    <p class="text-gray-400">Save your AI-generated masterpiece and share it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Simple <span class="gradient-text">Pricing</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass p-10 border-white/5 flex flex-col">
+                <h3 class="text-xl font-semibold mb-2">Free</h3>
+                <div class="text-4xl font-bold mb-6">$0<span class="text-lg text-gray-500">/mo</span></div>
+                <ul class="space-y-4 mb-10 text-gray-400">
+                    <li><i class="fas fa-check text-purple-500 mr-2"></i> 5 Style Swaps per month</li>
+                    <li><i class="fas fa-check text-purple-500 mr-2"></i> Standard Resolution</li>
+                    <li><i class="fas fa-check text-purple-500 mr-2"></i> Community Support</li>
+                </ul>
+                <button class="w-full py-3 rounded-lg border border-white/20 hover:bg-white/10 transition mt-auto">Choose Plan</button>
+            </div>
+            <div class="glass p-10 border-purple-500/50 relative flex flex-col scale-105 bg-white/[0.05]">
+                <div class="absolute top-0 right-0 bg-purple-gradient text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider">Recommended</div>
+                <h3 class="text-xl font-semibold mb-2">Pro</h3>
+                <div class="text-4xl font-bold mb-6">$9.99<span class="text-lg text-gray-500">/mo</span></div>
+                <ul class="space-y-4 mb-10 text-gray-400">
+                    <li><i class="fas fa-check text-purple-500 mr-2"></i> Unlimited Swaps</li>
+                    <li><i class="fas fa-check text-purple-500 mr-2"></i> 4K High Definition</li>
+                    <li><i class="fas fa-check text-purple-500 mr-2"></i> Priority Processing</li>
+                    <li><i class="fas fa-check text-purple-500 mr-2"></i> No Watermark</li>
+                </ul>
+                <button class="w-full py-3 rounded-lg bg-purple-gradient font-bold hover:opacity-90 transition mt-auto">Get Pro Now</button>
+            </div>
+            <div class="glass p-10 border-white/5 flex flex-col">
+                <h3 class="text-xl font-semibold mb-2">Enterprise</h3>
+                <div class="text-4xl font-bold mb-6">Custom</div>
+                <ul class="space-y-4 mb-10 text-gray-400">
+                    <li><i class="fas fa-check text-purple-500 mr-2"></i> API Access</li>
+                    <li><i class="fas fa-check text-purple-500 mr-2"></i> Custom Model Training</li>
+                    <li><i class="fas fa-check text-purple-500 mr-2"></i> Dedicated Account Manager</li>
+                </ul>
+                <button class="w-full py-3 rounded-lg border border-white/20 hover:bg-white/10 transition mt-auto">Contact Sales</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-white/5">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Loved by <span class="gradient-text">Creators</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass p-8">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://i.pravatar.cc/150?u=1" class="w-12 h-12 rounded-full border-2 border-purple-500">
+                        <div>
+                            <h5 class="font-bold">Sarah Jenkins</h5>
+                            <div class="text-yellow-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 italic">"This app changed how I plan my content. I can see if an outfit works before I even buy it!"</p>
+                </div>
+                <div class="glass p-8">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://i.pravatar.cc/150?u=2" class="w-12 h-12 rounded-full border-2 border-purple-500">
+                        <div>
+                            <h5 class="font-bold">Marcus Chen</h5>
+                            <div class="text-yellow-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 italic">"The style transfer is incredibly realistic. It's the best fashion AI tool I've used so far."</p>
+                </div>
+                <div class="glass p-8">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://i.pravatar.cc/150?u=3" class="w-12 h-12 rounded-full border-2 border-purple-500">
+                        <div>
+                            <h5 class="font-bold">Elena Rodriguez</h5>
+                            <div class="text-yellow-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 italic">"Clean UI and super fast. The Pro plan is a steal for the quality you get."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-24 px-6 text-center">
+        <div class="max-w-3xl mx-auto glass p-12 relative overflow-hidden">
+            <div class="hero-glow -top-20 -left-20"></div>
+            <h2 class="text-4xl font-bold mb-6">Ready to redefine your style?</h2>
+            <p class="text-gray-400 mb-8 text-lg">Join 50,000+ fashion enthusiasts today.</p>
+            <form class="flex flex-col md:flex-row gap-4 max-w-md mx-auto" onsubmit="event.preventDefault(); alert('Thanks for signing up!');">
+                <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-4 rounded-xl bg-white/5 border border-white/10 focus:outline-none focus:border-purple-500">
+                <button type="submit" class="bg-purple-gradient px-8 py-4 rounded-xl font-bold hover:scale-105 transition">Subscribe</button>
+            </form>
+            <div class="mt-12 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+                <p>&copy; 2026 Style Swap AI. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Twitter</a>
+                    <a href="#" class="hover:text-white">Instagram</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

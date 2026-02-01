@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your free try-ons are almost up</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f5f5f7;
+        }
+        .wrapper {
+            width: 100%;
+            background-color: #f5f5f7;
+            padding: 40px 0;
+        }
+        .main {
+            background-color: #ffffff;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #6B46C1 0%, #EC4899 100%);
+            padding: 50px 30px;
+            text-align: center;
+        }
+        .countdown {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto 0;
+            max-width: 300px;
+        }
+        .countdown-number {
+            font-size: 56px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1;
+        }
+        .countdown-label {
+            font-size: 16px;
+            color: #ffffff;
+            opacity: 0.9;
+            margin-top: 8px;
+        }
+        .content {
+            padding: 40px 30px;
+            color: #1F2937;
+        }
+        .content h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 0 0 20px 0;
+            color: #1F2937;
+            text-align: center;
+        }
+        .content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0 0 16px 0;
+            color: #4B5563;
+        }
+        .stats-box {
+            background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
+            border-left: 4px solid #6B46C1;
+            padding: 24px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        .stat-row:last-child {
+            border-bottom: none;
+        }
+        .stat-label {
+            font-size: 16px;
+            color: #6B7280;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #6B46C1;
+        }
+        .pricing-comparison {
+            background-color: #F9FAFB;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .pricing-table {
+            width: 100%;
+            margin: 20px 0;
+        }
+        .pricing-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 16px 0;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        .pricing-row.total {
+            border-bottom: none;
+            border-top: 2px solid #6B46C1;
+            font-weight: 700;
+            font-size: 18px;
+            color: #6B46C1;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #9CA3AF;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #6B46C1 0%, #EC4899 100%);
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 18px 50px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(107, 70, 193, 0.3);
+        }
+        .cta-secondary {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid #6B46C1;
+            color: #6B46C1 !important;
+            text-decoration: none;
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .testimonial {
+            background-color: #F9FAFB;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 30px 0;
+            position: relative;
+        }
+        .quote-icon {
+            font-size: 48px;
+            color: #EC4899;
+            opacity: 0.3;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+        .testimonial-text {
+            font-size: 16px;
+            font-style: italic;
+            color: #1F2937;
+            margin: 20px 0 16px;
+            line-height: 1.6;
+        }
+        .testimonial-author {
+            font-size: 14px;
+            font-weight: 600;
+            color: #6B46C1;
+        }
+        .guarantee {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            color: #ffffff;
+            padding: 24px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .guarantee h3 {
+            margin: 0 0 12px 0;
+            font-size: 20px;
+        }
+        .guarantee p {
+            margin: 0;
+            font-size: 14px;
+            color: #ffffff;
+            opacity: 0.95;
+        }
+        .footer {
+            background-color: #1F2937;
+            padding: 30px;
+            text-align: center;
+            color: #9CA3AF;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #EC4899;
+            text-decoration: none;
+        }
+        @media only screen and (max-width: 600px) {
+            .countdown-number {
+                font-size: 42px;
+            }
+            .content h2 {
+                font-size: 24px;
+            }
+            .stat-value {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <center class="wrapper">
+        <table class="main" width="100%">
+            <!-- Header with Countdown -->
+            <tr>
+                <td class="header">
+                    <div class="countdown">
+                        <div class="countdown-number">{{tries_remaining}}</div>
+                        <div class="countdown-label">FREE TRY-ONS LEFT</div>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Main Content -->
+            <tr>
+                <td class="content">
+                    <h2>Hi {{first_name}}, you're almost out of free try-ons!</h2>
+                    
+                    <p>We noticed you've been loving Style Swap (and we're loving having you here!). You've tried on <strong>{{tries_used}} outfits</strong> and have <strong>{{tries_remaining}} free try-ons</strong> left.</p>
+                    
+                    <p>Here's what you've discovered so far:</p>
+
+                    <!-- User Stats -->
+                    <div class="stats-box">
+                        <div class="stat-row">
+                            <span class="stat-label">Outfits tried on</span>
+                            <span class="stat-value">{{tries_used}}</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Time saved on returns</span>
+                            <span class="stat-value">{{hours_saved}}hrs</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Estimated money saved</span>
+                            <span class="stat-value">${{money_saved}}</span>
+                        </div>
+                    </div>
+
+                    <p style="text-align: center; font-size: 18px; margin-top: 30px;">
+                        <strong>Want unlimited try-ons?</strong>
+                    </p>
+
+                    <!-- Pricing Comparison -->
+                    <div class="pricing-comparison">
+                        <h3 style="text-align: center; margin: 0 0 20px 0;">What You Save vs. What You Pay</h3>
+                        
+                        <div class="pricing-table">
+                            <div class="pricing-row">
+                                <span>Average return shipping cost (per item)</span>
+                                <span>$6.99</span>
+                            </div>
+                            <div class="pricing-row">
+                                <span>Average items returned per month</span>
+                                <span>4 items</span>
+                            </div>
+                            <div class="pricing-row">
+                                <span>Time spent on returns (valued at $15/hr)</span>
+                                <span>$30</span>
+                            </div>
+                            <div class="pricing-row total">
+                                <span>Total monthly cost of returns</span>
+                                <span class="old-price">$57.96</span>
+                            </div>
+                            <div class="pricing-row total" style="border-top: none;">
+                                <span><strong>Style Swap Premium</strong></span>
+                                <span style="color: #10B981;">$9.99/mo</span>
+                            </div>
+                        </div>
+
+                        <p style="text-align: center; color: #6B7280; font-size: 14px; margin: 16px 0 0 0;">
+                            <strong>You save $47.97 every month</strong> vs. traditional online shopping returns.
+                        </p>
+                    </div>
+
+                    <center>
+                        <a href="{{upgrade_link}}" class="cta-button">Upgrade to Premium for $9.99/mo →</a>
+                        <br>
+                        <a href="{{app_link}}" class="cta-secondary">Use My Last {{tries_remaining}} Free Try-Ons</a>
+                    </center>
+
+                    <!-- Testimonial -->
+                    <div class="testimonial">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text">"I was skeptical about paying for Premium, but then I did the math. I was spending $60+ per month on return shipping alone. Style Swap pays for itself 6x over. No brainer."</p>
+                        <p class="testimonial-author">— Sarah M., Premium Member since 2024</p>
+                    </div>
+
+                    <!-- Premium Benefits -->
+                    <h3 style="text-align: center; margin-top: 40px; color: #1F2937;">Premium includes:</h3>
+                    <table width="100%" style="margin: 20px 0;">
+                        <tr>
+                            <td style="padding: 12px; text-align: center;">
+                                ✅ <strong>Unlimited try-ons</strong><br>
+                                <small style="color: #6B7280;">Try on as many outfits as you want</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; text-align: center;">
+                                ✅ <strong>Priority AI processing</strong><br>
+                                <small style="color: #6B7280;">Results in 3 seconds (vs. 5)</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; text-align: center;">
+                                ✅ <strong>Save favorites & outfits</strong><br>
+                                <small style="color: #6B7280;">Build your virtual closet</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; text-align: center;">
+                                ✅ <strong>Style DNA insights</strong><br>
+                                <small style="color: #6B7280;">Personalized recommendations</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; text-align: center;">
+                                ✅ <strong>Early access to new features</strong><br>
+                                <small style="color: #6B7280;">Be first to try new AI tools</small>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- Money-Back Guarantee -->
+                    <div class="guarantee">
+                        <h3>🛡️ 30-Day Money-Back Guarantee</h3>
+                        <p>Try Premium risk-free. If you don't love it, get a full refund within 30 days. No questions asked.</p>
+                    </div>
+
+                    <center style="margin-top: 30px;">
+                        <a href="{{upgrade_link}}" class="cta-button">Start Premium ($9.99/mo) →</a>
+                    </center>
+
+                    <p style="margin-top: 30px; font-size: 14px; color: #6B7280; text-align: center;">
+                        Not ready yet? No problem. Use your last {{tries_remaining}} free try-ons and upgrade anytime.<br>
+                        <strong>Questions?</strong> Hit reply—we're here to help. 💜
+                    </p>
+                </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+                <td class="footer">
+                    <p>
+                        Style Swap, Inc.<br>
+                        123 Fashion Ave, San Francisco, CA 94103<br>
+                        <a href="{{preferences_link}}">Email Preferences</a> | <a href="{{unsubscribe_link}}">Unsubscribe</a>
+                    </p>
+                    <p style="font-size: 12px; margin-top: 16px;">
+                        © 2026 Style Swap. All rights reserved.
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>

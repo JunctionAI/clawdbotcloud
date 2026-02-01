@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Style Swap!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f5f5f7;
+            -webkit-font-smoothing: antialiased;
+        }
+        table {
+            border-spacing: 0;
+        }
+        td {
+            padding: 0;
+        }
+        img {
+            border: 0;
+            display: block;
+        }
+        .wrapper {
+            width: 100%;
+            table-layout: fixed;
+            background-color: #f5f5f7;
+            padding: 40px 0;
+        }
+        .main {
+            background-color: #ffffff;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #6B46C1 0%, #EC4899 100%);
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .header h1 {
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+        }
+        .header p {
+            color: #ffffff;
+            font-size: 16px;
+            margin: 0;
+            opacity: 0.95;
+        }
+        .content {
+            padding: 40px 30px;
+            color: #1F2937;
+        }
+        .content h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 0 20px 0;
+            color: #6B46C1;
+        }
+        .content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0 0 16px 0;
+            color: #4B5563;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #6B46C1 0%, #EC4899 100%);
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .cta-button:hover {
+            opacity: 0.9;
+        }
+        .steps {
+            background-color: #F9FAFB;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .step {
+            display: flex;
+            margin-bottom: 24px;
+            align-items: start;
+        }
+        .step:last-child {
+            margin-bottom: 0;
+        }
+        .step-number {
+            background-color: #6B46C1;
+            color: #ffffff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            flex-shrink: 0;
+            margin-right: 16px;
+        }
+        .step-content h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #1F2937;
+        }
+        .step-content p {
+            font-size: 14px;
+            margin: 0;
+            color: #6B7280;
+        }
+        .benefits {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .benefit {
+            background-color: #F9FAFB;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .benefit-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        .benefit-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1F2937;
+        }
+        .footer {
+            background-color: #1F2937;
+            padding: 30px;
+            text-align: center;
+            color: #9CA3AF;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #EC4899;
+            text-decoration: none;
+        }
+        .social-links {
+            margin: 20px 0;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 8px;
+        }
+        @media only screen and (max-width: 600px) {
+            .main {
+                border-radius: 0 !important;
+            }
+            .header h1 {
+                font-size: 26px;
+            }
+            .content, .header, .footer {
+                padding: 30px 20px !important;
+            }
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <center class="wrapper">
+        <table class="main" width="100%">
+            <!-- Header -->
+            <tr>
+                <td class="header">
+                    <h1>Welcome to Style Swap! 👋</h1>
+                    <p>You're about to revolutionize how you shop for clothes</p>
+                </td>
+            </tr>
+
+            <!-- Main Content -->
+            <tr>
+                <td class="content">
+                    <h2>Hi {{first_name}},</h2>
+                    <p>Welcome to Style Swap! We're thrilled to have you join our community of 2 million+ fashion lovers who've said goodbye to returns and hello to smart shopping.</p>
+                    
+                    <p>You now have <strong>10 FREE try-ons</strong> waiting for you. No credit card needed. No catch. Just pure AI-powered fashion magic.</p>
+
+                    <center>
+                        <a href="{{app_link}}" class="cta-button">Start Your First Try-On →</a>
+                    </center>
+
+                    <!-- Getting Started Steps -->
+                    <div class="steps">
+                        <h2 style="margin-top: 0; text-align: center;">Get Started in 3 Easy Steps</h2>
+                        
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Upload a photo</h3>
+                                <p>Any selfie works! Good lighting helps, but you don't need to be a photographer. 10 seconds max.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Browse 10,000+ outfits</h3>
+                                <p>From Zara to Nordstrom, ASOS to designer brands. If it's online, we've got it.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>See yourself wearing it</h3>
+                                <p>Our AI creates a photorealistic image of YOU in the outfit. Decide in 5 seconds, not 5 days of waiting.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benefits Grid -->
+                    <h2 style="text-align: center; margin-top: 40px;">What You'll Love</h2>
+                    <table class="benefits" width="100%">
+                        <tr>
+                            <td class="benefit">
+                                <div class="benefit-icon">⚡</div>
+                                <div class="benefit-text">Instant Results<br><small style="color: #6B7280;">5 seconds per try-on</small></div>
+                            </td>
+                            <td class="benefit">
+                                <div class="benefit-icon">💰</div>
+                                <div class="benefit-text">Save Hundreds<br><small style="color: #6B7280;">Zero wasted returns</small></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="benefit">
+                                <div class="benefit-icon">🌍</div>
+                                <div class="benefit-text">Eco-Friendly<br><small style="color: #6B7280;">Less shipping, less waste</small></div>
+                            </td>
+                            <td class="benefit">
+                                <div class="benefit-icon">✅</div>
+                                <div class="benefit-text">95% Accurate<br><small style="color: #6B7280;">Photorealistic AI</small></div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p style="margin-top: 30px; text-align: center; font-size: 14px; color: #6B7280;">
+                        <strong>Pro Tip:</strong> The more you try on, the smarter our AI gets at recommending styles you'll love. It's like having a personal stylist who actually knows you.
+                    </p>
+
+                    <center style="margin-top: 30px;">
+                        <a href="{{app_link}}" class="cta-button">Try On Your First Outfit</a>
+                    </center>
+
+                    <p style="margin-top: 30px; font-size: 14px; color: #6B7280; text-align: center;">
+                        Questions? Hit reply—we read every email. 💜<br>
+                        <strong>- The Style Swap Team</strong>
+                    </p>
+                </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+                <td class="footer">
+                    <div class="social-links">
+                        <a href="{{instagram_link}}"><img src="https://via.placeholder.com/32/EC4899/FFFFFF?text=IG" alt="Instagram" width="32" height="32"></a>
+                        <a href="{{tiktok_link}}"><img src="https://via.placeholder.com/32/EC4899/FFFFFF?text=TT" alt="TikTok" width="32" height="32"></a>
+                        <a href="{{twitter_link}}"><img src="https://via.placeholder.com/32/EC4899/FFFFFF?text=X" alt="Twitter" width="32" height="32"></a>
+                    </div>
+                    
+                    <p>
+                        Style Swap, Inc.<br>
+                        123 Fashion Ave, San Francisco, CA 94103<br>
+                        <a href="{{preferences_link}}">Email Preferences</a> | <a href="{{unsubscribe_link}}">Unsubscribe</a>
+                    </p>
+                    
+                    <p style="font-size: 12px; margin-top: 16px;">
+                        You're receiving this email because you signed up for Style Swap.<br>
+                        © 2026 Style Swap. All rights reserved.
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>

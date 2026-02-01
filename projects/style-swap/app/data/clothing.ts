@@ -1,0 +1,86 @@
+import { ClothingItem } from '../types';
+
+// Demo clothing catalog - In production, this would come from a database
+export const clothingCatalog: ClothingItem[] = [
+  {
+    id: '1',
+    name: 'Classic White T-Shirt',
+    category: 'tops',
+    imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800',
+    thumbnail: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300',
+    description: 'Essential white cotton tee',
+    tags: ['casual', 'basic', 'summer'],
+  },
+  {
+    id: '2',
+    name: 'Denim Jacket',
+    category: 'outerwear',
+    imageUrl: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=800',
+    thumbnail: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=300',
+    description: 'Classic blue denim jacket',
+    tags: ['casual', 'classic', 'layering'],
+  },
+  {
+    id: '3',
+    name: 'Black Leather Jacket',
+    category: 'outerwear',
+    imageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800',
+    thumbnail: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=300',
+    description: 'Edgy black leather motorcycle jacket',
+    tags: ['edgy', 'rock', 'winter'],
+  },
+  {
+    id: '4',
+    name: 'Floral Summer Dress',
+    category: 'dresses',
+    imageUrl: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=800',
+    thumbnail: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=300',
+    description: 'Light floral print summer dress',
+    tags: ['feminine', 'summer', 'casual'],
+  },
+  {
+    id: '5',
+    name: 'Slim Fit Jeans',
+    category: 'bottoms',
+    imageUrl: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=800',
+    thumbnail: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=300',
+    description: 'Dark wash slim fit denim jeans',
+    tags: ['casual', 'denim', 'versatile'],
+  },
+  {
+    id: '6',
+    name: 'Oversized Hoodie',
+    category: 'tops',
+    imageUrl: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800',
+    thumbnail: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=300',
+    description: 'Comfortable oversized hoodie',
+    tags: ['streetwear', 'comfort', 'casual'],
+  },
+  {
+    id: '7',
+    name: 'Blazer',
+    category: 'outerwear',
+    imageUrl: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=800',
+    thumbnail: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=300',
+    description: 'Professional fitted blazer',
+    tags: ['formal', 'business', 'elegant'],
+  },
+  {
+    id: '8',
+    name: 'Graphic Tee',
+    category: 'tops',
+    imageUrl: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800',
+    thumbnail: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=300',
+    description: 'Cool graphic print t-shirt',
+    tags: ['streetwear', 'casual', 'trendy'],
+  },
+];
+
+export const categories = [
+  { id: 'all', name: 'All Items', icon: '👕' },
+  { id: 'tops', name: 'Tops', icon: '👔' },
+  { id: 'bottoms', name: 'Bottoms', icon: '👖' },
+  { id: 'dresses', name: 'Dresses', icon: '👗' },
+  { id: 'outerwear', name: 'Outerwear', icon: '🧥' },
+  { id: 'accessories', name: 'Accessories', icon: '🎒' },
+];

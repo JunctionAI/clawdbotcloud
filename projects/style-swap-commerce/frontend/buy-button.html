@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Swap - Buy Button Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            background: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .brand {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .buy-now-btn {
+            width: 100%;
+            padding: 14px;
+            background: #000;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .buy-now-btn:hover {
+            background: #333;
+        }
+
+        .add-to-cart-btn {
+            width: 100%;
+            padding: 14px;
+            background: white;
+            color: #000;
+            border: 2px solid #000;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .add-to-cart-btn:hover {
+            background: #f0f0f0;
+        }
+
+        .cart-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #000;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .cart-count {
+            background: #10b981;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-left: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #10b981;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            display: none;
+            z-index: 1000;
+        }
+
+        .notification.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateX(-50%) translateY(-100%);
+            }
+            to {
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-badge" onclick="viewCart()">
+        🛒 Cart <span class="cart-count" id="cartCount">0</span>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+    <div class="container">
+        <h1>🔥 Featured Products</h1>
+        
+        <div class="product-grid">
+            <!-- Sample products - in real app, fetch from API -->
+            <div class="product-card">
+                <div class="product-image">👟</div>
+                <div class="product-info">
+                    <div class="brand">Nike</div>
+                    <div class="product-name">Air Max 270</div>
+                    <div class="price">$150.00</div>
+                    <button class="buy-now-btn" onclick="buyNow('nike-air-max', 'abc12345')">
+                        Buy Now
+                    </button>
+                    <button class="add-to-cart-btn" onclick="addToCart(1, 'abc12345')">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">👕</div>
+                <div class="product-info">
+                    <div class="brand">Adidas</div>
+                    <div class="product-name">Classic Tee</div>
+                    <div class="price">$35.00</div>
+                    <button class="buy-now-btn" onclick="buyNow('adidas-tee', 'def23456')">
+                        Buy Now
+                    </button>
+                    <button class="add-to-cart-btn" onclick="addToCart(2, 'def23456')">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">👖</div>
+                <div class="product-info">
+                    <div class="brand">Zara</div>
+                    <div class="product-name">Slim Fit Jeans</div>
+                    <div class="price">$79.99</div>
+                    <button class="buy-now-btn" onclick="buyNow('zara-jeans', 'ghi34567')">
+                        Buy Now
+                    </button>
+                    <button class="add-to-cart-btn" onclick="addToCart(3, 'ghi34567')">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:3000/api';
+        let cartCount = 0;
+
+        // Initialize
+        loadCartCount();
+
+        async function buyNow(productSlug, shortCode) {
+            try {
+                // Redirect to tracked affiliate link
+                window.open(`${API_BASE}/link/${shortCode}/redirect`, '_blank');
+                
+                showNotification('Redirecting to brand site...');
+            } catch (error) {
+                console.error('Buy now error:', error);
+                showNotification('Something went wrong', 'error');
+            }
+        }
+
+        async function addToCart(productId, affiliateLinkId) {
+            try {
+                const response = await fetch(`${API_BASE}/cart/add`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({
+                        product_id: productId,
+                        affiliate_link_id: affiliateLinkId,
+                        quantity: 1
+                    })
+                });
+
+                if (response.ok) {
+                    cartCount++;
+                    updateCartBadge();
+                    showNotification('Added to cart!');
+                }
+            } catch (error) {
+                console.error('Add to cart error:', error);
+                showNotification('Failed to add to cart', 'error');
+            }
+        }
+
+        async function loadCartCount() {
+            try {
+                const response = await fetch(`${API_BASE}/cart`, {
+                    credentials: 'include'
+                });
+                const cart = await response.json();
+                cartCount = cart.item_count || 0;
+                updateCartBadge();
+            } catch (error) {
+                console.error('Load cart error:', error);
+            }
+        }
+
+        function updateCartBadge() {
+            document.getElementById('cartCount').textContent = cartCount;
+        }
+
+        async function viewCart() {
+            try {
+                const response = await fetch(`${API_BASE}/cart`, {
+                    credentials: 'include'
+                });
+                const cart = await response.json();
+                
+                if (cart.items && cart.items.length > 0) {
+                    // In a real app, show cart modal or navigate to cart page
+                    alert(`Cart has ${cart.item_count} items totaling $${cart.total.toFixed(2)}`);
+                    
+                    // Example: Checkout all items
+                    if (confirm('Proceed to checkout?')) {
+                        checkout();
+                    }
+                } else {
+                    alert('Your cart is empty');
+                }
+            } catch (error) {
+                console.error('View cart error:', error);
+            }
+        }
+
+        async function checkout() {
+            try {
+                const response = await fetch(`${API_BASE}/cart/checkout`, {
+                    method: 'POST',
+                    credentials: 'include'
+                });
+                
+                const result = await response.json();
+                
+                // Open all affiliate links in new tabs
+                result.items.forEach(item => {
+                    window.open(
+                        `${API_BASE}/link/${item.affiliate_link_id}/redirect`,
+                        '_blank'
+                    );
+                });
+                
+                cartCount = 0;
+                updateCartBadge();
+                showNotification('Redirecting to brand sites...');
+            } catch (error) {
+                console.error('Checkout error:', error);
+                showNotification('Checkout failed', 'error');
+            }
+        }
+
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.style.background = type === 'error' ? '#ef4444' : '#10b981';
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We miss you! Come back to Style Swap</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f5f5f7;
+        }
+        .wrapper {
+            width: 100%;
+            background-color: #f5f5f7;
+            padding: 40px 0;
+        }
+        .main {
+            background-color: #ffffff;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            padding: 50px 30px 30px;
+            text-align: center;
+        }
+        .header-emoji {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            color: #1F2937;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+        }
+        .header p {
+            color: #6B7280;
+            font-size: 18px;
+            margin: 0;
+        }
+        .content {
+            padding: 20px 30px 40px;
+            color: #1F2937;
+        }
+        .content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0 0 16px 0;
+            color: #4B5563;
+        }
+        .whats-new {
+            background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .whats-new h2 {
+            margin: 0 0 24px 0;
+            font-size: 24px;
+            color: #1F2937;
+            text-align: center;
+        }
+        .feature {
+            display: flex;
+            align-items: start;
+            margin-bottom: 20px;
+        }
+        .feature:last-child {
+            margin-bottom: 0;
+        }
+        .feature-icon {
+            font-size: 32px;
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+        .feature-content h3 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+            color: #1F2937;
+        }
+        .feature-content p {
+            margin: 0;
+            font-size: 14px;
+            color: #6B7280;
+        }
+        .feature-badge {
+            background: linear-gradient(135deg, #6B46C1 0%, #EC4899 100%);
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .comeback-offer {
+            background: linear-gradient(135deg, #6B46C1 0%, #EC4899 100%);
+            color: #ffffff;
+            padding: 40px 30px;
+            text-align: center;
+            margin: 30px 0;
+            border-radius: 12px;
+        }
+        .comeback-offer h2 {
+            color: #ffffff;
+            font-size: 28px;
+            margin: 0 0 16px 0;
+        }
+        .comeback-offer p {
+            color: #ffffff;
+            font-size: 16px;
+            margin: 0 0 24px 0;
+            opacity: 0.95;
+        }
+        .offer-code {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px dashed #ffffff;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 300px;
+        }
+        .offer-code-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+        .offer-code-value {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-family: 'Courier New', monospace;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #6B46C1 !important;
+            text-decoration: none;
+            padding: 18px 50px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .stat-box {
+            background-color: #F9FAFB;
+            padding: 24px 16px;
+            border-radius: 8px;
+        }
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #6B46C1;
+            margin-bottom: 8px;
+        }
+        .stat-label {
+            font-size: 13px;
+            color: #6B7280;
+        }
+        .testimonials {
+            margin: 30px 0;
+        }
+        .testimonial-card {
+            background-color: #F9FAFB;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+        .testimonial-text {
+            font-size: 14px;
+            font-style: italic;
+            color: #1F2937;
+            margin-bottom: 12px;
+        }
+        .testimonial-author {
+            font-size: 13px;
+            font-weight: 600;
+            color: #6B46C1;
+        }
+        .footer {
+            background-color: #1F2937;
+            padding: 30px;
+            text-align: center;
+            color: #9CA3AF;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #EC4899;
+            text-decoration: none;
+        }
+        @media only screen and (max-width: 600px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .stat-number {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <center class="wrapper">
+        <table class="main" width="100%">
+            <!-- Header -->
+            <tr>
+                <td class="header">
+                    <div class="header-emoji">👋</div>
+                    <h1>We miss you, {{first_name}}!</h1>
+                    <p>It's been {{days_inactive}} days since your last try-on</p>
+                </td>
+            </tr>
+
+            <!-- Main Content -->
+            <tr>
+                <td class="content">
+                    <p>Hey {{first_name}},</p>
+                    
+                    <p>We noticed you haven't been around Style Swap lately. Did we do something wrong? Drop your phone in the toilet? Get abducted by aliens? 😅</p>
+                    
+                    <p>Whatever the reason, we'd love to have you back. A lot has changed since you last logged in...</p>
+
+                    <!-- What's New Section -->
+                    <div class="whats-new">
+                        <h2>✨ What's New at Style Swap</h2>
+                        
+                        <div class="feature">
+                            <div class="feature-icon">🚀</div>
+                            <div class="feature-content">
+                                <div class="feature-badge">New</div>
+                                <h3>Lightning-Fast AI</h3>
+                                <p>We've upgraded our AI. Try-on results now appear in under 3 seconds. That's 40% faster!</p>
+                            </div>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">🎨</div>
+                            <div class="feature-content">
+                                <div class="feature-badge">New</div>
+                                <h3>Style DNA Quiz</h3>
+                                <p>Discover your unique style profile and get personalized outfit recommendations tailored just for you.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">🛍️</div>
+                            <div class="feature-content">
+                                <div class="feature-badge">New</div>
+                                <h3>5,000+ New Brands</h3>
+                                <p>We've added thousands of new brands, including designer labels and sustainable fashion brands you love.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">📸</div>
+                            <div class="feature-content">
+                                <div class="feature-badge">New</div>
+                                <h3>Multi-Angle Try-On</h3>
+                                <p>See outfits from different angles. Front, side, back—all photorealistic.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Community Stats -->
+                    <h2 style="text-align: center; margin-top: 40px;">While you were gone...</h2>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-number">2.5M+</div>
+                            <div class="stat-label">Active Users</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">50M+</div>
+                            <div class="stat-label">Outfits Tried</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">$180M</div>
+                            <div class="stat-label">Saved in Returns</div>
+                        </div>
+                    </div>
+
+                    <!-- Comeback Offer -->
+                    <div class="comeback-offer">
+                        <h2>🎁 Welcome Back Gift</h2>
+                        <p>We want to make your comeback special. Here's an exclusive offer just for you:</p>
+                        
+                        <div class="offer-code">
+                            <div class="offer-code-label">Your Exclusive Code:</div>
+                            <div class="offer-code-value">WELCOME{{user_id_short}}</div>
+                        </div>
+
+                        <p style="margin-top: 24px;"><strong>Get 50% off Premium for 3 months</strong><br>
+                        (That's just $4.99/mo instead of $9.99/mo)</p>
+
+                        <p style="font-size: 14px; margin-top: 16px;">Plus, we're giving you <strong>20 FREE bonus try-ons</strong> to get started again.</p>
+
+                        <a href="{{app_link}}?code=WELCOME{{user_id_short}}" class="cta-button">Claim My Offer →</a>
+
+                        <p style="font-size: 13px; margin-top: 20px; opacity: 0.8;">Offer expires in 7 days. Don't miss out!</p>
+                    </div>
+
+                    <!-- Social Proof -->
+                    <h3 style="text-align: center; margin-top: 40px;">What people are saying:</h3>
+                    <div class="testimonials">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"I tried Style Swap 6 months ago and kind of forgot about it. Came back last week and WOW—the AI is SO much better now. Blown away!"</p>
+                            <p class="testimonial-author">— Jessica T.</p>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"Haven't returned a single item in 3 months. Style Swap saves me time, money, and the planet. Why did I ever stop using it??"</p>
+                            <p class="testimonial-author">— Marcus R.</p>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"The new Style DNA feature is a game-changer. It's like having a stylist who actually knows my taste."</p>
+                            <p class="testimonial-author">— Aisha M.</p>
+                        </div>
+                    </div>
+
+                    <p style="text-align: center; margin-top: 40px;">
+                        <strong>Ready to give us another shot?</strong>
+                    </p>
+
+                    <center>
+                        <a href="{{app_link}}?code=WELCOME{{user_id_short}}" class="cta-button" style="background: linear-gradient(135deg, #6B46C1 0%, #EC4899 100%); color: #ffffff !important;">Get My 20 Free Try-Ons + 50% Off →</a>
+                    </center>
+
+                    <p style="margin-top: 40px; font-size: 14px; color: #6B7280; text-align: center;">
+                        <strong>Not interested in coming back?</strong><br>
+                        We totally understand. If you'd prefer not to receive these emails, you can <a href="{{unsubscribe_link}}" style="color: #6B46C1;">unsubscribe here</a>.<br><br>
+                        But if you have feedback on why you left, we'd genuinely love to hear it. Just hit reply—we read every email. 💜
+                    </p>
+                </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+                <td class="footer">
+                    <p>
+                        Style Swap, Inc.<br>
+                        123 Fashion Ave, San Francisco, CA 94103<br>
+                        <a href="{{preferences_link}}">Email Preferences</a> | <a href="{{unsubscribe_link}}">Unsubscribe</a>
+                    </p>
+                    <p style="font-size: 12px; margin-top: 16px;">
+                        © 2026 Style Swap. All rights reserved.
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>

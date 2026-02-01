@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Swap Revenue Share Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .input-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        
+        .input-section h2 {
+            color: #667eea;
+            margin-bottom: 25px;
+            font-size: 1.5em;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .tier-selector {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .tier-button {
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .tier-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .tier-button.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: transparent;
+        }
+        
+        .tier-button .split {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+        
+        .results-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        
+        .results-section h2 {
+            margin-bottom: 25px;
+            font-size: 1.5em;
+        }
+        
+        .result-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .result-item label {
+            display: block;
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        
+        .result-item .value {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .breakdown-table {
+            width: 100%;
+            margin-top: 30px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .breakdown-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .breakdown-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .breakdown-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            color: #333;
+        }
+        
+        .breakdown-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .breakdown-table .highlight {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        .annual-projection {
+            margin-top: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        
+        .annual-projection h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+        
+        .projection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .projection-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .projection-card .label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .projection-card .amount {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .help-text {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 Revenue Share Calculator</h1>
+            <p>Calculate earnings for your Style Swap brand partnership</p>
+        </div>
+        
+        <div class="content">
+            <div class="calculator-grid">
+                <!-- Input Section -->
+                <div class="input-section">
+                    <h2>📊 Partnership Details</h2>
+                    
+                    <div class="input-group">
+                        <label>Partnership Tier</label>
+                        <div class="tier-selector">
+                            <div class="tier-button active" onclick="selectTier('bronze', 70, 30)">
+                                <div>Bronze</div>
+                                <div class="split">70/30</div>
+                            </div>
+                            <div class="tier-button" onclick="selectTier('silver', 65, 35)">
+                                <div>Silver</div>
+                                <div class="split">65/35</div>
+                            </div>
+                            <div class="tier-button" onclick="selectTier('gold', 60, 40)">
+                                <div>Gold</div>
+                                <div class="split">60/40</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Number of Items (Monthly)</label>
+                        <input type="number" id="itemCount" value="100" min="1" oninput="calculate()">
+                        <div class="help-text">How many items will you list per month?</div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Average Selling Price</label>
+                        <input type="number" id="avgPrice" value="80" min="0" step="0.01" oninput="calculate()">
+                        <div class="help-text">Average price per item</div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Sell-Through Rate (%)</label>
+                        <input type="number" id="sellThrough" value="40" min="0" max="100" oninput="calculate()">
+                        <div class="help-text">Typically 30-50% in first 30 days</div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Payment Processing Fee (%)</label>
+                        <input type="number" id="processingFee" value="2.9" min="0" max="10" step="0.1" oninput="calculate()">
+                        <div class="help-text">Typical credit card fees: 2.9%</div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Fixed Transaction Fee</label>
+                        <input type="number" id="fixedFee" value="0.30" min="0" step="0.01" oninput="calculate()">
+                        <div class="help-text">Fixed fee per transaction</div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Average Shipping Cost</label>
+                        <input type="number" id="shippingCost" value="0" min="0" step="0.01" oninput="calculate()">
+                        <div class="help-text">If you subsidize shipping (optional)</div>
+                    </div>
+                </div>
+                
+                <!-- Results Section -->
+                <div class="results-section">
+                    <h2>💵 Monthly Results</h2>
+                    
+                    <div class="result-item">
+                        <label>Items Sold</label>
+                        <div class="value" id="itemsSold">40</div>
+                    </div>
+                    
+                    <div class="result-item">
+                        <label>Gross Revenue</label>
+                        <div class="value" id="grossRevenue">$3,200</div>
+                    </div>
+                    
+                    <div class="result-item">
+                        <label>Net Revenue (After Fees)</label>
+                        <div class="value" id="netRevenue">$3,092</div>
+                    </div>
+                    
+                    <div class="result-item" style="background: rgba(255,255,255,0.2);">
+                        <label>🎯 Brand Partner Revenue</label>
+                        <div class="value" id="brandRevenue">$2,164</div>
+                    </div>
+                    
+                    <div class="result-item" style="background: rgba(255,255,255,0.2);">
+                        <label>🏢 Style Swap Revenue</label>
+                        <div class="value" id="platformRevenue">$928</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Breakdown Table -->
+            <div class="breakdown-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Calculation</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="breakdownBody">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Annual Projection -->
+            <div class="annual-projection">
+                <h3>📅 12-Month Projection</h3>
+                <div class="projection-grid">
+                    <div class="projection-card">
+                        <div class="label">Total Items Sold</div>
+                        <div class="amount" id="annualItems">480</div>
+                    </div>
+                    <div class="projection-card">
+                        <div class="label">Gross Revenue</div>
+                        <div class="amount" id="annualGross">$38,400</div>
+                    </div>
+                    <div class="projection-card">
+                        <div class="label">Brand Partner Earnings</div>
+                        <div class="amount" id="annualBrand">$25,968</div>
+                    </div>
+                    <div class="projection-card">
+                        <div class="label">Style Swap Earnings</div>
+                        <div class="amount" id="annualPlatform">$11,136</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentTier = {
+            name: 'bronze',
+            brandSplit: 70,
+            platformSplit: 30
+        };
+        
+        function selectTier(name, brandSplit, platformSplit) {
+            currentTier = { name, brandSplit, platformSplit };
+            
+            // Update UI
+            document.querySelectorAll('.tier-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.closest('.tier-button').classList.add('active');
+            
+            calculate();
+        }
+        
+        function calculate() {
+            // Get inputs
+            const itemCount = parseFloat(document.getElementById('itemCount').value) || 0;
+            const avgPrice = parseFloat(document.getElementById('avgPrice').value) || 0;
+            const sellThrough = parseFloat(document.getElementById('sellThrough').value) || 0;
+            const processingFeeRate = parseFloat(document.getElementById('processingFee').value) || 0;
+            const fixedFee = parseFloat(document.getElementById('fixedFee').value) || 0;
+            const shippingCost = parseFloat(document.getElementById('shippingCost').value) || 0;
+            
+            // Calculate items sold
+            const itemsSold = Math.round(itemCount * (sellThrough / 100));
+            
+            // Calculate gross revenue
+            const grossRevenue = itemsSold * avgPrice;
+            
+            // Calculate fees per transaction
+            const processingFeePerItem = (avgPrice * (processingFeeRate / 100)) + fixedFee;
+            const totalProcessingFees = processingFeePerItem * itemsSold;
+            const totalShippingCosts = shippingCost * itemsSold;
+            
+            // Calculate net revenue
+            const netRevenue = grossRevenue - totalProcessingFees - totalShippingCosts;
+            
+            // Calculate revenue split
+            const brandRevenue = netRevenue * (currentTier.brandSplit / 100);
+            const platformRevenue = netRevenue * (currentTier.platformSplit / 100);
+            
+            // Update display
+            document.getElementById('itemsSold').textContent = itemsSold.toLocaleString();
+            document.getElementById('grossRevenue').textContent = '$' + grossRevenue.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            document.getElementById('netRevenue').textContent = '$' + netRevenue.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            document.getElementById('brandRevenue').textContent = '$' + brandRevenue.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            document.getElementById('platformRevenue').textContent = '$' + platformRevenue.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            
+            // Update breakdown table
+            updateBreakdownTable({
+                itemCount,
+                itemsSold,
+                avgPrice,
+                sellThrough,
+                grossRevenue,
+                processingFeePerItem,
+                totalProcessingFees,
+                totalShippingCosts,
+                netRevenue,
+                brandSplit: currentTier.brandSplit,
+                platformSplit: currentTier.platformSplit,
+                brandRevenue,
+                platformRevenue
+            });
+            
+            // Update annual projection
+            updateAnnualProjection({
+                itemsSold,
+                grossRevenue,
+                brandRevenue,
+                platformRevenue
+            });
+        }
+        
+        function updateBreakdownTable(data) {
+            const tbody = document.getElementById('breakdownBody');
+            tbody.innerHTML = `
+                <tr>
+                    <td>Items Listed</td>
+                    <td>${data.itemCount} items</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Sell-Through Rate</td>
+                    <td>${data.sellThrough}%</td>
+                    <td>-</td>
+                </tr>
+                <tr class="highlight">
+                    <td><strong>Items Sold</strong></td>
+                    <td>${data.itemCount} × ${data.sellThrough}%</td>
+                    <td><strong>${data.itemsSold}</strong></td>
+                </tr>
+                <tr>
+                    <td>Average Price per Item</td>
+                    <td>-</td>
+                    <td>$${data.avgPrice.toFixed(2)}</td>
+                </tr>
+                <tr class="highlight">
+                    <td><strong>Gross Revenue</strong></td>
+                    <td>${data.itemsSold} × $${data.avgPrice.toFixed(2)}</td>
+                    <td><strong>$${data.grossRevenue.toLocaleString(undefined, {minimumFractionDigits: 2})}</strong></td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 30px;">- Payment Processing</td>
+                    <td>$${data.processingFeePerItem.toFixed(2)} × ${data.itemsSold}</td>
+                    <td>-$${data.totalProcessingFees.toLocaleString(undefined, {minimumFractionDigits: 2})}</td>
+                </tr>
+                ${data.totalShippingCosts > 0 ? `
+                <tr>
+                    <td style="padding-left: 30px;">- Shipping Subsidy</td>
+                    <td>$${(data.totalShippingCosts / data.itemsSold).toFixed(2)} × ${data.itemsSold}</td>
+                    <td>-$${data.totalShippingCosts.toLocaleString(undefined, {minimumFractionDigits: 2})}</td>
+                </tr>
+                ` : ''}
+                <tr class="highlight">
+                    <td><strong>Net Revenue</strong></td>
+                    <td>After all fees</td>
+                    <td><strong>$${data.netRevenue.toLocaleString(undefined, {minimumFractionDigits: 2})}</strong></td>
+                </tr>
+                <tr style="background: #f0f7ff;">
+                    <td><strong>Brand Partner (${data.brandSplit}%)</strong></td>
+                    <td>$${data.netRevenue.toFixed(2)} × ${data.brandSplit}%</td>
+                    <td><strong style="color: #667eea;">$${data.brandRevenue.toLocaleString(undefined, {minimumFractionDigits: 2})}</strong></td>
+                </tr>
+                <tr style="background: #f0f7ff;">
+                    <td><strong>Style Swap (${data.platformSplit}%)</strong></td>
+                    <td>$${data.netRevenue.toFixed(2)} × ${data.platformSplit}%</td>
+                    <td><strong style="color: #764ba2;">$${data.platformRevenue.toLocaleString(undefined, {minimumFractionDigits: 2})}</strong></td>
+                </tr>
+            `;
+        }
+        
+        function updateAnnualProjection(monthlyData) {
+            document.getElementById('annualItems').textContent = (monthlyData.itemsSold * 12).toLocaleString();
+            document.getElementById('annualGross').textContent = '$' + (monthlyData.grossRevenue * 12).toLocaleString(undefined, {minimumFractionDigits: 2});
+            document.getElementById('annualBrand').textContent = '$' + (monthlyData.brandRevenue * 12).toLocaleString(undefined, {minimumFractionDigits: 2});
+            document.getElementById('annualPlatform').textContent = '$' + (monthlyData.platformRevenue * 12).toLocaleString(undefined, {minimumFractionDigits: 2});
+        }
+        
+        // Initialize calculator
+        calculate();
+    </script>
+</body>
+</html>

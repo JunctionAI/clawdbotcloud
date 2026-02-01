@@ -1,0 +1,377 @@
+{
+  "celebrities": [
+    {
+      "id": "zendaya",
+      "name": "Zendaya",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
+      "bio": "Red carpet icon and fashion trendsetter",
+      "looks": [
+        {
+          "id": "zendaya-golden-globes-2025",
+          "image": "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800",
+          "event": "Golden Globes 2025",
+          "date": "2025-01-05",
+          "description": "Burnt-orange Louis Vuitton ball gown with dramatic silhouette",
+          "items": [
+            {
+              "id": "zendaya-gg25-gown",
+              "type": "dress",
+              "name": "Burnt Orange Ball Gown",
+              "description": "Dramatic burnt-orange ball gown with structured bodice",
+              "aiPrompt": "wearing an elegant burnt-orange ball gown with dramatic silhouette and structured bodice",
+              "category": "dresses",
+              "tags": ["formal", "gown", "orange", "luxury"]
+            }
+          ]
+        },
+        {
+          "id": "zendaya-met-gala-2025",
+          "image": "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=800",
+          "event": "Met Gala 2025",
+          "date": "2025-05-05",
+          "description": "White Louis Vuitton tailored suit",
+          "items": [
+            {
+              "id": "zendaya-mg25-blazer",
+              "type": "top",
+              "name": "White Tailored Blazer",
+              "description": "Crisp white Louis Vuitton inspired blazer with sharp shoulders",
+              "aiPrompt": "wearing a crisp white tailored blazer with sharp shoulders and structured fit",
+              "category": "tops",
+              "tags": ["blazer", "white", "formal", "tailored"]
+            },
+            {
+              "id": "zendaya-mg25-pants",
+              "type": "bottom",
+              "name": "White Tailored Trousers",
+              "description": "High-waisted white trousers with clean lines",
+              "aiPrompt": "wearing high-waisted white tailored trousers with clean lines",
+              "category": "bottoms",
+              "tags": ["pants", "white", "formal", "tailored"]
+            }
+          ]
+        },
+        {
+          "id": "zendaya-met-after-party-2025",
+          "image": "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=800",
+          "event": "Met Gala After Party 2025",
+          "date": "2025-05-05",
+          "description": "Burgundy Patrick Kelly inspired gown",
+          "items": [
+            {
+              "id": "zendaya-map25-gown",
+              "type": "dress",
+              "name": "Burgundy Evening Gown",
+              "description": "Rich burgundy gown with elegant draping",
+              "aiPrompt": "wearing a rich burgundy evening gown with elegant draping",
+              "category": "dresses",
+              "tags": ["gown", "burgundy", "evening", "elegant"]
+            }
+          ]
+        },
+        {
+          "id": "zendaya-lv-ss26",
+          "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800",
+          "event": "Louis Vuitton SS26 Show",
+          "date": "2025-10-01",
+          "description": "Silver mini dress with bow bodice",
+          "items": [
+            {
+              "id": "zendaya-lv26-dress",
+              "type": "dress",
+              "name": "Silver Bow Mini Dress",
+              "description": "Metallic silver mini dress with statement bow bodice",
+              "aiPrompt": "wearing a metallic silver mini dress with statement bow bodice detail",
+              "category": "dresses",
+              "tags": ["mini", "silver", "metallic", "bow"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "timothee-chalamet",
+      "name": "Timothée Chalamet",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+      "bio": "Men's fashion trendsetter with experimental style",
+      "looks": [
+        {
+          "id": "timothee-golden-globes-2026",
+          "image": "https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=800",
+          "event": "Golden Globes 2026",
+          "date": "2026-01-10",
+          "description": "Chrome Hearts custom suit",
+          "items": [
+            {
+              "id": "timothee-gg26-jacket",
+              "type": "top",
+              "name": "Chrome Hearts Suit Jacket",
+              "description": "Edgy black suit jacket with Chrome Hearts details",
+              "aiPrompt": "wearing an edgy black suit jacket with metallic details",
+              "category": "tops",
+              "tags": ["blazer", "black", "edgy", "luxury"]
+            }
+          ]
+        },
+        {
+          "id": "timothee-pfw-2025",
+          "image": "https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=800",
+          "event": "Paris Fashion Week 2025",
+          "date": "2025-06-20",
+          "description": "Pink cap with Chanel jacket streetwear fusion",
+          "items": [
+            {
+              "id": "timothee-pfw25-jacket",
+              "type": "top",
+              "name": "Chanel Tweed Jacket",
+              "description": "Classic Chanel-inspired tweed jacket with modern twist",
+              "aiPrompt": "wearing a classic tweed jacket with modern styling",
+              "category": "tops",
+              "tags": ["jacket", "tweed", "chanel", "casual"]
+            },
+            {
+              "id": "timothee-pfw25-cap",
+              "type": "accessory",
+              "name": "Pink Baseball Cap",
+              "description": "Bright pink 4FSB baseball cap",
+              "aiPrompt": "wearing a bright pink baseball cap",
+              "category": "accessories",
+              "tags": ["cap", "pink", "streetwear", "casual"]
+            }
+          ]
+        },
+        {
+          "id": "timothee-berlin-2025",
+          "image": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=800",
+          "event": "Berlin Film Festival 2025",
+          "date": "2025-02-15",
+          "description": "Pink Chrome Hearts jumpsuit",
+          "items": [
+            {
+              "id": "timothee-berlin25-jumpsuit",
+              "type": "full",
+              "name": "Pink Designer Jumpsuit",
+              "description": "Bold pink jumpsuit with luxury details",
+              "aiPrompt": "wearing a bold pink jumpsuit with contemporary luxury styling",
+              "category": "full-outfits",
+              "tags": ["jumpsuit", "pink", "bold", "luxury"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anya-taylor-joy",
+      "name": "Anya Taylor-Joy",
+      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
+      "bio": "Vintage-modern fusion, high fashion icon",
+      "looks": [
+        {
+          "id": "anya-golden-globes-2025",
+          "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800",
+          "event": "Golden Globes 2025",
+          "date": "2025-01-05",
+          "description": "Archival pink Dior slipdress from 1998",
+          "items": [
+            {
+              "id": "anya-gg25-dress",
+              "type": "dress",
+              "name": "Pink Slip Dress",
+              "description": "Vintage-inspired pink silk slip dress with delicate straps",
+              "aiPrompt": "wearing a vintage-inspired pink silk slip dress with delicate straps",
+              "category": "dresses",
+              "tags": ["slip", "pink", "vintage", "silk"]
+            }
+          ]
+        },
+        {
+          "id": "anya-governors-awards-2025",
+          "image": "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=800",
+          "event": "Governors Awards 2025",
+          "date": "2025-11-18",
+          "description": "Sheer white Maison Margiela cape gown",
+          "items": [
+            {
+              "id": "anya-ga25-gown",
+              "type": "dress",
+              "name": "White Cape Gown",
+              "description": "Ethereal white gown with dramatic cape overlay",
+              "aiPrompt": "wearing an ethereal white gown with dramatic sheer cape overlay",
+              "category": "dresses",
+              "tags": ["gown", "white", "cape", "sheer"]
+            }
+          ]
+        },
+        {
+          "id": "anya-marrakech-2025",
+          "image": "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=800",
+          "event": "Marrakech Film Festival 2025",
+          "date": "2025-11-29",
+          "description": "Dior and McQueen fashion moments",
+          "items": [
+            {
+              "id": "anya-marr25-dress",
+              "type": "dress",
+              "name": "Structured Designer Dress",
+              "description": "Architectural dress with modern silhouette",
+              "aiPrompt": "wearing an architectural designer dress with modern structured silhouette",
+              "category": "dresses",
+              "tags": ["structured", "modern", "luxury", "designer"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bad-bunny",
+      "name": "Bad Bunny",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
+      "bio": "Streetwear influence, gender-fluid fashion pioneer",
+      "looks": [
+        {
+          "id": "bad-bunny-met-gala-2025",
+          "image": "https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=800",
+          "event": "Met Gala 2025",
+          "date": "2025-05-05",
+          "description": "Brown Prada suit with traditional pava hat",
+          "items": [
+            {
+              "id": "bb-mg25-jacket",
+              "type": "top",
+              "name": "Brown Prada Suit Jacket",
+              "description": "Rich brown tailored suit jacket with luxury finish",
+              "aiPrompt": "wearing a rich brown tailored suit jacket with luxury finish",
+              "category": "tops",
+              "tags": ["blazer", "brown", "prada", "tailored"]
+            },
+            {
+              "id": "bb-mg25-pants",
+              "type": "bottom",
+              "name": "Brown Suit Trousers",
+              "description": "Matching brown tailored trousers",
+              "aiPrompt": "wearing matching brown tailored trousers",
+              "category": "bottoms",
+              "tags": ["pants", "brown", "formal", "tailored"]
+            },
+            {
+              "id": "bb-mg25-hat",
+              "type": "accessory",
+              "name": "Pava Hat",
+              "description": "Traditional Puerto Rican pava straw hat",
+              "aiPrompt": "wearing a traditional straw pava hat",
+              "category": "accessories",
+              "tags": ["hat", "traditional", "straw", "cultural"]
+            }
+          ]
+        },
+        {
+          "id": "bad-bunny-calvin-klein-2025",
+          "image": "https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=800",
+          "event": "Calvin Klein Campaign 2025",
+          "date": "2025-03-15",
+          "description": "Minimalist streetwear campaign",
+          "items": [
+            {
+              "id": "bb-ck25-tank",
+              "type": "top",
+              "name": "White Tank Top",
+              "description": "Classic white ribbed tank top",
+              "aiPrompt": "wearing a classic white ribbed tank top",
+              "category": "tops",
+              "tags": ["tank", "white", "minimal", "casual"]
+            }
+          ]
+        },
+        {
+          "id": "bad-bunny-puerto-rico-2025",
+          "image": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=800",
+          "event": "Puerto Rico Residency 2025",
+          "date": "2025-08-20",
+          "description": "Bold streetwear concert looks",
+          "items": [
+            {
+              "id": "bb-pr25-jacket",
+              "type": "top",
+              "name": "Oversized Bomber Jacket",
+              "description": "Bold oversized streetwear bomber with graphics",
+              "aiPrompt": "wearing a bold oversized bomber jacket with street graphics",
+              "category": "tops",
+              "tags": ["bomber", "oversized", "streetwear", "bold"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "florence-pugh",
+      "name": "Florence Pugh",
+      "avatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400",
+      "bio": "Bold color choices, avant-garde fashion",
+      "looks": [
+        {
+          "id": "florence-thunderbolts-mint",
+          "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800",
+          "event": "Thunderbolts LA Premiere 2026",
+          "date": "2026-01-15",
+          "description": "Mint green McQueen gown",
+          "items": [
+            {
+              "id": "florence-tb26-gown",
+              "type": "dress",
+              "name": "Mint Green Evening Gown",
+              "description": "Stunning mint green gown with dramatic silhouette",
+              "aiPrompt": "wearing a stunning mint green evening gown with dramatic silhouette",
+              "category": "dresses",
+              "tags": ["gown", "mint", "green", "mcqueen"]
+            }
+          ]
+        },
+        {
+          "id": "florence-thunderbolts-black",
+          "image": "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=800",
+          "event": "Thunderbolts NYC Premiere 2026",
+          "date": "2026-01-20",
+          "description": "Black Elie Saab gown",
+          "items": [
+            {
+              "id": "florence-tb26-black-gown",
+              "type": "dress",
+              "name": "Black Evening Gown",
+              "description": "Elegant black evening gown with sophisticated details",
+              "aiPrompt": "wearing an elegant black evening gown with sophisticated details",
+              "category": "dresses",
+              "tags": ["gown", "black", "elegant", "formal"]
+            }
+          ]
+        },
+        {
+          "id": "florence-thunderbolts-leather",
+          "image": "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=800",
+          "event": "Thunderbolts Berlin Premiere 2026",
+          "date": "2026-01-22",
+          "description": "Francesco Murano leather ensemble",
+          "items": [
+            {
+              "id": "florence-tb26-leather-top",
+              "type": "top",
+              "name": "Leather Statement Top",
+              "description": "Bold leather top with contemporary design",
+              "aiPrompt": "wearing a bold leather statement top with contemporary design",
+              "category": "tops",
+              "tags": ["leather", "bold", "edgy", "modern"]
+            },
+            {
+              "id": "florence-tb26-leather-skirt",
+              "type": "bottom",
+              "name": "Leather Mini Skirt",
+              "description": "Edgy leather mini skirt",
+              "aiPrompt": "wearing an edgy leather mini skirt",
+              "category": "bottoms",
+              "tags": ["skirt", "leather", "mini", "edgy"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Swap | Try On Any Outfit with AI - Free Virtual Fashion Try-On</title>
+    <meta name="description" content="See yourself in any outfit before you buy. AI-powered virtual try-on used by 250K+ fashion lovers. Try it free - no credit card needed.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --purple-main: #8B5CF6;
+            --purple-mid: #A855F7;
+            --purple-light: #C084FC;
+            --pink-accent: #EC4899;
+            --green-eco: #10B981;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712;
+            color: #f9fafb;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, var(--purple-main), var(--pink-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-purple-gradient {
+            background: linear-gradient(135deg, var(--purple-main), var(--purple-mid), var(--pink-accent));
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+            filter: blur(60px);
+        }
+
+        .nav-link:hover {
+            color: var(--purple-light);
+            transition: 0.3s ease;
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .pulse-glow {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .7; }
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            color: var(--green-eco);
+        }
+
+        .before-after {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .social-proof-ticker {
+            display: flex;
+            gap: 2rem;
+            animation: scroll 20s linear infinite;
+        }
+
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        .cta-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-shimmer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            100% { left: 100%; }
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(139, 92, 246, 0.2);
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Trust Bar -->
+    <div class="bg-purple-gradient py-2 text-center text-sm font-semibold sticky top-0 z-50">
+        🔥 250K+ users this month • Try FREE - No credit card needed • #1 Virtual Try-On App
+    </div>
+
+    <nav class="fixed w-full z-40 glass mt-4 mx-auto max-w-6xl left-0 right-0 px-6 py-4 flex justify-between items-center top-10">
+        <div class="text-2xl font-bold gradient-text">Style Swap</div>
+        <div class="hidden md:flex gap-8 items-center">
+            <a href="#how-it-works" class="nav-link">How it Works</a>
+            <a href="#results" class="nav-link">See Results</a>
+            <a href="#pricing" class="nav-link">Pricing</a>
+            <button class="bg-purple-gradient px-6 py-2 rounded-full font-semibold hover:opacity-90 transition cta-shimmer">Try Free Now</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Mobile First, Value-Driven -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-32 pb-12">
+        <div class="hero-glow top-40 left-10"></div>
+        <div class="hero-glow bottom-20 right-10"></div>
+        
+        <!-- Trust Badges Above Headline -->
+        <div class="flex flex-wrap gap-3 justify-center mb-6">
+            <span class="trust-badge">
+                <i class="fas fa-leaf"></i> 40% Less Returns
+            </span>
+            <span class="trust-badge">
+                <i class="fas fa-lock"></i> Privacy First
+            </span>
+            <span class="tag">TRENDING #1</span>
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+            See Yourself in Any Outfit<br>
+            <span class="gradient-text">Before You Buy</span>
+        </h1>
+        
+        <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-4 font-medium">
+            AI-powered virtual try-on trusted by 250K+ fashion lovers. 
+            Try on clothes instantly from your phone. Zero commitment.
+        </p>
+        
+        <!-- Social Proof Stats -->
+        <div class="flex flex-wrap gap-8 justify-center mb-10 text-sm">
+            <div class="flex items-center gap-2">
+                <div class="flex -space-x-2">
+                    <img src="https://i.pravatar.cc/40?u=a" class="w-8 h-8 rounded-full border-2 border-gray-900">
+                    <img src="https://i.pravatar.cc/40?u=b" class="w-8 h-8 rounded-full border-2 border-gray-900">
+                    <img src="https://i.pravatar.cc/40?u=c" class="w-8 h-8 rounded-full border-2 border-gray-900">
+                    <img src="https://i.pravatar.cc/40?u=d" class="w-8 h-8 rounded-full border-2 border-gray-900">
+                </div>
+                <span class="text-gray-400">12K used today</span>
+            </div>
+            <div class="flex items-center gap-2 text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="text-gray-400 ml-1">4.9/5 (8.3K reviews)</span>
+            </div>
+        </div>
+
+        <!-- Strong CTA -->
+        <div class="flex flex-col md:flex-row gap-4 mb-8">
+            <button class="bg-purple-gradient px-10 py-5 rounded-xl text-lg font-bold shadow-2xl shadow-purple-500/30 hover:scale-105 transition transform cta-shimmer">
+                <i class="fas fa-camera mr-2"></i> Try It Free - No Sign Up
+            </button>
+            <button class="glass px-10 py-5 rounded-xl text-lg font-semibold hover:bg-white/10 transition">
+                <i class="fab fa-instagram mr-2"></i> See TikTok Demos
+            </button>
+        </div>
+
+        <p class="text-xs text-gray-500 mb-12">✓ No credit card • ✓ 5 free tries • ✓ Instant results</p>
+
+        <!-- Before/After Demo - VISUAL PROOF -->
+        <div class="mt-8 w-full max-w-5xl">
+            <div class="glass p-4 rounded-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="relative group">
+                        <div class="absolute top-4 left-4 bg-gray-900/80 px-3 py-1 rounded-full text-sm font-semibold z-10">Before</div>
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=600" 
+                             alt="Before" class="rounded-xl w-full shadow-xl">
+                    </div>
+                    <div class="relative group">
+                        <div class="absolute top-4 left-4 bg-purple-gradient px-3 py-1 rounded-full text-sm font-semibold z-10">After - Boho Chic ✨</div>
+                        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&q=80&w=600" 
+                             alt="After" class="rounded-xl w-full shadow-xl">
+                        <div class="absolute bottom-4 left-4 right-4 glass p-3 rounded-lg text-sm">
+                            <div class="flex items-center gap-2 mb-1">
+                                <img src="https://i.pravatar.cc/30?u=emma" class="w-6 h-6 rounded-full">
+                                <span class="font-semibold">@emma.styles</span>
+                                <i class="fas fa-check-circle text-blue-400 text-xs"></i>
+                            </div>
+                            <p class="text-gray-300 text-xs">"Saved me $200 on clothes that wouldn't fit!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- As Seen On / Social Proof -->
+        <div class="mt-16 w-full max-w-4xl">
+            <p class="text-gray-500 text-sm mb-4 uppercase tracking-wider">Featured On</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 opacity-50">
+                <div class="text-2xl font-bold">TechCrunch</div>
+                <div class="text-2xl font-bold">Vogue</div>
+                <div class="text-2xl font-bold">Hypebeast</div>
+                <div class="text-2xl font-bold">Cosmopolitan</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Ticker - Real User Activity -->
+    <section class="py-6 bg-white/5 overflow-hidden">
+        <div class="social-proof-ticker">
+            <div class="flex gap-8 whitespace-nowrap">
+                <div class="flex items-center gap-2 text-sm">
+                    <img src="https://i.pravatar.cc/32?u=1" class="w-8 h-8 rounded-full">
+                    <span><strong>Jessica</strong> from NYC just tried on vintage denim 🔥</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm">
+                    <img src="https://i.pravatar.cc/32?u=2" class="w-8 h-8 rounded-full">
+                    <span><strong>Marcus</strong> saved $150 avoiding bad purchases 💰</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm">
+                    <img src="https://i.pravatar.cc/32?u=3" class="w-8 h-8 rounded-full">
+                    <span><strong>Priya</strong> tried on 12 outfits in 2 minutes ⚡</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm">
+                    <img src="https://i.pravatar.cc/32?u=4" class="w-8 h-8 rounded-full">
+                    <span><strong>Alex</strong> from London just tried streetwear 👟</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm">
+                    <img src="https://i.pravatar.cc/32?u=5" class="w-8 h-8 rounded-full">
+                    <span><strong>Zoe</strong> loves the sustainable shopping feature 🌱</span>
+                </div>
+                <!-- Duplicate for infinite scroll -->
+                <div class="flex items-center gap-2 text-sm">
+                    <img src="https://i.pravatar.cc/32?u=1" class="w-8 h-8 rounded-full">
+                    <span><strong>Jessica</strong> from NYC just tried on vintage denim 🔥</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm">
+                    <img src="https://i.pravatar.cc/32?u=2" class="w-8 h-8 rounded-full">
+                    <span><strong>Marcus</strong> saved $150 avoiding bad purchases 💰</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm">
+                    <img src="https://i.pravatar.cc/32?u=3" class="w-8 h-8 rounded-full">
+                    <span><strong>Priya</strong> tried on 12 outfits in 2 minutes ⚡</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section - Quantified Value -->
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="stat-number gradient-text">250K+</div>
+                <p class="text-gray-400 mt-2">Monthly Users</p>
+            </div>
+            <div>
+                <div class="stat-number gradient-text">3.2M+</div>
+                <p class="text-gray-400 mt-2">Outfits Tried</p>
+            </div>
+            <div>
+                <div class="stat-number gradient-text">40%</div>
+                <p class="text-gray-400 mt-2">Return Reduction</p>
+            </div>
+            <div>
+                <div class="stat-number gradient-text">&lt;3s</div>
+                <p class="text-gray-400 mt-2">Avg. Result Time</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works - Simple 3 Steps -->
+    <section id="how-it-works" class="py-24 bg-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Try On Anything in <span class="gradient-text">3 Seconds</span></h2>
+                <p class="text-gray-400 text-lg">No downloads. No sign up. Just instant fashion magic.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="relative text-center">
+                    <div class="text-7xl font-black text-white/5 absolute -top-8 left-1/2 -translate-x-1/2">01</div>
+                    <div class="glass w-24 h-24 mx-auto flex items-center justify-center mb-6 relative z-10">
+                        <i class="fas fa-mobile-alt text-4xl text-purple-400"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-3">Snap or Upload</h4>
+                    <p class="text-gray-400">Take a selfie or upload any photo. Works with ANY photo quality.</p>
+                </div>
+                <div class="relative text-center">
+                    <div class="text-7xl font-black text-white/5 absolute -top-8 left-1/2 -translate-x-1/2">02</div>
+                    <div class="glass w-24 h-24 mx-auto flex items-center justify-center mb-6 relative z-10">
+                        <i class="fas fa-tshirt text-4xl text-purple-400"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-3">Pick Your Vibe</h4>
+                    <p class="text-gray-400">Choose from 800+ styles: Y2K, Streetwear, Boho, Preppy, Cottagecore & more.</p>
+                </div>
+                <div class="relative text-center">
+                    <div class="text-7xl font-black text-white/5 absolute -top-8 left-1/2 -translate-x-1/2">03</div>
+                    <div class="glass w-24 h-24 mx-auto flex items-center justify-center mb-6 relative z-10">
+                        <i class="fas fa-sparkles text-4xl text-pink-accent"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-3">Get Your Look</h4>
+                    <p class="text-gray-400">AI works its magic in seconds. Download, share, or shop the look!</p>
+                </div>
+            </div>
+            
+            <!-- Video Demo Placeholder -->
+            <div class="mt-16 text-center">
+                <button class="glass px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/10 transition inline-flex items-center gap-3">
+                    <i class="fas fa-play-circle text-2xl text-purple-400"></i>
+                    Watch 30-Second Demo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features - Pain Point Solutions -->
+    <section id="features" class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-6">Why Style Swappers <span class="gradient-text">Love Us</span></h2>
+        <p class="text-center text-gray-400 mb-16 text-lg">Built for Gen Z & Millennial fashion lovers who value speed, sustainability, and style</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="glass p-8 hover:border-purple-500/50 transition">
+                <div class="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-bolt text-purple-400 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Lightning Fast</h3>
+                <p class="text-gray-400">Results in under 3 seconds. No more waiting around—see your look instantly and keep scrolling.</p>
+            </div>
+            
+            <div class="glass p-8 hover:border-purple-500/50 transition">
+                <div class="w-14 h-14 bg-green-500/20 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-leaf text-green-400 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Eco-Friendly Shopping</h3>
+                <p class="text-gray-400">Reduce returns by 40%. Buy what you'll actually love. Better for you, better for the planet. 🌍</p>
+            </div>
+            
+            <div class="glass p-8 hover:border-purple-500/50 transition">
+                <div class="w-14 h-14 bg-pink-500/20 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fab fa-instagram text-pink-400 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Insta-Worthy Results</h3>
+                <p class="text-gray-400">4K quality photos ready to post. Get the drip without the guesswork. TikTok & IG approved.</p>
+            </div>
+            
+            <div class="glass p-8 hover:border-purple-500/50 transition">
+                <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-shield-alt text-blue-400 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Your Privacy Matters</h3>
+                <p class="text-gray-400">We don't store or sell your photos. Ever. Zero-knowledge AI processing. What's yours stays yours.</p>
+            </div>
+            
+            <div class="glass p-8 hover:border-purple-500/50 transition">
+                <div class="w-14 h-14 bg-yellow-500/20 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-infinity text-yellow-400 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">800+ Style Presets</h3>
+                <p class="text-gray-400">From Y2K to Dark Academia, Cottagecore to Cyberpunk. We've got every aesthetic you can imagine.</p>
+            </div>
+            
+            <div class="glass p-8 hover:border-purple-500/50 transition">
+                <div class="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-mobile-alt text-purple-400 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Mobile-First Design</h3>
+                <p class="text-gray-400">Built for your phone. Swipe, tap, done. Works perfectly on any device, anytime, anywhere.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Results / UGC Section -->
+    <section id="results" class="py-24 px-6 bg-white/5">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">Real People, <span class="gradient-text">Real Results</span></h2>
+            <p class="text-center text-gray-400 mb-16 text-lg">Don't just take our word for it—see what our community is creating</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- User Generated Content Examples -->
+                <div class="glass p-6 hover:scale-105 transition">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" 
+                         alt="User result" class="rounded-lg mb-4 w-full">
+                    <div class="flex items-start gap-3">
+                        <img src="https://i.pravatar.cc/40?u=sarah" class="w-10 h-10 rounded-full mt-1">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <h5 class="font-bold">@sarahstylez</h5>
+                                <i class="fas fa-check-circle text-blue-400 text-sm"></i>
+                                <span class="text-xs text-gray-500">Fashion Blogger • 45K</span>
+                            </div>
+                            <p class="text-gray-400 text-sm italic mb-2">"This app is a GAME CHANGER. I can plan my whole wardrobe before spending a dime. Already saved me $500+ this month!"</p>
+                            <div class="flex items-center gap-4 text-xs text-gray-500">
+                                <span><i class="fas fa-heart text-pink-500"></i> 2.4K</span>
+                                <span><i class="fas fa-comment"></i> 189</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass p-6 hover:scale-105 transition">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" 
+                         alt="User result" class="rounded-lg mb-4 w-full">
+                    <div class="flex items-start gap-3">
+                        <img src="https://i.pravatar.cc/40?u=jake" class="w-10 h-10 rounded-full mt-1">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <h5 class="font-bold">@jakefits</h5>
+                                <span class="text-xs text-gray-500">Streetwear Enthusiast</span>
+                            </div>
+                            <p class="text-gray-400 text-sm italic mb-2">"Yo this is CRAZY accurate. Tried on vintage Jordans before buying—looked fire so I copped. No regrets. 10/10"</p>
+                            <div class="flex items-center gap-4 text-xs text-gray-500">
+                                <span><i class="fas fa-heart text-pink-500"></i> 1.8K</span>
+                                <span><i class="fas fa-comment"></i> 94</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass p-6 hover:scale-105 transition">
+                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=600" 
+                         alt="User result" class="rounded-lg mb-4 w-full">
+                    <div class="flex items-start gap-3">
+                        <img src="https://i.pravatar.cc/40?u=mia" class="w-10 h-10 rounded-full mt-1">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <h5 class="font-bold">@mia.vintage</h5>
+                                <i class="fas fa-check-circle text-blue-400 text-sm"></i>
+                                <span class="text-xs text-gray-500">Thrift Queen • 28K</span>
+                            </div>
+                            <p class="text-gray-400 text-sm italic mb-2">"As someone who thrifts, this helps me visualize pieces before I hunt for them. Sustainable AND smart shopping 🌱✨"</p>
+                            <div class="flex items-center gap-4 text-xs text-gray-500">
+                                <span><i class="fas fa-heart text-pink-500"></i> 3.1K</span>
+                                <span><i class="fas fa-comment"></i> 267</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="glass px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition">
+                    <i class="fab fa-instagram mr-2"></i> View More on Instagram
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing - Value First -->
+    <section id="pricing" class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">Start Free, <span class="gradient-text">Upgrade Anytime</span></h2>
+        <p class="text-center text-gray-400 mb-16 text-lg">No credit card. No commitment. Just fire fits.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Free Tier -->
+            <div class="glass p-10 border-white/5 flex flex-col">
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold mb-2">Free Forever</h3>
+                    <div class="text-5xl font-black mb-2">$0</div>
+                    <p class="text-gray-500 text-sm">Perfect to get started</p>
+                </div>
+                <ul class="space-y-4 mb-10 text-gray-300 flex-1">
+                    <li><i class="fas fa-check text-green-400 mr-3"></i> 5 style swaps/month</li>
+                    <li><i class="fas fa-check text-green-400 mr-3"></i> HD quality (1080p)</li>
+                    <li><i class="fas fa-check text-green-400 mr-3"></i> 800+ style presets</li>
+                    <li><i class="fas fa-check text-green-400 mr-3"></i> Mobile & desktop</li>
+                    <li><i class="fas fa-check text-gray-600 mr-3"></i> <span class="text-gray-600">Small watermark</span></li>
+                </ul>
+                <button class="w-full py-4 rounded-xl border-2 border-white/20 hover:bg-white/10 transition font-bold">Start Free</button>
+            </div>
+            
+            <!-- Pro Tier - MOST POPULAR -->
+            <div class="glass p-10 border-purple-500 relative flex flex-col scale-105 bg-gradient-to-b from-purple-500/10 to-transparent shadow-2xl shadow-purple-500/20">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-purple-gradient text-sm font-bold px-6 py-2 rounded-full uppercase tracking-wider">
+                    🔥 Most Popular
+                </div>
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold mb-2">Pro</h3>
+                    <div class="flex items-baseline gap-2 mb-2">
+                        <span class="text-5xl font-black">$7.99</span>
+                        <span class="text-gray-500 line-through">$14.99</span>
+                    </div>
+                    <p class="text-purple-400 text-sm font-semibold">Launch special - 50% off!</p>
+                </div>
+                <ul class="space-y-4 mb-10 text-gray-300 flex-1">
+                    <li><i class="fas fa-check text-purple-400 mr-3"></i> <strong>Unlimited</strong> style swaps</li>
+                    <li><i class="fas fa-check text-purple-400 mr-3"></i> 4K ultra HD quality</li>
+                    <li><i class="fas fa-check text-purple-400 mr-3"></i> No watermark</li>
+                    <li><i class="fas fa-check text-purple-400 mr-3"></i> Priority processing (&lt;2s)</li>
+                    <li><i class="fas fa-check text-purple-400 mr-3"></i> Advanced AI models</li>
+                    <li><i class="fas fa-check text-purple-400 mr-3"></i> Custom style creation</li>
+                    <li><i class="fas fa-check text-purple-400 mr-3"></i> Early access to features</li>
+                </ul>
+                <button class="w-full py-4 rounded-xl bg-purple-gradient font-bold hover:opacity-90 transition cta-shimmer text-lg">
+                    Get Pro Now
+                </button>
+                <p class="text-center text-xs text-gray-500 mt-3">Cancel anytime • 7-day money-back guarantee</p>
+            </div>
+            
+            <!-- Creator Tier -->
+            <div class="glass p-10 border-white/5 flex flex-col">
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold mb-2">Creator</h3>
+                    <div class="text-5xl font-black mb-2">$19</div>
+                    <p class="text-gray-500 text-sm">For influencers & brands</p>
+                </div>
+                <ul class="space-y-4 mb-10 text-gray-300 flex-1">
+                    <li><i class="fas fa-check text-pink-400 mr-3"></i> Everything in Pro, plus:</li>
+                    <li><i class="fas fa-check text-pink-400 mr-3"></i> Batch processing (100/day)</li>
+                    <li><i class="fas fa-check text-pink-400 mr-3"></i> API access</li>
+                    <li><i class="fas fa-check text-pink-400 mr-3"></i> Custom branding</li>
+                    <li><i class="fas fa-check text-pink-400 mr-3"></i> Analytics dashboard</li>
+                    <li><i class="fas fa-check text-pink-400 mr-3"></i> Priority support</li>
+                </ul>
+                <button class="w-full py-4 rounded-xl border-2 border-pink-500/50 hover:bg-pink-500/10 transition font-bold">Get Creator</button>
+            </div>
+        </div>
+        
+        <!-- Trust Signals Below Pricing -->
+        <div class="mt-16 text-center">
+            <div class="flex flex-wrap justify-center gap-8 text-sm text-gray-400">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-lock text-green-400"></i>
+                    Secure checkout
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-undo text-green-400"></i>
+                    7-day money-back
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-times-circle text-green-400"></i>
+                    Cancel anytime
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-shield-alt text-green-400"></i>
+                    Privacy first
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section - Address Objections -->
+    <section class="py-24 px-6 bg-white/5">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Questions? <span class="gradient-text">We Got You</span></h2>
+            
+            <div class="space-y-6">
+                <div class="glass p-6">
+                    <h4 class="text-xl font-bold mb-3">Is it really free?</h4>
+                    <p class="text-gray-400">Yep! You get 5 free tries every month. No credit card needed. No catches. Just upload and go.</p>
+                </div>
+                
+                <div class="glass p-6">
+                    <h4 class="text-xl font-bold mb-3">How accurate is the AI?</h4>
+                    <p class="text-gray-400">Our AI has a 94% accuracy rating from user surveys. It's trained on millions of fashion images and gets better every day. Most users say it's "scary accurate."</p>
+                </div>
+                
+                <div class="glass p-6">
+                    <h4 class="text-xl font-bold mb-3">What happens to my photos?</h4>
+                    <p class="text-gray-400">Privacy is our #1 priority. We don't store your photos. They're processed securely and deleted immediately after. We NEVER sell your data.</p>
+                </div>
+                
+                <div class="glass p-6">
+                    <h4 class="text-xl font-bold mb-3">Can I use this for shopping?</h4>
+                    <p class="text-gray-400">Absolutely! That's what most people use it for. Try before you buy, reduce returns, and shop smarter. It's better for your wallet and the planet.</p>
+                </div>
+                
+                <div class="glass p-6">
+                    <h4 class="text-xl font-bold mb-3">Does it work on my phone?</h4>
+                    <p class="text-gray-400">100%. Style Swap is mobile-first. Works perfectly on iPhone, Android, tablets, and desktop. No app download needed—just use your browser.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA - FOMO + Urgency -->
+    <footer class="py-24 px-6">
+        <div class="max-w-4xl mx-auto glass p-12 md:p-16 relative overflow-hidden text-center">
+            <div class="hero-glow -top-32 left-1/2 -translate-x-1/2"></div>
+            
+            <div class="relative z-10">
+                <div class="inline-block mb-6">
+                    <div class="bg-purple-gradient px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider animate-pulse">
+                        Limited Time: 50% Off Pro Plans
+                    </div>
+                </div>
+                
+                <h2 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                    Stop Guessing.<br>
+                    <span class="gradient-text">Start Styling.</span>
+                </h2>
+                
+                <p class="text-gray-300 mb-8 text-lg md:text-xl font-medium max-w-2xl mx-auto">
+                    Join 250,000+ fashion lovers who already know what they'll look like before they buy.
+                </p>
+                
+                <!-- Email Capture -->
+                <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto mb-8" onsubmit="event.preventDefault(); alert('Thanks! Check your email for your free credits 🎉');">
+                    <input type="email" placeholder="Enter your email" required
+                           class="flex-1 px-6 py-5 rounded-xl bg-white/5 border-2 border-white/10 focus:outline-none focus:border-purple-500 text-lg">
+                    <button type="submit" class="bg-purple-gradient px-10 py-5 rounded-xl font-bold hover:scale-105 transition cta-shimmer whitespace-nowrap text-lg">
+                        Try Free Now →
+                    </button>
+                </form>
+                
+                <p class="text-sm text-gray-500 mb-12">
+                    ✓ No credit card required • ✓ Instant access • ✓ 5 free swaps
+                </p>
+                
+                <!-- Social Proof One More Time -->
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6 text-sm text-gray-400 border-t border-white/10 pt-8">
+                    <div class="flex items-center gap-2">
+                        <div class="flex -space-x-2">
+                            <img src="https://i.pravatar.cc/32?u=x1" class="w-8 h-8 rounded-full border-2 border-gray-900">
+                            <img src="https://i.pravatar.cc/32?u=x2" class="w-8 h-8 rounded-full border-2 border-gray-900">
+                            <img src="https://i.pravatar.cc/32?u=x3" class="w-8 h-8 rounded-full border-2 border-gray-900">
+                            <img src="https://i.pravatar.cc/32?u=x4" class="w-8 h-8 rounded-full border-2 border-gray-900">
+                        </div>
+                        <span>3.2K joined this week</span>
+                    </div>
+                    <div class="flex items-center gap-1 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="text-gray-400 ml-2">4.9/5 (8.3K reviews)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer Links -->
+        <div class="max-w-7xl mx-auto mt-16 pt-12 border-t border-white/5">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h5 class="font-bold mb-4 text-lg">Product</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Features</a></li>
+                        <li><a href="#" class="hover:text-white transition">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white transition">API</a></li>
+                        <li><a href="#" class="hover:text-white transition">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4 text-lg">Company</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">About</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition">Press Kit</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4 text-lg">Resources</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition">Community</a></li>
+                        <li><a href="#" class="hover:text-white transition">Style Guide</a></li>
+                        <li><a href="#" class="hover:text-white transition">Tutorials</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4 text-lg">Legal</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Privacy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms</a></li>
+                        <li><a href="#" class="hover:text-white transition">Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Licenses</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm border-t border-white/5 pt-8">
+                <p>&copy; 2026 Style Swap AI. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition text-xl"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="hover:text-white transition text-xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-white transition text-xl"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Animate all glass elements on scroll
+        document.querySelectorAll('.glass').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Animate stats on scroll
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const finalValue = entry.target.textContent;
+                    entry.target.style.opacity = '1';
+                    // Add count-up animation if you want
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-number').forEach(stat => {
+            stat.style.opacity = '0';
+            stat.style.transition = 'opacity 0.8s ease-out';
+            statsObserver.observe(stat);
+        });
+
+        // Mobile menu toggle (if adding hamburger menu)
+        const mobileMenuBtn = document.querySelector('[data-mobile-menu]');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                // Mobile menu logic here
+            });
+        }
+
+        // Add click tracking for CTAs (placeholder)
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const btnText = e.target.textContent.trim();
+                console.log('CTA clicked:', btnText);
+                // Add analytics tracking here
+            });
+        });
+    </script>
+</body>
+</html>

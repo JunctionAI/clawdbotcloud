@@ -4,6 +4,7 @@
 - **What to call them:** Tom
 - **Pronouns:** *(TBD)*
 - **Timezone:** GMT+13 (New Zealand)
+- **Address:** 17 Norfolk Street, Ponsonby, Auckland
 - **Telegram ID:** 825333001
 
 ## What Tom Does

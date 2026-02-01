@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "skills": {
+    "coding-agent": {
+      "version": "1.0.1",
+      "installedAt": 1769512743293
+    },
+    "local-places": {
+      "version": "1.0.0",
+      "installedAt": 1769512817732
+    },
+    "gemini": {
+      "version": "1.0.0",
+      "installedAt": 1769513093645
+    },
+    "apple-notes": {
+      "version": "1.0.0",
+      "installedAt": 1769513905867
+    },
+    "openai-whisper-api": {
+      "version": "1.0.0",
+      "installedAt": 1769514198787
+    }
+  }
+}

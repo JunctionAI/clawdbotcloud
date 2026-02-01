@@ -1,0 +1,242 @@
+Style Swap UI - Complete File Structure
+========================================
+
+style-swap-ui/
+├── src/
+│   ├── types/
+│   │   └── index.ts                    # TypeScript type definitions (5.4 KB)
+│   │       - Product, Brand, Category types
+│   │       - Cart, CartItem types
+│   │       - AffiliateLink types
+│   │       - Analytics, UserAction types
+│   │       - API request/response types
+│   │
+│   ├── services/
+│   │   ├── api.ts                      # API client configuration (4.6 KB)
+│   │   │   - Axios instances (backend & commerce)
+│   │   │   - Request/response interceptors
+│   │   │   - Retry logic
+│   │   │   - Session management
+│   │   │   - UTM tracking
+│   │   │
+│   │   ├── productService.ts           # Product catalog API (5.3 KB)
+│   │   │   - getProducts() - List with filters
+│   │   │   - searchProducts() - Search
+│   │   │   - getProductById() - Single product
+│   │   │   - getProductsByBrand/Category/Gender
+│   │   │   - getBrands/Categories
+│   │   │
+│   │   ├── commerceService.ts          # E-commerce API (6.0 KB)
+│   │   │   - getCart() - Fetch cart
+│   │   │   - addToCart() - Add item
+│   │   │   - updateCartItem() - Update quantity
+│   │   │   - removeFromCart() - Remove item
+│   │   │   - checkout() - Multi-brand checkout
+│   │   │   - trackClick() - Affiliate tracking
+│   │   │   - buyNow() - Direct purchase
+│   │   │
+│   │   ├── analyticsService.ts         # Analytics tracking (7.0 KB)
+│   │   │   - track() - Queue events
+│   │   │   - trackUpload/Swap/Select/Buy/Cart
+│   │   │   - flush() - Send to server
+│   │   │   - getOverview() - Dashboard data
+│   │   │   - getTopProducts() - Analytics
+│   │   │
+│   │   └── index.ts                    # Service exports (497 B)
+│   │
+│   ├── hooks/
+│   │   ├── useProducts.ts              # Product catalog hook (4.2 KB)
+│   │   │   - useProducts() - List management
+│   │   │   - useProduct() - Single product
+│   │   │   - Search, filter, pagination
+│   │   │
+│   │   └── useCart.ts                  # Shopping cart hook (4.2 KB)
+│   │       - Cart state management
+│   │       - Add/update/remove operations
+│   │       - Checkout flow
+│   │       - Cart statistics
+│   │
+│   ├── example-integration.tsx         # Integration examples (16 KB)
+│   │   - ProductCatalog component
+│   │   - ShoppingCartPanel component
+│   │   - EnhancedSwapScreen component
+│   │   - AnalyticsDashboard component
+│   │
+│   ├── App.jsx                         # Main application (existing)
+│   ├── main.jsx                        # Entry point (existing)
+│   └── index.css                       # Styles (existing)
+│
+├── public/                             # Static assets
+│
+├── docs/
+│   ├── INTEGRATION.md                  # Complete integration guide (25.8 KB)
+│   │   - Architecture overview
+│   │   - Setup instructions
+│   │   - API service documentation
+│   │   - TypeScript types reference
+│   │   - React hooks usage
+│   │   - Usage examples (8+)
+│   │   - Analytics tracking guide
+│   │   - Shopping cart integration
+│   │   - Affiliate link tracking
+│   │   - Error handling
+│   │   - Testing guide
+│   │   - Production deployment
+│   │   - Troubleshooting
+│   │
+│   ├── QUICK_REFERENCE.md              # Quick reference (4.0 KB)
+│   │   - Common tasks
+│   │   - Code snippets
+│   │   - API endpoints
+│   │   - Debug commands
+│   │
+│   ├── INTEGRATION_SUMMARY.md          # Integration summary (8.8 KB)
+│   │   - Files created
+│   │   - Features implemented
+│   │   - API endpoints integrated
+│   │   - Usage examples
+│   │   - Next steps
+│   │
+│   └── setup.md                        # Setup guide (8.2 KB)
+│       - Prerequisites
+│       - Step-by-step setup
+│       - Common issues
+│       - Development workflow
+│       - Production build
+│
+├── .env.example                        # Environment template (292 B)
+├── README.md                           # Project overview (7.0 KB)
+├── FILE_STRUCTURE.txt                  # This file
+│
+├── tsconfig.json                       # TypeScript config (633 B)
+├── tsconfig.node.json                  # Node TypeScript config (213 B)
+├── package.json                        # Dependencies & scripts
+├── vite.config.js                      # Vite configuration
+├── tailwind.config.js                  # Tailwind CSS config
+└── postcss.config.js                   # PostCSS config
+
+Total Files Created: 20+ files
+Total Documentation: ~60 KB
+Total Code: ~50 KB TypeScript/TSX
+
+========================================
+Key Features Implemented
+========================================
+
+✅ Product Catalog Integration
+   - Fetch real products from backend API
+   - Search, filter, pagination
+   - Brand & category management
+
+✅ E-commerce Tracking
+   - Affiliate link click tracking
+   - UTM parameter capture
+   - Session-based tracking
+   - Commission calculation support
+
+✅ Shopping Cart
+   - Session-based persistence
+   - Multi-brand checkout
+   - Add/update/remove operations
+   - Cart statistics
+
+✅ Analytics Tracking
+   - User action tracking
+   - Event batching & queuing
+   - Conversion tracking
+   - Dashboard data
+
+✅ TypeScript Integration
+   - Complete type definitions
+   - Type-safe services
+   - Typed hooks
+   - Build-time type checking
+
+✅ Error Handling
+   - Automatic retry logic
+   - Global interceptors
+   - User-friendly errors
+
+========================================
+API Endpoints Integrated
+========================================
+
+Backend API (localhost:3000)
+  GET    /api/products
+  GET    /api/products/:id
+  GET    /api/products/slug/:slug
+  GET    /api/brands
+  GET    /api/brands/:id
+  GET    /api/categories
+  GET    /api/categories/:id
+
+Commerce API (localhost:3001)
+  GET    /api/cart
+  POST   /api/cart/add
+  PUT    /api/cart/item/:id
+  DELETE /api/cart/item/:id
+  POST   /api/cart/checkout
+  POST   /api/affiliates/track-click
+  GET    /api/link/:shortCode/redirect
+  POST   /api/analytics/events
+  GET    /api/analytics/overview
+  GET    /api/analytics/top-products
+
+========================================
+Development Commands
+========================================
+
+npm install              # Install dependencies
+npm run dev              # Start dev server
+npm run build            # Build for production
+npm run preview          # Preview production build
+npm run type-check       # Check TypeScript types
+
+========================================
+Quick Start
+========================================
+
+1. Install dependencies:
+   npm install
+
+2. Configure environment:
+   cp .env.example .env
+   # Edit .env with backend URLs
+
+3. Start development:
+   npm run dev
+
+4. Open browser:
+   http://localhost:5173
+
+========================================
+Documentation Structure
+========================================
+
+For Developers:
+  - INTEGRATION.md      → Complete integration guide
+  - QUICK_REFERENCE.md  → Fast code reference
+  - example-integration.tsx → Working examples
+
+For Setup:
+  - setup.md           → Step-by-step setup
+  - .env.example       → Environment config
+  - README.md          → Project overview
+
+For Reference:
+  - FILE_STRUCTURE.txt → This file
+  - INTEGRATION_SUMMARY.md → What was built
+
+========================================
+Integration Status: ✅ COMPLETE
+========================================
+
+Ready for:
+  ✅ Real product data
+  ✅ User testing
+  ✅ Production deployment
+  ✅ Analytics monitoring
+  ✅ Affiliate revenue
+
+Last Updated: January 28, 2026
+Version: 1.0.0

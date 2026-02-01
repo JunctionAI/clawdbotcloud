@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-01-31T12:26:00+13:00",
+    "lastUpdated": "2026-02-01T20:00:00+13:00",
     "version": "1.0",
     "description": "Fast-tier operational state - loaded every session before anything else"
   },
@@ -33,7 +33,18 @@
       "connected": true
     },
     "whatsapp": {
-      "connected": false
+      "connected": true,
+      "phoneNumber": "+642108323870",
+      "mode": "selfChatMode",
+      "linkedAt": "2026-01-31T13:04:00+13:00"
+    },
+    "supermemory": {
+      "connected": true,
+      "containerTag": "tom_halltaylor",
+      "credentialsPath": "supermemory-credentials.json",
+      "scriptPath": "scripts/supermemory-sync.js",
+      "installedAt": "2026-01-31T13:10:00+13:00",
+      "note": "Universal Memory API for personalized AI context"
     }
   },
   "lastChecks": {
@@ -44,37 +55,45 @@
     "weather": null
   },
   "activeProjects": [
-    "Wise spending tracker (scripts/wise-daily-tracker.ps1)",
-    "PG Investments meeting prep - Chairman introduction next week",
-    "Jakob Clawdbot setup support - gog OAuth issues",
-    "Memory architecture improvements - STATE.json implementation",
-    "Moltbook engagement - joined 2026-01-31"
+    "PG Investments - Chairman meeting next week (board-level opportunity)",
+    "TWG Klaviyo project - awaiting Andi Garnett discovery call response",
+    "Jakob Clawdbot support - ongoing OAuth/browser setup",
+    "Clawdbot setup services - first client complete, scaling to 2-4/month",
+    "Spending tracker - daily 9pm check-ins started Feb 1",
+    "Apps portfolio - 7 apps in development (see APPS.md)"
   ],
   "pendingItems": [
+    "⏰ PG Chairman meeting - next week (HIGH PRIORITY)",
     "TWG discovery call - waiting for Andi Garnett response",
-    "PG Chairman meeting - details TBD next week",
+    "Genesis payment setup - browser open, needs password",
+    "⏰ Baycorp setup - reminder set Monday 9am",
     "Calendar API enabling for gog"
   ],
   "recentDecisions": [
     {
       "date": "2026-01-31",
+      "decision": "Integrated WhatsApp + Supermemory.ai",
+      "rationale": "WhatsApp for message routing, Supermemory for semantic memory + user profile learning"
+    },
+    {
+      "date": "2026-01-31",
       "decision": "Implemented STATE.json for fast-tier memory",
-      "rationale": "Solve state blindness problem - asking about configs I should already know"
-    },
-    {
-      "date": "2026-01-31",
-      "decision": "Joined Moltbook as PrepAgent",
-      "rationale": "Engage with agent community on memory architecture and infrastructure"
-    },
-    {
-      "date": "2026-01-31",
-      "decision": "Created automated Wise spending tracker",
-      "rationale": "Track daily spending without manual input - runs at 9pm via heartbeat"
+      "rationale": "Solve state blindness - load operational state every session"
     },
     {
       "date": "2026-01-30",
       "decision": "Always use reply-all for emails",
       "rationale": "Respectful to all involved - learned from PG Investments email mistake"
+    },
+    {
+      "date": "2026-01-29",
+      "decision": "HTML email formatting mandatory for client emails",
+      "rationale": "Plain text formatting failed - Tom's reputation as email agency depends on professional formatting"
+    },
+    {
+      "date": "2026-01-28",
+      "decision": "$400k revenue target for 2026",
+      "rationale": "Realistic goal: DBH $52k + Clawdbot $168k + Apps $180k = achievable with discipline"
     }
   ],
   "systemConfig": {

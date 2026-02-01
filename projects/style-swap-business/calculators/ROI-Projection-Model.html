@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Swap ROI Projection Model</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .tab {
+            padding: 15px 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .tab:hover {
+            color: #1e3c72;
+        }
+        
+        .tab.active {
+            color: #1e3c72;
+            border-bottom-color: #1e3c72;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .scenario-builder {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 1024px) {
+            .scenario-builder {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .input-panel {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        
+        .input-panel h3 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: #1e3c72;
+        }
+        
+        .help-text {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        
+        .results-panel {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        
+        .results-panel h3 {
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+        
+        .roi-highlight {
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .roi-highlight .label {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .roi-highlight .value {
+            font-size: 3em;
+            font-weight: bold;
+        }
+        
+        .roi-highlight .value.positive {
+            color: #4ade80;
+        }
+        
+        .roi-highlight .value.negative {
+            color: #f87171;
+        }
+        
+        .metric-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .metric-card {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .metric-card .label {
+            font-size: 0.85em;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+        
+        .metric-card .value {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        .projection-timeline {
+            margin-top: 40px;
+        }
+        
+        .projection-timeline h3 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+        
+        .timeline-table {
+            width: 100%;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .timeline-table th {
+            background: #1e3c72;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .timeline-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+            color: #333;
+        }
+        
+        .timeline-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .timeline-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .timeline-table .total-row {
+            background: #f0f7ff;
+            font-weight: bold;
+        }
+        
+        .comparison-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            border-radius: 10px;
+        }
+        
+        .comparison-section h3 {
+            color: #856404;
+            margin-bottom: 20px;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .comparison-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-card h4 {
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .comparison-card .stat {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+        
+        .comparison-card .stat:nth-child(even) {
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .comparison-card .stat .label {
+            color: #666;
+        }
+        
+        .comparison-card .stat .value {
+            font-weight: 600;
+            color: #1e3c72;
+        }
+        
+        .chart-container {
+            margin-top: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        
+        .chart-container h3 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+        }
+        
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            height: 300px;
+            gap: 10px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+        }
+        
+        .bar {
+            flex: 1;
+            background: linear-gradient(to top, #1e3c72, #2a5298);
+            border-radius: 5px 5px 0 0;
+            position: relative;
+            min-height: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .bar:hover {
+            opacity: 0.8;
+            transform: translateY(-5px);
+        }
+        
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .bar-label {
+            margin-top: 10px;
+            font-size: 0.85em;
+            color: #666;
+            text-align: center;
+        }
+        
+        .assumptions {
+            margin-top: 30px;
+            padding: 20px;
+            background: #e7f3ff;
+            border-radius: 10px;
+            border-left: 4px solid #1e3c72;
+        }
+        
+        .assumptions h4 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+        
+        .assumptions ul {
+            list-style-position: inside;
+            color: #333;
+        }
+        
+        .assumptions li {
+            margin-bottom: 8px;
+        }
+        
+        .action-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(30, 60, 114, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #1e3c72;
+            border: 2px solid #1e3c72;
+        }
+        
+        .btn-secondary:hover {
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📈 ROI Projection Model</h1>
+            <p>Calculate the financial impact of your Style Swap partnership</p>
+        </div>
+        
+        <div class="content">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab active" onclick="showTab('simple')">Simple Calculator</button>
+                <button class="tab" onclick="showTab('advanced')">Advanced Projections</button>
+                <button class="tab" onclick="showTab('comparison')">vs. Alternatives</button>
+            </div>
+            
+            <!-- Simple Calculator Tab -->
+            <div id="simple" class="tab-content active">
+                <div class="scenario-builder">
+                    <div class="input-panel">
+                        <h3>📊 Your Current Situation</h3>
+                        
+                        <div class="input-group">
+                            <label>Monthly Excess Inventory (units)</label>
+                            <input type="number" id="simple_inventory" value="200" min="1" oninput="calculateSimple()">
+                            <div class="help-text">Returns, samples, end-of-season items</div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Average Original Retail Price</label>
+                            <input type="number" id="simple_retail" value="100" min="0" step="0.01" oninput="calculateSimple()">
+                            <div class="help-text">What you originally sold these for</div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Current Recovery Rate (%)</label>
+                            <input type="number" id="simple_current_recovery" value="30" min="0" max="100" oninput="calculateSimple()">
+                            <div class="help-text">What % of retail you currently recover (e.g., 30% if discounting to 70% off)</div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Style Swap Partnership Tier</label>
+                            <select id="simple_tier" onchange="calculateSimple()">
+                                <option value="70">Bronze (70% you / 30% Style Swap)</option>
+                                <option value="65" selected>Silver (65% you / 35% Style Swap)</option>
+                                <option value="60">Gold (60% you / 40% Style Swap)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Expected Sell-Through Rate (%)</label>
+                            <input type="number" id="simple_sellthrough" value="40" min="0" max="100" oninput="calculateSimple()">
+                            <div class="help-text">Typical: 30-50% in first 30 days</div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Expected Selling Price (% of retail)</label>
+                            <input type="number" id="simple_selling_pct" value="50" min="0" max="100" oninput="calculateSimple()">
+                            <div class="help-text">What % of original retail you'll sell for on Style Swap</div>
+                        </div>
+                    </div>
+                    
+                    <div class="results-panel">
+                        <h3>💰 Monthly ROI Projection</h3>
+                        
+                        <div class="roi-highlight">
+                            <div class="label">Additional Monthly Revenue</div>
+                            <div class="value positive" id="simple_additional">+$2,800</div>
+                        </div>
+                        
+                        <div class="metric-grid">
+                            <div class="metric-card">
+                                <div class="label">Current Method</div>
+                                <div class="value" id="simple_current">$6,000</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="label">With Style Swap</div>
+                                <div class="value" id="simple_styleswap">$8,800</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="label">ROI Increase</div>
+                                <div class="value" id="simple_roi_pct">+47%</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="label">Annual Impact</div>
+                                <div class="value" id="simple_annual">$33,600</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="assumptions">
+                    <h4>💡 Assumptions & Notes</h4>
+                    <ul>
+                        <li>Calculations based on net revenue after payment processing (2.9% + $0.30)</li>
+                        <li>Current recovery assumes immediate sale at discounted price</li>
+                        <li>Style Swap recovery assumes items sell within 30 days at projected price</li>
+                        <li>Sell-through rate based on industry benchmarks for curated marketplaces</li>
+                        <li>Does not include operational cost savings (no staff time, warehouse space, etc.)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Advanced Projections Tab -->
+            <div id="advanced" class="tab-content">
+                <div class="scenario-builder">
+                    <div class="input-panel">
+                        <h3>🔬 Advanced Parameters</h3>
+                        
+                        <div class="input-group">
+                            <label>Starting Monthly Inventory</label>
+                            <input type="number" id="adv_start_inventory" value="100" min="1" oninput="calculateAdvanced()">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Monthly Growth Rate (%)</label>
+                            <input type="number" id="adv_growth" value="10" min="0" max="100" oninput="calculateAdvanced()">
+                            <div class="help-text">How much will you increase inventory each month?</div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Average Item Price</label>
+                            <input type="number" id="adv_price" value="80" min="0" step="0.01" oninput="calculateAdvanced()">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Partnership Tier</label>
+                            <select id="adv_tier" onchange="calculateAdvanced()">
+                                <option value="70">Bronze (70/30)</option>
+                                <option value="65" selected>Silver (65/35)</option>
+                                <option value="60">Gold (60/40)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Initial Sell-Through (%)</label>
+                            <input type="number" id="adv_sellthrough_start" value="35" min="0" max="100" oninput="calculateAdvanced()">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Sell-Through Improvement (% per month)</label>
+                            <input type="number" id="adv_sellthrough_growth" value="2" min="0" max="20" step="0.5" oninput="calculateAdvanced()">
+                            <div class="help-text">Performance typically improves as you optimize</div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Operational Cost Savings ($/month)</label>
+                            <input type="number" id="adv_cost_savings" value="500" min="0" oninput="calculateAdvanced()">
+                            <div class="help-text">Staff time, warehouse space, etc.</div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Projection Period (months)</label>
+                            <input type="number" id="adv_months" value="12" min="1" max="36" oninput="calculateAdvanced()">
+                        </div>
+                    </div>
+                    
+                    <div class="results-panel">
+                        <h3>📊 Cumulative Projections</h3>
+                        
+                        <div class="roi-highlight">
+                            <div class="label">Total Revenue (12 Months)</div>
+                            <div class="value positive" id="adv_total_revenue">$89,342</div>
+                        </div>
+                        
+                        <div class="metric-grid">
+                            <div class="metric-card">
+                                <div class="label">Total Items Sold</div>
+                                <div class="value" id="adv_total_items">932</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="label">Avg Monthly Revenue</div>
+                                <div class="value" id="adv_avg_monthly">$7,445</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="label">Cost Savings</div>
+                                <div class="value" id="adv_total_savings">$6,000</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="label">Total Business Impact</div>
+                                <div class="value" id="adv_total_impact">$95,342</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="projection-timeline">
+                    <h3>📅 Month-by-Month Projection</h3>
+                    <div class="timeline-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Month</th>
+                                    <th>Inventory</th>
+                                    <th>Sell-Through</th>
+                                    <th>Items Sold</th>
+                                    <th>Gross Revenue</th>
+                                    <th>Your Share</th>
+                                </tr>
+                            </thead>
+                            <tbody id="timeline_body">
+                                <!-- Populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>📊 Revenue Growth Visualization</h3>
+                    <div class="bar-chart" id="revenue_chart">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Comparison Tab -->
+            <div id="comparison" class="tab-content">
+                <div class="comparison-section">
+                    <h3>⚖️ Style Swap vs. Alternative Approaches</h3>
+                    <p style="margin-bottom: 20px; color: #856404;">
+                        Compare the financial and strategic impact of different ways to handle excess inventory
+                    </p>
+                    
+                    <div class="comparison-grid">
+                        <div class="comparison-card">
+                            <h4>🔥 Heavy Discounting (Current Method)</h4>
+                            <div class="stat">
+                                <span class="label">Recovery Rate:</span>
+                                <span class="value" id="comp_discount_recovery">30% of retail</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Monthly Revenue:</span>
+                                <span class="value" id="comp_discount_revenue">$6,000</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Brand Impact:</span>
+                                <span class="value" style="color: #dc3545;">Negative</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Customer Perception:</span>
+                                <span class="value" style="color: #dc3545;">Devalued</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Sustainability Story:</span>
+                                <span class="value" style="color: #dc3545;">None</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Operational Effort:</span>
+                                <span class="value" style="color: #ffc107;">Medium</span>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-card">
+                            <h4>🎁 Donation / Write-Off</h4>
+                            <div class="stat">
+                                <span class="label">Recovery Rate:</span>
+                                <span class="value" id="comp_donation_recovery">0% (tax benefit only)</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Monthly Revenue:</span>
+                                <span class="value" id="comp_donation_revenue">$0</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Brand Impact:</span>
+                                <span class="value" style="color: #28a745;">Neutral/Positive</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Customer Perception:</span>
+                                <span class="value" style="color: #28a745;">Charitable</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Sustainability Story:</span>
+                                <span class="value" style="color: #ffc107;">Limited</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Operational Effort:</span>
+                                <span class="value" style="color: #28a745;">Low</span>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-card" style="border: 3px solid #28a745;">
+                            <h4>♻️ Style Swap Partnership</h4>
+                            <div class="stat">
+                                <span class="label">Recovery Rate:</span>
+                                <span class="value" id="comp_ss_recovery" style="color: #28a745;">45-55% of retail</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Monthly Revenue:</span>
+                                <span class="value" id="comp_ss_revenue" style="color: #28a745;">$8,800</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Brand Impact:</span>
+                                <span class="value" style="color: #28a745;">Positive</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Customer Perception:</span>
+                                <span class="value" style="color: #28a745;">Sustainable Leader</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Sustainability Story:</span>
+                                <span class="value" style="color: #28a745;">Authentic & Verified</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Operational Effort:</span>
+                                <span class="value" style="color: #28a745;">Minimal (outsourced)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-card">
+                            <h4>🗑️ Destruction / Landfill</h4>
+                            <div class="stat">
+                                <span class="label">Recovery Rate:</span>
+                                <span class="value" id="comp_destroy_recovery">-10% (disposal cost)</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Monthly Revenue:</span>
+                                <span class="value" id="comp_destroy_revenue" style="color: #dc3545;">-$200</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Brand Impact:</span>
+                                <span class="value" style="color: #dc3545;">Highly Negative</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Customer Perception:</span>
+                                <span class="value" style="color: #dc3545;">Wasteful</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Sustainability Story:</span>
+                                <span class="value" style="color: #dc3545;">PR Risk</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Operational Effort:</span>
+                                <span class="value" style="color: #28a745;">Low</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 30px; background: #d1ecf1; border-left: 5px solid #0c5460; border-radius: 10px;">
+                    <h3 style="color: #0c5460; margin-bottom: 15px;">💡 Beyond the Numbers</h3>
+                    <p style="color: #0c5460; line-height: 1.6;">
+                        While financial ROI is critical, Style Swap partnerships deliver additional strategic value:
+                    </p>
+                    <ul style="margin-top: 15px; color: #0c5460; line-height: 1.8;">
+                        <li><strong>Customer Acquisition:</strong> Access to 25,000+ conscious consumers in our marketplace</li>
+                        <li><strong>Market Research:</strong> Real-time data on what products and prices resonate with eco-conscious shoppers</li>
+                        <li><strong>Brand Positioning:</strong> Authentic sustainability credentials (not greenwashing)</li>
+                        <li><strong>Competitive Advantage:</strong> Differentiation in increasingly sustainability-focused market</li>
+                        <li><strong>ESG Compliance:</strong> Circular economy metrics for sustainability reporting</li>
+                        <li><strong>Inventory Intelligence:</strong> Insights to inform future production and reduce future waste</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="downloadProjection()">📥 Download Full Projection</button>
+                <button class="btn btn-secondary" onclick="window.print()">🖨️ Print Report</button>
+                <button class="btn btn-secondary" onclick="resetCalculator()">🔄 Reset Calculator</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Tab switching
+        function showTab(tabName) {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+        
+        // Simple Calculator
+        function calculateSimple() {
+            const inventory = parseFloat(document.getElementById('simple_inventory').value) || 0;
+            const retail = parseFloat(document.getElementById('simple_retail').value) || 0;
+            const currentRecovery = parseFloat(document.getElementById('simple_current_recovery').value) || 0;
+            const tier = parseFloat(document.getElementById('simple_tier').value) || 65;
+            const sellThrough = parseFloat(document.getElementById('simple_sellthrough').value) || 0;
+            const sellingPct = parseFloat(document.getElementById('simple_selling_pct').value) || 0;
+            
+            // Current method revenue
+            const currentRevenue = inventory * retail * (currentRecovery / 100);
+            
+            // Style Swap method
+            const itemsSold = inventory * (sellThrough / 100);
+            const avgSellingPrice = retail * (sellingPct / 100);
+            const grossRevenue = itemsSold * avgSellingPrice;
+            
+            // Deduct processing fees
+            const processingFee = 0.029;
+            const fixedFee = 0.30;
+            const totalProcessingFees = (grossRevenue * processingFee) + (itemsSold * fixedFee);
+            const netRevenue = grossRevenue - totalProcessingFees;
+            
+            const styleswapRevenue = netRevenue * (tier / 100);
+            const additionalRevenue = styleswapRevenue - currentRevenue;
+            const roiIncrease = currentRevenue > 0 ? ((additionalRevenue / currentRevenue) * 100) : 0;
+            const annualImpact = additionalRevenue * 12;
+            
+            // Update display
+            document.getElementById('simple_current').textContent = '$' + currentRevenue.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0});
+            document.getElementById('simple_styleswap').textContent = '$' + styleswapRevenue.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0});
+            document.getElementById('simple_additional').textContent = (additionalRevenue >= 0 ? '+' : '') + '$' + additionalRevenue.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0});
+            document.getElementById('simple_roi_pct').textContent = (roiIncrease >= 0 ? '+' : '') + roiIncrease.toFixed(0) + '%';
+            document.getElementById('simple_annual').textContent = '$' + annualImpact.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0});
+            
+            // Update comparison tab
+            document.getElementById('comp_discount_recovery').textContent = currentRecovery + '% of retail';
+            document.getElementById('comp_discount_revenue').textContent = '$' + currentRevenue.toLocaleString(undefined, {minimumFractionDigits: 0});
+            document.getElementById('comp_ss_recovery').textContent = (sellingPct * (tier/100)).toFixed(0) + '% of retail';
+            document.getElementById('comp_ss_revenue').textContent = '$' + styleswapRevenue.toLocaleString(undefined, {minimumFractionDigits: 0});
+        }
+        
+        // Advanced Calculator
+        function calculateAdvanced() {
+            const startInventory = parseFloat(document.getElementById('adv_start_inventory').value) || 0;
+            const growthRate = parseFloat(document.getElementById('adv_growth').value) || 0;
+            const price = parseFloat(document.getElementById('adv_price').value) || 0;
+            const tier = parseFloat(document.getElementById('adv_tier').value) || 65;
+            const startSellThrough = parseFloat(document.getElementById('adv_sellthrough_start').value) || 0;
+            const sellThroughGrowth = parseFloat(document.getElementById('adv_sellthrough_growth').value) || 0;
+            const costSavings = parseFloat(document.getElementById('adv_cost_savings').value) || 0;
+            const months = parseInt(document.getElementById('adv_months').value) || 12;
+            
+            let totalRevenue = 0;
+            let totalItems = 0;
+            let tableHTML = '';
+            let chartBars = '';
+            
+            const maxMonthsToShow = 12;
+            const processingFee = 0.029;
+            const fixedFee = 0.30;
+            
+            let monthlyData = [];
+            
+            for (let month = 1; month <= months; month++) {
+                const inventory = Math.round(startInventory * Math.pow(1 + (growthRate / 100), month - 1));
+                const sellThrough = Math.min(100, startSellThrough + (sellThroughGrowth * (month - 1)));
+                const itemsSold = Math.round(inventory * (sellThrough / 100));
+                const grossRevenue = itemsSold * price;
+                const processingCost = (grossRevenue * processingFee) + (itemsSold * fixedFee);
+                const netRevenue = grossRevenue - processingCost;
+                const brandShare = netRevenue * (tier / 100);
+                
+                totalRevenue += brandShare;
+                totalItems += itemsSold;
+                
+                monthlyData.push({
+                    month,
+                    inventory,
+                    sellThrough,
+                    itemsSold,
+                    grossRevenue,
+                    brandShare
+                });
+                
+                if (month <= maxMonthsToShow) {
+                    tableHTML += `
+                        <tr>
+                            <td>Month ${month}</td>
+                            <td>${inventory}</td>
+                            <td>${sellThrough.toFixed(1)}%</td>
+                            <td>${itemsSold}</td>
+                            <td>$${grossRevenue.toLocaleString(undefined, {minimumFractionDigits: 0})}</td>
+                            <td>$${brandShare.toLocaleString(undefined, {minimumFractionDigits: 0})}</td>
+                        </tr>
+                    `;
+                }
+            }
+            
+            // Add total row
+            const totalGross = monthlyData.reduce((sum, m) => sum + m.grossRevenue, 0);
+            tableHTML += `
+                <tr class="total-row">
+                    <td>TOTAL</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>${totalItems.toLocaleString()}</td>
+                    <td>$${totalGross.toLocaleString(undefined, {minimumFractionDigits: 0})}</td>
+                    <td>$${totalRevenue.toLocaleString(undefined, {minimumFractionDigits: 0})}</td>
+                </tr>
+            `;
+            
+            document.getElementById('timeline_body').innerHTML = tableHTML;
+            
+            // Generate chart (first 12 months)
+            const maxRevenue = Math.max(...monthlyData.slice(0, 12).map(m => m.brandShare));
+            monthlyData.slice(0, 12).forEach(data => {
+                const height = (data.brandShare / maxRevenue) * 100;
+                chartBars += `
+                    <div class="bar" style="height: ${height}%;">
+                        <div class="bar-value">$${(data.brandShare / 1000).toFixed(1)}k</div>
+                    </div>
+                `;
+            });
+            
+            document.getElementById('revenue_chart').innerHTML = chartBars;
+            
+            // Update summary metrics
+            const avgMonthly = totalRevenue / months;
+            const totalSavings = costSavings * months;
+            const totalImpact = totalRevenue + totalSavings;
+            
+            document.getElementById('adv_total_revenue').textContent = '$' + totalRevenue.toLocaleString(undefined, {minimumFractionDigits: 0});
+            document.getElementById('adv_total_items').textContent = totalItems.toLocaleString();
+            document.getElementById('adv_avg_monthly').textContent = '$' + avgMonthly.toLocaleString(undefined, {minimumFractionDigits: 0});
+            document.getElementById('adv_total_savings').textContent = '$' + totalSavings.toLocaleString(undefined, {minimumFractionDigits: 0});
+            document.getElementById('adv_total_impact').textContent = '$' + totalImpact.toLocaleString(undefined, {minimumFractionDigits: 0});
+        }
+        
+        function downloadProjection() {
+            alert('Projection download feature would generate a PDF report with all calculations and charts.');
+        }
+        
+        function resetCalculator() {
+            if (confirm('Reset all values to defaults?')) {
+                location.reload();
+            }
+        }
+        
+        // Initialize
+        calculateSimple();
+        calculateAdvanced();
+    </script>
+</body>
+</html>
