@@ -118,5 +118,36 @@
     "timezone": "Pacific/Auckland (GMT+13)",
     "model": "anthropic/claude-sonnet-4-5",
     "gitInitialized": true
+  },
+  "automationSystems": {
+    "financialDashboard": {
+      "script": "scripts/financial-dashboard.js",
+      "description": "Comprehensive financial command center - Xero + Wise integration",
+      "features": ["balance", "runway", "invoices", "overdue alerts", "revenue", "goal progress"],
+      "usage": "node scripts/financial-dashboard.js [--json]",
+      "lastUpdated": "2026-02-03T02:42:00+13:00"
+    },
+    "morningBriefing": {
+      "script": "scripts/morning-briefing.js",
+      "description": "Automated comprehensive morning briefing",
+      "features": ["reminders", "priorities", "calendar", "financials"],
+      "usage": "node scripts/morning-briefing.js",
+      "autoRun": "8am heartbeat",
+      "lastUpdated": "2026-02-03T02:44:00+13:00"
+    },
+    "supermemoryEnhanced": {
+      "script": "scripts/supermemory-enhanced-sync.js",
+      "description": "Enhanced Supermemory sync with strategic insights",
+      "features": ["financial insights", "project tracking", "decision logging", "goal progress"],
+      "usage": "node scripts/supermemory-enhanced-sync.js",
+      "autoRun": "9pm heartbeat",
+      "lastUpdated": "2026-02-03T02:50:00+13:00"
+    },
+    "xeroTokenRefresh": {
+      "script": "scripts/xero-refresh-token.js",
+      "description": "Auto-refresh Xero API tokens",
+      "usage": "node scripts/xero-refresh-token.js",
+      "lastUpdated": "2026-02-03T02:38:00+13:00"
+    }
   }
 }
