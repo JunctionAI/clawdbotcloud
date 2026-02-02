@@ -1,0 +1,60 @@
+{
+  "schedule": {
+    "twitter": {
+      "enabled": true,
+      "frequency": "4h",
+      "script": "scripts/x-twitter-monitor.js"
+    },
+    "articles": {
+      "enabled": true,
+      "frequency": "6h",
+      "script": "scripts/article-digest.js"
+    },
+    "books": {
+      "enabled": false,
+      "script": "scripts/book-digest.js"
+    }
+  },
+  "delivery": {
+    "morningBriefing": {
+      "enabled": true,
+      "time": "08:00",
+      "timezone": "Pacific/Auckland",
+      "includeInsights": true,
+      "maxInsights": 5
+    },
+    "realTimeAlerts": {
+      "enabled": true,
+      "threshold": 8,
+      "channels": [
+        "telegram",
+        "discord"
+      ]
+    },
+    "eveningDigest": {
+      "enabled": true,
+      "time": "18:00",
+      "timezone": "Pacific/Auckland"
+    }
+  },
+  "scoring": {
+    "weights": {
+      "relevance": 0.4,
+      "actionability": 0.3,
+      "timeliness": 0.2,
+      "engagement": 0.1
+    },
+    "categories": {
+      "nz_business": 1.2,
+      "marketing": 1.1,
+      "wealth_management": 1.1,
+      "ai": 1,
+      "productivity": 1
+    }
+  },
+  "integration": {
+    "supermemory": true,
+    "morningBriefing": true,
+    "heartbeat": true
+  }
+}

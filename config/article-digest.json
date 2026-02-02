@@ -1,0 +1,52 @@
+{
+  "rssFeeds": [
+    {
+      "url": "https://fs.blog/feed/",
+      "name": "Farnam Street",
+      "category": "mental_models",
+      "priority": "high"
+    },
+    {
+      "url": "https://www.lennysnewsletter.com/feed",
+      "name": "Lenny's Newsletter",
+      "category": "product_marketing",
+      "priority": "high"
+    },
+    {
+      "url": "https://world.hey.com/dhh/feed.atom",
+      "name": "DHH (37signals)",
+      "category": "business_philosophy",
+      "priority": "medium"
+    },
+    {
+      "url": "http://www.paulgraham.com/rss.html",
+      "name": "Paul Graham Essays",
+      "category": "startups",
+      "priority": "high"
+    }
+  ],
+  "bookmarks": [],
+  "readingList": [],
+  "checkIntervalHours": 6,
+  "maxArticlesPerRun": 5,
+  "summaryLength": "medium",
+  "insightKeywords": [
+    "framework",
+    "strategy",
+    "playbook",
+    "lesson",
+    "mistake",
+    "revenue",
+    "growth",
+    "marketing",
+    "email",
+    "automation",
+    "productivity",
+    "system",
+    "process",
+    "workflow",
+    "wealth",
+    "investment",
+    "business model"
+  ]
+}

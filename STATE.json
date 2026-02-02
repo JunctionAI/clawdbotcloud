@@ -14,7 +14,10 @@
     },
     "gog": {
       "connected": true,
-      "services": ["gmail", "calendar"],
+      "services": [
+        "gmail",
+        "calendar"
+      ],
       "credentialsPath": "google-credentials.json",
       "tokenPath": "gmail-token.json",
       "setupScript": "scripts/gmail-setup.js",
@@ -25,7 +28,9 @@
       "email": "tom@junctionmedia.ai",
       "credentialsPath": "microsoft-graph-credentials.json",
       "scriptPath": "scripts/outlook-calendar.js",
-      "services": ["calendar"],
+      "services": [
+        "calendar"
+      ],
       "lastVerified": "2026-02-03T08:00:00+13:00",
       "calendarScript": {
         "path": "scripts/outlook-calendar.js",
@@ -126,14 +131,27 @@
     "financialDashboard": {
       "script": "scripts/financial-dashboard.js",
       "description": "Comprehensive financial command center - Xero + Wise integration",
-      "features": ["balance", "runway", "invoices", "overdue alerts", "revenue", "goal progress"],
+      "features": [
+        "balance",
+        "runway",
+        "invoices",
+        "overdue alerts",
+        "revenue",
+        "goal progress"
+      ],
       "usage": "node scripts/financial-dashboard.js [--json]",
       "lastUpdated": "2026-02-03T02:42:00+13:00"
     },
     "morningBriefing": {
       "script": "scripts/morning-briefing.js",
       "description": "Automated comprehensive morning briefing",
-      "features": ["reminders", "priorities", "calendar", "financials", "email intelligence"],
+      "features": [
+        "reminders",
+        "priorities",
+        "calendar",
+        "financials",
+        "email intelligence"
+      ],
       "usage": "node scripts/morning-briefing.js",
       "autoRun": "8am heartbeat",
       "lastUpdated": "2026-02-03T09:00:00+13:00"
@@ -141,7 +159,12 @@
     "supermemoryEnhanced": {
       "script": "scripts/supermemory-enhanced-sync.js",
       "description": "Enhanced Supermemory sync with strategic insights",
-      "features": ["financial insights", "project tracking", "decision logging", "goal progress"],
+      "features": [
+        "financial insights",
+        "project tracking",
+        "decision logging",
+        "goal progress"
+      ],
       "usage": "node scripts/supermemory-enhanced-sync.js",
       "autoRun": "9pm heartbeat",
       "lastUpdated": "2026-02-03T02:50:00+13:00"
@@ -189,37 +212,87 @@
     "projectTracker": {
       "script": "scripts/project-tracker.js",
       "description": "Track progress on active projects, alert on milestones",
-      "features": ["project status", "milestone tracking", "deadline alerts", "Supermemory sync"],
+      "features": [
+        "project status",
+        "milestone tracking",
+        "deadline alerts",
+        "Supermemory sync"
+      ],
       "usage": "node scripts/project-tracker.js [--sync]",
       "lastUpdated": "2026-02-03T03:15:00+13:00"
     },
     "goalDashboard": {
       "script": "scripts/goal-dashboard.js",
       "description": "Real-time tracking against $1M 2026 goal",
-      "features": ["Q1/year progress", "revenue model breakdown", "burn rate", "strategic insights"],
+      "features": [
+        "Q1/year progress",
+        "revenue model breakdown",
+        "burn rate",
+        "strategic insights"
+      ],
       "usage": "node scripts/goal-dashboard.js",
       "lastUpdated": "2026-02-03T03:18:00+13:00"
     },
     "relationshipCRM": {
       "script": "scripts/relationship-crm.js",
       "description": "Track people, conversations, follow-ups",
-      "features": ["contact database", "follow-up tracking", "meeting reminders", "Supermemory sync"],
+      "features": [
+        "contact database",
+        "follow-up tracking",
+        "meeting reminders",
+        "Supermemory sync"
+      ],
       "usage": "node scripts/relationship-crm.js [--sync]",
       "lastUpdated": "2026-02-03T03:20:00+13:00"
     },
     "controlCenter": {
       "script": "scripts/control-center.js",
       "description": "Master dashboard - runs all systems",
-      "features": ["comprehensive overview", "all systems status", "sub-agent monitoring"],
+      "features": [
+        "comprehensive overview",
+        "all systems status",
+        "sub-agent monitoring"
+      ],
       "usage": "node scripts/control-center.js",
       "lastUpdated": "2026-02-03T03:25:00+13:00"
     },
     "appDeployment": {
       "script": "scripts/app-deployment-automation.js",
       "description": "Automate app deployment, marketing, analytics",
-      "features": ["deployment checklist", "Meta ads setup", "kill criteria ($1k/60d)", "analytics tracking"],
+      "features": [
+        "deployment checklist",
+        "Meta ads setup",
+        "kill criteria ($1k/60d)",
+        "analytics tracking"
+      ],
       "usage": "node scripts/app-deployment-automation.js",
       "lastUpdated": "2026-02-03T03:28:00+13:00"
+    },
+    "informationPipeline": {
+      "script": "scripts/info-extraction-pipeline.js",
+      "description": "Intelligence extraction & delivery pipeline - perfect information at perfect times",
+      "features": [
+        "Twitter/X monitoring",
+        "Article digestion",
+        "Book/PDF extraction",
+        "Insight scoring & ranking",
+        "Morning briefing integration",
+        "Real-time alerts"
+      ],
+      "usage": "node scripts/info-extraction-pipeline.js run",
+      "components": {
+        "twitter": "scripts/x-twitter-monitor.js",
+        "articles": "scripts/article-digest.js",
+        "books": "scripts/book-digest.js"
+      },
+      "config": {
+        "twitterFrequency": "4h",
+        "articleFrequency": "6h",
+        "morningBriefing": "8am",
+        "alertThreshold": "8/10"
+      },
+      "autoRun": "every 4 hours (heartbeat)",
+      "lastUpdated": "2026-02-02T13:51:21.690Z"
     }
   },
   "subAgents": {
