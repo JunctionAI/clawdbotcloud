@@ -11,7 +11,9 @@
     "node": ">=22.0.0"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
     "clawdbot": "latest",
+    "googleapis": "^144.0.0",
     "supermemory": "^4.0.0"
   }
 }

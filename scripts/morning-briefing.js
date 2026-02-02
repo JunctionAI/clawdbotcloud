@@ -63,6 +63,23 @@ async function getEmailIntelligence() {
   }
 }
 
+// Get intelligence insights from pipeline
+async function getIntelligenceInsights() {
+  try {
+    // Check if insights cache exists
+    const insightsPath = 'cache/morning-insights.txt';
+    if (fs.existsSync(insightsPath)) {
+      return fs.readFileSync(insightsPath, 'utf8');
+    }
+    
+    // Try to generate fresh insights
+    const { stdout } = await execAsync('node scripts/info-extraction-pipeline.js insights 24');
+    return stdout;
+  } catch (err) {
+    return '⚠️  No recent insights (run: node scripts/info-extraction-pipeline.js run)';
+  }
+}
+
 // Check for critical reminders from HEARTBEAT.md
 function getCriticalReminders() {
   try {
@@ -160,6 +177,13 @@ async function generateBriefing() {
   console.log('⚠️  Note: Add +1 day to displayed dates (calendar offset bug)');
   const calendar = await getCalendarEvents();
   console.log(calendar);
+  
+  // Intelligence insights
+  console.log('');
+  console.log('💡  INTELLIGENCE INSIGHTS');
+  console.log('─'.repeat(80));
+  const insights = await getIntelligenceInsights();
+  console.log(insights);
   
   // Email intelligence
   console.log('');
