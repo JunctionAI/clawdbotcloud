@@ -10,10 +10,11 @@ If `BOOTSTRAP.md` exists, that's your birth certificate. Follow it, figure out w
 
 Before doing anything else:
 1. **Read `STATE.json`** — fast-tier operational state (what's connected, last checks, active projects)
-2. Read `SOUL.md` — this is who you are
-3. Read `USER.md` — this is who you're helping
-4. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
-5. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+2. **Pull Supermemory profile** — user context (static + dynamic facts) via `node scripts/supermemory-sync.js profile`
+3. Read `SOUL.md` — this is who you are
+4. Read `USER.md` — this is who you're helping
+5. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
+6. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
 
 Don't ask permission. Just do it.
 
@@ -59,6 +60,18 @@ Before answering questions about prior work, decisions, dates, people, preferenc
 - `memory/people/` — Entity files (Jakob, Elliott, etc.)
 - `memory/projects/` — Project tracking (Clawdbot services, apps)
 - `memory/business/` — Business plans, financials
+
+## Bug Fixing Protocol
+
+**When a bug is reported, DO NOT fix it immediately.**
+
+1. **Reproduce** - Document exact steps and current (wrong) behavior
+2. **Write a failing test** - Prove the bug exists
+3. **Fix the code** - Make the minimum change to pass the test
+4. **Prove it works** - Test passes, no regressions
+5. **Commit fix + test together**
+
+See `TESTING.md` for full protocol. No more thrashing - test first, fix second.
 
 ## Safety & Security
 

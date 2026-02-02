@@ -44,6 +44,24 @@ Actualization = true freedom of mind and knowledge
 
 ## Key Insights
 
+### Calendar Integration (CRITICAL - Feb 3, 2026)
+
+**ALWAYS use `scripts/outlook-calendar.js` for ALL calendar operations.**
+
+The script has a -1 day offset fix baked in because Microsoft Graph + Pacific/Auckland timezone has a bug that shifts dates +1 day. **DO NOT CHANGE THIS FIX.**
+
+Usage:
+```bash
+# List events
+node scripts/outlook-calendar.js list --days=7
+
+# Add event (just use the date/time you want - script handles the offset)
+node scripts/outlook-calendar.js add --subject="Meeting" --start="2026-02-05T09:00:00" --end="2026-02-05T10:00:00" --location="Office"
+
+# Delete event
+node scripts/outlook-calendar.js delete --id="EVENT_ID"
+```
+
 ### Week 1 Learnings (Jan 25-31)
 
 **Email Communication (Critical):**

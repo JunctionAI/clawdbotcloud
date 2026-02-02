@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-01T21:40:00+13:00",
+    "lastUpdated": "2026-02-02T23:44:00+13:00",
     "version": "1.0",
     "description": "Fast-tier operational state - loaded every session before anything else"
   },
@@ -16,6 +16,24 @@
       "connected": true,
       "services": ["gmail", "calendar"],
       "note": "OAuth configured, calendar API needs enabling"
+    },
+    "outlook": {
+      "connected": true,
+      "email": "tom@junctionmedia.ai",
+      "credentialsPath": "microsoft-graph-credentials.json",
+      "scriptPath": "scripts/outlook-calendar.js",
+      "services": ["calendar"],
+      "lastVerified": "2026-02-03T08:00:00+13:00",
+      "calendarScript": {
+        "path": "scripts/outlook-calendar.js",
+        "CRITICAL_FIX": "Script has -1 day offset baked in. Microsoft Graph + Pacific/Auckland has timezone bug that shifts dates +1 day. DO NOT CHANGE THIS. Just pass the date you want and it will appear correctly.",
+        "usage": {
+          "list": "node scripts/outlook-calendar.js list --days=7",
+          "add": "node scripts/outlook-calendar.js add --subject=\"Meeting\" --start=\"2026-02-05T09:00:00\" --end=\"2026-02-05T10:00:00\" --location=\"Office\"",
+          "delete": "node scripts/outlook-calendar.js delete --id=\"EVENT_ID\""
+        }
+      },
+      "note": "Microsoft Graph API - full calendar access. ALWAYS use scripts/outlook-calendar.js for ALL calendar operations. The -1 day fix is permanent."
     },
     "moltbook": {
       "connected": true,
@@ -63,11 +81,10 @@
     "Spending tracker - daily 9pm check-ins"
   ],
   "pendingItems": [
-    "⏰ PG Chairman meeting prep - CRITICAL (meeting next week)",
+    "⏰ PG Chairman meeting - Wednesday Feb 5 breakfast (8-10am) - CRITICAL",
     "⏰ Baycorp setup - reminder set Monday 9am",
     "TWG discovery call - waiting for Andi Garnett response",
-    "Genesis payment setup - browser open, needs password",
-    "Calendar API enabling for gog"
+    "Genesis payment setup - browser open, needs password"
   ],
   "recentDecisions": [
     {

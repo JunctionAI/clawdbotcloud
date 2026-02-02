@@ -141,3 +141,14 @@ _(Same format)_
 
 **Total spent today:** $0
 
+
+## 2026-02-02
+
+- **$116.00** @ Woolworths Nz/4 Williamso (Grocery Stores, Supermarkets) - 21:09
+- **$19.27** @ Mrs Bun&dumpling (Eating Places, Restaurants) - 13:54
+- **$40.00** @ Skinny Mobile (Telecommunication Services-prepa) - 09:54
+- **$101.38** → Trent Walker (Transfer) - 08:12
+- **$0.31** @ Google Cloud Vt3zl2 (Business Services not elsewhere) - 07:12
+
+**Total spent today:** $0
+

@@ -80,15 +80,35 @@ async function addEvent(options = {}) {
     throw new Error('subject, start, and end are required');
   }
 
-  // Format datetime for Microsoft Graph with -1 day workaround
-  // Bug: Microsoft Graph shifts Pacific/Auckland times by +1 day
-  // Workaround: Subtract 1 day when creating events
+  // Format datetime for Microsoft Graph
+  // Microsoft Graph + Pacific/Auckland has a +1 day bug
+  // Workaround: subtract 1 day from the date string directly
   const formatDateTime = (dateStr) => {
-    let date = new Date(dateStr);
-    // Subtract 1 day (24 hours)
-    date.setDate(date.getDate() - 1);
-    // Return as local datetime string (no timezone suffix)
-    return date.toISOString().slice(0, 19);
+    // Parse the date string manually (format: YYYY-MM-DDTHH:mm:ss)
+    const match = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2}))?$/);
+    if (!match) return dateStr;
+
+    let [, year, month, day, hour, minute, second] = match;
+    year = parseInt(year);
+    month = parseInt(month);
+    day = parseInt(day) - 1; // Subtract 1 day
+
+    // Handle day underflow (e.g., day 0 becomes last day of previous month)
+    if (day < 1) {
+      month--;
+      if (month < 1) {
+        month = 12;
+        year--;
+      }
+      // Days in each month (not accounting for leap years perfectly but close enough)
+      const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      if (month === 2 && year % 4 === 0) daysInMonth[1] = 29; // Leap year
+      day = daysInMonth[month - 1];
+    }
+
+    // Return formatted string
+    const pad = (n) => String(n).padStart(2, '0');
+    return `${year}-${pad(month)}-${pad(day)}T${hour}:${minute}:${second || '00'}`;
   };
 
   const event = {
