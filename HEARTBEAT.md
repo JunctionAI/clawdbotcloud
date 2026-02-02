@@ -10,10 +10,10 @@
 - **11:30pm-12am:** Rich & Tom catch-up @ PureSEO Polaroid
 
 ### Wednesday Feb 5 ⚡ CRITICAL
-- **8-10am:** PG Chairman meeting (breakfast) — PRIMARY FOCUS ($150k+ marketing role potential)
+- **9am:** PG Chairman Breakfast Meeting — PRIMARY FOCUS ($150k+ marketing role potential)
 
 ### Friday Feb 7
-- **Sian** _(time/details TBD - check calendar)_
+- **7:30pm:** Sian @ Deadshot
 
 ---
 
@@ -26,7 +26,7 @@
 - Calendar: Events in next 24-48h?
 - Outstanding: Any invoices/follow-ups needed?
 - **Monday 9am:** Baycorp setup reminder
-- **Wednesday morning:** PG Chairman meeting prep check (notes ready? outfit sorted?)
+- **Wednesday morning:** PG Chairman 9am breakfast prep check (notes ready? outfit sorted?)
 
 ### Midday Check (2-4pm)
 - Progress: Are daily goals on track?
@@ -37,7 +37,7 @@
 - Tomorrow: What's the #1 priority?
 - Memory: Anything significant to document?
 - **SPENDING CHECK (9pm):** Run `.\scripts\wise-daily-tracker.ps1` to auto-log Wise transactions
-- **Tuesday evening:** PG Chairman meeting prep — review notes, confirm outfit, mindset prep for Wednesday 8-10am breakfast
+- **Tuesday evening:** PG Chairman meeting prep — review notes, confirm outfit, mindset prep for Wednesday 9am breakfast
 
 ### Weekly Review (Sunday 8pm)
 - Read daily files from past week (memory/YYYY-MM-DD.md)
