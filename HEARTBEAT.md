@@ -26,6 +26,7 @@
 - Calendar: Events in next 24-48h?
 - Outstanding: Any invoices/follow-ups needed?
 - **Monday 9am:** Baycorp setup reminder
+- **Tuesday morning (Feb 3):** ⏰ SORT XERO INVOICE for DBH this week (timesheet/hours) - FIRST THING
 - **Wednesday morning:** PG Chairman 9am breakfast prep check (notes ready? outfit sorted?)
 
 ### Midday Check (2-4pm)
@@ -37,6 +38,7 @@
 - Tomorrow: What's the #1 priority?
 - Memory: Anything significant to document?
 - **SPENDING CHECK (9pm):** Run `.\scripts\wise-daily-tracker.ps1` to auto-log Wise transactions
+- **HABIT CHECK (9pm):** Log today's dopamine habits in `memory/habit-tracker-feb-2026.md` (porn/weed/alcohol/coffee - triggers, feelings, did it serve goals?)
 - **Tuesday evening:** PG Chairman meeting prep — review notes, confirm outfit, mindset prep for Wednesday 9am breakfast
 
 ### Weekly Review (Sunday 8pm)
