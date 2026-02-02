@@ -1,0 +1,38 @@
+{
+  "name": "passive-income-automation",
+  "version": "1.0.0",
+  "description": "Automation scripts for passive income portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon",
+    "start": "node index.js",
+    "stripe-webhook": "node micro-saas/stripe-webhook-handler.js",
+    "sales-dashboard": "node digital-products/sales-dashboard.js",
+    "weekly-report": "node shared/analytics-aggregator.js",
+    "content-gen": "node affiliate-marketing/content-generator.js"
+  },
+  "keywords": [
+    "passive-income",
+    "automation",
+    "saas",
+    "affiliate",
+    "digital-products"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@mailchimp/mailchimp_transactional": "^1.0.58",
+    "@sendgrid/mail": "^8.1.0",
+    "@supabase/supabase-js": "^2.39.0",
+    "axios": "^1.6.5",
+    "discord-webhook-node": "^1.1.8",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "openai": "^4.24.1",
+    "stripe": "^14.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

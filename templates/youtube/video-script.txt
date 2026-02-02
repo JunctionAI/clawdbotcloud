@@ -1,0 +1,178 @@
+YouTube Video Script Template
+==============================
+
+VIDEO TITLE: [How to / [Number] Ways to / Why [Topic]] - [Benefit]
+DURATION: [10-15 minutes ideal]
+TARGET AUDIENCE: [Who this is for]
+
+---
+
+[HOOK - First 15 seconds]
+
+This is CRITICAL. Viewer decides to stay or leave.
+
+[Show the outcome/result visually]
+"In this video, I'm going to show you exactly how to [achieve result]."
+
+OR
+
+[Ask a compelling question]
+"What if I told you [surprising fact about topic]?"
+
+OR
+
+[Show proof/transformation]
+"This is what happened when I [did X for Y days]..."
+
+---
+
+[INTRO - 15-45 seconds]
+
+"Hey, it's [Name], and on this channel we talk about [niche]."
+
+[If new viewers might be watching]
+"If you're new here, welcome! Every [day/week] I share [type of content]."
+
+[Quick preview of what's coming]
+"Today I'm going to show you:
+- [Thing 1]
+- [Thing 2]
+- [Thing 3]"
+
+"So let's dive in."
+
+---
+
+[CONTENT - Main sections]
+
+[SECTION 1 - Timestamp: 0:45]
+
+[B-ROLL: Show relevant visuals]
+
+[Main point 1]
+
+[Example or demonstration]
+
+[On-screen text: Key point]
+
+"Now, here's where most people mess this up..."
+
+[Common mistake and how to avoid it]
+
+---
+
+[PATTERN INTERRUPT - Timestamp: 4:00]
+
+Every 3-4 minutes, shift the energy:
+- Ask a question
+- Show something unexpected
+- Change camera angle
+- Add humor
+- Tease what's coming next
+
+"Before we move on to [next thing], quick question..."
+
+OR
+
+"Now here's where it gets interesting..."
+
+---
+
+[SECTION 2 - Timestamp: 5:00]
+
+[Continue pattern from Section 1]
+
+[Engagement prompt]
+"Drop a comment if you've experienced this too."
+
+---
+
+[MID-ROLL CTA - Timestamp: 7:00]
+
+"By the way, if you're enjoying this, hit that like button and subscribe."
+
+[Specific reason to subscribe]
+"I post new [topic] videos every [schedule], and I've got some amazing content coming up on [teaser]."
+
+---
+
+[SECTION 3 - Continue content]
+
+---
+
+[RECAP/SUMMARY - Final 2 minutes]
+
+"Alright, let's quickly recap what we covered today:"
+
+- [Key point 1]
+- [Key point 2]
+- [Key point 3]
+
+[Action steps]
+"Here's what you should do next:"
+
+1. [Immediate action]
+2. [Follow-up action]
+
+---
+
+[OUTRO - Final 30 seconds]
+
+"If you found this helpful, check out this video next where I [related topic]."
+
+[Show end screen with video recommendation]
+
+"Thanks for watching, and I'll see you in the next one!"
+
+---
+
+PRODUCTION NOTES:
+
+B-ROLL SUGGESTIONS:
+- [Timestamp: List specific b-roll needed]
+- [Timestamp: List specific b-roll needed]
+
+ON-SCREEN TEXT:
+- [Timestamp: "Key Point"]
+- [Timestamp: "Common Mistake"]
+- [Timestamp: "Pro Tip"]
+
+ENGAGEMENT ELEMENTS:
+- Ask question at [timestamp]
+- Like/subscribe reminder at [timestamp]
+- Pin comment: "What's your biggest challenge with [topic]?"
+
+SEO KEYWORDS:
+- Primary: [keyword]
+- Secondary: [keyword], [keyword]
+
+DESCRIPTION:
+[Write compelling description with timestamps, links, resources]
+
+TAGS:
+[List 10-15 relevant tags]
+
+---
+
+YOUTUBE BEST PRACTICES:
+
+✅ DO:
+- Hook in first 15 seconds
+- Pattern interrupts every 3-4 min
+- Ask viewers to like/subscribe (but give a reason)
+- Reply to comments in first 24 hours
+- Use end screens and cards
+- Include timestamps in description
+- Engage with community tab
+
+❌ DON'T:
+- Ramble or waste time at the start
+- Forget to ask for engagement
+- Make videos too long (under 15min unless deep-dive)
+- Ignore analytics (watch time, CTR)
+
+MONETIZATION:
+- Ad revenue (enabled at 1k subs, 4k watch hours)
+- Affiliate links in description
+- Sponsorships (mention products naturally)
+- Course/product promotion (soft sell)

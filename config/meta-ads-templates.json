@@ -1,0 +1,325 @@
+{
+  "default": {
+    "name": "Default App Campaign",
+    "audiences": [
+      {
+        "name": "NZ Broad - Mobile Users",
+        "ageMin": 18,
+        "ageMax": 65,
+        "interests": [
+          { "id": "6003139266461", "name": "Mobile apps" },
+          { "id": "6004115167424", "name": "Smartphones" }
+        ],
+        "behaviors": [
+          { "id": "6015235495383", "name": "Mobile device users" }
+        ]
+      },
+      {
+        "name": "NZ Major Cities",
+        "cities": [
+          { "key": "2413", "name": "Auckland", "country": "NZ" },
+          { "key": "2419", "name": "Wellington", "country": "NZ" },
+          { "key": "2414", "name": "Christchurch", "country": "NZ" }
+        ],
+        "ageMin": 18,
+        "ageMax": 45,
+        "behaviors": [
+          { "id": "6015235495383", "name": "Mobile device users" }
+        ]
+      }
+    ],
+    "creatives": [
+      {
+        "variation": "Feature Focus",
+        "template": "Discover {appName} - {description} {cta}",
+        "cta": "Install Now"
+      },
+      {
+        "variation": "Benefit Driven",
+        "template": "{appName} makes it easy. {description} {cta}",
+        "cta": "Get Started"
+      },
+      {
+        "variation": "Social Proof",
+        "template": "Join thousands using {appName}. {description} {cta}",
+        "cta": "Download Free"
+      }
+    ]
+  },
+  
+  "gaming": {
+    "name": "Gaming App Campaign",
+    "audiences": [
+      {
+        "name": "NZ Gamers - Casual",
+        "ageMin": 18,
+        "ageMax": 45,
+        "interests": [
+          { "id": "6003139266461", "name": "Mobile games" },
+          { "id": "6003450978532", "name": "Casual games" },
+          { "id": "6003348604581", "name": "Puzzle video games" }
+        ],
+        "behaviors": [
+          { "id": "6015235495383", "name": "Mobile device users" }
+        ]
+      },
+      {
+        "name": "NZ Gamers - Hardcore",
+        "ageMin": 18,
+        "ageMax": 35,
+        "genders": [1],
+        "interests": [
+          { "id": "6003139266461", "name": "Mobile games" },
+          { "id": "6003348604581", "name": "Strategy games" },
+          { "id": "6004115167424", "name": "Video games" }
+        ]
+      },
+      {
+        "name": "NZ Female Gamers",
+        "ageMin": 18,
+        "ageMax": 45,
+        "genders": [2],
+        "interests": [
+          { "id": "6003139266461", "name": "Mobile games" },
+          { "id": "6003450978532", "name": "Casual games" }
+        ]
+      }
+    ],
+    "creatives": [
+      {
+        "variation": "Challenge",
+        "template": "Can you beat level 10? {appName} - {description} {cta}",
+        "cta": "Play Now"
+      },
+      {
+        "variation": "Fun",
+        "template": "The most addictive game of 2024! {appName} - {description} {cta}",
+        "cta": "Start Playing"
+      },
+      {
+        "variation": "Competitive",
+        "template": "Think you're the best? Prove it in {appName}! {description} {cta}",
+        "cta": "Download & Compete"
+      },
+      {
+        "variation": "Casual",
+        "template": "Perfect game for quick breaks. {appName} - {description} {cta}",
+        "cta": "Try Free"
+      }
+    ]
+  },
+  
+  "productivity": {
+    "name": "Productivity App Campaign",
+    "audiences": [
+      {
+        "name": "NZ Professionals",
+        "ageMin": 25,
+        "ageMax": 55,
+        "interests": [
+          { "id": "6003348604581", "name": "Entrepreneurship" },
+          { "id": "6003139266461", "name": "Business" },
+          { "id": "6003348604581", "name": "Technology" }
+        ],
+        "behaviors": [
+          { "id": "6017253486583", "name": "Small business owners" }
+        ]
+      },
+      {
+        "name": "NZ Students",
+        "ageMin": 18,
+        "ageMax": 30,
+        "interests": [
+          { "id": "6003348604581", "name": "Education" },
+          { "id": "6003348604581", "name": "University" }
+        ]
+      }
+    ],
+    "creatives": [
+      {
+        "variation": "Time Saver",
+        "template": "Save 2 hours every day with {appName}. {description} {cta}",
+        "cta": "Get Organized"
+      },
+      {
+        "variation": "Problem Solution",
+        "template": "Tired of chaos? {appName} brings order. {description} {cta}",
+        "cta": "Start Free Trial"
+      },
+      {
+        "variation": "Professional",
+        "template": "The productivity tool trusted by 10,000+ Kiwis. {appName} - {description} {cta}",
+        "cta": "Boost Productivity"
+      }
+    ]
+  },
+  
+  "ecommerce": {
+    "name": "E-commerce App Campaign",
+    "audiences": [
+      {
+        "name": "NZ Online Shoppers",
+        "ageMin": 25,
+        "ageMax": 55,
+        "interests": [
+          { "id": "6003348604581", "name": "Online shopping" },
+          { "id": "6003348604581", "name": "Shopping" }
+        ],
+        "behaviors": [
+          { "id": "6015559470583", "name": "Engaged shoppers" }
+        ]
+      },
+      {
+        "name": "NZ Deal Seekers",
+        "ageMin": 18,
+        "ageMax": 65,
+        "interests": [
+          { "id": "6003348604581", "name": "Coupons" },
+          { "id": "6003348604581", "name": "Discounts and allowances" }
+        ]
+      }
+    ],
+    "creatives": [
+      {
+        "variation": "Discount",
+        "template": "Get 20% off your first order! {appName} - {description} {cta}",
+        "cta": "Shop Now"
+      },
+      {
+        "variation": "Convenience",
+        "template": "Shopping made simple. {appName} - {description} {cta}",
+        "cta": "Browse Deals"
+      },
+      {
+        "variation": "Selection",
+        "template": "Thousands of products. One easy app. {appName} - {description} {cta}",
+        "cta": "Start Shopping"
+      }
+    ]
+  },
+  
+  "social": {
+    "name": "Social App Campaign",
+    "audiences": [
+      {
+        "name": "NZ Social Users - Young",
+        "ageMin": 18,
+        "ageMax": 35,
+        "interests": [
+          { "id": "6003348604581", "name": "Social media" },
+          { "id": "6003348604581", "name": "Social networking" }
+        ]
+      },
+      {
+        "name": "NZ Social Users - Broad",
+        "ageMin": 18,
+        "ageMax": 55,
+        "interests": [
+          { "id": "6003348604581", "name": "Social networking" }
+        ]
+      }
+    ],
+    "creatives": [
+      {
+        "variation": "Community",
+        "template": "Find your tribe on {appName}. {description} {cta}",
+        "cta": "Join Community"
+      },
+      {
+        "variation": "Connection",
+        "template": "Connect with people who matter. {appName} - {description} {cta}",
+        "cta": "Sign Up Free"
+      },
+      {
+        "variation": "Trending",
+        "template": "Everyone's talking about {appName}. {description} {cta}",
+        "cta": "See What's New"
+      }
+    ]
+  },
+  
+  "health": {
+    "name": "Health & Fitness App Campaign",
+    "audiences": [
+      {
+        "name": "NZ Fitness Enthusiasts",
+        "ageMin": 18,
+        "ageMax": 55,
+        "interests": [
+          { "id": "6003348604581", "name": "Physical fitness" },
+          { "id": "6003348604581", "name": "Fitness and wellness" },
+          { "id": "6003348604581", "name": "Exercise" }
+        ]
+      },
+      {
+        "name": "NZ Health Conscious",
+        "ageMin": 25,
+        "ageMax": 65,
+        "interests": [
+          { "id": "6003348604581", "name": "Health" },
+          { "id": "6003348604581", "name": "Nutrition" },
+          { "id": "6003348604581", "name": "Wellness" }
+        ]
+      }
+    ],
+    "creatives": [
+      {
+        "variation": "Goal Focused",
+        "template": "Reach your fitness goals with {appName}. {description} {cta}",
+        "cta": "Start Training"
+      },
+      {
+        "variation": "Transformation",
+        "template": "Transform your body in 30 days. {appName} - {description} {cta}",
+        "cta": "Begin Journey"
+      },
+      {
+        "variation": "Support",
+        "template": "Your personal trainer in your pocket. {appName} - {description} {cta}",
+        "cta": "Get Fit Now"
+      }
+    ]
+  },
+  
+  "finance": {
+    "name": "Finance App Campaign",
+    "audiences": [
+      {
+        "name": "NZ Financially Savvy",
+        "ageMin": 25,
+        "ageMax": 65,
+        "interests": [
+          { "id": "6003348604581", "name": "Personal finance" },
+          { "id": "6003348604581", "name": "Investing" },
+          { "id": "6003348604581", "name": "Saving" }
+        ]
+      },
+      {
+        "name": "NZ Young Professionals",
+        "ageMin": 22,
+        "ageMax": 40,
+        "interests": [
+          { "id": "6003348604581", "name": "Career" },
+          { "id": "6003348604581", "name": "Money" }
+        ]
+      }
+    ],
+    "creatives": [
+      {
+        "variation": "Security",
+        "template": "Take control of your finances. {appName} - {description} {cta}",
+        "cta": "Start Saving"
+      },
+      {
+        "variation": "Growth",
+        "template": "Grow your wealth with smart tools. {appName} - {description} {cta}",
+        "cta": "Learn More"
+      },
+      {
+        "variation": "Simplicity",
+        "template": "Banking made easy. {appName} - {description} {cta}",
+        "cta": "Open Account"
+      }
+    ]
+  }
+}

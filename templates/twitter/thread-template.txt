@@ -1,0 +1,76 @@
+Twitter Thread Template
+======================
+
+1/ [HOOK - Stop the scroll]
+
+Make this surprising, controversial, or intriguing.
+
+Examples:
+- "I made $10k in 30 days using [method]. Here's exactly what I did:"
+- "Everyone's doing [X] wrong. Here's what actually works:"
+- "I analyzed 100+ [things] and found a pattern nobody's talking about:"
+
+2/ [Context or setup]
+
+Why does this matter?
+What problem does it solve?
+Why should they keep reading?
+
+3/ [First main point]
+
+One clear insight.
+Data, story, or example.
+
+4/ [Second main point]
+
+Build on the previous point.
+Add depth or a new angle.
+
+5/ [Third main point]
+
+Keep the momentum going.
+This is where the value really compounds.
+
+6/ [Fourth main point - optional]
+
+If you have 5-8 points, break them across tweets.
+One insight per tweet keeps it scannable.
+
+7/ [Recap or conclusion]
+
+Summarize the key takeaways.
+Make it quotable.
+
+8/ [CTA - Call to action]
+
+Examples:
+- "If you found this valuable, follow me @[handle] for more [topic] insights"
+- "Want the full breakdown? I wrote a detailed guide: [link]"
+- "Retweet the first tweet to help others discover this"
+- "What's your experience with this? Reply below 👇"
+
+---
+
+THREAD WRITING TIPS:
+
+✅ DO:
+- Start with a hook that promises value
+- Keep tweets short (under 280 chars)
+- Use line breaks for readability
+- One idea per tweet
+- End with a clear CTA
+- Include numbers/data when possible
+- Tell stories or give examples
+
+❌ DON'T:
+- Use hashtags (except maybe 1-2 at the end)
+- Make it too promotional
+- Forget to engage with replies
+- Post all at once (wait 2-3 min between tweets)
+
+ENGAGEMENT BOOSTERS:
+- Ask questions
+- Use "You" not "I"
+- Create open loops (curiosity)
+- Share contrarian opinions
+- Include personal stories

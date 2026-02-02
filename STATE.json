@@ -293,6 +293,59 @@
       },
       "autoRun": "every 4 hours (heartbeat)",
       "lastUpdated": "2026-02-02T13:51:21.690Z"
+    },
+    "networkMonetization": {
+      "script": "scripts/network-monetization-dashboard.js",
+      "description": "Turn network and connections into revenue opportunities automatically",
+      "goal": "$5k-20k/month from network-driven opportunities",
+      "components": {
+        "linkedinIntelligence": "scripts/linkedin-intelligence.js",
+        "opportunityScanner": "scripts/opportunity-scanner.js",
+        "relationshipCRMEnhanced": "scripts/relationship-crm-enhanced.js",
+        "referralSystem": "scripts/referral-system.js",
+        "dashboard": "scripts/network-monetization-dashboard.js"
+      },
+      "features": [
+        "LinkedIn connection analysis (value scoring, job changes)",
+        "Opportunity detection (consulting, speaking, partnerships, advisor roles)",
+        "Enhanced CRM (net worth estimation, decision-maker mapping)",
+        "Referral system (10% commission, auto-thank, leaderboard)",
+        "Strategic networking recommendations",
+        "Content strategy for attracting high-value connections"
+      ],
+      "usage": {
+        "setup": "node scripts/setup-network-monetization.js",
+        "linkedinAnalysis": "node scripts/linkedin-intelligence.js",
+        "opportunityScan": "node scripts/opportunity-scanner.js",
+        "enhancedCRM": "node scripts/relationship-crm-enhanced.js",
+        "referralDashboard": "node scripts/referral-system.js",
+        "masterDashboard": "node scripts/network-monetization-dashboard.js",
+        "addReferral": "node scripts/referral-system.js add --referrer=\"Name\" --referrer-email=\"email\" --client=\"Client\" --value=10000"
+      },
+      "dataStructure": {
+        "linkedin": "data/linkedin/ (connections, opportunities, tracking)",
+        "opportunities": "data/opportunities/ (all opportunities, sources, tracking)",
+        "relationships": "data/relationships/ (CRM, followups)",
+        "referrals": "data/referrals/ (referrals, referrers, payments)"
+      },
+      "revenueModel": {
+        "consulting": "$5k-50k per project (1-2/month)",
+        "speaking": "$1k-10k per talk (1-2/month)",
+        "partnerships": "$5k-20k per partnership (2-3 active)",
+        "advisor": "0.25-1% equity + $2k-5k/month (1-2 roles)",
+        "referrals": "10% commission (target $2k-5k/month)"
+      },
+      "workflow": {
+        "morning": "Check dashboard, review top 10 actions, prioritize 2-3",
+        "daily": "Execute actions, log referrals, update statuses",
+        "evening": "Update progress, plan next day",
+        "weekly": "Review leaderboard, pay commissions, adjust strategy"
+      },
+      "documentation": "NETWORK-MONETIZATION-SYSTEM.md",
+      "setupScript": "scripts/setup-network-monetization.js",
+      "testScript": "scripts/test-network-monetization.js",
+      "lastUpdated": "2026-02-03T03:30:00+13:00",
+      "status": "Ready for production - awaiting LinkedIn data import"
     }
   },
   "subAgents": {
@@ -315,6 +368,26 @@
         "task": "Build information extraction and intelligence pipeline",
         "status": "running",
         "spawnedAt": "2026-02-03T03:02:00+13:00"
+      },
+      {
+        "label": "network-monetization",
+        "task": "Build network monetization and opportunity detection system",
+        "status": "completed",
+        "spawnedAt": "2026-02-03T03:04:00+13:00",
+        "completedAt": "2026-02-03T03:30:00+13:00",
+        "deliverables": [
+          "scripts/linkedin-intelligence.js",
+          "scripts/opportunity-scanner.js",
+          "scripts/relationship-crm-enhanced.js",
+          "scripts/referral-system.js",
+          "scripts/network-monetization-dashboard.js",
+          "scripts/setup-network-monetization.js",
+          "scripts/test-network-monetization.js",
+          "NETWORK-MONETIZATION-SYSTEM.md (14KB documentation)",
+          "TASK-COMPLETE-NETWORK-MONETIZATION.md"
+        ],
+        "goal": "$5k-20k/month from network-driven opportunities",
+        "status_detail": "All components built, tested, and documented. Ready for production use."
       }
     ]
   }

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LinkedIn Tracker</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      width: 380px;
+      min-height: 500px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    
+    .header {
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .header h1 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    
+    .header p {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      padding: 20px;
+    }
+    
+    .stat-card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .stat-number {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    
+    .stat-label {
+      font-size: 12px;
+      opacity: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .quick-actions {
+      padding: 0 20px 20px;
+    }
+    
+    .action-btn {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 10px;
+      background: white;
+      color: #667eea;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    
+    .action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .action-btn.secondary {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    
+    .upgrade-banner {
+      margin: 0 20px 20px;
+      padding: 16px;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      border-radius: 12px;
+      text-align: center;
+    }
+    
+    .upgrade-banner h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    
+    .upgrade-banner p {
+      font-size: 13px;
+      opacity: 0.9;
+      margin-bottom: 12px;
+    }
+    
+    .upgrade-btn {
+      background: white;
+      color: #f5576c;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    
+    .recent-leads {
+      padding: 0 20px 20px;
+    }
+    
+    .recent-leads h3 {
+      font-size: 14px;
+      margin-bottom: 12px;
+      opacity: 0.9;
+    }
+    
+    .lead-item {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 8px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .lead-name {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    
+    .lead-info {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+    
+    .loader {
+      text-align: center;
+      padding: 40px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📊 LinkedIn Tracker</h1>
+    <p>Your outreach, organized</p>
+  </div>
+  
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number" id="stat-total">0</div>
+      <div class="stat-label">Tracked</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" id="stat-pending">0</div>
+      <div class="stat-label">Pending</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" id="stat-responded">0</div>
+      <div class="stat-label">Responded</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" id="stat-followup">0</div>
+      <div class="stat-label">Follow-ups</div>
+    </div>
+  </div>
+  
+  <div id="upgrade-banner" class="upgrade-banner" style="display: none;">
+    <h3>🚀 Upgrade to Pro</h3>
+    <p><span id="limit-text">You've tracked 10/10 free leads</span></p>
+    <button class="upgrade-btn" id="upgrade-btn">Unlock Unlimited - $19/mo</button>
+  </div>
+  
+  <div class="quick-actions">
+    <button class="action-btn" id="open-dashboard">
+      📈 Open Full Dashboard
+    </button>
+    <button class="action-btn secondary" id="open-linkedin">
+      💼 Go to LinkedIn Messages
+    </button>
+  </div>
+  
+  <div class="recent-leads">
+    <h3>Recent Leads</h3>
+    <div id="recent-leads-list">
+      <div class="loader">Loading...</div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

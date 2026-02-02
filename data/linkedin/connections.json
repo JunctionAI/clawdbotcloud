@@ -1,0 +1,100 @@
+{
+  "connections": [
+    {
+      "name": "Sarah Chen",
+      "title": "VP Marketing at CloudScale SaaS",
+      "company": "CloudScale SaaS",
+      "industry": "SaaS",
+      "connectionCount": 750,
+      "lastContact": "2025-11-20",
+      "relationshipStrength": "MEDIUM",
+      "email": "sarah.chen@cloudscale.io",
+      "notes": "Met at SaaStr conference 2024",
+      "jobChangeDate": "2026-01-15",
+      "previousTitle": "Director of Marketing at StartupX"
+    },
+    {
+      "name": "Marcus Johnson",
+      "title": "CEO at FinTech Innovations",
+      "company": "FinTech Innovations",
+      "industry": "Fintech",
+      "connectionCount": 1200,
+      "lastContact": "2025-12-10",
+      "relationshipStrength": "STRONG",
+      "email": "marcus@fintechinno.com",
+      "notes": "Founded company after $5M seed round",
+      "mutualConnections": [
+        "Tom Hall-Taylor",
+        "Rich"
+      ]
+    },
+    {
+      "name": "Emily Rodriguez",
+      "title": "CMO at E-commerce Giant",
+      "company": "E-commerce Giant",
+      "industry": "E-commerce",
+      "connectionCount": 2500,
+      "lastContact": "2026-01-05",
+      "relationshipStrength": "STRONG",
+      "email": "emily.r@ecommerce.com",
+      "notes": "Looking for growth hacking expertise"
+    },
+    {
+      "name": "David Kim",
+      "title": "Founder & CTO at AI Startup",
+      "company": "AI Startup",
+      "industry": "AI/ML",
+      "connectionCount": 450,
+      "lastContact": "2025-10-15",
+      "relationshipStrength": "WEAK",
+      "email": "david@aistartup.ai",
+      "notes": "Just raised Series A ($10M)",
+      "jobChangeDate": "2025-12-01",
+      "previousTitle": "Senior Engineer at Google"
+    },
+    {
+      "name": "Jennifer Lee",
+      "title": "VP Growth at Shopify",
+      "company": "Shopify",
+      "industry": "E-commerce Platform",
+      "connectionCount": 3000,
+      "lastContact": "2025-09-20",
+      "relationshipStrength": "MEDIUM",
+      "email": "jennifer.lee@shopify.com",
+      "notes": "Influential in e-commerce space"
+    },
+    {
+      "name": "Alex Thompson",
+      "title": "Marketing Director at Agency Co",
+      "company": "Agency Co",
+      "industry": "Marketing Agency",
+      "connectionCount": 600,
+      "lastContact": "2026-01-20",
+      "relationshipStrength": "STRONG",
+      "email": "alex@agencyco.com",
+      "notes": "Potential partnership opportunity"
+    },
+    {
+      "name": "Lisa Wang",
+      "title": "Investor at Venture Partners",
+      "company": "Venture Partners",
+      "industry": "Venture Capital",
+      "connectionCount": 5000,
+      "lastContact": "2025-08-15",
+      "relationshipStrength": "WEAK",
+      "email": "lisa@venturepartners.com",
+      "notes": "High-net-worth, great network"
+    },
+    {
+      "name": "Robert Brown",
+      "title": "CEO at Local Business",
+      "company": "Local Business",
+      "industry": "Retail",
+      "connectionCount": 200,
+      "lastContact": "2025-11-30",
+      "relationshipStrength": "MEDIUM",
+      "email": "robert@localbusiness.com",
+      "notes": "Looking for marketing help"
+    }
+  ]
+}

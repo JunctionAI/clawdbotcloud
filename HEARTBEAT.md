@@ -2,17 +2,17 @@
 
 ## 🚨 Critical This Week (Feb 3-9)
 
-### Monday Feb 3
+### Tuesday Feb 3
 - **9am:** Baycorp setup reminder
 - **10pm-11pm:** Will x Tom Catch-Up @ B:HIVE Smales Farm
 
-### Tuesday Feb 4
+### Tuesday Feb 3 (late night)
 - **11:30pm-12am:** Rich & Tom catch-up @ PureSEO Polaroid
 
-### Wednesday Feb 5 ⚡ CRITICAL
+### Wednesday Feb 4 ⚡ CRITICAL
 - **9am:** PG Chairman Breakfast Meeting — PRIMARY FOCUS ($150k+ marketing role potential)
 
-### Friday Feb 7
+### Friday Feb 6
 - **7:30pm:** Sian @ Deadshot
 
 ---
@@ -25,9 +25,9 @@
 - Emails: Any urgent unread messages?
 - Calendar: Events in next 24-48h?
 - Outstanding: Any invoices/follow-ups needed?
-- **Monday 9am:** Baycorp setup reminder
+- **Tuesday 9am (Feb 3):** Baycorp setup reminder
 - **Tuesday morning (Feb 3):** ⏰ SORT XERO INVOICE for DBH this week (timesheet/hours) - FIRST THING
-- **Wednesday morning:** PG Chairman 9am breakfast prep check (notes ready? outfit sorted?)
+- **Wednesday morning (Feb 4):** PG Chairman 9am breakfast prep check (notes ready? outfit sorted?)
 
 ### Midday Check (2-4pm)
 - Progress: Are daily goals on track?
@@ -39,7 +39,7 @@
 - Memory: Anything significant to document?
 - **SPENDING CHECK (9pm):** Run `.\scripts\wise-daily-tracker.ps1` to auto-log Wise transactions
 - **HABIT CHECK (9pm):** Log today's dopamine habits in `memory/habit-tracker-feb-2026.md` (porn/weed/alcohol/coffee - triggers, feelings, did it serve goals?)
-- **Tuesday evening:** PG Chairman meeting prep — review notes, confirm outfit, mindset prep for Wednesday 9am breakfast
+- **Tuesday evening (Feb 3):** PG Chairman meeting prep — review notes, confirm outfit, mindset prep for Wednesday 9am breakfast
 
 ### Weekly Review (Sunday 8pm)
 - Read daily files from past week (memory/YYYY-MM-DD.md)

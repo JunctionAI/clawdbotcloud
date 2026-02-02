@@ -1,0 +1,131 @@
+Weekly Newsletter Template
+==========================
+
+SUBJECT LINE: [Short, curiosity-driven, benefit-focused]
+Examples:
+- "The [tool/strategy] nobody's using (yet)"
+- "I tried [thing] for 30 days. Here's what happened."
+- "[Number] lessons from [experience]"
+
+PREVIEW TEXT: [Expands on subject, visible in inbox]
+
+---
+
+EMAIL BODY:
+
+Hey [First Name],
+
+[PERSONAL OPENING - 1-2 sentences]
+
+Start with something relatable, timely, or personal.
+
+Examples:
+- "It's been a wild week..."
+- "Quick question: have you ever [relatable struggle]?"
+- "I just realized something about [topic]..."
+
+---
+
+[MAIN CONTENT]
+
+Option A - One Main Topic:
+
+[Headline or main point]
+
+[Story, insight, or teaching]
+
+[Paragraph break - keep it scannable]
+
+[Another point or example]
+
+[Key takeaway or action step]
+
+---
+
+Option B - Curated Content:
+
+**📚 What I'm Reading**
+[Article title] - [Why it's valuable in 1 sentence]
+[Link]
+
+**🛠️ Tool of the Week**
+[Tool name] - [What it does and why you should try it]
+[Affiliate link if applicable]
+
+**💡 Quick Win**
+[One actionable tip they can implement today]
+
+**🎯 Deep Dive**
+[Longer insight or story]
+
+---
+
+[CALL TO ACTION]
+
+Make it clear and valuable.
+
+Examples:
+- "Want more insights like this? [Check out my latest blog post →]"
+- "Struggling with [problem]? I created a free guide: [link]"
+- "This week I'm curious: [Ask a question]. Hit reply and let me know!"
+- "P.S. If you're interested in [topic], I'm launching [product/course] soon. [Waitlist link]"
+
+---
+
+[SIGN-OFF]
+
+Talk soon,
+[Your Name]
+
+---
+
+P.S. [Second CTA or personal note]
+
+Examples:
+- "Loving these emails? Forward this to a friend who'd find it valuable."
+- "Not vibing with this content? You can [update preferences] or [unsubscribe]."
+- "By the way, I'm [working on X / launching Y / hosting Z]. More soon."
+
+---
+
+FOOTER:
+
+[Unsubscribe link]
+[Update preferences]
+[Your social media links]
+
+*Disclosure: Some links in this email are affiliate links. I only recommend products I personally use.*
+
+---
+
+NEWSLETTER BEST PRACTICES:
+
+✅ DO:
+- Write like you're emailing a friend
+- Keep paragraphs short (2-3 sentences)
+- Use "you" not "I"
+- Include actionable takeaways
+- Reply to responses (builds relationship)
+- Test subject lines (A/B test)
+- Be consistent (same day, same time)
+- Add personality and voice
+
+❌ DON'T:
+- Over-promote (80% value, 20% promotion)
+- Use too many links (confuses reader)
+- Make it too long (500-1000 words ideal)
+- Forget mobile readers (most will read on phone)
+- Ignore analytics (open rate, click rate)
+
+MONETIZATION:
+- Affiliate links (naturally integrated)
+- Sponsorships (once you hit 1k+ subscribers)
+- Paid tier (exclusive content for premium subs)
+- Product launches (courses, ebooks, etc.)
+
+GROWTH:
+- Lead magnet (free guide, checklist, template)
+- Content upgrades on blog posts
+- Social media CTAs
+- Collaborations with other newsletters
+- Testimonials on landing page

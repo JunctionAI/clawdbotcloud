@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clawdbot Setup Services | AI Automation Made Easy</title>
+  <meta name="description" content="Get your own AI assistant set up in 2 weeks. Automate email, calendar, research, and more. From $1,000.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f9f9f9;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 100px 20px 80px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .hero .subtitle {
+      font-size: 24px;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+    .hero .cta {
+      display: inline-block;
+      background: white;
+      color: #667eea;
+      padding: 15px 40px;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .hero .cta:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Features */
+    .features {
+      padding: 80px 20px;
+      background: white;
+    }
+    .features h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 50px;
+      color: #333;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+    .feature-card {
+      padding: 30px;
+      border-radius: 10px;
+      background: #f9f9f9;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .feature-card .icon {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+    .feature-card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #667eea;
+    }
+    
+    /* Pricing */
+    .pricing {
+      padding: 80px 20px;
+      background: #f5f5f5;
+    }
+    .pricing h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 50px;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .pricing-card {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    .pricing-card.featured {
+      border: 3px solid #667eea;
+      transform: scale(1.05);
+    }
+    .pricing-card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .pricing-card .price {
+      font-size: 48px;
+      font-weight: 700;
+      color: #667eea;
+      margin: 20px 0;
+    }
+    .pricing-card .price span {
+      font-size: 18px;
+      color: #666;
+    }
+    .pricing-card ul {
+      list-style: none;
+      margin: 20px 0;
+      text-align: left;
+    }
+    .pricing-card ul li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .pricing-card ul li:before {
+      content: "✓ ";
+      color: #667eea;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    .pricing-card .btn {
+      display: inline-block;
+      background: #667eea;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+    .pricing-card .btn:hover {
+      background: #5568d3;
+    }
+    
+    /* Lead Form */
+    .lead-form {
+      padding: 80px 20px;
+      background: white;
+    }
+    .lead-form h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .lead-form p {
+      text-align: center;
+      color: #666;
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #f9f9f9;
+      padding: 40px;
+      border-radius: 10px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #333;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 15px;
+      background: #667eea;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .submit-btn:hover {
+      background: #5568d3;
+    }
+    
+    /* Testimonials */
+    .testimonials {
+      padding: 80px 20px;
+      background: #f5f5f5;
+    }
+    .testimonials h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 50px;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .testimonial-card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .testimonial-card .quote {
+      font-style: italic;
+      color: #666;
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+    .testimonial-card .author {
+      font-weight: 600;
+      color: #333;
+    }
+    .testimonial-card .author span {
+      color: #667eea;
+      font-weight: normal;
+    }
+    
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Your Own AI Assistant, Fully Set Up</h1>
+      <p class="subtitle">Automate email, calendar, research, and more with Clawdbot</p>
+      <a href="#contact" class="cta">Get Started →</a>
+    </div>
+  </section>
+  
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <h2>What You Get</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="icon">🤖</div>
+          <h3>Fully Configured AI Assistant</h3>
+          <p>Clawdbot installed, trained, and customized to your workflow</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">📧</div>
+          <h3>Email & Calendar Integration</h3>
+          <p>Automatic email intelligence, calendar management, and scheduling</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">💬</div>
+          <h3>Multi-Channel Access</h3>
+          <p>Discord, Telegram, WhatsApp - talk to your AI anywhere</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🔧</div>
+          <h3>Custom Skills</h3>
+          <p>Tailored automations for your specific business needs</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">📊</div>
+          <h3>Analytics & Reporting</h3>
+          <p>Track tasks, monitor productivity, get insights</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🎓</div>
+          <h3>Training & Support</h3>
+          <p>1-on-1 training and ongoing support included</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Pricing -->
+  <section class="pricing">
+    <div class="container">
+      <h2>Pricing Plans</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Basic</h3>
+          <div class="price">$1,000<span></span></div>
+          <ul>
+            <li>Basic Clawdbot setup</li>
+            <li>1 channel (Discord/Telegram/WhatsApp)</li>
+            <li>Email integration</li>
+            <li>Standard skills library</li>
+            <li>1 hour training</li>
+          </ul>
+          <a href="#contact" class="btn">Get Basic</a>
+        </div>
+        
+        <div class="pricing-card featured">
+          <h3>Standard</h3>
+          <div class="price">$2,500<span> Most Popular</span></div>
+          <ul>
+            <li>Full Clawdbot setup</li>
+            <li>2-3 channels</li>
+            <li>Email + Calendar integration</li>
+            <li>Custom skills (up to 3)</li>
+            <li>2 hours training</li>
+            <li>30 days support</li>
+          </ul>
+          <a href="#contact" class="btn">Get Standard</a>
+        </div>
+        
+        <div class="pricing-card">
+          <h3>Enterprise</h3>
+          <div class="price">$5,000<span>+</span></div>
+          <ul>
+            <li>Complete automation suite</li>
+            <li>Multi-channel setup</li>
+            <li>Custom workflows</li>
+            <li>CRM/API integrations</li>
+            <li>Unlimited training</li>
+            <li>90 days premium support</li>
+          </ul>
+          <a href="#contact" class="btn">Get Enterprise</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Clients Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p class="quote">"Tom set up Clawdbot for our team in less than a week. It's like having an extra team member who never sleeps."</p>
+          <p class="author">Jakob <span>// Clawdbot Early User</span></p>
+        </div>
+        <div class="testimonial-card">
+          <p class="quote">"The ROI was immediate. Clawdbot handles all our email triage and calendar scheduling automatically."</p>
+          <p class="author">Sarah M. <span>// Marketing Director</span></p>
+        </div>
+        <div class="testimonial-card">
+          <p class="quote">"Best investment we made this year. Tom's setup process was seamless and the ongoing support is excellent."</p>
+          <p class="author">David K. <span>// CEO, Tech Startup</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Lead Form -->
+  <section class="lead-form" id="contact">
+    <div class="container">
+      <h2>Get Your Free Consultation</h2>
+      <p>Tell us about your needs and we'll create a custom proposal within 24 hours</p>
+      
+      <div class="form-container">
+        <form id="leadForm">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company">
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          
+          <div class="form-group">
+            <label for="budget_range">Budget Range *</label>
+            <select id="budget_range" name="budget_range" required>
+              <option value="">Select...</option>
+              <option value="1k-5k">$1,000 - $5,000</option>
+              <option value="5k-10k">$5,000 - $10,000</option>
+              <option value="10k+">$10,000+</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="urgency">When do you need this? *</label>
+            <select id="urgency" name="urgency" required>
+              <option value="">Select...</option>
+              <option value="immediate">ASAP (within 2 weeks)</option>
+              <option value="this-month">This month</option>
+              <option value="exploring">Just exploring</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="notes">Tell us about your needs</label>
+            <textarea id="notes" name="notes" placeholder="What do you want to automate? Any specific requirements?"></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Get My Free Proposal</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p><strong>Junction Media</strong> | Tom Hall-Taylor</p>
+      <p>Email: tom@junctionmedia.ai | Based in Auckland, NZ</p>
+      <p style="margin-top: 20px; opacity: 0.7; font-size: 14px;">
+        © 2026 Junction Media. All rights reserved.
+      </p>
+    </div>
+  </footer>
+  
+  <script>
+    // Handle form submission
+    document.getElementById('leadForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        company: document.getElementById('company').value,
+        phone: document.getElementById('phone').value,
+        budget_range: document.getElementById('budget_range').value,
+        urgency: document.getElementById('urgency').value,
+        notes: document.getElementById('notes').value,
+        service_interest: 'clawdbot',
+        source: 'landing-page'
+      };
+      
+      try {
+        const response = await fetch('http://localhost:3001/api/leads', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+          alert('Thank you! We\'ll send your custom proposal within 24 hours.');
+          this.reset();
+        } else {
+          alert('Something went wrong. Please email us directly at tom@junctionmedia.ai');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Something went wrong. Please email us directly at tom@junctionmedia.ai');
+      }
+    });
+  </script>
+</body>
+</html>

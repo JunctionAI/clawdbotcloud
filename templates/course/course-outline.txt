@@ -1,0 +1,253 @@
+Course Outline Template
+=======================
+
+COURSE TITLE: [Clear, benefit-driven]
+TAGLINE: [One sentence describing transformation]
+PRICE POINT: $[97-497 for starter courses, $997+ for premium]
+
+---
+
+TARGET AUDIENCE:
+
+Who is this for?
+- [Specific persona 1]
+- [Specific persona 2]
+
+Current situation:
+- They're struggling with [problem]
+- They've tried [failed solutions]
+- They want [desired outcome]
+
+---
+
+LEARNING OUTCOMES:
+
+By the end of this course, students will be able to:
+- [Specific skill/outcome 1]
+- [Specific skill/outcome 2]
+- [Specific skill/outcome 3]
+- [Specific skill/outcome 4]
+- [Specific skill/outcome 5]
+
+---
+
+COURSE STRUCTURE:
+
+MODULE 1: [Foundation/Mindset/Overview]
+**Goal:** [What they'll achieve in this module]
+
+Lesson 1.1: [Lesson Title]
+- [Key concept]
+- [Activity/exercise]
+- [Deliverable]
+
+Lesson 1.2: [Lesson Title]
+- [Key concept]
+- [Activity/exercise]
+- [Deliverable]
+
+Lesson 1.3: [Lesson Title]
+- [Key concept]
+- [Activity/exercise]
+- [Deliverable]
+
+Module Outcome: [What they can do after completing this module]
+
+---
+
+MODULE 2: [Core Skill/Strategy]
+**Goal:** [What they'll achieve in this module]
+
+Lesson 2.1: [Lesson Title]
+Lesson 2.2: [Lesson Title]
+Lesson 2.3: [Lesson Title]
+Lesson 2.4: [Lesson Title]
+
+Module Outcome: [What they can do after completing this module]
+
+---
+
+MODULE 3: [Implementation/Advanced Tactics]
+**Goal:** [What they'll achieve in this module]
+
+Lesson 3.1: [Lesson Title]
+Lesson 3.2: [Lesson Title]
+Lesson 3.3: [Lesson Title]
+Lesson 3.4: [Lesson Title]
+
+Module Outcome: [What they can do after completing this module]
+
+---
+
+MODULE 4: [Optimization/Scaling]
+**Goal:** [What they'll achieve in this module]
+
+Lesson 4.1: [Lesson Title]
+Lesson 4.2: [Lesson Title]
+Lesson 4.3: [Lesson Title]
+
+Module Outcome: [What they can do after completing this module]
+
+---
+
+MODULE 5: [Case Studies/Troubleshooting]
+**Goal:** [What they'll achieve in this module]
+
+Lesson 5.1: [Real-world example 1]
+Lesson 5.2: [Real-world example 2]
+Lesson 5.3: [Common pitfalls and solutions]
+
+Module Outcome: [What they can do after completing this module]
+
+---
+
+MODULE 6: [Next Steps/Graduation]
+**Goal:** [What they'll achieve in this module]
+
+Lesson 6.1: [Recap and integration]
+Lesson 6.2: [Creating your action plan]
+Lesson 6.3: [Resources and community]
+
+Final Outcome: [Their complete transformation]
+
+---
+
+BONUS MATERIALS:
+
+- [Bonus 1]: [Workbook/template/checklist]
+- [Bonus 2]: [Swipe files/examples]
+- [Bonus 3]: [Tools and resources list]
+- [Bonus 4]: [Private community access]
+- [Bonus 5]: [Monthly Q&A calls]
+
+---
+
+COURSE DELIVERY:
+
+Format: [Video / Text / Mixed]
+Total Runtime: [X hours]
+Access: [Lifetime / 12 months]
+Platform: [Teachable / Gumroad / Kajabi / etc.]
+
+Support:
+- [Email support]
+- [Community forum]
+- [Office hours]
+
+---
+
+MARKETING COPY:
+
+**Sales Page Headline:**
+[Benefit-driven, clear transformation]
+
+**Subheadline:**
+[Address pain point and promise solution]
+
+**Social Proof:**
+"[Testimonial from beta student]" - [Name, result]
+
+**Guarantee:**
+[30-day money-back guarantee, risk-free, etc.]
+
+---
+
+LAUNCH STRATEGY:
+
+Pre-launch:
+- Build email list with free lead magnet
+- Create content around course topics
+- Share student success stories
+- Host free webinar or workshop
+
+Launch:
+- Open cart for [5-7 days]
+- Limited-time bonus
+- Early bird pricing
+
+Post-launch:
+- Evergreen funnel
+- Retarget with ads
+- Affiliate program
+
+---
+
+PRICING TIERS:
+
+Option 1: STARTER - $[X]
+- Core course content
+- Access to community
+
+Option 2: PRO - $[X+$200]
+- Everything in Starter
+- Bonus materials
+- 1-on-1 coaching call
+
+Option 3: VIP - $[X+$500]
+- Everything in Pro
+- Monthly group coaching
+- Personalized feedback
+
+---
+
+SUCCESS METRICS:
+
+Course completion rate: [Target 50%+]
+Student satisfaction: [Target 4.5+ stars]
+Revenue goal: $[X] in first 90 days
+
+---
+
+COURSE CREATION CHECKLIST:
+
+□ Outline all modules and lessons
+□ Record/write lesson content
+□ Create worksheets and exercises
+□ Design slide decks (if applicable)
+□ Edit videos and audio
+□ Set up course platform
+□ Write sales page copy
+□ Create landing page
+□ Build email funnel
+□ Film promotional content
+□ Set up payment processing
+□ Launch!
+
+---
+
+PLATFORM RECOMMENDATIONS:
+
+- **Teachable**: Best for robust courses with community
+- **Gumroad**: Best for simple digital products
+- **Kajabi**: Best all-in-one (expensive)
+- **Thinkific**: Good free option to start
+
+---
+
+PRO TIPS:
+
+✅ DO:
+- Start with a beta cohort (get feedback, testimonials)
+- Make it outcome-focused, not just information
+- Include worksheets and action steps
+- Over-deliver on value
+- Build community aspect
+- Show your face (builds trust)
+
+❌ DON'T:
+- Make it too long (focus on essentials)
+- Over-complicate the tech
+- Launch without validation
+- Forget to collect testimonials
+- Ignore student questions
+
+---
+
+NEXT STEPS:
+
+1. Validate idea (survey audience, pre-sell if possible)
+2. Create beta version (MVP)
+3. Run beta cohort (get results and testimonials)
+4. Refine based on feedback
+5. Launch full course
+6. Build evergreen funnel

@@ -1,0 +1,75 @@
+{
+  "mode": "PAPER_TRADING_ONLY",
+  "liveTrading": false,
+  "apis": {
+    "binance": {
+      "apiKey": "YOUR_BINANCE_API_KEY",
+      "apiSecret": "YOUR_BINANCE_API_SECRET",
+      "testnet": true
+    },
+    "alpaca": {
+      "apiKey": "YOUR_ALPACA_API_KEY",
+      "apiSecret": "YOUR_ALPACA_API_SECRET",
+      "paper": true,
+      "baseUrl": "https://paper-api.alpaca.markets"
+    },
+    "polygon": {
+      "apiKey": "YOUR_POLYGON_API_KEY"
+    },
+    "coingecko": {
+      "apiKey": "YOUR_COINGECKO_API_KEY"
+    }
+  },
+  "portfolio": {
+    "paperBalance": {
+      "USD": 50000,
+      "USDT": 20000,
+      "NZD": 30000
+    },
+    "riskPerTrade": 0.02,
+    "maxPositions": 10,
+    "maxDrawdown": 0.15
+  },
+  "markets": {
+    "crypto": {
+      "enabled": true,
+      "pairs": ["BTC/USDT", "ETH/USDT", "SOL/USDT", "AVAX/USDT", "MATIC/USDT"],
+      "timeframes": ["1h", "4h", "1d"]
+    },
+    "stocks": {
+      "enabled": true,
+      "symbols": ["AAPL", "MSFT", "GOOGL", "NVDA", "SPY", "QQQ"],
+      "nzStocks": ["FPH.NZ", "AIA.NZ", "SPK.NZ", "MEL.NZ"],
+      "dividendFocus": true
+    },
+    "forex": {
+      "enabled": true,
+      "pairs": ["NZD/USD", "EUR/USD", "GBP/USD", "AUD/USD"]
+    }
+  },
+  "strategies": {
+    "momentumBreakout": {
+      "enabled": true,
+      "rsiPeriod": 14,
+      "rsiOverbought": 70,
+      "rsiOversold": 30,
+      "volumeMultiplier": 1.5
+    },
+    "swingTrading": {
+      "enabled": true,
+      "emaPeriods": [20, 50, 200],
+      "confirmationCandles": 2
+    },
+    "meanReversion": {
+      "enabled": true,
+      "bollingerPeriod": 20,
+      "bollingerStdDev": 2
+    }
+  },
+  "alerts": {
+    "telegram": false,
+    "discord": true,
+    "email": false,
+    "minConfidence": 0.7
+  }
+}

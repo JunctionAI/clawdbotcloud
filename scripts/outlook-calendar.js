@@ -196,6 +196,81 @@ async function deleteEvent(eventId, userEmail = creds.email) {
 }
 
 /**
+ * Convert UTC datetime to Pacific/Auckland timezone with proper formatting
+ * 
+ * Microsoft Graph returns UTC times (e.g., "2026-02-04T20:00:00.0000000")
+ * We need to convert to Pacific/Auckland (NZDT = UTC+13 during DST, NZST = UTC+12)
+ * 
+ * Example: "2026-02-04T20:00:00" UTC → "Wednesday Feb 5, 9:00am NZDT"
+ */
+function formatEventTime(utcDateTimeString) {
+  // Parse the UTC datetime string
+  // Microsoft Graph format: "2026-02-04T20:00:00.0000000" or "2026-02-04T20:00:00Z"
+  const cleanedDateStr = utcDateTimeString.replace(/\.0+$/, '').replace(/Z$/, '');
+  
+  // Create Date object from UTC string
+  const utcDate = new Date(cleanedDateStr + 'Z'); // Ensure it's parsed as UTC
+  
+  // Convert to Pacific/Auckland timezone using Intl.DateTimeFormat
+  const nzFormatter = new Intl.DateTimeFormat('en-NZ', {
+    timeZone: 'Pacific/Auckland',
+    weekday: 'long',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+    timeZoneName: 'short'
+  });
+  
+  return nzFormatter.format(utcDate);
+}
+
+/**
+ * Convert UTC datetime to Pacific/Auckland for testing/programmatic use
+ * Returns object with date, time, dayOfWeek, timezone
+ */
+function convertToLocalTimezone(utcDateTimeString, timezone = 'Pacific/Auckland') {
+  const cleanedDateStr = utcDateTimeString.replace(/\.0+$/, '').replace(/Z$/, '');
+  const utcDate = new Date(cleanedDateStr + 'Z');
+  
+  // Get date components in target timezone
+  const formatter = new Intl.DateTimeFormat('en-US', {
+    timeZone: timezone,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false
+  });
+  
+  const parts = formatter.formatToParts(utcDate);
+  const get = (type) => parts.find(p => p.type === type)?.value;
+  
+  const dayFormatter = new Intl.DateTimeFormat('en-US', {
+    timeZone: timezone,
+    weekday: 'long'
+  });
+  
+  const tzFormatter = new Intl.DateTimeFormat('en-US', {
+    timeZone: timezone,
+    timeZoneName: 'short'
+  });
+  const tzParts = tzFormatter.formatToParts(utcDate);
+  const tzName = tzParts.find(p => p.type === 'timeZoneName')?.value || 'NZDT';
+  
+  return {
+    date: `${get('year')}-${get('month')}-${get('day')}`,
+    time: `${get('hour')}:${get('minute')}:${get('second')}`,
+    dayOfWeek: dayFormatter.format(utcDate),
+    timezone: tzName
+  };
+}
+
+/**
  * CLI interface
  */
 async function main() {
@@ -233,10 +308,13 @@ Usage:
           console.log('   No events scheduled.');
         } else {
           events.forEach(event => {
-            const start = new Date(event.start.dateTime);
-            const end = new Date(event.end.dateTime);
+            // Fix: Properly convert to Pacific/Auckland timezone
+            // Microsoft Graph returns UTC times, we need to display in Pacific/Auckland (NZDT/NZST)
+            const startLocal = formatEventTime(event.start.dateTime);
+            const endLocal = formatEventTime(event.end.dateTime);
+            
             console.log(`   📌 ${event.subject}`);
-            console.log(`      ${start.toLocaleString('en-NZ')} → ${end.toLocaleString('en-NZ')}`);
+            console.log(`      ${startLocal} → ${endLocal}`);
             if (event.location?.displayName) {
               console.log(`      📍 ${event.location.displayName}`);
             }
@@ -306,6 +384,9 @@ Usage:
   }
 }
 
-main();
+// Only run main if this script is executed directly (not imported)
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main();
+}
 
-export { listEvents, addEvent, getAvailability };
+export { listEvents, addEvent, getAvailability, convertToLocalTimezone, formatEventTime };

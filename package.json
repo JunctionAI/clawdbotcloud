@@ -1,19 +1,43 @@
 {
-  "name": "clawdbot-railway",
+  "name": "content-monetization-system",
   "version": "1.0.0",
-  "description": "Clawdbot deployment for Railway",
+  "description": "Turn expertise into $1k-5k/month passive income through automated content creation and monetization",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node start.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "generate": "node scripts/content-generator.js",
+    "seo": "node scripts/seo-optimizer.js",
+    "publish": "node scripts/auto-publisher.js",
+    "affiliate": "node scripts/affiliate-tracker.js",
+    "analytics": "node scripts/analytics-dashboard.js",
+    "dashboard": "node scripts/analytics-dashboard.js web 3000",
+    "process-queue": "node scripts/auto-publisher.js process",
+    "daily-report": "node scripts/analytics-dashboard.js report today",
+    "monthly-report": "node scripts/analytics-dashboard.js report month"
   },
+  "keywords": [
+    "content",
+    "monetization",
+    "ai",
+    "automation",
+    "passive-income",
+    "blogging",
+    "seo",
+    "affiliate-marketing",
+    "digital-products"
+  ],
+  "author": "Tom",
+  "license": "MIT",
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=16.0.0"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.32.1",
-    "clawdbot": "latest",
-    "googleapis": "^144.0.0",
-    "supermemory": "^4.0.0"
+    "@azure/identity": "^4.13.0",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
+    "clawdbot": "^2026.1.24-3"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
   }
 }

@@ -1,27 +1,31 @@
-# Node
+# Environment variables
+.env
+
+# Node modules
 node_modules/
-npm-debug.log
-yarn-error.log
 
-# Clawdbot runtime (don't commit these)
-.clawdbot/
-*.lock
-
-# OS
-.DS_Store
-Thumbs.db
+# Generated content and data
+data/generated/
+data/seo/
+data/affiliate/
+data/*.json
 
 # Logs
 *.log
+logs/
 
-# Environment
-.env
-.env.local
+# OS files
+.DS_Store
+Thumbs.db
 
-# PM2
-ecosystem.config.js
-.pm2/
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# Temp
-temp/
+# Temporary files
 tmp/
+temp/
+*.tmp
