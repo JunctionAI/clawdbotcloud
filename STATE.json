@@ -15,7 +15,10 @@
     "gog": {
       "connected": true,
       "services": ["gmail", "calendar"],
-      "note": "OAuth configured, calendar API needs enabling"
+      "credentialsPath": "google-credentials.json",
+      "tokenPath": "gmail-token.json",
+      "setupScript": "scripts/gmail-setup.js",
+      "note": "Gmail API for email intelligence - run gmail-setup.js to configure"
     },
     "outlook": {
       "connected": true,
@@ -130,10 +133,10 @@
     "morningBriefing": {
       "script": "scripts/morning-briefing.js",
       "description": "Automated comprehensive morning briefing",
-      "features": ["reminders", "priorities", "calendar", "financials"],
+      "features": ["reminders", "priorities", "calendar", "financials", "email intelligence"],
       "usage": "node scripts/morning-briefing.js",
       "autoRun": "8am heartbeat",
-      "lastUpdated": "2026-02-03T02:44:00+13:00"
+      "lastUpdated": "2026-02-03T09:00:00+13:00"
     },
     "supermemoryEnhanced": {
       "script": "scripts/supermemory-enhanced-sync.js",
@@ -148,6 +151,98 @@
       "description": "Auto-refresh Xero API tokens",
       "usage": "node scripts/xero-refresh-token.js",
       "lastUpdated": "2026-02-03T02:38:00+13:00"
+    },
+    "emailIntelligence": {
+      "script": "scripts/email-intelligence.js",
+      "setupScript": "scripts/gmail-setup.js",
+      "description": "Email monitoring and intelligence system with critical sender detection",
+      "features": [
+        "Critical sender detection (PG Investments, Andi Garnett, DBH, Jakob, Ella)",
+        "Auto-summarization (key points, action items, deadlines)",
+        "Priority scoring (urgent/important matrix)",
+        "Real-time monitoring",
+        "Morning briefing integration"
+      ],
+      "criticalSenders": [
+        "PG Investments",
+        "Andi Garnett (TWG)",
+        "DBH (accounts@dbh.co.nz)",
+        "Jakob",
+        "Ella"
+      ],
+      "usage": {
+        "setup": "node scripts/gmail-setup.js",
+        "test": "node scripts/email-intelligence.js test",
+        "monitor": "node scripts/email-intelligence.js monitor",
+        "count": "node scripts/email-intelligence.js count"
+      },
+      "integration": {
+        "morningBriefing": "Automatically runs during 8am briefing",
+        "heartbeat": "Check 4x daily (8am, 12pm, 4pm, 8pm)",
+        "alerts": "Discord/Telegram/WhatsApp for critical senders"
+      },
+      "statePath": "email-intelligence-state.json",
+      "briefingCachePath": "email-briefing-cache.json",
+      "lastUpdated": "2026-02-03T09:00:00+13:00",
+      "note": "Perfect information at perfect times - never miss critical emails"
+    },
+    "projectTracker": {
+      "script": "scripts/project-tracker.js",
+      "description": "Track progress on active projects, alert on milestones",
+      "features": ["project status", "milestone tracking", "deadline alerts", "Supermemory sync"],
+      "usage": "node scripts/project-tracker.js [--sync]",
+      "lastUpdated": "2026-02-03T03:15:00+13:00"
+    },
+    "goalDashboard": {
+      "script": "scripts/goal-dashboard.js",
+      "description": "Real-time tracking against $1M 2026 goal",
+      "features": ["Q1/year progress", "revenue model breakdown", "burn rate", "strategic insights"],
+      "usage": "node scripts/goal-dashboard.js",
+      "lastUpdated": "2026-02-03T03:18:00+13:00"
+    },
+    "relationshipCRM": {
+      "script": "scripts/relationship-crm.js",
+      "description": "Track people, conversations, follow-ups",
+      "features": ["contact database", "follow-up tracking", "meeting reminders", "Supermemory sync"],
+      "usage": "node scripts/relationship-crm.js [--sync]",
+      "lastUpdated": "2026-02-03T03:20:00+13:00"
+    },
+    "controlCenter": {
+      "script": "scripts/control-center.js",
+      "description": "Master dashboard - runs all systems",
+      "features": ["comprehensive overview", "all systems status", "sub-agent monitoring"],
+      "usage": "node scripts/control-center.js",
+      "lastUpdated": "2026-02-03T03:25:00+13:00"
+    },
+    "appDeployment": {
+      "script": "scripts/app-deployment-automation.js",
+      "description": "Automate app deployment, marketing, analytics",
+      "features": ["deployment checklist", "Meta ads setup", "kill criteria ($1k/60d)", "analytics tracking"],
+      "usage": "node scripts/app-deployment-automation.js",
+      "lastUpdated": "2026-02-03T03:28:00+13:00"
     }
+  },
+  "subAgents": {
+    "active": [
+      {
+        "label": "pg-research",
+        "task": "Deep research on PG Investments for Wednesday meeting",
+        "status": "running",
+        "spawnedAt": "2026-02-03T02:52:00+13:00"
+      },
+      {
+        "label": "email-intelligence",
+        "task": "Build email monitoring and intelligence system",
+        "status": "completed",
+        "spawnedAt": "2026-02-03T03:00:00+13:00",
+        "completedAt": "2026-02-03T09:00:00+13:00"
+      },
+      {
+        "label": "info-extraction",
+        "task": "Build information extraction and intelligence pipeline",
+        "status": "running",
+        "spawnedAt": "2026-02-03T03:02:00+13:00"
+      }
+    ]
   }
 }

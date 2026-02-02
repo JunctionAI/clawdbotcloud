@@ -47,6 +47,22 @@ async function getFinancialSnapshot() {
   }
 }
 
+// Get email intelligence
+async function getEmailIntelligence() {
+  try {
+    // Check if email intelligence is set up
+    if (!fs.existsSync('gmail-token.json')) {
+      return '⚠️  Email intelligence not configured (run: node scripts/gmail-setup.js)';
+    }
+    
+    // Run email monitoring
+    const { stdout } = await execAsync('node scripts/email-intelligence.js monitor');
+    return stdout;
+  } catch (err) {
+    return '❌ Failed to fetch emails: ' + err.message;
+  }
+}
+
 // Check for critical reminders from HEARTBEAT.md
 function getCriticalReminders() {
   try {
@@ -144,6 +160,13 @@ async function generateBriefing() {
   console.log('⚠️  Note: Add +1 day to displayed dates (calendar offset bug)');
   const calendar = await getCalendarEvents();
   console.log(calendar);
+  
+  // Email intelligence
+  console.log('');
+  console.log('📧  EMAIL INTELLIGENCE');
+  console.log('─'.repeat(80));
+  const emails = await getEmailIntelligence();
+  console.log(emails);
   
   // Financial snapshot
   console.log('');
