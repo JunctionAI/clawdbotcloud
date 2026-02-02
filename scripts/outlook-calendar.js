@@ -80,14 +80,13 @@ async function addEvent(options = {}) {
     throw new Error('subject, start, and end are required');
   }
 
-  // Format datetime for Microsoft Graph with +1 day +2 hours workaround
-  // Bug: Microsoft Graph shifts Pacific/Auckland times by -1 day -2 hours
-  // Workaround: Add 1 day + 2 hours when creating events
+  // Format datetime for Microsoft Graph with -1 day workaround
+  // Bug: Microsoft Graph shifts Pacific/Auckland times by +1 day
+  // Workaround: Subtract 1 day when creating events
   const formatDateTime = (dateStr) => {
     let date = new Date(dateStr);
-    // Add 1 day (24 hours) + 2 hours = 26 hours total
-    date.setDate(date.getDate() + 1);
-    date.setHours(date.getHours() + 2);
+    // Subtract 1 day (24 hours)
+    date.setDate(date.getDate() - 1);
     // Return as local datetime string (no timezone suffix)
     return date.toISOString().slice(0, 19);
   };
