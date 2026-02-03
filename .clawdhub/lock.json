@@ -20,6 +20,14 @@
     "openai-whisper-api": {
       "version": "1.0.0",
       "installedAt": 1769514198787
+    },
+    "decision-trees": {
+      "version": "1.0.1",
+      "installedAt": 1770114230917
+    },
+    "multi-viewpoint-debates": {
+      "version": "1.0.0",
+      "installedAt": 1770114238318
     }
   }
 }

@@ -10,7 +10,7 @@ const fs = require('fs');
 const path = require('path');
 
 const API_BASE = 'www.molthunt.com';
-const API_KEY = process.env.MOLTHUNT_API_KEY || null; // Set after registration
+const API_KEY = 'mh_FUNpeV107nAzSZ6OGpHLlKJl9vWdVC6Z';
 const DATA_DIR = path.join(__dirname, '..', 'data', 'molthunt');
 const REPORT_PATH = path.join(DATA_DIR, 'daily-reports');
 

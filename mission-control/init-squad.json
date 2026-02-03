@@ -1,0 +1,69 @@
+{
+  "agents": [
+    {
+      "name": "Jarvis",
+      "role": "Squad Lead / COO",
+      "sessionKey": "agent:main:main",
+      "status": "idle",
+      "description": "Coordinates operations, delegates work, monitors progress. Tom's primary interface.",
+      "responsibilities": [
+        "Strategy coordination",
+        "Task delegation",
+        "Progress monitoring",
+        "Tom communication"
+      ]
+    },
+    {
+      "name": "Friday",
+      "role": "Developer / CTO",
+      "sessionKey": "agent:developer:main",
+      "status": "idle",
+      "description": "Codes, implements features, deploys, maintains infrastructure.",
+      "responsibilities": [
+        "Feature development",
+        "Bug fixes",
+        "Deployment",
+        "Technical architecture"
+      ]
+    },
+    {
+      "name": "Shuri",
+      "role": "Product Analyst / QA Lead",
+      "sessionKey": "agent:product-analyst:main",
+      "status": "idle",
+      "description": "Tests from user perspective, finds edge cases, ensures quality.",
+      "responsibilities": [
+        "Quality assurance",
+        "User testing",
+        "Bug reporting",
+        "UX feedback"
+      ]
+    }
+  ],
+  "initialTasks": [
+    {
+      "title": "Research trending projects on Molthunt",
+      "description": "Scan Molthunt trending projects (past 7 days), identify top 5 opportunities with strong validation signals (100+ votes, active comments). Document findings.",
+      "status": "inbox",
+      "priority": "urgent",
+      "assignedTo": ["Jarvis"],
+      "tags": ["research", "molthunt", "project-selection"]
+    },
+    {
+      "title": "Score project opportunities using decision framework",
+      "description": "Use CEO Decision Protocol to score 3-5 opportunities on: Demand (7+), Build Speed (7+), Revenue Potential (7+), Competition (7+), Marketing (7+). Document scores.",
+      "status": "inbox",
+      "priority": "high",
+      "assignedTo": ["Jarvis"],
+      "tags": ["research", "decision-making"]
+    },
+    {
+      "title": "Prepare findings presentation for Tom",
+      "description": "Compile research, scores, and recommendation into clear presentation. Include pros/cons, risks, timeline, and revenue projections.",
+      "status": "inbox",
+      "priority": "high",
+      "assignedTo": ["Jarvis"],
+      "tags": ["presentation", "decision"]
+    }
+  ]
+}
