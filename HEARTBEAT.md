@@ -9,7 +9,10 @@
 ### Tuesday Feb 3 (late night)
 - **11:30pm-12am:** Rich & Tom catch-up @ PureSEO Polaroid
 
-### Wednesday Feb 4 ⚡ CRITICAL
+### Wednesday Feb 4
+- **Evening:** PG Chairman meeting prep (review research, rehearse, outfit check)
+
+### Thursday Feb 5 ⚡ CRITICAL
 - **9am:** PG Chairman Breakfast Meeting — PRIMARY FOCUS ($150k+ marketing role potential)
 
 ### Friday Feb 6
@@ -27,9 +30,7 @@
 - Outstanding: Any invoices/follow-ups needed?
 - **🦞 Clawnch Monitor:** Run `node scripts/clawnch-monitor.cjs` → track AI agent predictions, look for arbitrage vs Polymarket
 - **🚀 Molthunt Monitor:** Run `node scripts/molthunt-monitor.cjs` → scan agent-built projects, find validation signals, identify build opportunities
-- **Tuesday 9am (Feb 3):** Baycorp setup reminder
-- **Tuesday morning (Feb 3):** ⏰ SORT XERO INVOICE for DBH this week (timesheet/hours) - FIRST THING
-- **Wednesday morning (Feb 4):** PG Chairman 9am breakfast prep check (notes ready? outfit sorted?)
+- **Thursday morning (Feb 5):** PG Chairman 9am breakfast prep check (notes ready? outfit sorted?)
 
 ### Midday Check (2-4pm)
 - Progress: Are daily goals on track?
@@ -41,7 +42,7 @@
 - Memory: Anything significant to document?
 - **SPENDING CHECK (9pm):** Run `.\scripts\wise-daily-tracker.ps1` to auto-log Wise transactions
 - **HABIT CHECK (9pm):** Log today's dopamine habits in `memory/habit-tracker-feb-2026.md` (porn/weed/alcohol/coffee - triggers, feelings, did it serve goals?)
-- **Tuesday evening (Feb 3):** PG Chairman meeting prep — review notes, confirm outfit, mindset prep for Wednesday 9am breakfast
+- **Wednesday evening (Feb 4):** PG Chairman meeting prep — review notes, confirm outfit, mindset prep for Thursday 9am breakfast
 
 ### Weekly Review (Sunday 8pm)
 - Read daily files from past week (memory/YYYY-MM-DD.md)
