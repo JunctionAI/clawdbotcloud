@@ -89,3 +89,4 @@ curl http://127.0.0.1:8000/places/{place_id}
 ```
 
 Use `next_page_token` as `page_token` in next request for more results.
+

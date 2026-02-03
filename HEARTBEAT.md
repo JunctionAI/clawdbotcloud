@@ -25,6 +25,7 @@
 - Emails: Any urgent unread messages?
 - Calendar: Events in next 24-48h?
 - Outstanding: Any invoices/follow-ups needed?
+- **🦞 Clawnch Monitor:** Run `node scripts/clawnch-monitor.cjs` → track AI agent predictions, look for arbitrage vs Polymarket
 - **Tuesday 9am (Feb 3):** Baycorp setup reminder
 - **Tuesday morning (Feb 3):** ⏰ SORT XERO INVOICE for DBH this week (timesheet/hours) - FIRST THING
 - **Wednesday morning (Feb 4):** PG Chairman 9am breakfast prep check (notes ready? outfit sorted?)

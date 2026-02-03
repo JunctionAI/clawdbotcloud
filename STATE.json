@@ -346,6 +346,112 @@
       "testScript": "scripts/test-network-monetization.js",
       "lastUpdated": "2026-02-03T03:30:00+13:00",
       "status": "Ready for production - awaiting LinkedIn data import"
+    },
+    "promptInjectionProtection": {
+      "script": "scripts/prompt-injection-protection.js",
+      "description": "Security-first external content validation",
+      "features": [
+        "Prompt injection detection",
+        "Risk scoring (0-10)",
+        "Auto-block high-risk content",
+        "User confirmation for suspicious content",
+        "Pattern-based detection"
+      ],
+      "totalScans": 7,
+      "blocked": 1,
+      "lastUpdated": "2026-02-03T08:52:28.254Z"
+    },
+    "expectationFramework": {
+      "script": "scripts/expectation-framework.cjs",
+      "description": "Working relationship definition and boundaries",
+      "features": [
+        "Proactivity level setting",
+        "Approval requirements by category",
+        "Off-limits areas definition",
+        "Weekly calibration check-ins"
+      ],
+      "proactivityLevel": "high",
+      "lastUpdated": "2026-02-03T08:52:28.542Z"
+    },
+    "trendMonitor": {
+      "script": "scripts/trend-monitor.cjs",
+      "description": "Proactive trend monitoring + autonomous feature building",
+      "features": [
+        "Twitter/X trend monitoring",
+        "Autonomous feature design",
+        "Prototype building",
+        "GitHub PR creation",
+        "Morning brief integration"
+      ],
+      "lastScan": null,
+      "trendsFound": 0,
+      "lastUpdated": "2026-02-03T09:00:00+13:00"
+    },
+    "missionControl": {
+      "script": "scripts/mission-control.js",
+      "description": "Kanban dashboard tracking all autonomous tasks",
+      "features": [
+        "Kanban board (To Do → In Progress → Review → Complete)",
+        "Activity feed",
+        "Web interface (localhost:3100)",
+        "Auto-updates from scripts",
+        "Task management API"
+      ],
+      "url": "http://localhost:3100",
+      "lastUpdated": "2026-02-03T09:03:13.977Z"
+    },
+    "modelOrchestrator": {
+      "script": "scripts/model-orchestrator.cjs",
+      "description": "Multi-model orchestration system with cost optimization",
+      "features": [
+        "Intelligent model routing",
+        "Cost tracking per model",
+        "Budget alerts",
+        "Quality monitoring",
+        "Auto-optimization"
+      ],
+      "monthlySpend": 0,
+      "monthlySavings": 0,
+      "lastUpdated": "2026-02-03T09:00:00+13:00"
+    },
+    "localModels": {
+      "script": "scripts/local-models.cjs",
+      "description": "Local model integration framework with privacy-first routing",
+      "features": [
+        "Ollama integration",
+        "Privacy detection (PII, financial data)",
+        "Cost optimization",
+        "Mac Studio optimization",
+        "Auto-routing logic"
+      ],
+      "lastUpdated": "2026-02-03T09:00:00+13:00"
+    },
+    "unknownUnknowns": {
+      "script": "scripts/unknown-unknowns.cjs",
+      "description": "Capability discovery system - surfaces unknown unknowns",
+      "features": [
+        "Profile-based capability discovery",
+        "Interview mode for needs assessment",
+        "Comprehensive capability map",
+        "Weekly discovery reports"
+      ],
+      "totalDiscoveries": 0,
+      "implemented": 0,
+      "lastDiscovery": null,
+      "lastUpdated": "2026-02-03T09:00:00+13:00"
+    },
+    "agencyWorkflow": {
+      "script": "scripts/agency-workflow.cjs",
+      "description": "Agency-style workflow system for CRO, testing, optimization",
+      "features": [
+        "Audit → Research → Ideation → Wireframes → Testing → Report",
+        "Multi-variant testing with screenshots",
+        "Automated comparison reports",
+        "Hypothesis tracking"
+      ],
+      "activeProjects": 0,
+      "totalProjects": 0,
+      "lastUpdated": "2026-02-03T09:00:00+13:00"
     }
   },
   "subAgents": {

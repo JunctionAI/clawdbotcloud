@@ -1,0 +1,45 @@
+{
+  "enableProtection": true,
+  "autoBlockThreshold": 8,
+  "requireConfirmThreshold": 6,
+  "logAllAttempts": true,
+  "alertOnBlock": true,
+  "patterns": {
+    "highRisk": [
+      "SYSTEM OVERRIDE",
+      "ADMIN MODE",
+      "DISABLE SECURITY",
+      "BYPASS",
+      "EXECUTE COMMAND",
+      "DELETE ALL",
+      "IGNORE PREVIOUS",
+      "FORGET INSTRUCTIONS",
+      "sudo",
+      "rm -rf",
+      "/bin/",
+      "eval(",
+      "exec(",
+      "__import__"
+    ],
+    "mediumRisk": [
+      "URGENT",
+      "IMMEDIATE ACTION",
+      "CRITICAL",
+      "EMERGENCY",
+      "PRIORITY",
+      "API KEY",
+      "PASSWORD",
+      "CREDENTIALS",
+      "TOKEN",
+      "SECRET"
+    ],
+    "suspicious": [
+      "base64",
+      "encode",
+      "decode",
+      "hidden",
+      "invisible",
+      "zero-width"
+    ]
+  }
+}

@@ -384,9 +384,7 @@ Usage:
   }
 }
 
-// Only run main if this script is executed directly (not imported)
-if (import.meta.url === `file://${process.argv[1]}`) {
-  main();
-}
+// Run main
+main();
 
 export { listEvents, addEvent, getAvailability, convertToLocalTimezone, formatEventTime };

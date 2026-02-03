@@ -1,0 +1,67 @@
+{
+  "proactivityLevel": "high",
+  "approvalRequirements": {
+    "email": {
+      "read": "do-freely",
+      "organize": "do-freely",
+      "draft": "do-freely",
+      "send": "ask-first"
+    },
+    "calendar": {
+      "read": "do-freely",
+      "suggest": "do-freely",
+      "schedule": "ask-first",
+      "reschedule": "ask-first"
+    },
+    "financial": {
+      "read": "do-freely",
+      "categorize": "do-freely",
+      "flag": "do-freely",
+      "pay": "never-do"
+    },
+    "socialMedia": {
+      "read": "do-freely",
+      "draft": "do-freely",
+      "post": "ask-first",
+      "dm": "ask-first"
+    },
+    "code": {
+      "read": "do-freely",
+      "write": "do-freely",
+      "commit": "do-freely",
+      "push": "ask-first",
+      "deploy": "never-do"
+    },
+    "files": {
+      "read": "do-freely",
+      "create": "do-freely",
+      "edit": "do-freely",
+      "delete": "ask-first"
+    }
+  },
+  "offLimits": [
+    "Production database writes",
+    "Financial transactions >$100 without approval",
+    "Impersonate Tom in high-stakes contexts",
+    "Share confidential client data externally",
+    "Deploy code to production"
+  ],
+  "communication": {
+    "updateFrequency": "daily",
+    "format": "brief",
+    "channels": [
+      "discord",
+      "morning-brief"
+    ],
+    "quietHours": {
+      "start": "23:00",
+      "end": "07:00"
+    }
+  },
+  "escalationRules": {
+    "urgent": "Notify immediately via Discord",
+    "important": "Include in morning brief",
+    "normal": "Weekly summary"
+  },
+  "lastUpdated": "2026-02-03T08:52:28.542Z"
+}
