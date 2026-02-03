@@ -28,6 +28,18 @@
     "multi-viewpoint-debates": {
       "version": "1.0.0",
       "installedAt": 1770114238318
+    },
+    "marketing-mode": {
+      "version": "1.0.0",
+      "installedAt": 1770115116118
+    },
+    "adcp-advertising": {
+      "version": "1.0.1",
+      "installedAt": 1770115124668
+    },
+    "social-media-management": {
+      "version": "1.0.0",
+      "installedAt": 1770115140884
     }
   }
 }
