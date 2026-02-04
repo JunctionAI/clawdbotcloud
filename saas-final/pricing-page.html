@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Clawdbot | AI Automation Plans Starting at $199/mo</title>
+    <meta name="description" content="Flexible pricing for businesses of all sizes. Start with 14-day free trial. Cancel anytime.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .pricing-card { transition: transform 0.2s, box-shadow 0.2s; }
+        .pricing-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .featured { border: 3px solid #667eea; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold text-purple-600">🤖 Clawdbot</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="/#features" class="text-gray-600 hover:text-purple-600">Features</a>
+                    <a href="/#how-it-works" class="text-gray-600 hover:text-purple-600">How It Works</a>
+                    <a href="/#testimonials" class="text-gray-600 hover:text-purple-600">Testimonials</a>
+                    <a href="/pricing" class="text-purple-600 font-semibold">Pricing</a>
+                </div>
+                <div>
+                    <a href="https://app.clawdbot.com/login" class="text-gray-600 hover:text-purple-600 mr-4">Login</a>
+                    <a href="#pricing" class="bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition">Start Free Trial</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-16">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-bold mb-6">Simple, Transparent Pricing</h1>
+            <p class="text-xl mb-4 text-purple-100">Start with 14-day free trial. Cancel anytime. No hidden fees.</p>
+            <p class="text-lg text-purple-200">💳 No credit card required for trial</p>
+        </div>
+    </section>
+
+    <!-- Pricing Toggle (Annual/Monthly) -->
+    <section class="py-8 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center items-center gap-4">
+                <span class="text-gray-600 font-semibold" id="monthly-label">Monthly</span>
+                <button class="relative inline-flex h-8 w-14 items-center rounded-full bg-purple-600" id="billing-toggle">
+                    <span class="inline-block h-6 w-6 transform rounded-full bg-white transition translate-x-1" id="toggle-button"></span>
+                </button>
+                <span class="text-gray-600 font-semibold" id="annual-label">Annual <span class="text-green-600 text-sm">(Save 20%)</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section id="pricing" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Starter Plan -->
+                <div class="pricing-card bg-white rounded-xl shadow-lg p-8">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Starter</h3>
+                        <p class="text-gray-600 mb-4">For solopreneurs & freelancers</p>
+                        <div class="mb-4">
+                            <span class="text-5xl font-bold">$199</span>
+                            <span class="text-gray-600">/month</span>
+                        </div>
+                        <p class="text-sm text-green-600 font-semibold">Save $478/year with annual</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>1 AI Agent (24/7 monitoring)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>Email + Calendar automation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>1,000 API calls/month</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>Gmail, Google Calendar</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>Community support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>Daily summaries</span>
+                        </li>
+                    </ul>
+                    
+                    <button onclick="selectPlan('starter', 'monthly')" class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+                        Start Free Trial
+                    </button>
+                    <p class="text-center text-sm text-gray-500 mt-3">14 days free, then $199/mo</p>
+                </div>
+
+                <!-- Professional Plan (Featured) -->
+                <div class="pricing-card featured bg-white rounded-xl shadow-2xl p-8 relative">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <span class="bg-purple-600 text-white px-6 py-2 rounded-full text-sm font-bold">MOST POPULAR</span>
+                    </div>
+                    
+                    <div class="text-center mb-6 mt-4">
+                        <h3 class="text-2xl font-bold mb-2">Professional</h3>
+                        <p class="text-gray-600 mb-4">For teams & growing businesses</p>
+                        <div class="mb-4">
+                            <span class="text-5xl font-bold text-purple-600">$499</span>
+                            <span class="text-gray-600">/month</span>
+                        </div>
+                        <p class="text-sm text-green-600 font-semibold">Save $1,198/year with annual</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="font-semibold">5 AI Agents (parallel execution)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>All Starter features +</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>10,000 API calls/month</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>All integrations (Slack, Discord, etc.)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>Custom workflows</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>Priority email support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>Weekly reports + insights</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>API access</span>
+                        </li>
+                    </ul>
+                    
+                    <button onclick="selectPlan('professional', 'monthly')" class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+                        Start Free Trial
+                    </button>
+                    <p class="text-center text-sm text-gray-500 mt-3">14 days free, then $499/mo</p>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card bg-white rounded-xl shadow-lg p-8">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+                        <p class="text-gray-600 mb-4">For agencies & scale-ups</p>
+                        <div class="mb-4">
+                            <span class="text-5xl font-bold">$999</span>
+                            <span class="text-gray-600">/month</span>
+                        </div>
+                        <p class="text-sm text-green-600 font-semibold">Save $2,398/year with annual</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="font-semibold">Unlimited AI Agents</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>All Professional features +</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>100,000 API calls/month</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>White-label option</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>Dedicated Slack channel</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>Custom development (4 hours/month)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>SLA guarantee (99.9% uptime)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>Onboarding call + training</span>
+                        </li>
+                    </ul>
+                    
+                    <button onclick="selectPlan('enterprise', 'monthly')" class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+                        Start Free Trial
+                    </button>
+                    <p class="text-center text-sm text-gray-500 mt-3">14 days free, then $999/mo</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Comparison Table -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Compare All Features</h2>
+                <p class="text-gray-600">Everything you need to know</p>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b-2">
+                            <th class="py-4 px-6 font-bold">Feature</th>
+                            <th class="py-4 px-6 font-bold text-center">Starter</th>
+                            <th class="py-4 px-6 font-bold text-center bg-purple-50">Professional</th>
+                            <th class="py-4 px-6 font-bold text-center">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="py-4 px-6 font-semibold">AI Agents</td>
+                            <td class="py-4 px-6 text-center">1</td>
+                            <td class="py-4 px-6 text-center bg-purple-50">5</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-4 px-6 font-semibold">API Calls/Month</td>
+                            <td class="py-4 px-6 text-center">1,000</td>
+                            <td class="py-4 px-6 text-center bg-purple-50">10,000</td>
+                            <td class="py-4 px-6 text-center">100,000</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-4 px-6">Email Automation</td>
+                            <td class="py-4 px-6 text-center text-green-600">✓</td>
+                            <td class="py-4 px-6 text-center text-green-600 bg-purple-50">✓</td>
+                            <td class="py-4 px-6 text-center text-green-600">✓</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-4 px-6">Calendar Management</td>
+                            <td class="py-4 px-6 text-center text-green-600">✓</td>
+                            <td class="py-4 px-6 text-center text-green-600 bg-purple-50">✓</td>
+                            <td class="py-4 px-6 text-center text-green-600">✓</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-4 px-6">Research Assistant</td>
+                            <td class="py-4 px-6 text-center text-gray-400">—</td>
+                            <td class="py-4 px-6 text-center text-green-600 bg-purple-50">✓</td>
+                            <td class="py-4 px-6 text-center text-green-600">✓</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-4 px-6">Slack/Discord Integration</td>
+                            <td class="py-4 px-6 text-center text-gray-400">—</td>
+                            <td class="py-4 px-6 text-center text-green-600 bg-purple-50">✓</td>
+                            <td class="py-4 px-6 text-center text-green-600">✓</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-4 px-6">Custom Workflows</td>
+                            <td class="py-4 px-6 text-center text-gray-400">—</td>
+                            <td class="py-4 px-6 text-center text-green-600 bg-purple-50">✓</td>
+                            <td class="py-4 px-6 text-center text-green-600">✓</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-4 px-6">API Access</td>
+                            <td class="py-4 px-6 text-center text-gray-400">—</td>
+                            <td class="py-4 px-6 text-center text-green-600 bg-purple-50">✓</td>
+                            <td class="py-4 px-6 text-center text-green-600">✓</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-4 px-6">White-Label</td>
+                            <td class="py-4 px-6 text-center text-gray-400">—</td>
+                            <td class="py-4 px-6 text-center text-gray-400 bg-purple-50">—</td>
+                            <td class="py-4 px-6 text-center text-green-600">✓</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-4 px-6">Custom Development</td>
+                            <td class="py-4 px-6 text-center text-gray-400">—</td>
+                            <td class="py-4 px-6 text-center text-gray-400 bg-purple-50">—</td>
+                            <td class="py-4 px-6 text-center">4 hrs/mo</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-4 px-6 font-semibold">Support</td>
+                            <td class="py-4 px-6 text-center">Community</td>
+                            <td class="py-4 px-6 text-center bg-purple-50">Priority Email</td>
+                            <td class="py-4 px-6 text-center">Dedicated Slack</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-4 px-6 font-semibold">SLA</td>
+                            <td class="py-4 px-6 text-center">99%</td>
+                            <td class="py-4 px-6 text-center bg-purple-50">99.5%</td>
+                            <td class="py-4 px-6 text-center">99.9%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Pricing Questions?</h2>
+                <p class="text-gray-600">Everything you need to know</p>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="font-bold text-lg mb-2">What happens after my free trial?</h3>
+                    <p class="text-gray-600">After 14 days, you'll be charged for your chosen plan. No surprises. You can cancel before the trial ends to avoid any charges.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="font-bold text-lg mb-2">Can I change plans later?</h3>
+                    <p class="text-gray-600">Yes! Upgrade or downgrade anytime. Changes take effect at your next billing cycle. Or contact support for immediate changes.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="font-bold text-lg mb-2">What payment methods do you accept?</h3>
+                    <p class="text-gray-600">We accept all major credit cards (Visa, Mastercard, Amex) via Stripe. Enterprise customers can pay via invoice.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="font-bold text-lg mb-2">Is there a setup fee?</h3>
+                    <p class="text-gray-600">Nope! Zero setup fees. Zero hidden costs. The price you see is the price you pay.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="font-bold text-lg mb-2">What if I exceed my API limit?</h3>
+                    <p class="text-gray-600">We'll notify you at 80% usage. You can upgrade to a higher plan or purchase additional API calls at $10 per 1,000 calls.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="font-bold text-lg mb-2">Do you offer refunds?</h3>
+                    <p class="text-gray-600">Yes! 14-day money-back guarantee (after trial). If you're not happy, we'll refund your first month. No questions asked.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="font-bold text-lg mb-2">Can I pay annually?</h3>
+                    <p class="text-gray-600">Yes! Annual plans save you 20%. That's 2+ months free. Pay once, forget for a year.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Save 20 Hours Per Week?</h2>
+            <p class="text-xl mb-8 text-purple-100">Join 100+ businesses automating with Clawdbot.</p>
+            <a href="#pricing" class="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition inline-block">
+                Start Your Free Trial
+            </a>
+            <p class="mt-6 text-purple-200">
+                ✅ 14-day free trial · ✅ No credit card required · ✅ Cancel anytime
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold text-xl mb-4">🤖 Clawdbot</h3>
+                    <p class="text-gray-400">Your AI-powered business assistant.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/pricing" class="hover:text-white">Pricing</a></li>
+                        <li><a href="/#features" class="hover:text-white">Features</a></li>
+                        <li><a href="/#demo" class="hover:text-white">Demo</a></li>
+                        <li><a href="https://docs.clawdbot.com" class="hover:text-white">Docs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/about" class="hover:text-white">About</a></li>
+                        <li><a href="/blog" class="hover:text-white">Blog</a></li>
+                        <li><a href="/contact" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/privacy" class="hover:text-white">Privacy</a></li>
+                        <li><a href="/terms" class="hover:text-white">Terms</a></li>
+                        <li><a href="/security" class="hover:text-white">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Clawdbot. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Billing toggle (monthly/annual)
+        let isAnnual = false;
+        const toggle = document.getElementById('billing-toggle');
+        const toggleButton = document.getElementById('toggle-button');
+        
+        toggle.addEventListener('click', function() {
+            isAnnual = !isAnnual;
+            if (isAnnual) {
+                toggleButton.classList.remove('translate-x-1');
+                toggleButton.classList.add('translate-x-7');
+                // Update prices to annual (apply 20% discount)
+                // This would update the DOM prices - implement as needed
+            } else {
+                toggleButton.classList.remove('translate-x-7');
+                toggleButton.classList.add('translate-x-1');
+                // Reset to monthly prices
+            }
+        });
+        
+        // Plan selection
+        function selectPlan(plan, billing) {
+            // This would redirect to Stripe Checkout
+            // For now, redirect to app signup
+            window.location.href = `https://app.clawdbot.com/signup?plan=${plan}&billing=${billing}`;
+        }
+    </script>
+</body>
+</html>

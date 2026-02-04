@@ -1,0 +1,6 @@
+{
+  "query": "query service($id: String!) { service(id: $id) { id name deployments(first: 1) { edges { node { id status url staticUrl } } } } }",
+  "variables": {
+    "id": "f2109449-e858-4eaf-8f8d-05aa087670f8"
+  }
+}

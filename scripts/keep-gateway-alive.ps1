@@ -44,8 +44,8 @@ while ($true) {
     try {
         Write-Log "Starting gateway (restart #$restartCount)..."
         
-        # Start gateway and wait for it to exit
-        $process = Start-Process -FilePath $clawdbotPath -ArgumentList "gateway", "run" -NoNewWindow -PassThru -Wait
+        # Start gateway in a new window and wait for it to exit
+        $process = Start-Process -FilePath $clawdbotPath -ArgumentList "gateway", "run" -PassThru -Wait
         
         $exitCode = $process.ExitCode
         Write-Log "Gateway exited with code $exitCode"

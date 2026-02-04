@@ -1,0 +1,87 @@
+{
+  "enabled": true,
+  "apiEndpoint": "https://api.supermemory.ai",
+  "credentialsPath": "supermemory-credentials.json",
+  "containerTagKey": "containerTag",
+  "features": {
+    "sessionStart": {
+      "enabled": true,
+      "fetchProfile": true,
+      "fetchRelevantMemories": true,
+      "maxMemories": 10
+    },
+    "sessionEnd": {
+      "enabled": true,
+      "autoSync": true,
+      "syncHighlights": true,
+      "maxHighlights": 5
+    },
+    "heartbeat": {
+      "enabled": true,
+      "syncFrequency": "daily",
+      "syncTime": "21:00",
+      "sendDailySummary": true
+    },
+    "privacy": {
+      "filterSensitiveData": true,
+      "neverSendPatterns": [
+        "password",
+        "api[_-]?key",
+        "token",
+        "secret",
+        "credential",
+        "bank[_-]?account",
+        "credit[_-]?card",
+        "ssn",
+        "passport"
+      ],
+      "requireConfirmationPatterns": [
+        "personal[_-]?information",
+        "financial[_-]?data",
+        "medical[_-]?record"
+      ]
+    },
+    "autoExtraction": {
+      "enabled": true,
+      "extractFrom": [
+        "conversations",
+        "files",
+        "documents",
+        "emails"
+      ],
+      "minImportanceScore": 5
+    }
+  },
+  "userProfile": {
+    "staticFields": [
+      "identity",
+      "goals",
+      "businessModel",
+      "lifePhilosophy",
+      "connectedServices",
+      "preferences"
+    ],
+    "dynamicFields": [
+      "currentFocus",
+      "activeProjects",
+      "recentDecisions",
+      "temporalFacts"
+    ],
+    "maxDynamicAge": "30d"
+  },
+  "integration": {
+    "loadOrder": 2,
+    "dependencies": [],
+    "sessionStartScript": "scripts/supermemory-session-start.js",
+    "sessionEndScript": "scripts/session-end-sync.js",
+    "heartbeatScript": "scripts/heartbeat-sync.js"
+  },
+  "performance": {
+    "cacheProfile": true,
+    "cacheMaxAge": 300000,
+    "timeoutMs": 3000,
+    "retryAttempts": 2
+  },
+  "documentation": "SUPERMEMORY-INTEGRATION.md",
+  "lastUpdated": "2026-02-04T00:00:00+13:00"
+}

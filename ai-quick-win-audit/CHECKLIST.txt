@@ -1,0 +1,88 @@
+AI QUICK WIN AUDIT - DEPLOYMENT CHECKLIST
+==========================================
+
+PRE-DEPLOYMENT (Must complete before going live)
+-------------------------------------------------
+[ ] 1. Create Stripe payment link ($97 product)
+       → https://dashboard.stripe.com/payment-links
+
+[ ] 2. Create Calendly event (60-min booking)
+       → https://calendly.com/event_types
+
+[ ] 3. Edit index.html - Replace YOUR_PAYMENT_LINK (2 places)
+
+[ ] 4. Edit index.html - Replace YOUR_CALENDLY_USERNAME
+
+[ ] 5. Edit index.html - Replace your-email@example.com
+
+
+DEPLOYMENT (Choose one method)
+--------------------------------
+METHOD A: Netlify Drop (Fastest - 2 minutes)
+[ ] Go to https://app.netlify.com/drop
+[ ] Drag ai-quick-win-audit folder
+[ ] Copy live URL
+[ ] Done!
+
+METHOD B: GitHub Pages (10 minutes)
+[ ] git init
+[ ] git add .
+[ ] git commit -m "Landing page"
+[ ] Create repo on GitHub
+[ ] git remote add origin [YOUR_REPO_URL]
+[ ] git push -u origin main
+[ ] Enable Pages in repo Settings
+[ ] Copy live URL
+
+
+POST-DEPLOYMENT TESTING
+------------------------
+[ ] Open page on desktop - looks good?
+[ ] Open page on mobile - responsive?
+[ ] Click Stripe payment link - goes to checkout?
+[ ] Calendly embed shows - available times visible?
+[ ] Email link works - opens email client?
+[ ] All images/text loading correctly?
+
+
+GO LIVE
+-------
+[ ] Share URL with warm traffic (email, DMs, social)
+[ ] Monitor Stripe dashboard for payments
+[ ] Check Calendly for bookings
+[ ] Respond to any questions via email
+
+
+SUCCESS METRICS (First 48 hours)
+---------------------------------
+Target: 3-5 bookings from warm traffic
+Payment received: $_____ (track in Stripe)
+Calendly bookings: ___
+Conversion rate: ___% (bookings/page visits)
+
+
+ITERATION IDEAS
+---------------
+If conversion is low (<5%):
+- Try different headline
+- Add video introduction
+- Adjust price ($77 vs $97 vs $127)
+- Add more social proof/testimonials
+- Simplify the offer further
+
+If conversion is high (>10%):
+- Consider raising price
+- Add upsells (implementation package)
+- Create paid ads funnel
+
+
+CURRENT STATUS
+--------------
+Created: 2026-02-04
+Last updated: _______
+Live URL: _______________________
+Status: [ ] NOT DEPLOYED  [ ] LIVE  [ ] TESTING
+
+
+NOTES
+-----

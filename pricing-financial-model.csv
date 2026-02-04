@@ -1,0 +1,228 @@
+Pricing Financial Model - Unit Economics Calculator
+
+CURRENT PRICING MODEL
+Tier,Monthly Price,Annual Price,Target Distribution %,Customers (1000 total),Monthly Revenue,Annual Revenue
+Starter,$29,-,15%,150,"$4,350","$52,200"
+Professional,$79,-,60%,600,"$47,400","$568,800"
+Business,$199,-,20%,200,"$39,800","$477,600"
+Enterprise,N/A,-,5%,0,$0,$0
+TOTAL,,,100%,950,"$91,550","$1,098,600"
+
+PROPOSED PRICING MODEL (Monthly Only)
+Tier,Monthly Price,Annual Price,Target Distribution %,Customers (1000 total),Monthly Revenue,Annual Revenue
+Starter,$29,-,15%,150,"$4,350","$52,200"
+Professional,$99,-,60%,600,"$59,400","$712,800"
+Business,$299,-,20%,200,"$59,800","$717,600"
+Enterprise,"$1,500",-,5%,50,"$75,000","$900,000"
+TOTAL,,,100%,1000,"$198,550","$2,382,600"
+Revenue Increase vs Current,,,,,117%,117%
+
+PROPOSED PRICING WITH ANNUAL (17% discount - 2 months free)
+Tier,Monthly Price,Annual Price (Monthly×10),Monthly Customers,Annual Customers,Total Customers,Monthly Revenue,Annual Revenue (Normalized),Total ARR
+Starter,$29,$290,90,60,150,"$2,610","$17,400","$48,720"
+Professional,$99,$990,360,240,600,"$35,640","$237,600","$665,040"
+Business,$299,"$2,990",120,80,200,"$35,880","$239,200","$669,880"
+Enterprise,"$1,500","$15,000",30,20,50,"$45,000","$300,000","$840,000"
+TOTAL,,,,,,,"$119,130",,"$2,223,640"
+
+Annual Adoption Rate,40%,,,,,,,
+Effective Monthly Revenue,,"$185,303",,,,,,$0
+ARR with Annual Option,,"$2,223,640",,,,,,$0
+vs Current ARR,,,,,,,+102%,$0
+
+UNIT ECONOMICS COMPARISON
+Metric,Current Model,Proposed (Monthly),Proposed (w/ Annual),Notes
+Average Revenue Per User (ARPU),$91.55,$198.55,$185.30,Weighted average across tiers
+Gross Margin %,80%,80%,80%,Typical SaaS margin
+Monthly Churn Rate,5.0%,5.0%,3.0%,Annual customers churn 40% less
+Annual Churn Rate,46%,46%,31%,Calculated retention
+
+Customer Lifetime Value (LTV)
+Metric,Current Model,Proposed (Monthly),Proposed (w/ Annual),Calculation
+Monthly LTV,"$1,464","$3,177","$4,947","ARPU × Margin / Monthly Churn"
+Annual LTV,"$159","$345","$478","ARPU × Margin / Annual Churn (simplified)"
+
+Customer Acquisition Cost (CAC) Scenarios
+CAC Scenario,Assumed CAC,LTV:CAC (Current),LTV:CAC (Proposed Monthly),LTV:CAC (Proposed Annual),Target Ratio
+Low CAC (organic),$100,14.6x,31.8x,49.5x,>3:1 ✓
+Medium CAC (paid),$300,4.9x,10.6x,16.5x,>3:1 ✓
+High CAC (enterprise sales),$600,2.4x,5.3x,8.2x,>3:1 ✓
+Very High CAC,"$1,200",1.2x,2.6x,4.1x,>3:1 (Annual only)
+
+Payback Period (months)
+CAC Scenario,Current Model,Proposed (Monthly),Proposed (Annual),Industry Target
+Low CAC ($100),1.4,0.6,Immediate (<1 month),<12 months ✓
+Medium CAC ($300),4.1,1.9,Immediate (<1 month),<12 months ✓
+High CAC ($600),8.2,3.8,1 month,<18 months ✓
+Very High CAC ($1200),16.4,7.6,2 months,<24 months
+
+ANNUAL BILLING IMPACT
+Metric,Monthly Only,With Annual (40% adoption),Difference,Notes
+Upfront Cash Collected (Year 1),"$198,550","$533,440",+168%,Huge working capital boost
+Monthly Cash Flow,"$198,550","$119,130",-40%,Lower ongoing monthly but...
+Total ARR,"$2,382,600","$2,223,640",-7%,Slight revenue decrease BUT:
+Year 2 ARR (with churn),"$1,286,604","$1,534,311",+19%,Lower churn = better retention
+Effective LTV,"$3,177","$4,947",+56%,Massively improved economics
+
+GROWTH SCENARIOS (12-Month Projection)
+Scenario,New Customers/Month,Total Customers (Month 12),Monthly MRR (Month 12),ARR (Month 12),Upfront Annual Cash Collected
+No Growth (Price Change Only),0,"1,000","$185,303","$2,223,640","$133,200"
+Conservative Growth,50,"1,600","$296,485","$3,557,820","$426,700"
+Moderate Growth,100,"2,200","$407,667","$4,892,000","$720,200"
+Aggressive Growth,200,"3,400","$630,030","$7,560,360","$1,307,200"
+
+REVENUE BRIDGE (Current → Proposed)
+Source,Current Annual Revenue,Change,New Annual Revenue,% Impact
+Baseline (no changes),"$1,098,600",$0,"$1,098,600",0%
+Price Increase (Pro: $79→$99),,"$144,000","$1,242,600",+13%
+Price Increase (Biz: $199→$299),,"$240,000","$1,482,600",+22%
+Add Enterprise Tier,,"$900,000","$2,382,600",+82%
+Annual Billing (with discount),,-"$158,960","$2,223,640",-7%
+Annual Billing (retention benefit - Year 2),,+"$247,707","$2,471,347",+11%
+
+TIER MIGRATION MODEL
+Current Distribution,Starter,Professional,Business,Enterprise,
+Starting Customers,150,600,200,0,
+Upgrades to Professional,-30,+30,,,
+Upgrades to Business,,-60,+60,,
+Upgrades to Enterprise,,,-20,+20,
+Ending Distribution,120,570,240,20,
+New % Distribution,13%,61%,25%,2%,
+
+With Tier Migration:
+Tier,Customers,Monthly Revenue,Annual Revenue
+Starter,120,"$3,480","$41,760"
+Professional,570,"$56,430","$677,160"
+Business,240,"$71,760","$861,120"
+Enterprise,20,"$30,000","$360,000"
+TOTAL,950,"$161,670","$1,940,040"
+
+FEATURE GATING STRATEGY
+Feature,Starter ($29),Professional ($99),Business ($299),Enterprise (Custom)
+Users,1,10,Unlimited,Unlimited
+Projects,3,Unlimited,Unlimited,Unlimited
+Storage,5GB,100GB,500GB,Unlimited
+API Calls,"1,000/mo","50,000/mo","500,000/mo",Unlimited
+Integrations,Basic (5),All (100+),All (100+),All + Custom
+Webhooks,No,Yes,Yes,Yes
+Priority Support,No,Email,Live Chat,24/7 + SLA
+SSO/SAML,No,No,Google only,Full SAML
+Audit Logs,No,No,30 days,Unlimited
+Account Manager,No,No,No,Dedicated
+SLA,No,No,No,99.9% uptime
+
+PRICING PAGE A/B TEST IDEAS
+Test,Variant A,Variant B,Hypothesis,Expected Impact
+Annual Toggle,"Pay Monthly | Pay Yearly (Save 17%)","Pay Monthly | Pay Yearly (2 Months Free)",Concrete savings > %,+15% annual adoption
+Professional Badge,"MOST POPULAR","BEST VALUE",Social proof vs value,+5% conversion
+Enterprise CTA,"Contact Sales","Get Custom Quote",Less salesy language,+20% form fills
+Price Display,"$99/month","$99 per month per user",Clarity on per-user,+10% conversion (if per-user)
+Free Trial Length,14 days,30 days,Longer trial = more activation,+20% trial-to-paid
+
+COMPETITIVE PRICING ANALYSIS
+Company,Entry Tier,Mid Tier,Top Tier,Annual Discount,Pricing Model
+Your Product (Current),$29,$79,$199,0%,Flat monthly
+Your Product (Proposed),$29,$99,$299,17%,Flat monthly + annual
+Stripe,Pay-per-use,Pay-per-use,Custom,Varies,Usage-based
+Zapier,"$0 (Free)","$19.99 (Pro)","$69 (Team)",33%,Task-based tiers
+Linear,"$0 (Free)","$8/user (Standard)","$14/user (Plus)",0% (no annual),Per-user
+Slack,"$0 (Free)","$7.25/user (Pro)","$12.50/user (Biz+)",17%,Per-user + annual
+Notion,"$0 (Free)","$8/user (Plus)","$15/user (Biz)",17%,Per-user + annual
+Airtable,"$0 (Free)","$20/user (Team)","$45/user (Biz)",0%,Per-user
+Intercom,$74,"$395 (Start)","$799+ (Grow)",25%,Seat-based + usage
+
+Key Insights:
+- $99 mid-tier is competitive (vs $19.99-$69 range)
+- 17% annual discount matches Slack/Notion standard
+- Missing per-user pricing (vs most competitors)
+- Enterprise tier is table stakes
+- Free tier drives acquisition (consider freemium?)
+
+RECOMMENDATIONS PRIORITY MATRIX
+Action,Impact,Effort,Priority,Quick Win?
+Change Pro to $99/mo,High (15% revenue),Low (1 day),🔥 P0,✓ Yes
+Add annual billing (17% off),High (LTV +56%),Medium (1 week),🔥 P0,
+Add Enterprise tier,High (anchoring + revenue),Low (1 day),🔥 P0,✓ Yes
+Add "Most Popular" badge,Medium (10% conversion),Low (2 hours),⚡ P1,✓ Yes
+Raise Business to $299/mo,High (10% total revenue),Low (same day),⚡ P1,✓ Yes
+Implement usage overages,Medium (15-30% expansion),High (2-4 weeks),⚡ P1,
+A/B test pricing page,Medium (5-20% conversion),Medium (1 week),⏳ P2,
+Grandfather existing customers,Low (retention),Low (email),⏳ P2,✓ Yes
+Add free tier,High (acquisition),High (feature work),🔬 P3,
+Switch to per-user pricing,High (alignment),Very High (model change),🔬 P3,
+
+P0 = Do immediately (this week)
+P1 = Do next (this month)
+P2 = Do soon (this quarter)
+P3 = Test & learn (future)
+
+NEXT 30 DAYS ACTION PLAN
+Week,Action Items,Owner,Success Metrics
+Week 1,"Update pricing page: $29/$99/$299, Add Enterprise tier, Add ""Most Popular"" badge",Product/Marketing,"Page deployed, A/B test running"
+Week 2,"Implement annual billing (Stripe), Email existing customers about annual option, Grandfather existing pricing",Engineering/Ops,"Annual checkout live, 0 customer complaints"
+Week 3,"Set up Enterprise sales flow (Calendly), Create comparison page vs competitors, Launch pricing A/B tests",Sales/Marketing,"First Enterprise demo booked, Comparison page live"
+Week 4,"Monitor conversion metrics, Analyze tier distribution, Gather customer feedback on pricing",Product,"Dashboard built, Weekly review meeting scheduled"
+
+90-DAY METRICS TO TRACK
+Metric,Baseline (Current),Target (Month 3),Actual (Month 3),Notes
+Conversion Rate (Trial → Paid),TBD,+20%,,Improved pricing clarity
+Professional Tier %,60%,60-70%,,Should stay dominant tier
+Annual Adoption Rate,0%,30-40%,,Industry benchmark
+Average Contract Value (ACV),$1,098,$2,000,,With annual billing
+MRR,"$91,550","$150,000",,Price change + growth
+Churn Rate (Monthly),TBD,"<5%",,Annual should reduce churn
+LTV:CAC Ratio,TBD,>5:1,,Sustainable growth
+Time-to-Value (Activation),TBD,"<7 days",,Faster = better retention
+
+FINAL RECOMMENDATIONS SUMMARY
+1. IMMEDIATE (This Week):
+   - Change Professional to $99/mo ✓
+   - Add Enterprise tier ("Contact Sales") ✓
+   - Raise Business to $299/mo ✓
+   - Add "Most Popular" badge to Professional ✓
+   
+2. THIS MONTH:
+   - Launch annual billing (17% discount)
+   - Grandfather existing customers
+   - Set up Enterprise sales funnel
+   - A/B test pricing page variants
+   
+3. THIS QUARTER:
+   - Implement usage-based overages
+   - Build competitor comparison page
+   - Optimize feature gating by tier
+   - Test pricing psychology triggers
+   
+4. FUTURE EXPERIMENTS:
+   - Consider freemium tier
+   - Test per-user pricing model
+   - Evaluate usage-based primary pricing
+   - Bundle add-on products
+
+Expected Impact:
+- Revenue: +100-120% in Year 1
+- LTV: +56% with annual billing
+- CAC Efficiency: 2-3x improvement
+- Cash Flow: +168% upfront (annual)
+- Customer Retention: +40% (annual vs monthly)
+
+QUESTIONS FOR FOLLOW-UP:
+1. What's your current monthly churn rate? (Critical for LTV calculation)
+2. What's your current CAC by channel? (Determines viable price points)
+3. What % of customers are power users? (Helps size Business/Enterprise tiers)
+4. What features could be enterprise-only? (Feature gating strategy)
+5. Do you have usage data? (Explore usage-based pricing)
+6. Are customers asking for annual plans? (Validates discount strategy)
+7. What's your competitive differentiation? (Premium vs value positioning)
+
+CONCLUSION:
+The proposed pricing strategy ($29/$99/$299 + Enterprise + 17% annual discount) is projected to increase revenue by 100%+ while improving unit economics significantly. The combination of better tier pricing, annual billing, and enterprise expansion creates multiple revenue levers. Implementation is low-risk (grandfather existing customers) and high-reward (immediate revenue impact + long-term LTV gains).
+
+Key success factors:
+✓ Execute quickly (pricing changes = fast revenue impact)
+✓ Monitor metrics weekly (conversion, churn, distribution)
+✓ Iterate based on data (A/B test everything)
+✓ Communicate value clearly (justify price increases)
+✓ Protect existing customers (grandfather loyalty)
+
+This is your roadmap. Execute systematically. Measure rigorously. Optimize continuously.

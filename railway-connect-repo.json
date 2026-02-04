@@ -1,0 +1,12 @@
+{
+  "query": "mutation serviceUpdate($id: String!, $input: ServiceUpdateInput!) { serviceUpdate(id: $id, input: $input) { id } }",
+  "variables": {
+    "id": "f2109449-e858-4eaf-8f8d-05aa087670f8",
+    "input": {
+      "source": {
+        "repo": "JunctionAI/openclawsetup",
+        "branch": "main"
+      }
+    }
+  }
+}

@@ -1,15 +1,10 @@
 {
   "date": "2026-02-03",
-  "timestamp": "2026-02-03T09:42:34.349Z",
+  "timestamp": "2026-02-03T10:49:25.638Z",
   "deployerAddress": "0xa1F72459dfA10BAD200Ac160eCd78C6b77a747be",
-  "chains": {
-    "polygon": "49.91%",
-    "base": "26.33%",
-    "binance": "23.13%"
-  },
-  "predictions": [],
-  "keyMetrics": {
-    "totalNetWorth": "917.95"
-  },
+  "chains": {},
+  "balances": {},
+  "tokens": [],
+  "keyMetrics": {},
   "notes": []
 }

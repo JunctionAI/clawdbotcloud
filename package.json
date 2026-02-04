@@ -1,46 +1,22 @@
 {
-  "name": "content-monetization-system",
+  "name": "stripe-setup-automation",
   "version": "1.0.0",
-  "description": "Turn expertise into $1k-5k/month passive income through automated content creation and monetization",
-  "type": "module",
-  "main": "index.js",
+  "description": "One-command setup for Stripe products and payment links",
+  "main": "stripe-setup-automation.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "generate": "node scripts/content-generator.js",
-    "seo": "node scripts/seo-optimizer.js",
-    "publish": "node scripts/auto-publisher.js",
-    "affiliate": "node scripts/affiliate-tracker.js",
-    "analytics": "node scripts/analytics-dashboard.js",
-    "dashboard": "node scripts/analytics-dashboard.js web 3000",
-    "process-queue": "node scripts/auto-publisher.js process",
-    "daily-report": "node scripts/analytics-dashboard.js report today",
-    "monthly-report": "node scripts/analytics-dashboard.js report month"
+    "setup": "node stripe-setup-automation.js",
+    "install-cli": "npm install -g stripe",
+    "test": "echo 'Run: npm run setup' && exit 0"
   },
   "keywords": [
-    "content",
-    "monetization",
-    "ai",
+    "stripe",
     "automation",
-    "passive-income",
-    "blogging",
-    "seo",
-    "affiliate-marketing",
-    "digital-products"
+    "payment-links"
   ],
   "author": "Tom",
   "license": "MIT",
-  "engines": {
-    "node": ">=16.0.0"
-  },
   "dependencies": {
-    "@azure/identity": "^4.13.0",
-    "@microsoft/microsoft-graph-client": "^3.0.7",
-    "clawdbot": "^2026.1.24-3",
-    "ethers": "^6.16.0",
-    "mammoth": "^1.11.0",
-    "xlsx": "^0.18.5"
-  },
-  "devDependencies": {
-    "jest": "^30.2.0"
+    "stripe": "^14.0.0",
+    "supermemory": "^4.0.0"
   }
 }

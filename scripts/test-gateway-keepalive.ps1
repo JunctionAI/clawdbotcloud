@@ -216,6 +216,74 @@ Test-Case "FIX #2: Script uses 'gateway run' (foreground mode)" {
 }
 
 # ============================================================
+# TEST 8: BUG #3 - Multiple conflicting scheduled tasks
+# ============================================================
+Test-Case "FIX #3: Only ONE gateway scheduled task should be enabled/running" {
+    $tasks = Get-ScheduledTask -TaskName '*Clawdbot*Gateway*' -ErrorAction SilentlyContinue
+
+    Write-Host "  Found scheduled tasks:"
+    $runningTasks = @()
+    $enabledTasks = @()
+
+    foreach ($task in $tasks) {
+        $state = $task.State
+        Write-Host "    - $($task.TaskName): $state"
+
+        if ($state -eq 'Running') {
+            $runningTasks += $task.TaskName
+        }
+        if ($state -eq 'Running' -or $state -eq 'Ready') {
+            $enabledTasks += $task.TaskName
+        }
+    }
+
+    Write-Host "  Running tasks: $($runningTasks.Count)"
+    Write-Host "  Enabled tasks (Running/Ready): $($enabledTasks.Count)"
+
+    # Should have exactly 1 running task
+    if ($runningTasks.Count -eq 1) {
+        Write-Host "  FIX CONFIRMED: Only one gateway task is running ($($runningTasks[0]))"
+        return $true
+    } elseif ($runningTasks.Count -gt 1) {
+        Write-Host "  BUG: Multiple gateway tasks running - they will conflict!"
+        return $false
+    } else {
+        Write-Host "  WARNING: No gateway tasks running"
+        return $false
+    }
+}
+
+# ============================================================
+# TEST 9: Gateway is actually listening and healthy
+# ============================================================
+Test-Case "Gateway is listening on port 18789 and healthy" {
+    $connection = Get-NetTCPConnection -LocalPort 18789 -ErrorAction SilentlyContinue | Select-Object -First 1
+
+    if ($connection) {
+        Write-Host "  Port 18789: LISTENING (PID $($connection.OwningProcess))"
+
+        # Try health check
+        try {
+            $healthOutput = cmd /c 'C:\Users\Nightgalem\AppData\Roaming\npm\clawdbot.cmd gateway health' 2>&1
+            if ($healthOutput -match 'OK') {
+                Write-Host "  Health check: OK"
+                return $true
+            } else {
+                Write-Host "  Health check: FAILED"
+                Write-Host "  $healthOutput"
+                return $false
+            }
+        } catch {
+            Write-Host "  Health check: ERROR - $($_.Exception.Message)"
+            return $false
+        }
+    } else {
+        Write-Host "  Port 18789: NOT LISTENING"
+        return $false
+    }
+}
+
+# ============================================================
 # SUMMARY
 # ============================================================
 Write-Host "`n"

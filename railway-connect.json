@@ -1,0 +1,10 @@
+{
+  "query": "mutation serviceConnect($input: ServiceConnectInput!) { serviceConnect(input: $input) { id } }",
+  "variables": {
+    "input": {
+      "repo": "JunctionAI/openclawsetup",
+      "branch": "main",
+      "serviceId": "f2109449-e858-4eaf-8f8d-05aa087670f8"
+    }
+  }
+}
