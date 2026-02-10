@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "created": "2026-02-08T23:53:00+13:00",
+    "description": "Autonomous task queue for 24/7 AI workforce",
+    "version": "1.0"
+  },
+  "config": {
+    "maxConcurrentTasks": 3,
+    "checkIntervalMinutes": 15,
+    "autoExecute": true
+  },
+  "queues": {
+    "higgsfield": {
+      "description": "Video/image generation tasks for Higgsfield",
+      "pending": [],
+      "inProgress": [],
+      "completed": [
+        {
+          "id": "hf_001",
+          "type": "image_generation",
+          "priority": "high",
+          "project": "ALTERNATE",
+          "title": "Poster Image (No Text)",
+          "prompt": "Cinematic movie poster composition, NO TEXT ANYWHERE. Psychedelic sacred geometry mandala glowing neon orange and green at center. Three young men positioned around mandala: dark curly hair with orange futuristic visor (left), dark spiky hair confident expression (center), bright red spiky hair with earrings (right). Background: cyberpunk neon city chaos left side, sci-fi battle scenes right side, flying vehicles, explosions, neon pink blue cyan. Epic blockbuster composition, theatrical quality, film grain, full bleed to edges NO BORDER. Aspect ratio 2:3 portrait poster format.",
+          "outputPath": "autonomous/output/higgsfield/alternate-poster-notext.png",
+          "status": "completed",
+          "createdAt": "2026-02-08T23:55:00+13:00",
+          "completedAt": "2026-02-09T00:02:00+13:00",
+          "notes": "Generated via DALL-E 3 (browser alternative)"
+        },
+        {
+          "id": "hf_002",
+          "type": "image_generation",
+          "priority": "high",
+          "project": "ALTERNATE",
+          "title": "Tokyo Chase Scene Still",
+          "prompt": "Cinematic still from cyberpunk movie, young man with dark curly hair wearing glowing orange tactical visor, riding sleek futuristic motorcycle through neon-soaked Tokyo 2226 streets. Rain-slicked road reflecting pink and cyan neon lights. Beautiful blonde woman in rebel gear holding him from behind. Police hovercrafts in pursuit with red-blue lights in background. Motion blur, anamorphic lens flares, Blade Runner meets Akira aesthetic. 16:9 cinematic aspect ratio.",
+          "outputPath": "autonomous/output/higgsfield/alternate-tokyo-chase.png",
+          "status": "completed",
+          "createdAt": "2026-02-08T23:55:00+13:00",
+          "completedAt": "2026-02-09T00:02:00+13:00",
+          "notes": "Generated via DALL-E 3 (browser alternative)"
+        },
+        {
+          "id": "hf_003",
+          "type": "image_generation",
+          "priority": "high",
+          "project": "ALTERNATE",
+          "title": "Jungle Waterfall Scene Still",
+          "prompt": "Cinematic wide shot, magnificent jungle waterfall cascading into crystal clear turquoise pool. Young man in red tactical vest and goth woman in black silhouetted in foreground at pool edge, small against nature's grandeur. Golden hour lighting from behind waterfall creating rainbow in mist. Pristine untouched paradise, National Geographic quality, 16:9 cinematic aspect ratio, film grain.",
+          "outputPath": "autonomous/output/higgsfield/alternate-jungle-waterfall.png",
+          "status": "completed",
+          "createdAt": "2026-02-08T23:55:00+13:00",
+          "completedAt": "2026-02-09T00:02:00+13:00",
+          "notes": "Generated via DALL-E 3 (browser alternative)"
+        },
+        {
+          "id": "hf_004",
+          "type": "image_generation",
+          "priority": "high",
+          "project": "ALTERNATE",
+          "title": "Medieval Battle Scene Still",
+          "prompt": "Epic wide establishing shot, medieval battlefield circa 1600s. Knight general with bright red hair tied back in warrior style, polished steel armor with red accents and gold filigree, red cloak billowing in wind, sword raised high against grey overcast sky. Army behind erupting in rally, hundreds of weapons raised. Flags waving. Ridley Scott inspired, Kingdom of Heaven quality, 16:9 cinematic aspect ratio, cold desaturated palette.",
+          "outputPath": "autonomous/output/higgsfield/alternate-medieval-battle.png",
+          "status": "completed",
+          "createdAt": "2026-02-08T23:55:00+13:00",
+          "completedAt": "2026-02-09T00:02:00+13:00",
+          "notes": "Generated via DALL-E 3 (browser alternative)"
+        },
+        {
+          "id": "hf_005",
+          "type": "image_generation",
+          "priority": "medium",
+          "project": "ALTERNATE",
+          "title": "The Choice Scene Still",
+          "prompt": "Wide shot, three exhausted friends in quiet apartment flooded with warm golden dawn light. One sitting on floor, one slumped in beanbag, one on couch edge holding dark phone. String lights, early dawn blue-gold at windows. Peaceful aftermath energy, locked-off composition, 35mm film quality, warm amber tones, emotional resolution, 16:9 cinematic aspect ratio.",
+          "outputPath": "autonomous/output/higgsfield/alternate-dawn-choice.png",
+          "status": "completed",
+          "createdAt": "2026-02-08T23:55:00+13:00",
+          "completedAt": "2026-02-09T00:02:00+13:00",
+          "notes": "Generated via DALL-E 3 (browser alternative)"
+        }
+      ],
+      "failed": []
+    },
+    "content": {
+      "description": "Content creation tasks (copy, prompts, etc)",
+      "pending": [],
+      "inProgress": [],
+      "completed": [
+        {
+          "id": "ct_001",
+          "type": "social_copy",
+          "priority": "high",
+          "project": "ALTERNATE",
+          "title": "Teaser Tweet Thread",
+          "description": "Write 5 teaser tweets for ALTERNATE launch, mysterious tone, no spoilers, build intrigue",
+          "outputPath": "autonomous/output/content/alternate-teaser-tweets.md",
+          "status": "completed",
+          "createdAt": "2026-02-08T23:55:00+13:00",
+          "completedAt": "2026-02-09T00:00:00+13:00"
+        },
+        {
+          "id": "ct_002",
+          "type": "social_copy",
+          "priority": "high",
+          "project": "ALTERNATE",
+          "title": "Instagram Captions",
+          "description": "Write 5 Instagram captions for scene stills, evocative, philosophical, include relevant hashtags",
+          "outputPath": "autonomous/output/content/alternate-ig-captions.md",
+          "status": "completed",
+          "createdAt": "2026-02-08T23:55:00+13:00",
+          "completedAt": "2026-02-09T00:00:00+13:00"
+        },
+        {
+          "id": "ct_003",
+          "type": "press_release",
+          "priority": "medium",
+          "project": "ALTERNATE",
+          "title": "Press Release Draft",
+          "description": "Write full press release for ALTERNATE, include all key talking points from press-talking-points.md",
+          "outputPath": "autonomous/output/content/alternate-press-release.md",
+          "status": "completed",
+          "createdAt": "2026-02-08T23:55:00+13:00",
+          "completedAt": "2026-02-09T00:00:00+13:00"
+        }
+      ],
+      "failed": []
+    },
+    "research": {
+      "description": "Research and analysis tasks",
+      "pending": [],
+      "inProgress": [],
+      "completed": [],
+      "failed": []
+    },
+    "social": {
+      "description": "Social media tasks (drafts, scheduling)",
+      "pending": [],
+      "inProgress": [],
+      "completed": [
+        {
+          "id": "sc_001",
+          "type": "draft_post",
+          "priority": "medium",
+          "project": "ALTERNATE",
+          "platform": "twitter",
+          "title": "Launch Day Thread",
+          "description": "Prepare full launch day Twitter thread (10 tweets) with placeholders for media",
+          "outputPath": "autonomous/output/social/alternate-launch-thread.md",
+          "status": "completed",
+          "createdAt": "2026-02-08T23:55:00+13:00",
+          "completedAt": "2026-02-09T00:00:00+13:00"
+        }
+      ],
+      "failed": []
+    }
+  },
+  "stats": {
+    "totalTasksCompleted": 9,
+    "totalTasksFailed": 0,
+    "lastCheckTime": "2026-02-09T00:02:00+13:00",
+    "lastTaskCompleted": "2026-02-09T00:02:00+13:00"
+  }
+}

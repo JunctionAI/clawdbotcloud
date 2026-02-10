@@ -1,1 +1,121 @@
-[]
+{
+  "tasks": [
+    {
+      "id": "task-001",
+      "title": "Write First SEO Blog Posts",
+      "description": "Create blog content targeting AI marketing agency NZ keywords - we own this space",
+      "status": "in-progress",
+      "priority": "critical",
+      "assignee": "junction-content",
+      "project": "junction",
+      "tags": ["content", "seo", "priority"],
+      "createdAt": "2026-02-10T19:36:00+13:00"
+    },
+    {
+      "id": "task-002",
+      "title": "AI Curve Website Section",
+      "description": "Update autonomy section - show exponential AI curve, Junction as partner for the wave",
+      "status": "in-progress",
+      "priority": "high",
+      "assignee": "junction-dev",
+      "project": "junction",
+      "tags": ["website"],
+      "createdAt": "2026-02-10T19:50:00+13:00"
+    },
+    {
+      "id": "task-003",
+      "title": "ALTERNATE - Seedance 2 Access",
+      "description": "Get access to Seedance 2 via China contact for faster video generation",
+      "status": "blocked",
+      "priority": "high",
+      "assignee": "alternate-agent",
+      "project": "alternate",
+      "tags": ["video", "blocked"],
+      "createdAt": "2026-02-10T17:50:00+13:00",
+      "dueDate": "2026-02-14"
+    },
+    {
+      "id": "task-004",
+      "title": "Connect junctionmedia.ai Domain",
+      "description": "Hook up the domain to junction-v3.vercel.app",
+      "status": "pending",
+      "priority": "high",
+      "assignee": "junction-dev",
+      "project": "junction",
+      "tags": ["website", "launch"],
+      "createdAt": "2026-02-10T20:00:00+13:00"
+    },
+    {
+      "id": "task-005",
+      "title": "Junction Client #001 - Execute 2-Week Sprint",
+      "description": "Run Junction as first client - Option B (FURY delivers, Tom receives)",
+      "status": "in-progress",
+      "priority": "critical",
+      "assignee": "fury",
+      "project": "junction",
+      "tags": ["ops", "priority"],
+      "createdAt": "2026-02-10T19:40:00+13:00"
+    },
+    {
+      "id": "task-006",
+      "title": "DBH Friday Filming",
+      "description": "Vietnamese influencer arrives 2pm Friday - Deer Blood, Calcium, Ginkgo",
+      "status": "ready",
+      "priority": "high",
+      "assignee": "prep",
+      "project": "dbh",
+      "tags": ["filming", "friday"],
+      "createdAt": "2026-02-10T16:34:00+13:00",
+      "dueDate": "2026-02-14"
+    },
+    {
+      "id": "task-007",
+      "title": "ALTERNATE 1-Day Trailer Blitz",
+      "description": "Once Seedance unblocked - create trailers for Friday/Saturday release",
+      "status": "blocked",
+      "priority": "high",
+      "assignee": "alternate-agent",
+      "project": "alternate",
+      "tags": ["video", "marketing"],
+      "createdAt": "2026-02-10T18:00:00+13:00",
+      "dueDate": "2026-02-14"
+    },
+    {
+      "id": "task-008",
+      "title": "Design Queue System",
+      "description": "Set up design brief queue - AI generates briefs, designer pulls from queue",
+      "status": "pending",
+      "priority": "medium",
+      "assignee": "fury",
+      "project": "junction",
+      "tags": ["ops", "design"],
+      "createdAt": "2026-02-10T19:15:00+13:00"
+    },
+    {
+      "id": "task-009",
+      "title": "LinkedIn Content - Tom AI Influencer",
+      "description": "Start posting thought leadership using @Tom Influencer in Higgsfield",
+      "status": "pending",
+      "priority": "medium",
+      "assignee": "junction-content",
+      "project": "junction",
+      "tags": ["social", "content"],
+      "createdAt": "2026-02-10T18:00:00+13:00"
+    },
+    {
+      "id": "task-010",
+      "title": "Lessons Learned System",
+      "description": "Build agent knowledge compounding - log insights, synthesize improvements",
+      "status": "pending",
+      "priority": "medium",
+      "assignee": "shuri",
+      "project": "mission-control",
+      "tags": ["infrastructure", "agents"],
+      "createdAt": "2026-02-10T18:25:00+13:00"
+    }
+  ],
+  "meta": {
+    "lastUpdated": "2026-02-10T20:03:00+13:00",
+    "version": "3.0"
+  }
+}

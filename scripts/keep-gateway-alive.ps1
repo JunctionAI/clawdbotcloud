@@ -3,20 +3,20 @@
 
 $logFile = "$PSScriptRoot\..\logs\gateway-keepalive.log"
 
-# Determine the absolute path to clawdbot
-# Prefer local node_modules path (more reliable), fallback to npm global
-$localClawdbot = "$PSScriptRoot\..\node_modules\.bin\clawdbot.cmd"
-$globalClawdbot = "$env:APPDATA\npm\clawdbot.cmd"
+# Determine the absolute paths to node and clawdbot
+# IMPORTANT: Use absolute hardcoded paths for scheduled task reliability
+# Scheduled tasks don't get the user's PATH or environment variables
+$nodePath = "C:\Program Files\nodejs\node.exe"
+$clawdbotScript = "C:\Users\Nightgalem\AppData\Roaming\npm\node_modules\clawdbot\dist\entry.js"
 
-if (Test-Path $localClawdbot) {
-    $clawdbotPath = (Resolve-Path $localClawdbot).Path
-} elseif (Test-Path $globalClawdbot) {
-    $clawdbotPath = $globalClawdbot
-} else {
-    Write-Error "ERROR: clawdbot not found at either location:"
-    Write-Error "  Local:  $localClawdbot"
-    Write-Error "  Global: $globalClawdbot"
-    Write-Error "Please install clawdbot with 'npm install' or 'npm install -g clawdbot'"
+if (-not (Test-Path $nodePath)) {
+    Write-Error "ERROR: Node.js not found at: $nodePath"
+    exit 1
+}
+
+if (-not (Test-Path $clawdbotScript)) {
+    Write-Error "ERROR: Clawdbot not found at: $clawdbotScript"
+    Write-Error "Please install clawdbot with 'npm install -g clawdbot'"
     exit 1
 }
 
@@ -33,19 +33,40 @@ function Write-Log {
 }
 
 Write-Log "=== Gateway Keep-Alive Started ==="
-Write-Log "Using clawdbot at: $clawdbotPath"
+Write-Log "Using node at: $nodePath"
+Write-Log "Using clawdbot at: $clawdbotScript"
 Write-Log "Process will restart gateway if it stops"
 Write-Log "Logs: $logFile"
 Write-Log "Press Ctrl+C to stop"
 
 $restartCount = 0
+$gatewayPort = 18789
+
+# Function to check if gateway is running
+function Test-GatewayRunning {
+    $conn = Get-NetTCPConnection -LocalPort $gatewayPort -ErrorAction SilentlyContinue | Where-Object { $_.State -eq 'Listen' }
+    return $null -ne $conn
+}
 
 while ($true) {
     try {
+        # Check if gateway is already running
+        if (Test-GatewayRunning) {
+            Write-Log "Gateway already running on port $gatewayPort - monitoring..."
+            # Wait and check again in 30 seconds
+            Start-Sleep -Seconds 30
+            continue
+        }
+
         Write-Log "Starting gateway (restart #$restartCount)..."
-        
-        # Start gateway in a new window and wait for it to exit
-        $process = Start-Process -FilePath $clawdbotPath -ArgumentList "gateway", "run" -PassThru -Wait
+
+        # Start gateway using node.exe directly (more reliable than .cmd in scheduled tasks)
+        # Use -WorkingDirectory to ensure valid working directory in scheduled task context
+        $workingDir = "C:\Users\Nightgalem\clawd"
+        $args = "`"$clawdbotScript`" gateway run"
+        Write-Log "  Command: $nodePath $args"
+        Write-Log "  Working dir: $workingDir"
+        $process = Start-Process -FilePath $nodePath -ArgumentList $args -WorkingDirectory $workingDir -PassThru -Wait
         
         $exitCode = $process.ExitCode
         Write-Log "Gateway exited with code $exitCode"

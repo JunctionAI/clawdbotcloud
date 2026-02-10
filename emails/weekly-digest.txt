@@ -1,0 +1,47 @@
+ALLY — LIFE, HANDLED.
+
+Your week in review ✨
+{{weekDateRange}}
+
+---
+
+THIS WEEK'S STATS
+
+📋 {{tasksCompleted}} tasks handled
+⏱️ {{timeSaved}} hours saved
+📧 {{emailsManaged}} emails managed
+🔔 {{remindersSet}} reminders set
+
+---
+
+WHAT I HELPED WITH THIS WEEK
+
+{{#each activities}}
+{{icon}} {{title}}
+   {{description}} ({{timestamp}})
+
+{{/each}}
+
+---
+
+COMING UP NEXT WEEK
+
+{{#each upcoming}}
+{{date}} — {{event}}
+{{/each}}
+
+---
+
+💡 TIP OF THE WEEK
+
+{{tip}}
+
+---
+
+Open Ally: {{appUrl}}
+
+Enjoying these digests? Let me know what else you'd like to see: {{feedbackUrl}}
+
+{{companyName}} · {{companyAddress}}
+Unsubscribe: {{unsubscribeUrl}}
+Email preferences: {{preferencesUrl}}

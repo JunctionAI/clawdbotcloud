@@ -1,0 +1,37 @@
+ALLY — LIFE, HANDLED.
+
+🎉 You're on {{planName}}!
+
+Thanks for upgrading, {{firstName}}. I'm thrilled to be able to do even more for you now.
+
+---
+
+HERE'S WHAT YOU'VE UNLOCKED:
+
+{{#each features}}
+✓ {{this}}
+{{/each}}
+
+---
+
+BILLING SUMMARY
+
+Plan: {{planName}}
+Amount: {{amount}}/{{billingPeriod}}
+Next billing date: {{nextBillingDate}}
+
+---
+
+Explore your new features: {{appUrl}}
+
+Need help getting the most out of {{planName}}?
+Just ask me — I'll walk you through everything.
+
+---
+
+Manage billing: {{billingUrl}}
+View receipt: {{receiptUrl}}
+
+{{companyName}} · {{companyAddress}}
+Unsubscribe: {{unsubscribeUrl}}
+Email preferences: {{preferencesUrl}}

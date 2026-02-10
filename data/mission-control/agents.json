@@ -1,0 +1,174 @@
+{
+  "agents": [
+    {
+      "id": "jarvis",
+      "name": "JARVIS",
+      "emoji": "🤖",
+      "role": "Senior Agent",
+      "focus": "Full-stack capabilities, complex problem solving",
+      "status": "active",
+      "skills": ["research", "coding", "writing", "calendar", "social", "analysis", "coordination", "media"],
+      "level": "senior",
+      "team": "core",
+      "capabilities": ["All skills enabled", "Complex multi-step tasks", "Strategic decision making", "Agent supervision"],
+      "currentTask": null,
+      "tasksCompleted": 0,
+      "createdAt": "2026-02-10T14:00:00+13:00"
+    },
+    {
+      "id": "shuri",
+      "name": "SHURI",
+      "emoji": "🔬",
+      "role": "Research & Development",
+      "focus": "Research, analysis, and technical implementation",
+      "status": "active",
+      "skills": ["research", "analysis", "coding"],
+      "level": "specialist",
+      "team": "core",
+      "capabilities": ["Deep research dives", "Data analysis and visualization", "Technical implementation", "Pattern recognition"],
+      "currentTask": null,
+      "tasksCompleted": 0,
+      "createdAt": "2026-02-10T14:00:00+13:00"
+    },
+    {
+      "id": "fury",
+      "name": "FURY",
+      "emoji": "👁️",
+      "role": "Coordinator",
+      "focus": "Task orchestration, oversight, and delegation",
+      "status": "active",
+      "skills": ["coordination", "analysis"],
+      "level": "manager",
+      "team": "core",
+      "capabilities": ["Task delegation", "Progress monitoring", "Priority management", "Cross-agent coordination"],
+      "currentTask": null,
+      "tasksCompleted": 0,
+      "createdAt": "2026-02-10T14:00:00+13:00"
+    },
+    {
+      "id": "prep",
+      "name": "PREP",
+      "emoji": "⚡",
+      "role": "Main Agent",
+      "focus": "Primary interface, all capabilities enabled",
+      "status": "active",
+      "skills": ["research", "coding", "writing", "calendar", "social", "analysis", "coordination", "media"],
+      "level": "main",
+      "team": "core",
+      "capabilities": ["All skills enabled", "Direct user interaction", "Task execution", "Agent spawning"],
+      "currentTask": null,
+      "tasksCompleted": 0,
+      "createdAt": "2026-02-10T14:00:00+13:00"
+    },
+    {
+      "id": "alternate-agent",
+      "name": "ALTERNATE Campaign Agent",
+      "emoji": "🎬",
+      "role": "Campaign Specialist",
+      "focus": "Film marketing, content production, social media",
+      "project": "ALTERNATE",
+      "status": "paused",
+      "skills": ["social", "media", "writing"],
+      "level": "specialist",
+      "team": "alternate",
+      "capabilities": ["Higgsfield image generation", "Higgsfield video generation", "AI influencer creation", "Social media content"],
+      "currentTask": null,
+      "tasksCompleted": 0,
+      "createdAt": "2026-02-09T19:40:00+13:00"
+    },
+    {
+      "id": "junction-lead",
+      "name": "Junction Lead",
+      "emoji": "🏢",
+      "role": "Agency Lead",
+      "focus": "Junction strategy, client acquisition, team coordination",
+      "project": "Junction",
+      "status": "active",
+      "skills": ["writing", "coordination", "analysis"],
+      "level": "lead",
+      "team": "junction",
+      "capabilities": ["Client acquisition strategy", "Team coordination", "Service packaging", "Content direction"],
+      "currentTask": null,
+      "tasksCompleted": 0,
+      "createdAt": "2026-02-10T18:03:00+13:00"
+    },
+    {
+      "id": "junction-dev",
+      "name": "Junction Developer",
+      "emoji": "💻",
+      "role": "Web Developer",
+      "focus": "Website builds, animations, technical implementation",
+      "project": "Junction",
+      "status": "active",
+      "skills": ["coding", "research"],
+      "level": "specialist",
+      "team": "junction",
+      "capabilities": ["React/Next.js development", "Framer Motion animations", "Vercel deployment", "Website optimization"],
+      "currentTask": "Premium animation upgrade for junction-v3",
+      "tasksCompleted": 0,
+      "createdAt": "2026-02-10T18:03:00+13:00"
+    },
+    {
+      "id": "junction-content",
+      "name": "Junction Content",
+      "emoji": "📹",
+      "role": "Content Creator",
+      "focus": "Scripts, AI influencer content, case studies",
+      "project": "Junction",
+      "status": "active",
+      "skills": ["writing", "media", "social"],
+      "level": "specialist",
+      "team": "junction",
+      "higgsfield": {
+        "influencer": "@Tom Influencer",
+        "canGenerate": true
+      },
+      "capabilities": ["Script writing from voice notes", "Higgsfield content production", "Case study creation", "Social content"],
+      "currentTask": null,
+      "tasksCompleted": 0,
+      "createdAt": "2026-02-10T18:03:00+13:00"
+    },
+    {
+      "id": "personal-agent",
+      "name": "Personal Life Agent",
+      "emoji": "🧠",
+      "role": "Life Management",
+      "focus": "Calendar, finances, health, admin tasks",
+      "project": "Personal",
+      "status": "active",
+      "skills": ["calendar", "analysis", "writing"],
+      "level": "specialist",
+      "team": "personal",
+      "capabilities": ["Calendar management", "Financial tracking", "Email monitoring", "Habit tracking"],
+      "currentTask": null,
+      "tasksCompleted": 0,
+      "createdAt": "2026-02-09T19:40:00+13:00"
+    }
+  ],
+  "teams": {
+    "core": {
+      "name": "Core Team",
+      "description": "Main agents handling cross-cutting work",
+      "members": ["jarvis", "shuri", "fury", "prep"]
+    },
+    "junction": {
+      "name": "Junction Media",
+      "description": "Agency sub-team - development, content, client acquisition",
+      "members": ["junction-lead", "junction-dev", "junction-content"]
+    },
+    "alternate": {
+      "name": "ALTERNATE Film",
+      "description": "Film campaign and marketing",
+      "members": ["alternate-agent"]
+    },
+    "personal": {
+      "name": "Personal",
+      "description": "Life management and admin",
+      "members": ["personal-agent"]
+    }
+  },
+  "meta": {
+    "lastUpdated": "2026-02-10T18:03:00+13:00",
+    "version": "4.0"
+  }
+}

@@ -7,7 +7,9 @@
     "dev": "nodemon api/server.js",
     "start": "node api/server.js",
     "test": "jest",
-    "provision:test": "node scripts/test-provision.js"
+    "provision:test": "node scripts/test-provision.js",
+    "security:audit": "npm audit",
+    "security:fix": "npm audit fix"
   },
   "keywords": [
     "clawdbot",
@@ -26,7 +28,17 @@
     "dotenv": "^16.4.1",
     "pg": "^8.11.3",
     "bullmq": "^5.1.9",
-    "ioredis": "^5.3.2"
+    "ioredis": "^5.3.2",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5",
+    "rate-limit-redis": "^4.2.0",
+    "express-validator": "^7.0.1",
+    "express-slow-down": "^2.0.1",
+    "xss": "^1.0.14",
+    "validator": "^13.11.0",
+    "jsonwebtoken": "^9.0.2",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5"
   },
   "devDependencies": {
     "nodemon": "^3.0.3",

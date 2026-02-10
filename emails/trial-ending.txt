@@ -1,0 +1,44 @@
+ALLY — LIFE, HANDLED.
+
+Hey {{firstName}}, your trial ends in 3 days
+
+I wanted to reach out before things change. We've had a good run together — and I've got the receipts to prove it.
+
+---
+
+WHAT WE'VE DONE TOGETHER
+
+📊 {{tasksCompleted}} tasks handled
+⏱️ {{timeSaved}} hours saved
+💬 {{conversations}} conversations
+
+---
+
+SOME HIGHLIGHTS FROM YOUR TRIAL:
+
+{{#each highlights}}
+{{icon}} {{text}}
+{{/each}}
+
+---
+
+KEEP THE MOMENTUM GOING
+
+{{planName}} — just {{amount}}/{{billingPeriod}}
+
+Upgrade now: {{upgradeUrl}}
+Compare plans: {{comparePlansUrl}}
+
+---
+
+WHAT HAPPENS AFTER YOUR TRIAL?
+
+If you upgrade, everything continues seamlessly — all your preferences, history, and setup stay exactly as they are. If you don't, you'll still have access to the free tier with basic features. No pressure, but I'd love to keep helping you at full capacity. 💜
+
+---
+
+Questions about plans? Just reply — I'm happy to help you choose.
+
+{{companyName}} · {{companyAddress}}
+Unsubscribe: {{unsubscribeUrl}}
+Email preferences: {{preferencesUrl}}

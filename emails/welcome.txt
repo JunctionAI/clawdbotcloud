@@ -1,0 +1,36 @@
+ALLY — LIFE, HANDLED.
+
+Hey {{firstName}}! 👋
+
+Welcome to Ally — I'm genuinely excited to meet you.
+
+I'm here to be your personal AI assistant. Not the kind that just answers questions, but the kind that actually handles things for you. Think of me as your capable friend who happens to be available 24/7.
+
+Here's what I can help you with right away:
+
+📅 MANAGE YOUR CALENDAR
+"What's on my calendar this week?" or "Schedule lunch with Sarah for Thursday"
+
+📧 TAME YOUR INBOX
+"Summarize my unread emails" or "Draft a reply to that invoice"
+
+✅ STAY ON TOP OF TASKS
+"Remind me to call the dentist tomorrow at 9am" or "What's on my to-do list?"
+
+---
+
+Start chatting: {{appUrl}}
+
+---
+
+"The best part? The more you use me, the better I get at understanding how you work. I'll learn your preferences, remember your context, and genuinely become more helpful over time."
+
+— Ally ✨
+
+---
+
+Questions? Just reply to this email — I'm here to help.
+
+{{companyName}} · {{companyAddress}}
+Unsubscribe: {{unsubscribeUrl}}
+Email preferences: {{preferencesUrl}}

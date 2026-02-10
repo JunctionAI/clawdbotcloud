@@ -1,0 +1,1409 @@
+'use client';
+
+import { useEffect, useState, useRef, useCallback } from 'react';
+import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence } from 'framer-motion';
+
+// ============================================================================
+// STUNNING LANDING PAGE - $50M Startup Quality
+// Inspired by: Stripe, Linear, Vercel
+// Features: Scroll animations, gradients, particles, 3D, micro-interactions
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// Particle System Component
+// ----------------------------------------------------------------------------
+const ParticleField = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    
+    let animationId: number;
+    let particles: Array<{
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      size: number;
+      opacity: number;
+      hue: number;
+    }> = [];
+    
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    
+    const createParticles = () => {
+      particles = [];
+      const count = Math.floor((canvas.width * canvas.height) / 15000);
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          size: Math.random() * 2 + 1,
+          opacity: Math.random() * 0.5 + 0.2,
+          hue: Math.random() * 60 + 200, // Blue to purple range
+        });
+      }
+    };
+    
+    const animate = () => {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      particles.forEach((p, i) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+        
+        // Draw particle with glow
+        const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 3);
+        gradient.addColorStop(0, `hsla(${p.hue}, 100%, 70%, ${p.opacity})`);
+        gradient.addColorStop(1, 'transparent');
+        
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size * 3, 0, Math.PI * 2);
+        ctx.fillStyle = gradient;
+        ctx.fill();
+        
+        // Connect nearby particles
+        particles.slice(i + 1).forEach(p2 => {
+          const dx = p.x - p2.x;
+          const dy = p.y - p2.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          
+          if (dist < 150) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `hsla(${p.hue}, 100%, 70%, ${0.1 * (1 - dist / 150)})`;
+            ctx.stroke();
+          }
+        });
+      });
+      
+      animationId = requestAnimationFrame(animate);
+    };
+    
+    resize();
+    createParticles();
+    animate();
+    
+    window.addEventListener('resize', () => {
+      resize();
+      createParticles();
+    });
+    
+    return () => {
+      cancelAnimationFrame(animationId);
+    };
+  }, []);
+  
+  return (
+    <canvas
+      ref={canvasRef}
+      className="fixed inset-0 pointer-events-none z-0"
+      style={{ background: 'transparent' }}
+    />
+  );
+};
+
+// ----------------------------------------------------------------------------
+// Floating Orbs Background
+// ----------------------------------------------------------------------------
+const FloatingOrbs = () => {
+  return (
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+      {/* Primary orb - top right */}
+      <motion.div
+        animate={{
+          x: [0, 100, 50, 0],
+          y: [0, 50, 100, 0],
+          scale: [1, 1.2, 1.1, 1],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full"
+        style={{
+          background: 'radial-gradient(circle, rgba(99,102,241,0.3) 0%, rgba(139,92,246,0.1) 50%, transparent 70%)',
+          filter: 'blur(40px)',
+        }}
+      />
+      
+      {/* Secondary orb - bottom left */}
+      <motion.div
+        animate={{
+          x: [0, -50, -100, 0],
+          y: [0, -100, -50, 0],
+          scale: [1, 1.3, 1.1, 1],
+        }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute -bottom-40 -left-40 w-[700px] h-[700px] rounded-full"
+        style={{
+          background: 'radial-gradient(circle, rgba(236,72,153,0.25) 0%, rgba(168,85,247,0.1) 50%, transparent 70%)',
+          filter: 'blur(60px)',
+        }}
+      />
+      
+      {/* Accent orb - center */}
+      <motion.div
+        animate={{
+          x: [0, 80, -80, 0],
+          y: [0, -80, 80, 0],
+        }}
+        transition={{
+          duration: 30,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full"
+        style={{
+          background: 'radial-gradient(circle, rgba(6,182,212,0.2) 0%, transparent 60%)',
+          filter: 'blur(50px)',
+        }}
+      />
+    </div>
+  );
+};
+
+// ----------------------------------------------------------------------------
+// Animated Gradient Text
+// ----------------------------------------------------------------------------
+const GradientText = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => {
+  return (
+    <span
+      className={`bg-clip-text text-transparent bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-500 bg-[length:200%_auto] animate-gradient ${className}`}
+      style={{
+        animation: 'gradient 8s linear infinite',
+      }}
+    >
+      {children}
+    </span>
+  );
+};
+
+// ----------------------------------------------------------------------------
+// Typing Animation Hook
+// ----------------------------------------------------------------------------
+const useTypingAnimation = (texts: string[], typingSpeed = 50, deletingSpeed = 30, pauseDuration = 2000) => {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  
+  useEffect(() => {
+    const currentText = texts[currentIndex];
+    
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        if (displayText.length < currentText.length) {
+          setDisplayText(currentText.slice(0, displayText.length + 1));
+        } else {
+          setTimeout(() => setIsDeleting(true), pauseDuration);
+        }
+      } else {
+        if (displayText.length > 0) {
+          setDisplayText(displayText.slice(0, -1));
+        } else {
+          setIsDeleting(false);
+          setCurrentIndex((prev) => (prev + 1) % texts.length);
+        }
+      }
+    }, isDeleting ? deletingSpeed : typingSpeed);
+    
+    return () => clearTimeout(timeout);
+  }, [displayText, currentIndex, isDeleting, texts, typingSpeed, deletingSpeed, pauseDuration]);
+  
+  return displayText;
+};
+
+// ----------------------------------------------------------------------------
+// 3D Card Component
+// ----------------------------------------------------------------------------
+const Card3D = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [rotateX, setRotateX] = useState(0);
+  const [rotateY, setRotateY] = useState(0);
+  
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+    
+    const rect = ref.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    const mouseX = e.clientX - centerX;
+    const mouseY = e.clientY - centerY;
+    
+    setRotateX(-mouseY / 20);
+    setRotateY(mouseX / 20);
+  };
+  
+  const handleMouseLeave = () => {
+    setRotateX(0);
+    setRotateY(0);
+  };
+  
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      animate={{
+        rotateX,
+        rotateY,
+      }}
+      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+      style={{ transformStyle: 'preserve-3d' }}
+      className={`${className}`}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+// ----------------------------------------------------------------------------
+// Magnetic Button Component
+// ----------------------------------------------------------------------------
+const MagneticButton = ({ children, className = '', onClick }: { children: React.ReactNode; className?: string; onClick?: () => void }) => {
+  const ref = useRef<HTMLButtonElement>(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  
+  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (!ref.current) return;
+    
+    const rect = ref.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    setPosition({
+      x: (e.clientX - centerX) * 0.3,
+      y: (e.clientY - centerY) * 0.3,
+    });
+  };
+  
+  const handleMouseLeave = () => {
+    setPosition({ x: 0, y: 0 });
+  };
+  
+  return (
+    <motion.button
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      animate={position}
+      transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+      onClick={onClick}
+      className={className}
+    >
+      {children}
+    </motion.button>
+  );
+};
+
+// ----------------------------------------------------------------------------
+// Animated Counter
+// ----------------------------------------------------------------------------
+const AnimatedCounter = ({ value, suffix = '', prefix = '' }: { value: number; suffix?: string; prefix?: string }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    if (isInView) {
+      const duration = 2000;
+      const steps = 60;
+      const increment = value / steps;
+      let current = 0;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= value) {
+          setCount(value);
+          clearInterval(timer);
+        } else {
+          setCount(Math.floor(current));
+        }
+      }, duration / steps);
+      
+      return () => clearInterval(timer);
+    }
+  }, [isInView, value]);
+  
+  return (
+    <span ref={ref}>
+      {prefix}{count.toLocaleString()}{suffix}
+    </span>
+  );
+};
+
+// ----------------------------------------------------------------------------
+// Testimonial Card with Typing Effect
+// ----------------------------------------------------------------------------
+const TestimonialCard = ({ testimonial, author, role, company, avatar, delay }: {
+  testimonial: string;
+  author: string;
+  role: string;
+  company: string;
+  avatar: string;
+  delay: number;
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [showText, setShowText] = useState(false);
+  const [displayedText, setDisplayedText] = useState('');
+  
+  useEffect(() => {
+    if (isInView) {
+      const timer = setTimeout(() => setShowText(true), delay);
+      return () => clearTimeout(timer);
+    }
+  }, [isInView, delay]);
+  
+  useEffect(() => {
+    if (showText && displayedText.length < testimonial.length) {
+      const timer = setTimeout(() => {
+        setDisplayedText(testimonial.slice(0, displayedText.length + 1));
+      }, 20);
+      return () => clearTimeout(timer);
+    }
+  }, [showText, displayedText, testimonial]);
+  
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay: delay / 1000 }}
+    >
+      <Card3D className="h-full">
+        <div className="relative h-full p-8 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 overflow-hidden group">
+          {/* Shine effect */}
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+          </div>
+          
+          {/* Content */}
+          <div className="relative z-10">
+            <div className="flex items-center gap-1 mb-4">
+              {[...Array(5)].map((_, i) => (
+                <motion.svg
+                  key={i}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ delay: delay / 1000 + i * 0.1 }}
+                  className="w-5 h-5 text-yellow-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </motion.svg>
+              ))}
+            </div>
+            
+            <p className="text-white/90 text-lg leading-relaxed mb-6 min-h-[120px]">
+              "{displayedText}"
+              {displayedText.length < testimonial.length && (
+                <span className="inline-block w-0.5 h-5 bg-violet-400 ml-1 animate-pulse" />
+              )}
+            </p>
+            
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-white font-bold text-lg">
+                {avatar}
+              </div>
+              <div>
+                <p className="text-white font-semibold">{author}</p>
+                <p className="text-white/60 text-sm">{role} at {company}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Card3D>
+    </motion.div>
+  );
+};
+
+// ----------------------------------------------------------------------------
+// Feature Card
+// ----------------------------------------------------------------------------
+const FeatureCard = ({ icon, title, description, gradient, delay }: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  gradient: string;
+  delay: number;
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay }}
+    >
+      <Card3D className="h-full">
+        <div className="relative h-full p-8 rounded-2xl bg-gradient-to-br from-white/[0.08] to-transparent backdrop-blur-sm border border-white/10 group hover:border-white/20 transition-all duration-300">
+          {/* Icon container */}
+          <motion.div
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            className={`w-14 h-14 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center mb-6 shadow-lg`}
+          >
+            {icon}
+          </motion.div>
+          
+          <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
+          <p className="text-white/60 leading-relaxed">{description}</p>
+          
+          {/* Hover arrow */}
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            whileHover={{ opacity: 1, x: 0 }}
+            className="absolute bottom-8 right-8 text-white/40"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </motion.div>
+        </div>
+      </Card3D>
+    </motion.div>
+  );
+};
+
+// ----------------------------------------------------------------------------
+// Pricing Card
+// ----------------------------------------------------------------------------
+const PricingCard = ({ name, price, period, description, features, popular, delay }: {
+  name: string;
+  price: string;
+  period: string;
+  description: string;
+  features: string[];
+  popular?: boolean;
+  delay: number;
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50, scale: 0.95 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+      transition={{ duration: 0.6, delay }}
+      className={`relative ${popular ? 'z-10' : ''}`}
+    >
+      {popular && (
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full text-white text-sm font-medium">
+          Most Popular
+        </div>
+      )}
+      
+      <Card3D className="h-full">
+        <div className={`relative h-full p-8 rounded-2xl backdrop-blur-xl border transition-all duration-300
+          ${popular 
+            ? 'bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20 border-violet-500/50 shadow-2xl shadow-violet-500/20' 
+            : 'bg-white/5 border-white/10 hover:border-white/20'
+          }`}
+        >
+          <div className="mb-6">
+            <h3 className="text-xl font-bold text-white mb-2">{name}</h3>
+            <p className="text-white/60 text-sm">{description}</p>
+          </div>
+          
+          <div className="mb-8">
+            <span className="text-5xl font-bold text-white">{price}</span>
+            <span className="text-white/60 ml-2">{period}</span>
+          </div>
+          
+          <ul className="space-y-4 mb-8">
+            {features.map((feature, i) => (
+              <motion.li
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ delay: delay + 0.1 * i }}
+                className="flex items-center gap-3 text-white/80"
+              >
+                <svg className="w-5 h-5 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                {feature}
+              </motion.li>
+            ))}
+          </ul>
+          
+          <MagneticButton
+            className={`w-full py-4 rounded-xl font-semibold transition-all duration-300
+              ${popular
+                ? 'bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white hover:shadow-lg hover:shadow-violet-500/30'
+                : 'bg-white/10 text-white hover:bg-white/20'
+              }`}
+          >
+            Get Started
+          </MagneticButton>
+        </div>
+      </Card3D>
+    </motion.div>
+  );
+};
+
+// ----------------------------------------------------------------------------
+// Scroll Progress Indicator
+// ----------------------------------------------------------------------------
+const ScrollProgress = () => {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
+  
+  return (
+    <motion.div
+      style={{ scaleX }}
+      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-500 origin-left z-50"
+    />
+  );
+};
+
+// ----------------------------------------------------------------------------
+// Navigation
+// ----------------------------------------------------------------------------
+const Navigation = () => {
+  const [scrolled, setScrolled] = useState(false);
+  
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
+  return (
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        scrolled ? 'bg-black/80 backdrop-blur-xl border-b border-white/10' : ''
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center gap-2"
+          >
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <span className="text-xl font-bold text-white">Nexus</span>
+          </motion.div>
+          
+          {/* Nav Links */}
+          <div className="hidden md:flex items-center gap-8">
+            {['Features', 'Pricing', 'Testimonials', 'About'].map((item) => (
+              <motion.a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                whileHover={{ y: -2 }}
+                className="text-white/70 hover:text-white transition-colors relative group"
+              >
+                {item}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-500 to-fuchsia-500 group-hover:w-full transition-all duration-300" />
+              </motion.a>
+            ))}
+          </div>
+          
+          {/* CTA Buttons */}
+          <div className="flex items-center gap-4">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="hidden sm:block text-white/70 hover:text-white transition-colors"
+            >
+              Sign In
+            </motion.button>
+            <MagneticButton className="px-6 py-2.5 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-medium hover:shadow-lg hover:shadow-violet-500/30 transition-all duration-300">
+              Start Free Trial
+            </MagneticButton>
+          </div>
+        </div>
+      </div>
+    </motion.nav>
+  );
+};
+
+// ----------------------------------------------------------------------------
+// Hero Section
+// ----------------------------------------------------------------------------
+const HeroSection = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"]
+  });
+  
+  const y = useTransform(scrollYProgress, [0, 1], [0, 300]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  
+  const typedText = useTypingAnimation([
+    'Build faster.',
+    'Scale smarter.',
+    'Ship better.',
+    'Grow revenue.',
+  ], 80, 50, 2500);
+  
+  return (
+    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <motion.div style={{ y, opacity }} className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+        {/* Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span className="text-white/80 text-sm">Now available in 50+ countries</span>
+        </motion.div>
+        
+        {/* Main Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight"
+        >
+          The platform to
+          <br />
+          <GradientText>{typedText}</GradientText>
+          <span className="inline-block w-1 h-16 md:h-20 bg-violet-400 ml-2 animate-pulse" />
+        </motion.h1>
+        
+        {/* Subheadline */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="text-xl md:text-2xl text-white/60 max-w-3xl mx-auto mb-12 leading-relaxed"
+        >
+          Nexus is the all-in-one platform that helps modern teams build, launch, 
+          and scale products 10x faster. Join 50,000+ companies already growing.
+        </motion.p>
+        
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+        >
+          <MagneticButton className="group px-8 py-4 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-semibold text-lg hover:shadow-2xl hover:shadow-violet-500/30 transition-all duration-300 flex items-center gap-2">
+            Start Free Trial
+            <motion.svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              animate={{ x: [0, 5, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </motion.svg>
+          </MagneticButton>
+          
+          <MagneticButton className="px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-lg hover:bg-white/20 transition-all duration-300 flex items-center gap-2">
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            Watch Demo
+          </MagneticButton>
+        </motion.div>
+        
+        {/* Social Proof */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          className="flex flex-col items-center gap-4"
+        >
+          <div className="flex -space-x-3">
+            {['JD', 'AK', 'MR', 'SL', 'PK'].map((initials, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.7 + i * 0.1 }}
+                className="w-10 h-10 rounded-full border-2 border-black bg-gradient-to-br from-violet-400 to-fuchsia-400 flex items-center justify-center text-white text-xs font-bold"
+              >
+                {initials}
+              </motion.div>
+            ))}
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.2 }}
+              className="w-10 h-10 rounded-full border-2 border-black bg-white/10 backdrop-blur-sm flex items-center justify-center text-white text-xs font-bold"
+            >
+              +5k
+            </motion.div>
+          </div>
+          <p className="text-white/60">
+            <span className="text-white font-semibold">4.9/5</span> from over 2,000 reviews
+          </p>
+        </motion.div>
+        
+        {/* Hero Image/Product Preview */}
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+          className="mt-20 relative"
+        >
+          <div className="relative mx-auto max-w-5xl">
+            {/* Glow effect */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-500 rounded-2xl blur-2xl opacity-30" />
+            
+            {/* Dashboard mockup */}
+            <div className="relative rounded-2xl overflow-hidden border border-white/20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl p-1">
+              <div className="rounded-xl bg-gray-900/90 overflow-hidden">
+                {/* Browser chrome */}
+                <div className="flex items-center gap-2 px-4 py-3 bg-black/50 border-b border-white/10">
+                  <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                    <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                  </div>
+                  <div className="flex-1 flex justify-center">
+                    <div className="px-4 py-1 rounded-lg bg-white/10 text-white/60 text-sm">
+                      app.nexus.io/dashboard
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Dashboard content */}
+                <div className="p-6 space-y-4">
+                  <div className="grid grid-cols-3 gap-4">
+                    {[
+                      { label: 'Total Revenue', value: '$2.4M', change: '+24%' },
+                      { label: 'Active Users', value: '48.2K', change: '+18%' },
+                      { label: 'Conversion', value: '24.8%', change: '+12%' },
+                    ].map((stat, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1 + i * 0.1 }}
+                        className="p-4 rounded-xl bg-white/5 border border-white/10"
+                      >
+                        <p className="text-white/60 text-sm mb-1">{stat.label}</p>
+                        <p className="text-2xl font-bold text-white">{stat.value}</p>
+                        <p className="text-emerald-400 text-sm">{stat.change}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                  
+                  {/* Chart placeholder */}
+                  <div className="h-48 rounded-xl bg-white/5 border border-white/10 flex items-end justify-around p-4">
+                    {[40, 65, 45, 80, 55, 90, 70, 85, 60, 95, 75, 88].map((height, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ height: 0 }}
+                        animate={{ height: `${height}%` }}
+                        transition={{ delay: 1.3 + i * 0.05, duration: 0.5 }}
+                        className="w-6 rounded-t-lg bg-gradient-to-t from-violet-500 to-fuchsia-500"
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+};
+
+// ----------------------------------------------------------------------------
+// Logos Section
+// ----------------------------------------------------------------------------
+const LogosSection = () => {
+  const logos = ['Stripe', 'Vercel', 'Linear', 'Notion', 'Figma', 'Slack', 'Discord', 'GitHub'];
+  
+  return (
+    <section className="py-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center text-white/40 mb-12"
+        >
+          Trusted by 50,000+ teams at companies like
+        </motion.p>
+        
+        <div className="relative overflow-hidden">
+          <motion.div
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            className="flex gap-16"
+          >
+            {[...logos, ...logos].map((logo, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 text-2xl font-bold text-white/20 hover:text-white/40 transition-colors cursor-pointer"
+              >
+                {logo}
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ----------------------------------------------------------------------------
+// Features Section
+// ----------------------------------------------------------------------------
+const FeaturesSection = () => {
+  const features = [
+    {
+      icon: (
+        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+      title: 'Lightning Fast',
+      description: 'Experience blazing-fast performance with our edge-optimized infrastructure. Sub-100ms response times globally.',
+      gradient: 'from-yellow-500 to-orange-500',
+    },
+    {
+      icon: (
+        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+      ),
+      title: 'Enterprise Security',
+      description: 'Bank-grade encryption, SOC2 compliant, and GDPR ready. Your data is always protected.',
+      gradient: 'from-emerald-500 to-teal-500',
+    },
+    {
+      icon: (
+        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      ),
+      title: 'Beautiful UI',
+      description: 'Stunning, accessible interfaces that your users will love. Built with modern design principles.',
+      gradient: 'from-violet-500 to-purple-500',
+    },
+    {
+      icon: (
+        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        </svg>
+      ),
+      title: 'Real-time Sync',
+      description: 'Changes sync instantly across all devices and team members. No refresh needed, ever.',
+      gradient: 'from-blue-500 to-cyan-500',
+    },
+    {
+      icon: (
+        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      ),
+      title: 'Advanced Analytics',
+      description: 'Deep insights into your business with AI-powered analytics. Make data-driven decisions.',
+      gradient: 'from-pink-500 to-rose-500',
+    },
+    {
+      icon: (
+        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+        </svg>
+      ),
+      title: 'Seamless Integrations',
+      description: 'Connect with 100+ tools you already use. Zapier, Slack, GitHub, and more.',
+      gradient: 'from-indigo-500 to-violet-500',
+    },
+  ];
+  
+  return (
+    <section id="features" className="py-32 relative z-10">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <span className="inline-block px-4 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-sm font-medium mb-6">
+            Features
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Everything you need to{' '}
+            <GradientText>scale</GradientText>
+          </h2>
+          <p className="text-xl text-white/60 max-w-2xl mx-auto">
+            Powerful features designed to help your team move faster and build better products.
+          </p>
+        </motion.div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {features.map((feature, i) => (
+            <FeatureCard key={i} {...feature} delay={i * 0.1} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ----------------------------------------------------------------------------
+// Stats Section
+// ----------------------------------------------------------------------------
+const StatsSection = () => {
+  const stats = [
+    { value: 50000, suffix: '+', label: 'Companies Worldwide' },
+    { value: 99.9, suffix: '%', label: 'Uptime SLA' },
+    { value: 2, prefix: '$', suffix: 'B+', label: 'Processed Revenue' },
+    { value: 150, suffix: '+', label: 'Countries Supported' },
+  ];
+  
+  return (
+    <section className="py-32 relative z-10">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="relative rounded-3xl overflow-hidden">
+          {/* Background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-violet-500/20 via-fuchsia-500/20 to-cyan-500/20" />
+          <div className="absolute inset-0 backdrop-blur-3xl" />
+          
+          <div className="relative p-12 md:p-20">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="text-center"
+                >
+                  <div className="text-5xl md:text-6xl font-bold text-white mb-2">
+                    <AnimatedCounter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
+                  </div>
+                  <p className="text-white/60">{stat.label}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ----------------------------------------------------------------------------
+// Testimonials Section
+// ----------------------------------------------------------------------------
+const TestimonialsSection = () => {
+  const testimonials = [
+    {
+      testimonial: "Nexus completely transformed how we build products. We shipped 3x faster and our conversion rates went through the roof. Absolutely game-changing.",
+      author: "Sarah Chen",
+      role: "CTO",
+      company: "TechFlow",
+      avatar: "SC",
+    },
+    {
+      testimonial: "The best platform we've ever used. Period. Our team productivity increased by 200% in the first month. I can't imagine going back.",
+      author: "Marcus Rodriguez",
+      role: "VP Engineering",
+      company: "ScaleUp",
+      avatar: "MR",
+    },
+    {
+      testimonial: "We evaluated 20+ tools before choosing Nexus. Nothing else comes close. The ROI was visible within the first week of implementation.",
+      author: "Emily Watson",
+      role: "Head of Product",
+      company: "GrowthLabs",
+      avatar: "EW",
+    },
+  ];
+  
+  return (
+    <section id="testimonials" className="py-32 relative z-10">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
+            Testimonials
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Loved by{' '}
+            <GradientText>50,000+</GradientText>
+            {' '}teams
+          </h2>
+          <p className="text-xl text-white/60 max-w-2xl mx-auto">
+            Don't just take our word for it. Here's what leaders at top companies have to say.
+          </p>
+        </motion.div>
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, i) => (
+            <TestimonialCard key={i} {...testimonial} delay={i * 200} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ----------------------------------------------------------------------------
+// Pricing Section
+// ----------------------------------------------------------------------------
+const PricingSection = () => {
+  const plans = [
+    {
+      name: 'Starter',
+      price: '$29',
+      period: '/month',
+      description: 'Perfect for small teams getting started',
+      features: [
+        'Up to 5 team members',
+        '10GB storage',
+        'Basic analytics',
+        'Email support',
+        'API access',
+      ],
+    },
+    {
+      name: 'Pro',
+      price: '$99',
+      period: '/month',
+      description: 'For growing teams that need more power',
+      features: [
+        'Unlimited team members',
+        '100GB storage',
+        'Advanced analytics',
+        'Priority support',
+        'Custom integrations',
+        'SSO & SAML',
+        'Audit logs',
+      ],
+      popular: true,
+    },
+    {
+      name: 'Enterprise',
+      price: 'Custom',
+      period: '',
+      description: 'For large organizations with specific needs',
+      features: [
+        'Everything in Pro',
+        'Unlimited storage',
+        'Dedicated support',
+        'Custom SLA',
+        'On-premise option',
+        'Advanced security',
+        'Custom contracts',
+      ],
+    },
+  ];
+  
+  return (
+    <section id="pricing" className="py-32 relative z-10">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <span className="inline-block px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium mb-6">
+            Pricing
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Simple,{' '}
+            <GradientText>transparent</GradientText>
+            {' '}pricing
+          </h2>
+          <p className="text-xl text-white/60 max-w-2xl mx-auto">
+            No hidden fees. No surprises. Start free, upgrade when you're ready.
+          </p>
+        </motion.div>
+        
+        <div className="grid md:grid-cols-3 gap-8 items-start">
+          {plans.map((plan, i) => (
+            <PricingCard key={i} {...plan} delay={i * 0.1} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ----------------------------------------------------------------------------
+// CTA Section
+// ----------------------------------------------------------------------------
+const CTASection = () => {
+  return (
+    <section className="py-32 relative z-10">
+      <div className="max-w-5xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="relative rounded-3xl overflow-hidden"
+        >
+          {/* Animated gradient background */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-violet-600 via-fuchsia-600 to-cyan-600 animate-gradient-shift" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(0,0,0,0.4)_100%)]" />
+          </div>
+          
+          {/* Floating shapes */}
+          <motion.div
+            animate={{
+              rotate: [0, 360],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{ duration: 20, repeat: Infinity }}
+            className="absolute top-10 right-10 w-32 h-32 rounded-full border border-white/20"
+          />
+          <motion.div
+            animate={{
+              rotate: [360, 0],
+              scale: [1, 0.8, 1],
+            }}
+            transition={{ duration: 25, repeat: Infinity }}
+            className="absolute bottom-10 left-10 w-24 h-24 rounded-2xl border border-white/20"
+          />
+          
+          <div className="relative p-12 md:p-20 text-center">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+            >
+              Ready to transform
+              <br />
+              your workflow?
+            </motion.h2>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-xl text-white/80 max-w-2xl mx-auto mb-10"
+            >
+              Join 50,000+ companies already using Nexus to build better products faster.
+              Start your free 14-day trial today.
+            </motion.p>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            >
+              <MagneticButton className="px-8 py-4 rounded-full bg-white text-violet-600 font-semibold text-lg hover:shadow-2xl hover:shadow-white/30 transition-all duration-300 flex items-center gap-2">
+                Start Free Trial
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </MagneticButton>
+              
+              <MagneticButton className="px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-lg hover:bg-white/20 transition-all duration-300">
+                Talk to Sales
+              </MagneticButton>
+            </motion.div>
+            
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="mt-6 text-white/60 text-sm"
+            >
+              No credit card required · 14-day free trial · Cancel anytime
+            </motion.p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+// ----------------------------------------------------------------------------
+// Footer
+// ----------------------------------------------------------------------------
+const Footer = () => {
+  const footerLinks = {
+    Product: ['Features', 'Pricing', 'Integrations', 'Changelog', 'Documentation'],
+    Company: ['About', 'Blog', 'Careers', 'Press', 'Partners'],
+    Resources: ['Community', 'Help Center', 'Support', 'Status', 'API'],
+    Legal: ['Privacy', 'Terms', 'Security', 'Cookies', 'Compliance'],
+  };
+  
+  return (
+    <footer className="relative z-10 border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-6 py-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12 mb-16">
+          {/* Brand */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-2 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <span className="text-xl font-bold text-white">Nexus</span>
+            </div>
+            <p className="text-white/60 mb-6 max-w-xs">
+              The all-in-one platform for modern teams to build, launch, and scale products faster.
+            </p>
+            <div className="flex gap-4">
+              {['Twitter', 'GitHub', 'LinkedIn', 'Discord'].map((social) => (
+                <motion.a
+                  key={social}
+                  whileHover={{ y: -3 }}
+                  href="#"
+                  className="w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-white/60 hover:text-white transition-colors"
+                >
+                  {social[0]}
+                </motion.a>
+              ))}
+            </div>
+          </div>
+          
+          {/* Links */}
+          {Object.entries(footerLinks).map(([title, links]) => (
+            <div key={title}>
+              <h4 className="font-semibold text-white mb-4">{title}</h4>
+              <ul className="space-y-3">
+                {links.map((link) => (
+                  <li key={link}>
+                    <a href="#" className="text-white/60 hover:text-white transition-colors">
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        
+        {/* Bottom */}
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-white/40 text-sm">
+            © 2024 Nexus, Inc. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6">
+            <a href="#" className="text-white/40 hover:text-white/60 text-sm transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#" className="text-white/40 hover:text-white/60 text-sm transition-colors">
+              Terms of Service
+            </a>
+            <a href="#" className="text-white/40 hover:text-white/60 text-sm transition-colors">
+              Cookie Settings
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+// ----------------------------------------------------------------------------
+// Main Page Component
+// ----------------------------------------------------------------------------
+export default function LandingPage() {
+  return (
+    <main className="relative min-h-screen bg-black overflow-x-hidden">
+      {/* Custom CSS for animations */}
+      <style jsx global>{`
+        @keyframes gradient {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        
+        @keyframes gradient-shift {
+          0%, 100% { 
+            background-position: 0% 50%;
+            filter: hue-rotate(0deg);
+          }
+          50% { 
+            background-position: 100% 50%;
+            filter: hue-rotate(30deg);
+          }
+        }
+        
+        .animate-gradient {
+          animation: gradient 8s linear infinite;
+        }
+        
+        .animate-gradient-shift {
+          animation: gradient-shift 10s ease infinite;
+          background-size: 200% 200%;
+        }
+        
+        html {
+          scroll-behavior: smooth;
+        }
+        
+        ::selection {
+          background: rgba(139, 92, 246, 0.4);
+          color: white;
+        }
+      `}</style>
+      
+      {/* Background layers */}
+      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_#1a1a2e_0%,_#000_100%)]" />
+      <ParticleField />
+      <FloatingOrbs />
+      
+      {/* Content */}
+      <ScrollProgress />
+      <Navigation />
+      <HeroSection />
+      <LogosSection />
+      <FeaturesSection />
+      <StatsSection />
+      <TestimonialsSection />
+      <PricingSection />
+      <CTASection />
+      <Footer />
+    </main>
+  );
+}

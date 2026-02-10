@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clawdbot Ops Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --bg-primary: #0d1117;
+      --bg-secondary: #161b22;
+      --bg-tertiary: #21262d;
+      --border: #30363d;
+      --text-primary: #f0f6fc;
+      --text-secondary: #8b949e;
+      --text-muted: #6e7681;
+      --accent-blue: #58a6ff;
+      --accent-green: #3fb950;
+      --accent-red: #f85149;
+      --accent-yellow: #d29922;
+      --accent-purple: #a371f7;
+      --accent-cyan: #39d9d9;
+      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    .header {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header h1 {
+      font-size: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .header h1::before {
+      content: '🤖';
+      font-size: 24px;
+    }
+    
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      background: var(--bg-tertiary);
+      border-radius: 20px;
+      font-size: 13px;
+    }
+    
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-green);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    .status-badge.disconnected .status-dot {
+      background: var(--accent-red);
+      animation: none;
+    }
+    
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      padding: 24px;
+      max-width: 1800px;
+      margin: 0 auto;
+    }
+    
+    .card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    .card-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .card-body { padding: 20px; }
+    .card.wide { grid-column: span 2; }
+    .card.tall { grid-row: span 2; }
+    
+    @media (max-width: 768px) {
+      .card.wide { grid-column: span 1; }
+    }
+    
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+    }
+    
+    .metric {
+      background: var(--bg-tertiary);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .metric:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+    
+    .metric-value {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      background: var(--gradient-3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .metric-value.green { background: var(--gradient-4); -webkit-background-clip: text; background-clip: text; }
+    .metric-value.red { background: var(--gradient-2); -webkit-background-clip: text; background-clip: text; }
+    .metric-value.purple { background: var(--gradient-1); -webkit-background-clip: text; background-clip: text; }
+    
+    .metric-label {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+    
+    .metric-trend {
+      font-size: 11px;
+      margin-top: 8px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    
+    .metric-trend.up { background: rgba(63, 185, 80, 0.15); color: var(--accent-green); }
+    .metric-trend.down { background: rgba(248, 81, 73, 0.15); color: var(--accent-red); }
+    
+    .feed { max-height: 400px; overflow-y: auto; }
+    
+    .feed-item {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      animation: slideIn 0.3s ease-out;
+    }
+    
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-10px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    .feed-item:last-child { border-bottom: none; }
+    .feed-item:hover { background: var(--bg-tertiary); }
+    
+    .feed-content { flex: 1; min-width: 0; }
+    
+    .feed-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .feed-meta { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+    .feed-time { font-size: 11px; color: var(--text-muted); white-space: nowrap; }
+    
+    .feed-badge {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    
+    .badge-signup { background: rgba(88, 166, 255, 0.15); color: var(--accent-blue); }
+    .badge-upgrade { background: rgba(163, 113, 247, 0.15); color: var(--accent-purple); }
+    .badge-payment { background: rgba(63, 185, 80, 0.15); color: var(--accent-green); }
+    .badge-cancel { background: rgba(248, 81, 73, 0.15); color: var(--accent-red); }
+    .badge-error { background: rgba(248, 81, 73, 0.15); color: var(--accent-red); }
+    .badge-warning { background: rgba(210, 153, 34, 0.15); color: var(--accent-yellow); }
+    
+    .error-item {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+    
+    .error-item:hover { background: var(--bg-tertiary); }
+    
+    .error-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .error-type { font-size: 13px; font-weight: 600; color: var(--accent-red); }
+    
+    .error-count {
+      font-size: 11px;
+      padding: 2px 8px;
+      background: rgba(248, 81, 73, 0.2);
+      color: var(--accent-red);
+      border-radius: 10px;
+    }
+    
+    .error-message {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+      font-family: 'SF Mono', SFMono-Regular, Consolas, monospace;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .error-stack {
+      display: none;
+      margin-top: 8px;
+      padding: 12px;
+      background: var(--bg-primary);
+      border-radius: 6px;
+      font-size: 11px;
+      font-family: 'SF Mono', SFMono-Regular, Consolas, monospace;
+      color: var(--text-secondary);
+      white-space: pre-wrap;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    
+    .error-item.expanded .error-stack { display: block; }
+    
+    .health-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    
+    .health-item {
+      background: var(--bg-tertiary);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    
+    .health-label { font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; }
+    
+    .health-bar {
+      height: 8px;
+      background: var(--bg-primary);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .health-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+    
+    .health-fill.good { background: var(--accent-green); }
+    .health-fill.warn { background: var(--accent-yellow); }
+    .health-fill.bad { background: var(--accent-red); }
+    
+    .health-value { font-size: 14px; font-weight: 600; margin-top: 8px; }
+    
+    .funnel { display: flex; flex-direction: column; gap: 8px; }
+    
+    .funnel-stage {
+      position: relative;
+      padding: 12px 16px;
+      background: var(--bg-tertiary);
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .funnel-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      border-radius: 8px;
+      opacity: 0.15;
+    }
+    
+    .funnel-stage:nth-child(1) .funnel-bar { background: var(--accent-blue); }
+    .funnel-stage:nth-child(2) .funnel-bar { background: var(--accent-cyan); }
+    .funnel-stage:nth-child(3) .funnel-bar { background: var(--accent-green); }
+    .funnel-stage:nth-child(4) .funnel-bar { background: var(--accent-purple); }
+    
+    .funnel-label { font-size: 13px; font-weight: 500; position: relative; z-index: 1; }
+    
+    .funnel-stats {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .funnel-count { font-size: 16px; font-weight: 700; }
+    .funnel-rate { font-size: 11px; color: var(--text-secondary); }
+    
+    .chart-container { position: relative; height: 200px; }
+    
+    .chart-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+    
+    .chart-tab {
+      padding: 6px 12px;
+      background: var(--bg-tertiary);
+      border: none;
+      border-radius: 6px;
+      color: var(--text-secondary);
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .chart-tab:hover { background: var(--border); }
+    .chart-tab.active { background: var(--accent-blue); color: white; }
+    
+    .alert-banner {
+      display: none;
+      background: rgba(248, 81, 73, 0.1);
+      border: 1px solid var(--accent-red);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      animation: shake 0.5s ease-in-out;
+    }
+    
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+    
+    .alert-banner.show {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .alert-icon { font-size: 20px; }
+    .alert-text { flex: 1; }
+    .alert-title { font-weight: 600; color: var(--accent-red); }
+    .alert-message { font-size: 13px; color: var(--text-secondary); }
+    
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+    
+    .empty-state { text-align: center; padding: 40px 20px; color: var(--text-muted); }
+    .empty-state-icon { font-size: 40px; margin-bottom: 12px; }
+    .last-updated { font-size: 11px; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Clawdbot Operations</h1>
+    <div class="status-badge" id="connectionStatus">
+      <span class="status-dot"></span>
+      <span>Connected</span>
+      <span class="last-updated" id="lastUpdated">Just now</span>
+    </div>
+  </header>
+  
+  <main class="dashboard">
+    <div class="alert-banner" id="alertBanner" style="grid-column: 1 / -1;">
+      <span class="alert-icon">⚠️</span>
+      <div class="alert-text">
+        <div class="alert-title" id="alertTitle">Error Spike Detected</div>
+        <div class="alert-message" id="alertMessage">15 errors in the last 5 minutes</div>
+      </div>
+    </div>
+    
+    <div class="card wide">
+      <div class="card-header">
+        <span class="card-title">📊 Live Metrics</span>
+      </div>
+      <div class="card-body">
+        <div class="metrics-grid">
+          <div class="metric">
+            <div class="metric-value" id="activeUsers">0</div>
+            <div class="metric-label">Active Users</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value purple" id="messagesToday">0</div>
+            <div class="metric-label">Messages Today</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value green" id="signupsToday">0</div>
+            <div class="metric-label">Signups Today</div>
+            <div class="metric-trend up" id="signupsTrend">+0 this week</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value green" id="revenueToday">$0</div>
+            <div class="metric-label">Revenue Today</div>
+            <div class="metric-trend up" id="revenueTrend">+$0 this week</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value" id="avgLatency">0ms</div>
+            <div class="metric-label">Avg Latency</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value red" id="errorsLastHour">0</div>
+            <div class="metric-label">Errors (1h)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">💚 System Health</span>
+      </div>
+      <div class="card-body">
+        <div class="health-grid">
+          <div class="health-item">
+            <div class="health-label">Memory Usage</div>
+            <div class="health-bar">
+              <div class="health-fill good" id="memoryBar" style="width: 0%"></div>
+            </div>
+            <div class="health-value" id="memoryValue">0%</div>
+          </div>
+          <div class="health-item">
+            <div class="health-label">CPU Load</div>
+            <div class="health-bar">
+              <div class="health-fill good" id="cpuBar" style="width: 0%"></div>
+            </div>
+            <div class="health-value" id="cpuValue">0%</div>
+          </div>
+          <div class="health-item">
+            <div class="health-label">API Response</div>
+            <div class="health-bar">
+              <div class="health-fill good" id="apiBar" style="width: 100%"></div>
+            </div>
+            <div class="health-value" id="apiValue">Healthy</div>
+          </div>
+          <div class="health-item">
+            <div class="health-label">Uptime</div>
+            <div class="health-value" id="uptimeValue">0h 0m</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card tall">
+      <div class="card-header">
+        <span class="card-title">👤 Signup Feed</span>
+        <span class="feed-badge badge-signup" id="signupCount">0 today</span>
+      </div>
+      <div class="card-body">
+        <div class="feed" id="signupFeed">
+          <div class="empty-state">
+            <div class="empty-state-icon">👋</div>
+            <div>Waiting for signups...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card tall">
+      <div class="card-header">
+        <span class="card-title">💰 Revenue Feed</span>
+        <span class="feed-badge badge-payment" id="revenueCount">$0 today</span>
+      </div>
+      <div class="card-body">
+        <div class="feed" id="revenueFeed">
+          <div class="empty-state">
+            <div class="empty-state-icon">💵</div>
+            <div>Waiting for payments...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">🎯 Conversion Funnel</span>
+      </div>
+      <div class="card-body">
+        <div class="funnel" id="funnel">
+          <div class="funnel-stage">
+            <div class="funnel-bar" style="width: 100%"></div>
+            <span class="funnel-label">Visitors</span>
+            <div class="funnel-stats">
+              <span class="funnel-count" id="funnelVisitors">0</span>
+              <span class="funnel-rate">100%</span>
+            </div>
+          </div>
+          <div class="funnel-stage">
+            <div class="funnel-bar" style="width: 0%"></div>
+            <span class="funnel-label">Signups</span>
+            <div class="funnel-stats">
+              <span class="funnel-count" id="funnelSignups">0</span>
+              <span class="funnel-rate" id="funnelSignupRate">0%</span>
+            </div>
+          </div>
+          <div class="funnel-stage">
+            <div class="funnel-bar" style="width: 0%"></div>
+            <span class="funnel-label">Activated</span>
+            <div class="funnel-stats">
+              <span class="funnel-count" id="funnelActivated">0</span>
+              <span class="funnel-rate" id="funnelActivatedRate">0%</span>
+            </div>
+          </div>
+          <div class="funnel-stage">
+            <div class="funnel-bar" style="width: 0%"></div>
+            <span class="funnel-label">Subscribed</span>
+            <div class="funnel-stats">
+              <span class="funnel-count" id="funnelSubscribed">0</span>
+              <span class="funnel-rate" id="funnelSubscribedRate">0%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card wide">
+      <div class="card-header">
+        <span class="card-title">🚨 Error Log</span>
+        <span class="feed-badge badge-error" id="errorCount">0 errors</span>
+      </div>
+      <div class="card-body">
+        <div class="feed" id="errorFeed" style="max-height: 300px;">
+          <div class="empty-state">
+            <div class="empty-state-icon">✅</div>
+            <div>No errors - all systems go!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">📈 Signups Over Time</span>
+      </div>
+      <div class="card-body">
+        <div class="chart-tabs">
+          <button class="chart-tab active" data-chart="signups" data-period="24h">24h</button>
+          <button class="chart-tab" data-chart="signups" data-period="7d">7d</button>
+          <button class="chart-tab" data-chart="signups" data-period="30d">30d</button>
+        </div>
+        <div class="chart-container">
+          <canvas id="signupsChart"></canvas>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">💵 Revenue Over Time</span>
+      </div>
+      <div class="card-body">
+        <div class="chart-tabs">
+          <button class="chart-tab active" data-chart="revenue" data-period="24h">24h</button>
+          <button class="chart-tab" data-chart="revenue" data-period="7d">7d</button>
+          <button class="chart-tab" data-chart="revenue" data-period="30d">30d</button>
+        </div>
+        <div class="chart-container">
+          <canvas id="revenueChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let ws;
+    let reconnectAttempts = 0;
+    const maxReconnectAttempts = 10;
+    
+    function connect() {
+      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+      ws = new WebSocket(protocol + '//' + window.location.host + '/ws');
+      
+      ws.onopen = () => {
+        console.log('WebSocket connected');
+        document.getElementById('connectionStatus').classList.remove('disconnected');
+        document.querySelector('#connectionStatus span:nth-child(2)').textContent = 'Connected';
+        reconnectAttempts = 0;
+      };
+      
+      ws.onclose = () => {
+        console.log('WebSocket disconnected');
+        document.getElementById('connectionStatus').classList.add('disconnected');
+        document.querySelector('#connectionStatus span:nth-child(2)').textContent = 'Disconnected';
+        
+        if (reconnectAttempts < maxReconnectAttempts) {
+          reconnectAttempts++;
+          setTimeout(connect, Math.min(1000 * reconnectAttempts, 10000));
+        }
+      };
+      
+      ws.onerror = (error) => console.error('WebSocket error:', error);
+      
+      ws.onmessage = (event) => {
+        try {
+          const { type, data, timestamp } = JSON.parse(event.data);
+          handleMessage(type, data, timestamp);
+        } catch (e) {
+          console.error('Failed to parse message:', e);
+        }
+      };
+    }
+    
+    function handleMessage(type, data, timestamp) {
+      document.getElementById('lastUpdated').textContent = formatTime(timestamp);
+      
+      switch (type) {
+        case 'metrics': updateMetrics(data); break;
+        case 'signup': addSignup(data); break;
+        case 'revenue': addRevenue(data); break;
+        case 'error': addError(data); break;
+        case 'health': updateHealth(data); break;
+        case 'funnel': updateFunnel(data); break;
+        case 'timeseries': updateCharts(data); break;
+        case 'alert': showAlert(data); break;
+      }
+    }
+    
+    function updateMetrics(data) {
+      document.getElementById('activeUsers').textContent = data.activeUsers || 0;
+      document.getElementById('messagesToday').textContent = formatNumber(data.messagesToday || 0);
+      document.getElementById('signupsToday').textContent = data.signupsToday || 0;
+      document.getElementById('signupsTrend').textContent = '+' + (data.signupsThisWeek || 0) + ' this week';
+      document.getElementById('revenueToday').textContent = formatCurrency(data.revenueToday || 0);
+      document.getElementById('revenueTrend').textContent = '+' + formatCurrency(data.revenueThisWeek || 0) + ' this week';
+      document.getElementById('avgLatency').textContent = (data.avgLatency || 0) + 'ms';
+      document.getElementById('errorsLastHour').textContent = data.errorsLastHour || 0;
+      
+      document.getElementById('signupCount').textContent = (data.signupsToday || 0) + ' today';
+      document.getElementById('revenueCount').textContent = formatCurrency(data.revenueToday || 0) + ' today';
+    }
+    
+    function updateHealth(data) {
+      const memPercent = data.memory?.percent || 0;
+      document.getElementById('memoryBar').style.width = memPercent + '%';
+      document.getElementById('memoryBar').className = 'health-fill ' + getHealthClass(memPercent);
+      document.getElementById('memoryValue').textContent = memPercent + '%';
+      
+      const cpuPercent = Math.min(100, Math.round((data.cpu?.loadAvg?.[0] || 0) / (data.cpu?.cores || 1) * 100));
+      document.getElementById('cpuBar').style.width = cpuPercent + '%';
+      document.getElementById('cpuBar').className = 'health-fill ' + getHealthClass(cpuPercent);
+      document.getElementById('cpuValue').textContent = cpuPercent + '%';
+      
+      const avgLatency = data.apiLatencies?.length > 0 
+        ? data.apiLatencies.reduce((a,b) => a+b, 0) / data.apiLatencies.length 
+        : 0;
+      const apiHealth = avgLatency < 200 ? 'good' : avgLatency < 500 ? 'warn' : 'bad';
+      document.getElementById('apiBar').className = 'health-fill ' + apiHealth;
+      document.getElementById('apiValue').textContent = avgLatency < 200 ? 'Healthy' : avgLatency < 500 ? 'Degraded' : 'Slow';
+      
+      if (data.process?.uptime) {
+        const hours = Math.floor(data.process.uptime / 3600);
+        const minutes = Math.floor((data.process.uptime % 3600) / 60);
+        document.getElementById('uptimeValue').textContent = hours + 'h ' + minutes + 'm';
+      }
+    }
+    
+    function getHealthClass(percent) {
+      if (percent < 60) return 'good';
+      if (percent < 80) return 'warn';
+      return 'bad';
+    }
+    
+    function addSignup(data) {
+      const feed = document.getElementById('signupFeed');
+      const empty = feed.querySelector('.empty-state');
+      if (empty) empty.remove();
+      
+      const item = document.createElement('div');
+      item.className = 'feed-item';
+      item.innerHTML = '<div class="feed-content">' +
+        '<div class="feed-title">' + escapeHtml(data.email) + '</div>' +
+        '<div class="feed-meta">' +
+        '<span class="feed-badge badge-signup">' + (data.plan || 'Free') + '</span>' +
+        (data.source ? '<span style="margin-left: 8px;">' + escapeHtml(data.source) + '</span>' : '') +
+        '</div></div>' +
+        '<span class="feed-time">' + formatTime(data.timestamp) + '</span>';
+      
+      feed.insertBefore(item, feed.firstChild);
+      while (feed.children.length > 50) feed.removeChild(feed.lastChild);
+    }
+    
+    function addRevenue(data) {
+      const feed = document.getElementById('revenueFeed');
+      const empty = feed.querySelector('.empty-state');
+      if (empty) empty.remove();
+      
+      const badgeClass = data.type === 'cancellation' ? 'badge-cancel' : 
+                        data.type === 'upgrade' ? 'badge-upgrade' : 'badge-payment';
+      const badgeText = data.type || 'Payment';
+      
+      const item = document.createElement('div');
+      item.className = 'feed-item';
+      item.innerHTML = '<div class="feed-content">' +
+        '<div class="feed-title">' + formatCurrency(data.amount) + '</div>' +
+        '<div class="feed-meta">' +
+        '<span class="feed-badge ' + badgeClass + '">' + badgeText + '</span>' +
+        '<span style="margin-left: 8px;">' + escapeHtml(data.email || data.customer || '') + '</span>' +
+        '</div></div>' +
+        '<span class="feed-time">' + formatTime(data.timestamp) + '</span>';
+      
+      feed.insertBefore(item, feed.firstChild);
+      while (feed.children.length > 50) feed.removeChild(feed.lastChild);
+    }
+    
+    function addError(data) {
+      const feed = document.getElementById('errorFeed');
+      const empty = feed.querySelector('.empty-state');
+      if (empty) empty.remove();
+      
+      const errorCount = feed.querySelectorAll('.error-item').length + 1;
+      document.getElementById('errorCount').textContent = errorCount + ' errors';
+      
+      const item = document.createElement('div');
+      item.className = 'error-item';
+      item.onclick = () => item.classList.toggle('expanded');
+      item.innerHTML = '<div class="error-header">' +
+        '<span class="error-type">' + escapeHtml(data.type || 'Error') + '</span>' +
+        '<span class="feed-time">' + formatTime(data.timestamp) + '</span>' +
+        '</div>' +
+        '<div class="error-message">' + escapeHtml(data.message || 'Unknown error') + '</div>' +
+        '<pre class="error-stack">' + escapeHtml(data.stack || 'No stack trace available') + '</pre>';
+      
+      feed.insertBefore(item, feed.firstChild);
+      while (feed.children.length > 100) feed.removeChild(feed.lastChild);
+      checkErrorSpike();
+    }
+    
+    function updateFunnel(data) {
+      const visitors = data.visitors || 0;
+      const signups = data.signups || 0;
+      const activated = data.activated || 0;
+      const subscribed = data.subscribed || 0;
+      
+      document.getElementById('funnelVisitors').textContent = formatNumber(visitors);
+      document.getElementById('funnelSignups').textContent = formatNumber(signups);
+      document.getElementById('funnelActivated').textContent = formatNumber(activated);
+      document.getElementById('funnelSubscribed').textContent = formatNumber(subscribed);
+      
+      if (visitors > 0) {
+        document.getElementById('funnelSignupRate').textContent = Math.round((signups / visitors) * 100) + '%';
+        document.getElementById('funnelActivatedRate').textContent = Math.round((activated / visitors) * 100) + '%';
+        document.getElementById('funnelSubscribedRate').textContent = Math.round((subscribed / visitors) * 100) + '%';
+        
+        const stages = document.querySelectorAll('.funnel-stage .funnel-bar');
+        stages[1].style.width = Math.round((signups / visitors) * 100) + '%';
+        stages[2].style.width = Math.round((activated / visitors) * 100) + '%';
+        stages[3].style.width = Math.round((subscribed / visitors) * 100) + '%';
+      }
+    }
+    
+    function showAlert(data) {
+      const banner = document.getElementById('alertBanner');
+      document.getElementById('alertTitle').textContent = data.title;
+      document.getElementById('alertMessage').textContent = data.message;
+      banner.classList.add('show');
+      setTimeout(() => banner.classList.remove('show'), 30000);
+    }
+    
+    let errorTimestamps = [];
+    function checkErrorSpike() {
+      const now = Date.now();
+      errorTimestamps.push(now);
+      errorTimestamps = errorTimestamps.filter(t => now - t < 300000);
+      
+      if (errorTimestamps.length >= 10) {
+        showAlert({
+          title: 'Error Spike Detected',
+          message: errorTimestamps.length + ' errors in the last 5 minutes'
+        });
+      }
+    }
+    
+    let signupsChart, revenueChart;
+    
+    function initCharts() {
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: {
+            grid: { color: 'rgba(48, 54, 61, 0.5)' },
+            ticks: { color: '#8b949e' }
+          },
+          y: {
+            grid: { color: 'rgba(48, 54, 61, 0.5)' },
+            ticks: { color: '#8b949e' },
+            beginAtZero: true
+          }
+        }
+      };
+      
+      signupsChart = new Chart(document.getElementById('signupsChart'), {
+        type: 'line',
+        data: {
+          labels: [],
+          datasets: [{
+            data: [],
+            borderColor: '#58a6ff',
+            backgroundColor: 'rgba(88, 166, 255, 0.1)',
+            fill: true,
+            tension: 0.4
+          }]
+        },
+        options: chartOptions
+      });
+      
+      revenueChart = new Chart(document.getElementById('revenueChart'), {
+        type: 'bar',
+        data: {
+          labels: [],
+          datasets: [{
+            data: [],
+            backgroundColor: 'rgba(63, 185, 80, 0.6)',
+            borderColor: '#3fb950',
+            borderWidth: 1
+          }]
+        },
+        options: chartOptions
+      });
+    }
+    
+    function updateCharts(data) {
+      if (data.signups) {
+        signupsChart.data.labels = data.signups.labels;
+        signupsChart.data.datasets[0].data = data.signups.values;
+        signupsChart.update('none');
+      }
+      
+      if (data.revenue) {
+        revenueChart.data.labels = data.revenue.labels;
+        revenueChart.data.datasets[0].data = data.revenue.values;
+        revenueChart.update('none');
+      }
+    }
+    
+    document.querySelectorAll('.chart-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const chart = tab.dataset.chart;
+        const period = tab.dataset.period;
+        
+        tab.parentElement.querySelectorAll('.chart-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        
+        if (ws && ws.readyState === WebSocket.OPEN) {
+          ws.send(JSON.stringify({ type: 'request-timeseries', chart, period }));
+        }
+      });
+    });
+    
+    function formatNumber(n) {
+      if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+      if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
+      return n.toString();
+    }
+    
+    function formatCurrency(amount) {
+      return '$' + (amount / 100).toFixed(2).replace(/\.00$/, '');
+    }
+    
+    function formatTime(ts) {
+      if (!ts) return 'now';
+      const date = new Date(ts);
+      const now = new Date();
+      const diff = now - date;
+      
+      if (diff < 60000) return 'Just now';
+      if (diff < 3600000) return Math.floor(diff / 60000) + 'm ago';
+      if (diff < 86400000) return Math.floor(diff / 3600000) + 'h ago';
+      
+      return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    }
+    
+    function escapeHtml(str) {
+      if (!str) return '';
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+    
+    initCharts();
+    connect();
+    
+    setInterval(() => {
+      if (ws && ws.readyState === WebSocket.OPEN) {
+        ws.send(JSON.stringify({ type: 'request-metrics' }));
+      }
+    }, 5000);
+  </script>
+</body>
+</html>

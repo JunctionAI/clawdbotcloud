@@ -1,0 +1,203 @@
+{
+  "agent": "junction-agent",
+  "project": "Junction Media",
+  "tasks": [
+    {
+      "id": "jnc-001",
+      "title": "Audit existing site code",
+      "description": "Review projects/junctionmedia-site, assess what's there",
+      "status": "ready",
+      "priority": "high",
+      "estimatedMinutes": 30,
+      "output": "Audit report"
+    },
+    {
+      "id": "jnc-002",
+      "title": "Define site structure",
+      "description": "Homepage, Services, Case Studies, About, Contact",
+      "status": "ready",
+      "priority": "high",
+      "estimatedMinutes": 20,
+      "output": "Site map document"
+    },
+    {
+      "id": "jnc-003",
+      "title": "Write homepage copy",
+      "description": "Hero, value props, social proof, CTA",
+      "status": "ready",
+      "priority": "high",
+      "estimatedMinutes": 45,
+      "output": "Homepage copy document"
+    },
+    {
+      "id": "jnc-004",
+      "title": "Write services page copy",
+      "description": "AI Marketing, Automation, Agent Deployment",
+      "status": "ready",
+      "priority": "high",
+      "estimatedMinutes": 45,
+      "output": "Services copy document"
+    },
+    {
+      "id": "jnc-005",
+      "title": "Write DBH case study",
+      "description": "30% sales increase, full AI model deployment",
+      "status": "ready",
+      "priority": "high",
+      "estimatedMinutes": 60,
+      "output": "Case study document"
+    },
+    {
+      "id": "jnc-006",
+      "title": "Write Jakob case study",
+      "description": "Clawdbot setup, ongoing support",
+      "status": "ready",
+      "priority": "medium",
+      "estimatedMinutes": 45,
+      "output": "Case study document"
+    },
+    {
+      "id": "jnc-007",
+      "title": "Design system setup",
+      "description": "Colors, typography, components for site",
+      "status": "ready",
+      "priority": "high",
+      "estimatedMinutes": 30,
+      "output": "Tailwind config + component specs"
+    },
+    {
+      "id": "jnc-008",
+      "title": "Build homepage",
+      "description": "Implement homepage in Next.js",
+      "status": "blocked",
+      "blocker": "Needs jnc-003 and jnc-007",
+      "priority": "high",
+      "estimatedMinutes": 120,
+      "output": "Working homepage"
+    },
+    {
+      "id": "jnc-009",
+      "title": "Build services page",
+      "description": "Implement services in Next.js",
+      "status": "blocked",
+      "blocker": "Needs jnc-004 and jnc-007",
+      "priority": "high",
+      "estimatedMinutes": 90,
+      "output": "Working services page"
+    },
+    {
+      "id": "jnc-010",
+      "title": "Build case studies section",
+      "description": "Case study template + DBH + Jakob",
+      "status": "blocked",
+      "blocker": "Needs jnc-005, jnc-006, jnc-007",
+      "priority": "high",
+      "estimatedMinutes": 90,
+      "output": "Working case studies"
+    },
+    {
+      "id": "jnc-011",
+      "title": "Build contact page",
+      "description": "Contact form, Calendly embed",
+      "status": "blocked",
+      "blocker": "Needs jnc-007",
+      "priority": "medium",
+      "estimatedMinutes": 45,
+      "output": "Working contact page"
+    },
+    {
+      "id": "jnc-012",
+      "title": "SEO setup",
+      "description": "Meta tags, OG images, sitemap",
+      "status": "blocked",
+      "blocker": "Needs pages built",
+      "priority": "medium",
+      "estimatedMinutes": 30,
+      "output": "SEO configured"
+    },
+    {
+      "id": "jnc-013",
+      "title": "Deploy to Vercel",
+      "description": "Connect repo, deploy, configure domain",
+      "status": "blocked",
+      "blocker": "Needs site built",
+      "priority": "high",
+      "estimatedMinutes": 30,
+      "output": "Live at junctionmedia.ai"
+    },
+    {
+      "id": "jnc-014",
+      "title": "Create service packages",
+      "description": "Define 3 tiers: Starter, Growth, Enterprise",
+      "status": "ready",
+      "priority": "high",
+      "estimatedMinutes": 45,
+      "output": "Pricing/package document"
+    },
+    {
+      "id": "jnc-015",
+      "title": "Create proposal template",
+      "description": "Reusable proposal for client pitches",
+      "status": "ready",
+      "priority": "medium",
+      "estimatedMinutes": 60,
+      "output": "Proposal template"
+    },
+    {
+      "id": "jnc-016",
+      "title": "LinkedIn content plan",
+      "description": "30 days of posts for thought leadership",
+      "status": "ready",
+      "priority": "medium",
+      "estimatedMinutes": 60,
+      "output": "Content calendar"
+    },
+    {
+      "id": "jnc-017",
+      "title": "Write 5 blog posts",
+      "description": "SEO-focused AI marketing content",
+      "status": "ready",
+      "priority": "medium",
+      "estimatedMinutes": 180,
+      "output": "5 blog posts"
+    },
+    {
+      "id": "jnc-018",
+      "title": "Create lead magnet",
+      "description": "Free guide: 'AI Marketing Playbook for 2026'",
+      "status": "ready",
+      "priority": "medium",
+      "estimatedMinutes": 120,
+      "output": "PDF guide"
+    },
+    {
+      "id": "jnc-019",
+      "title": "Set up email capture",
+      "description": "Newsletter signup, lead magnet delivery",
+      "status": "blocked",
+      "blocker": "Needs site and lead magnet",
+      "priority": "medium",
+      "estimatedMinutes": 30,
+      "output": "Working email capture"
+    },
+    {
+      "id": "jnc-020",
+      "title": "Outreach list - 50 prospects",
+      "description": "Research and compile prospect list",
+      "status": "ready",
+      "priority": "high",
+      "estimatedMinutes": 90,
+      "output": "Prospect spreadsheet"
+    }
+  ],
+  "stats": {
+    "total": 20,
+    "ready": 13,
+    "blocked": 7,
+    "inProgress": 0,
+    "complete": 0
+  },
+  "meta": {
+    "lastUpdated": "2026-02-09T19:50:00+13:00"
+  }
+}

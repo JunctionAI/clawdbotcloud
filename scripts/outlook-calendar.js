@@ -297,11 +297,25 @@ Usage:
         
         const days = daysArg ? parseInt(daysArg.split('=')[1]) : 7;
         const limit = limitArg ? parseInt(limitArg.split('=')[1]) : 50;
+        const jsonOutput = args.includes('--json');
 
         const endDate = new Date(Date.now() + days * 24 * 60 * 60 * 1000);
         const events = await listEvents({ endDate, limit });
 
         const showIds = args.includes('--ids');
+        
+        // JSON output for programmatic access (e.g., JARVIS HUD)
+        if (jsonOutput) {
+          const jsonEvents = events.map(event => ({
+            id: event.id,
+            subject: event.subject,
+            start: event.start.dateTime,
+            end: event.end.dateTime,
+            location: event.location?.displayName || ''
+          }));
+          console.log(JSON.stringify({ events: jsonEvents }));
+          break;
+        }
         
         console.log(`\n📅 Calendar Events (next ${days} days):\n`);
         if (events.length === 0) {

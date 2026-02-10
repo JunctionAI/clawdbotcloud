@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your week with Ally</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f8f9fa; color: #333333;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #f8f9fa;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="background-color: #ffffff; border-radius: 16px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+          <!-- Header -->
+          <tr>
+            <td style="padding: 48px 48px 32px; text-align: center;">
+              <div style="font-size: 32px; font-weight: 700; color: #6366f1; margin-bottom: 8px;">Ally</div>
+              <div style="font-size: 14px; color: #9ca3af; letter-spacing: 2px;">LIFE, HANDLED.</div>
+            </td>
+          </tr>
+          
+          <!-- Greeting -->
+          <tr>
+            <td style="padding: 0 48px 24px;">
+              <h1 style="margin: 0 0 8px; font-size: 24px; font-weight: 600; color: #1f2937; line-height: 1.3;">
+                Your week in review ✨
+              </h1>
+              <p style="margin: 0; font-size: 15px; color: #6b7280;">
+                {{weekDateRange}}
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Stats Grid -->
+          <tr>
+            <td style="padding: 0 48px 32px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="50%" style="padding-right: 8px;">
+                    <div style="padding: 24px; background-color: #eff6ff; border-radius: 12px; text-align: center;">
+                      <div style="font-size: 36px; font-weight: 700; color: #3b82f6; margin-bottom: 4px;">{{tasksCompleted}}</div>
+                      <div style="font-size: 13px; color: #6b7280;">Tasks handled</div>
+                    </div>
+                  </td>
+                  <td width="50%" style="padding-left: 8px;">
+                    <div style="padding: 24px; background-color: #f0fdf4; border-radius: 12px; text-align: center;">
+                      <div style="font-size: 36px; font-weight: 700; color: #22c55e; margin-bottom: 4px;">{{timeSaved}}</div>
+                      <div style="font-size: 13px; color: #6b7280;">Hours saved</div>
+                    </div>
+                  </td>
+                </tr>
+                <tr><td colspan="2" style="height: 16px;"></td></tr>
+                <tr>
+                  <td width="50%" style="padding-right: 8px;">
+                    <div style="padding: 24px; background-color: #fef3f2; border-radius: 12px; text-align: center;">
+                      <div style="font-size: 36px; font-weight: 700; color: #ef4444; margin-bottom: 4px;">{{emailsManaged}}</div>
+                      <div style="font-size: 13px; color: #6b7280;">Emails managed</div>
+                    </div>
+                  </td>
+                  <td width="50%" style="padding-left: 8px;">
+                    <div style="padding: 24px; background-color: #faf5ff; border-radius: 12px; text-align: center;">
+                      <div style="font-size: 36px; font-weight: 700; color: #a855f7; margin-bottom: 4px;">{{remindersSet}}</div>
+                      <div style="font-size: 13px; color: #6b7280;">Reminders set</div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- What I Helped With -->
+          <tr>
+            <td style="padding: 0 48px 32px;">
+              <h2 style="margin: 0 0 16px; font-size: 16px; font-weight: 600; color: #1f2937;">What I helped with this week</h2>
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                {{#each activities}}
+                <tr>
+                  <td style="padding: 16px; background-color: #f9fafb; border-radius: 10px; margin-bottom: 8px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" width="100%">
+                      <tr>
+                        <td style="vertical-align: top; padding-right: 12px; width: 36px;">
+                          <div style="width: 36px; height: 36px; background-color: {{iconBg}}; border-radius: 8px; text-align: center; line-height: 36px; font-size: 16px;">{{icon}}</div>
+                        </td>
+                        <td>
+                          <div style="font-weight: 500; color: #1f2937; margin-bottom: 2px;">{{title}}</div>
+                          <div style="font-size: 14px; color: #6b7280;">{{description}}</div>
+                        </td>
+                        <td style="text-align: right; vertical-align: middle; color: #9ca3af; font-size: 13px;">
+                          {{timestamp}}
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr><td style="height: 8px;"></td></tr>
+                {{/each}}
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Upcoming -->
+          <tr>
+            <td style="padding: 0 48px 32px;">
+              <div style="padding: 24px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); border-radius: 16px; color: #ffffff;">
+                <h2 style="margin: 0 0 16px; font-size: 16px; font-weight: 600;">Coming up next week</h2>
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                  {{#each upcoming}}
+                  <tr>
+                    <td style="padding: 8px 0;">
+                      <table role="presentation" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td style="vertical-align: top; padding-right: 12px; width: 60px;">
+                            <div style="font-size: 13px; opacity: 0.85;">{{date}}</div>
+                          </td>
+                          <td style="font-size: 15px;">{{event}}</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  {{/each}}
+                </table>
+              </div>
+            </td>
+          </tr>
+          
+          <!-- Tip of the Week -->
+          <tr>
+            <td style="padding: 0 48px 32px;">
+              <div style="padding: 20px; background-color: #fffbeb; border-radius: 12px; border: 1px solid #fde68a;">
+                <table role="presentation" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td style="vertical-align: top; padding-right: 12px;">
+                      <div style="font-size: 20px;">💡</div>
+                    </td>
+                    <td>
+                      <div style="font-weight: 600; color: #92400e; margin-bottom: 4px;">Tip of the week</div>
+                      <div style="font-size: 14px; line-height: 1.5; color: #a16207;">{{tip}}</div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+          
+          <!-- CTA -->
+          <tr>
+            <td style="padding: 0 48px 48px; text-align: center;">
+              <a href="{{appUrl}}" style="display: inline-block; padding: 16px 32px; background-color: #6366f1; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 10px;">Open Ally</a>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 32px 48px; background-color: #f9fafb; border-radius: 0 0 16px 16px; border-top: 1px solid #e5e7eb;">
+              <p style="margin: 0 0 8px; font-size: 14px; color: #9ca3af; text-align: center;">
+                Enjoying these digests? <a href="{{feedbackUrl}}" style="color: #6366f1; text-decoration: none;">Let me know</a> what else you'd like to see.
+              </p>
+              <p style="margin: 0; font-size: 12px; color: #d1d5db; text-align: center;">
+                {{companyName}} · {{companyAddress}}<br>
+                <a href="{{unsubscribeUrl}}" style="color: #9ca3af;">Unsubscribe</a> · <a href="{{preferencesUrl}}" style="color: #9ca3af;">Email preferences</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

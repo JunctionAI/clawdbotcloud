@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clawdbot - Get Started in 2 Minutes</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    
+    .timer {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.2);
+      padding: 10px 20px;
+      border-radius: 30px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    
+    .progress-bar {
+      height: 6px;
+      background: #e5e7eb;
+      border-radius: 3px;
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      width: 0%;
+      transition: width 0.5s ease;
+    }
+    
+    .step {
+      display: none;
+    }
+    
+    .step.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    h1 {
+      color: #1f2937;
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+    
+    .subtitle {
+      color: #6b7280;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+    
+    input, select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      transition: border-color 0.3s;
+    }
+    
+    input:focus, select:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    
+    .btn {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    }
+    
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    .quick-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .quick-option {
+      padding: 20px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-align: center;
+    }
+    
+    .quick-option:hover, .quick-option.selected {
+      border-color: #667eea;
+      background: #f9fafb;
+    }
+    
+    .quick-option .icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    
+    .quick-option .label {
+      font-weight: 600;
+      color: #1f2937;
+    }
+    
+    .provisioning {
+      text-align: center;
+    }
+    
+    .spinner {
+      border: 4px solid #f3f4f6;
+      border-top: 4px solid #667eea;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .success-icon {
+      font-size: 64px;
+      margin: 20px 0;
+    }
+    
+    .chat-preview {
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    
+    .message {
+      margin-bottom: 15px;
+      display: flex;
+      gap: 10px;
+    }
+    
+    .message.user {
+      flex-direction: row-reverse;
+    }
+    
+    .message .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #667eea;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    
+    .message.user .avatar {
+      background: #10b981;
+    }
+    
+    .message .bubble {
+      background: white;
+      padding: 10px 15px;
+      border-radius: 12px;
+      max-width: 70%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .message.user .bubble {
+      background: #10b981;
+      color: white;
+    }
+    
+    .sample-prompts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .sample-prompt {
+      background: #667eea;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    .sample-prompt:hover {
+      transform: scale(1.05);
+    }
+    
+    .checklist {
+      list-style: none;
+      margin: 20px 0;
+    }
+    
+    .checklist li {
+      padding: 10px 0;
+      padding-left: 30px;
+      position: relative;
+      color: #6b7280;
+    }
+    
+    .checklist li.done {
+      color: #10b981;
+    }
+    
+    .checklist li:before {
+      content: "○";
+      position: absolute;
+      left: 0;
+      font-size: 20px;
+    }
+    
+    .checklist li.done:before {
+      content: "✓";
+      color: #10b981;
+    }
+    
+    .stat-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .stat-card {
+      background: #f9fafb;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .stat-card .value {
+      font-size: 32px;
+      font-weight: bold;
+      color: #667eea;
+    }
+    
+    .stat-card .label {
+      font-size: 14px;
+      color: #6b7280;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="timer" id="timer">2:00</div>
+  
+  <div class="container">
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress"></div>
+    </div>
+    
+    <!-- Step 1: Welcome & Goal Selection -->
+    <div class="step active" id="step1">
+      <h1>🎉 Welcome to Clawdbot!</h1>
+      <p class="subtitle">Let's get you up and running in under 2 minutes</p>
+      
+      <p style="margin-bottom: 20px; color: #6b7280;">What do you want to automate first?</p>
+      
+      <div class="quick-options">
+        <div class="quick-option" data-goal="email">
+          <div class="icon">📧</div>
+          <div class="label">Email Management</div>
+        </div>
+        <div class="quick-option" data-goal="calendar">
+          <div class="icon">📅</div>
+          <div class="label">Calendar & Scheduling</div>
+        </div>
+        <div class="quick-option" data-goal="research">
+          <div class="icon">🔍</div>
+          <div class="label">Research & Analysis</div>
+        </div>
+        <div class="quick-option" data-goal="general">
+          <div class="icon">⚡</div>
+          <div class="label">Everything</div>
+        </div>
+      </div>
+      
+      <button class="btn" onclick="nextStep()" id="step1Btn" disabled>Continue</button>
+    </div>
+    
+    <!-- Step 2: Quick Setup -->
+    <div class="step" id="step2">
+      <h1>⚡ Quick Setup</h1>
+      <p class="subtitle">Just a few details to personalize your agent</p>
+      
+      <input type="text" id="userName" placeholder="Your name (e.g., Tom)" />
+      <input type="text" id="companyName" placeholder="Company name (optional)" />
+      
+      <select id="timezone">
+        <option value="">Select timezone</option>
+        <option value="Pacific/Auckland">Pacific/Auckland (NZDT)</option>
+        <option value="America/Los_Angeles">Pacific Time (US)</option>
+        <option value="America/New_York">Eastern Time (US)</option>
+        <option value="Europe/London">London (GMT)</option>
+        <option value="Asia/Singapore">Singapore</option>
+      </select>
+      
+      <button class="btn" onclick="provision()">Create My Agent →</button>
+    </div>
+    
+    <!-- Step 3: Provisioning -->
+    <div class="step" id="step3">
+      <div class="provisioning">
+        <h1>🚀 Creating Your Agent...</h1>
+        <p class="subtitle">This will only take a few seconds</p>
+        
+        <div class="spinner"></div>
+        
+        <ul class="checklist" id="provisionChecklist">
+          <li id="check1">Setting up workspace</li>
+          <li id="check2">Configuring memory system</li>
+          <li id="check3">Loading skills library (50+ skills)</li>
+          <li id="check4">Preparing first conversation</li>
+          <li id="check5">Ready to go!</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Step 4: First Interaction -->
+    <div class="step" id="step4">
+      <h1>💬 Meet Your Agent!</h1>
+      <p class="subtitle">Your agent is ready. Try your first message:</p>
+      
+      <div class="sample-prompts">
+        <div class="sample-prompt" onclick="sendSampleMessage(this)">What can you help me with?</div>
+        <div class="sample-prompt" onclick="sendSampleMessage(this)">Check my schedule today</div>
+        <div class="sample-prompt" onclick="sendSampleMessage(this)">Summarize my inbox</div>
+        <div class="sample-prompt" onclick="sendSampleMessage(this)">Find flights to SF</div>
+      </div>
+      
+      <div class="chat-preview" id="chatPreview">
+        <div class="message">
+          <div class="avatar">🤖</div>
+          <div class="bubble">
+            Hi <span id="userName1">there</span>! I'm your AI assistant, ready to help. 
+            I can manage your email, schedule meetings, do research, and much more. 
+            What would you like to try first?
+          </div>
+        </div>
+      </div>
+      
+      <div style="display: flex; gap: 10px;">
+        <input type="text" id="userMessage" placeholder="Type anything..." 
+               style="flex: 1;" onkeypress="if(event.key==='Enter') sendMessage()" />
+        <button class="btn" onclick="sendMessage()" style="width: auto; padding: 12px 24px;">Send</button>
+      </div>
+      
+      <button class="btn" onclick="nextStep()" style="margin-top: 15px; background: linear-gradient(135deg, #10b981, #059669);">
+        I'm Ready! Show Me More →
+      </button>
+    </div>
+    
+    <!-- Step 5: Quick Tutorial -->
+    <div class="step" id="step5">
+      <h1>🎓 30-Second Tour</h1>
+      <p class="subtitle">Here's everything you can do:</p>
+      
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="value">50+</div>
+          <div class="label">Pre-built Skills</div>
+        </div>
+        <div class="stat-card">
+          <div class="value">24/7</div>
+          <div class="label">Always Available</div>
+        </div>
+      </div>
+      
+      <div style="background: #f9fafb; padding: 20px; border-radius: 12px; margin: 20px 0;">
+        <h3 style="margin-bottom: 15px; color: #1f2937;">Popular Commands:</h3>
+        <ul style="list-style: none; color: #6b7280;">
+          <li style="margin-bottom: 10px;">📧 <strong>"Summarize emails from this week"</strong></li>
+          <li style="margin-bottom: 10px;">📅 <strong>"Schedule a meeting with Sarah tomorrow at 2pm"</strong></li>
+          <li style="margin-bottom: 10px;">🔍 <strong>"Research AI trends in healthcare"</strong></li>
+          <li style="margin-bottom: 10px;">📝 <strong>"Draft a proposal for Project X"</strong></li>
+          <li style="margin-bottom: 10px;">💡 <strong>"What should I focus on today?"</strong></li>
+        </ul>
+      </div>
+      
+      <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 15px; border-radius: 8px; margin: 20px 0;">
+        <strong>💡 Pro Tip:</strong> Your agent learns from every conversation. 
+        The more you use it, the better it gets at understanding your needs!
+      </div>
+      
+      <button class="btn" onclick="complete()">Start Using Clawdbot 🚀</button>
+    </div>
+    
+    <!-- Step 6: Success -->
+    <div class="step" id="step6">
+      <div style="text-align: center;">
+        <div class="success-icon">🎉</div>
+        <h1>You're All Set!</h1>
+        <p class="subtitle">Completed in <span id="finalTime">1:47</span></p>
+        
+        <div class="stat-cards">
+          <div class="stat-card">
+            <div class="value">✓</div>
+            <div class="label">Agent Ready</div>
+          </div>
+          <div class="stat-card">
+            <div class="value">✓</div>
+            <div class="label">Skills Loaded</div>
+          </div>
+        </div>
+        
+        <div style="background: #f9fafb; padding: 20px; border-radius: 12px; margin: 20px 0; text-align: left;">
+          <h3 style="margin-bottom: 15px; color: #1f2937;">Quick Access:</h3>
+          <ul style="list-style: none; color: #6b7280;">
+            <li style="margin-bottom: 10px;">
+              <strong>WhatsApp:</strong> <a href="#" style="color: #667eea;">Connect now</a>
+            </li>
+            <li style="margin-bottom: 10px;">
+              <strong>Telegram:</strong> <a href="#" style="color: #667eea;">Connect now</a>
+            </li>
+            <li style="margin-bottom: 10px;">
+              <strong>Discord:</strong> <a href="#" style="color: #667eea;">Connect now</a>
+            </li>
+            <li style="margin-bottom: 10px;">
+              <strong>Web Dashboard:</strong> <a href="#" style="color: #667eea;">Open dashboard</a>
+            </li>
+          </ul>
+        </div>
+        
+        <button class="btn" onclick="window.location.href='/dashboard'">
+          Open Dashboard →
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="onboarding.js"></script>
+</body>
+</html>

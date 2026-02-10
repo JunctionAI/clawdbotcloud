@@ -1,0 +1,566 @@
+# Onboarding Wireframes - Visual Spec
+
+## Screen Flow Diagram
+
+```
+┌──────────────┐     ┌──────────────┐     ┌──────────────┐
+│   WELCOME    │────▶│   QUIZ 1     │────▶│   QUIZ 2     │
+│   (10 sec)   │     │  Use Cases   │     │ Work Style   │
+└──────────────┘     └──────────────┘     └──────────────┘
+       │                                         │
+       │ skip                                    ▼
+       │                               ┌──────────────┐
+       │                               │   QUIZ 3     │
+       │                               │  First Win   │
+       │                               └──────────────┘
+       │                                         │
+       ▼                                         ▼
+┌──────────────┐     ┌──────────────┐     ┌──────────────┐
+│    CHAT      │◀────│    READY     │◀────│    SETUP     │
+│  + Prompts   │     │  + Skills    │     │  Animation   │
+└──────────────┘     └──────────────┘     └──────────────┘
+```
+
+---
+
+## Screen 1: Welcome
+
+### Mobile (375px)
+```
+┌─────────────────────────────────────┐
+│ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │  ← Status bar
+├─────────────────────────────────────┤
+│                                     │
+│                                     │
+│              [LOGO]                 │  ← Animated
+│               🤖✨                   │
+│                                     │
+│                                     │
+│     ┌───────────────────────┐      │
+│     │                       │      │
+│     │  Hey, I'm your        │      │  ← Fade in
+│     │  Clawdbot.            │      │
+│     │                       │      │
+│     │  I actually DO things │      │
+│     │  — not just talk.     │      │
+│     │                       │      │
+│     └───────────────────────┘      │
+│                                     │
+│     ┌───────────────────────┐      │
+│     │ 📧 Manages email       │      │
+│     │ 🔍 Researches for you  │      │  ← Stagger in
+│     │ 📱 Controls devices    │      │
+│     │ 🧠 Remembers all       │      │
+│     └───────────────────────┘      │
+│                                     │
+│                                     │
+│   ╔═══════════════════════════╗    │
+│   ║   Let's get started! →    ║    │  ← Primary CTA
+│   ╚═══════════════════════════╝    │
+│                                     │
+│      I'll explore on my own         │  ← Skip link
+│                                     │
+│            ● ○ ○ ○                  │  ← Progress
+│                                     │
+└─────────────────────────────────────┘
+```
+
+### Desktop (1200px)
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│                                                                             │
+│                                                                             │
+│                                    [LOGO]                                   │
+│                                     🤖✨                                     │
+│                                                                             │
+│                         ┌─────────────────────────────┐                     │
+│                         │                             │                     │
+│                         │   Hey, I'm your Clawdbot.   │                     │
+│                         │                             │                     │
+│                         │   I'm not like other AI     │                     │
+│                         │   assistants that just      │                     │
+│                         │   chat. I actually DO       │                     │
+│                         │   things for you.           │                     │
+│                         │                             │                     │
+│                         └─────────────────────────────┘                     │
+│                                                                             │
+│          ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐           │
+│          │ 📧       │  │ 🔍       │  │ 📱       │  │ 🧠       │           │
+│          │ Email    │  │ Research │  │ Devices  │  │ Memory   │           │
+│          └──────────┘  └──────────┘  └──────────┘  └──────────┘           │
+│                                                                             │
+│                                                                             │
+│                    ╔══════════════════════════════╗                        │
+│                    ║   Let's spend 30 seconds     ║                        │
+│                    ║   setting things up →        ║                        │
+│                    ╚══════════════════════════════╝                        │
+│                                                                             │
+│                       I'll explore on my own                                │
+│                                                                             │
+│                            ● ○ ○ ○                                          │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Screen 2: Quiz - Use Cases
+
+### Mobile
+```
+┌─────────────────────────────────────┐
+│ ← Back              1 of 3          │
+├─────────────────────────────────────┤
+│                                     │
+│   What do you need help with?       │
+│   ─────────────────────────────     │
+│   Pick as many as you like          │
+│                                     │
+│   ┌───────────────┐┌───────────────┐│
+│   │     📧        ││     🔍        ││
+│   │   Email &     ││  Research &   ││
+│   │   Messages    ││   Learning    ││
+│   │               ││               ││
+│   │   [  ]        ││   [✓]        ││
+│   └───────────────┘└───────────────┘│
+│                                     │
+│   ┌───────────────┐┌───────────────┐│
+│   │     📋        ││     🏠        ││
+│   │   Tasks &     ││  Smart Home   ││
+│   │ Productivity  ││   & Devices   ││
+│   │               ││               ││
+│   │   [✓]        ││   [  ]        ││
+│   └───────────────┘└───────────────┘│
+│                                     │
+│   ┌───────────────┐┌───────────────┐│
+│   │     💼        ││     🎨        ││
+│   │   Work &      ││   Creative    ││
+│   │   Business    ││   Projects    ││
+│   │               ││               ││
+│   │   [  ]        ││   [  ]        ││
+│   └───────────────┘└───────────────┘│
+│                                     │
+│   ╔═════════════════════════════╗   │
+│   ║       Continue →            ║   │
+│   ╚═════════════════════════════╝   │
+│                                     │
+│            ○ ● ○ ○                  │
+│                                     │
+└─────────────────────────────────────┘
+```
+
+### Selection States
+
+```
+┌─────────────────────┐     ┌─────────────────────┐
+│    UNSELECTED       │     │     SELECTED        │
+│                     │     │                     │
+│ ┌─────────────────┐ │     │ ┌─────────────────┐ │
+│ │ Border: #DDD    │ │     │ │ Border: #4F46E5 │ │
+│ │ BG: White       │ │     │ │ BG: #EEF2FF     │ │
+│ │                 │ │     │ │      ✓          │ │
+│ │   📧            │ │     │ │   📧            │ │
+│ │   Email         │ │     │ │   Email         │ │
+│ │                 │ │     │ │                 │ │
+│ │ [ ] checkbox    │ │     │ │ [✓] checkbox    │ │
+│ └─────────────────┘ │     │ └─────────────────┘ │
+│                     │     │                     │
+└─────────────────────┘     └─────────────────────┘
+```
+
+---
+
+## Screen 3: Quiz - Working Style
+
+### Mobile
+```
+┌─────────────────────────────────────┐
+│ ← Back              2 of 3          │
+├─────────────────────────────────────┤
+│                                     │
+│   How do you like to work?          │
+│   ─────────────────────────────     │
+│                                     │
+│   ┌─────────────────────────────┐   │
+│   │  🚀  "Just do it"           │   │
+│   │                             │   │
+│   │  I trust you to handle      │   │
+│   │  things and tell me when    │   │
+│   │  it's done.                 │   │
+│   │                         ○   │   │
+│   └─────────────────────────────┘   │
+│                                     │
+│   ┌─────────────────────────────┐   │
+│   │  🤝  "Let's collaborate"    │◀──│── Selected
+│   │                             │   │
+│   │  Show me what you're        │   │
+│   │  thinking, and we'll        │   │
+│   │  decide together.           │   │
+│   │                         ●   │   │
+│   └─────────────────────────────┘   │
+│                                     │
+│   ┌─────────────────────────────┐   │
+│   │  🎯  "Keep me in control"   │   │
+│   │                             │   │
+│   │  Always ask before taking   │   │
+│   │  action. I like to approve  │   │
+│   │  everything.                │   │
+│   │                         ○   │   │
+│   └─────────────────────────────┘   │
+│                                     │
+│   ╔═════════════════════════════╗   │
+│   ║       Continue →            ║   │
+│   ╚═════════════════════════════╝   │
+│                                     │
+│            ○ ○ ● ○                  │
+│                                     │
+└─────────────────────────────────────┘
+```
+
+---
+
+## Screen 4: Quiz - First Win
+
+### Mobile
+```
+┌─────────────────────────────────────┐
+│ ← Back              3 of 3          │
+├─────────────────────────────────────┤
+│                                     │
+│   What would make today a win? 🎯   │
+│   ─────────────────────────────     │
+│   Let's do this first               │
+│                                     │
+│   ┌─────────────────────────────┐   │
+│   │  📧  Clear my inbox clutter │   │
+│   └─────────────────────────────┘   │
+│                                     │
+│   ┌─────────────────────────────┐   │
+│   │  🔍  Research something     │◀──│── Selected
+│   │      for me                 │   │
+│   └─────────────────────────────┘   │
+│                                     │
+│   ┌─────────────────────────────┐   │
+│   │  📅  Get my schedule        │   │
+│   │      organized              │   │
+│   └─────────────────────────────┘   │
+│                                     │
+│   ┌─────────────────────────────┐   │
+│   │  💡  Surprise me with       │   │
+│   │      something cool         │   │
+│   └─────────────────────────────┘   │
+│                                     │
+│   ┌─────────────────────────────┐   │
+│   │  ⏭️  Skip — I'll figure     │   │
+│   │      it out                 │   │
+│   └─────────────────────────────┘   │
+│                                     │
+│   ╔═════════════════════════════╗   │
+│   ║       Let's go! →           ║   │
+│   ╚═════════════════════════════╝   │
+│                                     │
+│            ○ ○ ○ ●                  │
+│                                     │
+└─────────────────────────────────────┘
+```
+
+---
+
+## Screen 5: Setup Animation
+
+### Mobile - Loading State
+```
+┌─────────────────────────────────────┐
+│                                     │
+│                                     │
+│                                     │
+│                                     │
+│        Setting up your              │
+│          Clawdbot...                │
+│                                     │
+│           ⚙️  →  🔧  →  ✨           │
+│        [animated sequence]          │
+│                                     │
+│   ┌─────────────────────────────┐   │
+│   │                             │   │
+│   │  ✓ Configuring research     │   │
+│   │    and learning mode        │   │
+│   │                             │   │
+│   │  ✓ Setting collaboration    │   │
+│   │    preferences              │   │
+│   │                             │   │
+│   │  ● Loading recommended      │   │  ← Spinner
+│   │    skills...                │   │
+│   │                             │   │
+│   │  ○ Preparing your first     │   │  ← Waiting
+│   │    experience               │   │
+│   │                             │   │
+│   └─────────────────────────────┘   │
+│                                     │
+│       "A good assistant             │
+│        remembers. A great           │
+│        one anticipates."            │
+│                                     │
+│                                     │
+│                                     │
+└─────────────────────────────────────┘
+```
+
+---
+
+## Screen 6: Skill Recommendations
+
+### Mobile
+```
+┌─────────────────────────────────────┐
+│                                     │
+│   Based on your answers,            │
+│   I recommend these:                │
+│                                     │
+│   ┌─────────────────────────────┐   │
+│   │ 🔍  Web Research Pro        │   │
+│   │                             │   │
+│   │ Deep search, summarize      │   │
+│   │ content, compare options    │   │
+│   │                             │   │
+│   │         ╔═════════╗         │   │
+│   │         ║ Enable  ║         │   │
+│   │         ╚═════════╝         │   │
+│   └─────────────────────────────┘   │
+│                                     │
+│   ┌─────────────────────────────┐   │
+│   │ 🧠  Memory & Context        │   │
+│   │                             │   │
+│   │ I remember everything we    │   │
+│   │ talk about                  │   │
+│   │                             │   │
+│   │         ╔═════════╗         │   │
+│   │         ║ Enabled ✓║        │   │  ← Auto-on
+│   │         ╚═════════╝         │   │
+│   └─────────────────────────────┘   │
+│                                     │
+│   ┌─────────────────────────────┐   │
+│   │ 📧  Email Assistant         │   │
+│   │                             │   │
+│   │ Read, draft, and send       │   │
+│   │ emails on your behalf       │   │
+│   │                             │   │
+│   │         ╔═════════╗         │   │
+│   │         ║ Connect ║         │   │  ← Needs auth
+│   │         ╚═════════╝         │   │
+│   └─────────────────────────────┘   │
+│                                     │
+│   + Show all 12 skills              │
+│                                     │
+│   ╔═════════════════════════════╗   │
+│   ║    All set! Let's chat →    ║   │
+│   ╚═════════════════════════════╝   │
+│                                     │
+└─────────────────────────────────────┘
+```
+
+---
+
+## Screen 7: First Chat with Prompts
+
+### Mobile
+```
+┌─────────────────────────────────────┐
+│  Clawdbot                  ⚙️  ✕    │
+├─────────────────────────────────────┤
+│                                     │
+│   ┌─────────────────────────────┐   │
+│   │ 🤖                          │   │
+│   │                             │   │
+│   │ Hey! All set up and ready.  │   │
+│   │                             │   │
+│   │ You said you wanted help    │   │
+│   │ with research — let's start │   │
+│   │ there!                      │   │
+│   │                             │   │
+│   │ Tap any of these, or just   │   │
+│   │ ask me anything:            │   │
+│   └─────────────────────────────┘   │
+│                                     │
+│   Quick starts:                     │
+│                                     │
+│   ┌─────────────────────────────┐   │
+│   │ 🔍 "Research the best       │   │
+│   │    productivity apps for    │   │
+│   │    2024"                    │   │
+│   └─────────────────────────────┘   │
+│                                     │
+│   ┌─────────────────────────────┐   │
+│   │ 📊 "Compare Notion vs       │   │
+│   │    Obsidian — which is      │   │
+│   │    better for me?"          │   │
+│   └─────────────────────────────┘   │
+│                                     │
+│   ┌─────────────────────────────┐   │
+│   │ 💡 "Surprise me — show me   │   │
+│   │    something cool"          │   │
+│   └─────────────────────────────┘   │
+│                                     │
+├─────────────────────────────────────┤
+│ ┌─────────────────────────────┐ ➤  │
+│ │ Type a message...           │    │
+│ └─────────────────────────────┘    │
+└─────────────────────────────────────┘
+```
+
+---
+
+## "Aha Moment" Animation
+
+### Research Aha - Typing + Progress
+```
+Frame 1 (0s):
+┌─────────────────────────────────────┐
+│   │ 🤖 ●●●                          │  ← Typing dots
+│   └─────────────────────────────────┘
+
+Frame 2 (2s):
+┌─────────────────────────────────────┐
+│   │ 🤖                              │
+│   │ Searching across sources...     │
+│   │                                 │
+│   │ ░░░░░░░░░░░░░░░░░░░░░░  0%     │
+│   └─────────────────────────────────┘
+
+Frame 3 (4s):
+┌─────────────────────────────────────┐
+│   │ 🤖                              │
+│   │ Searching across sources...     │
+│   │                                 │
+│   │ ✓ Searched 8 articles           │
+│   │ ● Analyzing reviews...          │
+│   │                                 │
+│   │ █████████░░░░░░░░░░░░  45%     │
+│   └─────────────────────────────────┘
+
+Frame 4 (7s):
+┌─────────────────────────────────────┐
+│   │ 🤖                              │
+│   │ ✓ Searched 15 articles          │
+│   │ ✓ Analyzed 12 reviews           │
+│   │ ✓ Compared features             │
+│   │                                 │
+│   │ ████████████████████  Done! ✨  │
+│   └─────────────────────────────────┘
+
+Frame 5 (8s):
+┌─────────────────────────────────────┐
+│   │ 🤖                              │
+│   │ Here's what I found:            │
+│   │                                 │
+│   │ **Top 5 Productivity Apps**     │
+│   │                                 │
+│   │ 1. **Notion** — Best all-in-one │
+│   │    ✓ Flexible    ✗ Learning...  │
+│   │ [...]                           │
+│   └─────────────────────────────────┘
+```
+
+---
+
+## Component Library
+
+### Buttons
+
+```
+Primary CTA:
+╔═══════════════════════════════╗
+║   Let's get started! →        ║   BG: #4F46E5
+╚═══════════════════════════════╝   Text: White
+                                    Radius: 12px
+                                    Padding: 16px 32px
+
+Secondary:
+┌───────────────────────────────┐
+│   I'll explore on my own      │   BG: Transparent
+└───────────────────────────────┘   Text: #6B7280
+                                    Underline on hover
+
+Selection Card (Unselected):
+┌───────────────────────────────┐
+│       📧                      │   Border: #E5E7EB
+│    Email & Messages           │   BG: White
+│                               │   Radius: 12px
+│         [ ]                   │
+└───────────────────────────────┘
+
+Selection Card (Selected):
+┌───────────────────────────────┐
+│       📧        ✓             │   Border: #4F46E5 (2px)
+│    Email & Messages           │   BG: #EEF2FF
+│                               │   Radius: 12px
+│         [✓]                   │   Shadow: subtle
+└───────────────────────────────┘
+```
+
+### Typography
+
+```
+Headline:    32px / Bold / #111827
+Subhead:     18px / Regular / #6B7280
+Body:        16px / Regular / #374151
+Caption:     14px / Regular / #9CA3AF
+Button:      16px / Semibold / varies
+```
+
+### Colors
+
+```
+Primary:     #4F46E5 (Indigo 600)
+Primary BG:  #EEF2FF (Indigo 50)
+Success:     #10B981 (Emerald 500)
+Text:        #111827 (Gray 900)
+Muted:       #6B7280 (Gray 500)
+Border:      #E5E7EB (Gray 200)
+BG:          #FFFFFF (White)
+```
+
+### Spacing
+
+```
+Container padding: 24px
+Card padding: 16px
+Element gap: 16px
+Section gap: 32px
+```
+
+---
+
+## Animation Spec
+
+### Welcome Screen
+```
+Logo:        Bounce ease-out, 300ms, delay 0ms
+Headline:    Fade up, 400ms, delay 200ms
+Features:    Stagger fade up, 200ms each, delay 400ms
+CTA:         Fade in + subtle pulse, delay 1000ms
+```
+
+### Quiz Transitions
+```
+Between screens: Slide left, 300ms, ease-in-out
+Card selection:  Scale 1.02 + border color, 150ms
+```
+
+### Setup Animation
+```
+Gear sequence:  ⚙️ → 🔧 → ✨ rotate + scale, 2s loop
+Checklist:      Fade in + checkmark animate, 400ms stagger
+```
+
+### Chat Prompts
+```
+Message:     Fade up, 300ms
+Prompts:     Stagger fade up, 150ms each, delay 500ms
+Input focus: Border color transition, 200ms
+```
+
+---
+
+*Wireframes complete. Ready for implementation.*

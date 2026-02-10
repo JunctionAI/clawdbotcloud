@@ -28,9 +28,28 @@ export default defineSchema({
     createdBy: v.optional(v.id("agents")),
     createdAt: v.number(),
     updatedAt: v.number(),
+    // Calendar/scheduling fields
+    scheduledFor: v.optional(v.number()), // timestamp when task should run
+    recurrence: v.optional(v.string()), // cron expression or "daily", "weekly", etc.
+    isScheduled: v.optional(v.boolean()),
   })
     .index("by_status", ["status"])
-    .index("by_updated", ["updatedAt"]),
+    .index("by_updated", ["updatedAt"])
+    .index("by_scheduled", ["scheduledFor"]),
+  
+  // Scheduled jobs for cron-like tasks
+  scheduledJobs: defineTable({
+    name: v.string(),
+    description: v.string(),
+    cronExpression: v.string(), // e.g., "0 9 * * *" for 9am daily
+    lastRun: v.optional(v.number()),
+    nextRun: v.number(),
+    status: v.union(v.literal("active"), v.literal("paused"), v.literal("completed")),
+    taskType: v.string(), // what kind of task this creates
+    createdAt: v.number(),
+  })
+    .index("by_next_run", ["nextRun"])
+    .index("by_status", ["status"]),
 
   messages: defineTable({
     taskId: v.id("tasks"),

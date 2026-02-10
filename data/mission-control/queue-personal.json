@@ -1,0 +1,183 @@
+{
+  "agent": "personal-agent",
+  "project": "Personal",
+  "tasks": [
+    {
+      "id": "per-001",
+      "title": "Morning briefing",
+      "description": "Calendar, emails, priorities push to Discord",
+      "status": "ready",
+      "priority": "high",
+      "recurring": "daily",
+      "recurringTime": "08:00",
+      "estimatedMinutes": 15,
+      "output": "Discord message"
+    },
+    {
+      "id": "per-002",
+      "title": "Evening review",
+      "description": "What shipped, update memory, check tomorrow, log spending",
+      "status": "ready",
+      "priority": "high",
+      "recurring": "daily",
+      "recurringTime": "21:00",
+      "estimatedMinutes": 20,
+      "output": "Memory update + Discord summary"
+    },
+    {
+      "id": "per-003",
+      "title": "Spending tracker",
+      "description": "Run Wise daily tracker, log transactions",
+      "status": "ready",
+      "priority": "medium",
+      "recurring": "daily",
+      "recurringTime": "21:00",
+      "estimatedMinutes": 10,
+      "output": "Spending log updated"
+    },
+    {
+      "id": "per-004",
+      "title": "Habit check",
+      "description": "Log dopamine habits (porn/weed/alcohol/coffee)",
+      "status": "ready",
+      "priority": "medium",
+      "recurring": "daily",
+      "recurringTime": "21:00",
+      "estimatedMinutes": 5,
+      "output": "Habit tracker updated"
+    },
+    {
+      "id": "per-005",
+      "title": "Email intelligence check",
+      "description": "Scan for critical sender emails",
+      "status": "ready",
+      "priority": "high",
+      "recurring": "4x daily",
+      "recurringTimes": ["08:00", "12:00", "16:00", "20:00"],
+      "estimatedMinutes": 10,
+      "output": "Alert if critical email found"
+    },
+    {
+      "id": "per-006",
+      "title": "Calendar check",
+      "description": "Review next 48h events, prep reminders",
+      "status": "ready",
+      "priority": "high",
+      "recurring": "daily",
+      "recurringTime": "08:00",
+      "estimatedMinutes": 10,
+      "output": "Calendar summary"
+    },
+    {
+      "id": "per-007",
+      "title": "Weekly review",
+      "description": "Read week's daily files, update MEMORY.md, STATE.json",
+      "status": "ready",
+      "priority": "high",
+      "recurring": "weekly",
+      "recurringDay": "Sunday",
+      "recurringTime": "20:00",
+      "estimatedMinutes": 45,
+      "output": "Memory consolidated, git commit"
+    },
+    {
+      "id": "per-008",
+      "title": "Baycorp setup",
+      "description": "Complete Baycorp payment setup",
+      "status": "todo",
+      "priority": "medium",
+      "scheduledDate": "2026-02-10",
+      "estimatedMinutes": 30,
+      "output": "Payment configured"
+    },
+    {
+      "id": "per-009",
+      "title": "TWG migration work",
+      "description": "Klaviyo migration (11:30-1:30 daily)",
+      "status": "ready",
+      "priority": "medium",
+      "recurring": "daily",
+      "recurringTime": "11:30",
+      "estimatedMinutes": 120,
+      "output": "Migration progress"
+    },
+    {
+      "id": "per-010",
+      "title": "Influencer from Vietnam prep",
+      "description": "Prep for Friday Feb 13 2pm meeting",
+      "status": "todo",
+      "priority": "medium",
+      "scheduledDate": "2026-02-13",
+      "estimatedMinutes": 30,
+      "output": "Meeting prep notes"
+    },
+    {
+      "id": "per-011",
+      "title": "Financial dashboard check",
+      "description": "Run financial dashboard, check runway",
+      "status": "ready",
+      "priority": "medium",
+      "recurring": "weekly",
+      "recurringDay": "Monday",
+      "recurringTime": "09:00",
+      "estimatedMinutes": 15,
+      "output": "Financial summary"
+    },
+    {
+      "id": "per-012",
+      "title": "Goal progress check",
+      "description": "Review progress against $1M 2026 goal",
+      "status": "ready",
+      "priority": "medium",
+      "recurring": "weekly",
+      "recurringDay": "Sunday",
+      "recurringTime": "20:00",
+      "estimatedMinutes": 15,
+      "output": "Goal progress update"
+    },
+    {
+      "id": "per-013",
+      "title": "Supermemory sync",
+      "description": "Sync insights to Supermemory",
+      "status": "ready",
+      "priority": "low",
+      "recurring": "daily",
+      "recurringTime": "21:00",
+      "estimatedMinutes": 10,
+      "output": "Supermemory updated"
+    },
+    {
+      "id": "per-014",
+      "title": "Git commit daily work",
+      "description": "Commit and push workspace changes",
+      "status": "ready",
+      "priority": "low",
+      "recurring": "daily",
+      "recurringTime": "22:00",
+      "estimatedMinutes": 5,
+      "output": "Git pushed"
+    },
+    {
+      "id": "per-015",
+      "title": "Clawnch monitor",
+      "description": "Track AI agent predictions for arbitrage",
+      "status": "ready",
+      "priority": "low",
+      "recurring": "daily",
+      "recurringTime": "08:00",
+      "estimatedMinutes": 10,
+      "output": "Monitor report"
+    }
+  ],
+  "stats": {
+    "total": 15,
+    "ready": 12,
+    "todo": 2,
+    "blocked": 0,
+    "inProgress": 0,
+    "complete": 0
+  },
+  "meta": {
+    "lastUpdated": "2026-02-09T19:55:00+13:00"
+  }
+}

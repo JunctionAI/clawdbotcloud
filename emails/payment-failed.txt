@@ -1,0 +1,38 @@
+ALLY — LIFE, HANDLED.
+
+Hey {{firstName}}, quick heads up 👋
+
+I tried to process your payment for {{planName}}, but it didn't go through. No worries — these things happen! Usually it's just an expired card or a temporary bank hiccup.
+
+---
+
+💳 PAYMENT FAILED
+
+Card: {{cardBrand}} ending in {{cardLast4}}
+Amount: {{amount}}
+
+---
+
+WHAT HAPPENS NEXT?
+
+I'll try again in a few days. But if you want to sort it out now (takes 30 seconds), just update your payment method:
+
+Update payment: {{updatePaymentUrl}}
+
+---
+
+⏰ HEADS UP
+
+If we can't process payment by {{gracePeriodEnd}}, your account will be paused. You won't lose any data — everything will be waiting for you when you come back.
+
+---
+
+Running into issues? Just reply to this email.
+I'm here to help sort things out.
+
+Manage billing: {{billingUrl}}
+Get help: {{helpUrl}}
+
+{{companyName}} · {{companyAddress}}
+Unsubscribe: {{unsubscribeUrl}}
+Email preferences: {{preferencesUrl}}

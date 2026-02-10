@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick heads up about your payment</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f8f9fa; color: #333333;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #f8f9fa;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="background-color: #ffffff; border-radius: 16px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+          <!-- Header -->
+          <tr>
+            <td style="padding: 48px 48px 32px; text-align: center;">
+              <div style="font-size: 32px; font-weight: 700; color: #6366f1; margin-bottom: 8px;">Ally</div>
+              <div style="font-size: 14px; color: #9ca3af; letter-spacing: 2px;">LIFE, HANDLED.</div>
+            </td>
+          </tr>
+          
+          <!-- Main Content -->
+          <tr>
+            <td style="padding: 0 48px 24px;">
+              <h1 style="margin: 0 0 24px; font-size: 24px; font-weight: 600; color: #1f2937; line-height: 1.3;">
+                Hey {{firstName}}, quick heads up 👋
+              </h1>
+              <p style="margin: 0 0 20px; font-size: 16px; line-height: 1.6; color: #4b5563;">
+                I tried to process your payment for {{planName}}, but it didn't go through. No worries — these things happen! Usually it's just an expired card or a temporary bank hiccup.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Payment Details -->
+          <tr>
+            <td style="padding: 0 48px 32px;">
+              <div style="padding: 20px; background-color: #fef2f2; border-radius: 12px; border: 1px solid #fecaca;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td style="vertical-align: top; padding-right: 16px; width: 24px;">
+                      <div style="font-size: 20px;">💳</div>
+                    </td>
+                    <td>
+                      <div style="font-weight: 600; color: #991b1b; margin-bottom: 4px;">Payment failed</div>
+                      <div style="font-size: 14px; color: #7f1d1d;">
+                        {{cardBrand}} ending in {{cardLast4}}<br>
+                        Amount: {{amount}}
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+          
+          <!-- What Happens Next -->
+          <tr>
+            <td style="padding: 0 48px 32px;">
+              <h2 style="margin: 0 0 16px; font-size: 16px; font-weight: 600; color: #1f2937;">What happens next?</h2>
+              <p style="margin: 0 0 16px; font-size: 15px; line-height: 1.6; color: #4b5563;">
+                I'll try again in a few days. But if you want to sort it out now (takes 30 seconds), just update your payment method:
+              </p>
+            </td>
+          </tr>
+          
+          <!-- CTA -->
+          <tr>
+            <td style="padding: 0 48px 32px; text-align: center;">
+              <a href="{{updatePaymentUrl}}" style="display: inline-block; padding: 16px 32px; background-color: #6366f1; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 10px;">Update payment method</a>
+            </td>
+          </tr>
+          
+          <!-- Timeline -->
+          <tr>
+            <td style="padding: 0 48px 32px;">
+              <div style="padding: 20px; background-color: #fffbeb; border-radius: 12px; border: 1px solid #fde68a;">
+                <table role="presentation" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td style="vertical-align: top; padding-right: 12px;">
+                      <div style="font-size: 18px;">⏰</div>
+                    </td>
+                    <td>
+                      <div style="font-size: 14px; line-height: 1.5; color: #92400e;">
+                        <strong>Heads up:</strong> If we can't process payment by {{gracePeriodEnd}}, your account will be paused. You won't lose any data — everything will be waiting for you when you come back.
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+          
+          <!-- Support -->
+          <tr>
+            <td style="padding: 0 48px 48px;">
+              <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #6b7280; text-align: center;">
+                Running into issues? Just reply to this email.<br>
+                I'm here to help sort things out.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 32px 48px; background-color: #f9fafb; border-radius: 0 0 16px 16px; border-top: 1px solid #e5e7eb;">
+              <p style="margin: 0 0 8px; font-size: 14px; color: #9ca3af; text-align: center;">
+                <a href="{{billingUrl}}" style="color: #6366f1; text-decoration: none;">Manage billing</a> · <a href="{{helpUrl}}" style="color: #6366f1; text-decoration: none;">Get help</a>
+              </p>
+              <p style="margin: 0; font-size: 12px; color: #d1d5db; text-align: center;">
+                {{companyName}} · {{companyAddress}}<br>
+                <a href="{{unsubscribeUrl}}" style="color: #9ca3af;">Unsubscribe</a> · <a href="{{preferencesUrl}}" style="color: #9ca3af;">Email preferences</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

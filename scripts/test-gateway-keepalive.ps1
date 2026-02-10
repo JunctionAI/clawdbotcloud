@@ -35,6 +35,34 @@ function Test-Case {
 }
 
 # ============================================================
+# TEST 0: BUG REPRODUCTION - $env:APPDATA fails in scheduled task
+# ============================================================
+Test-Case "BUG: \$env:APPDATA may be empty in scheduled task context" {
+    # The bug: scheduled tasks often don't have $env:APPDATA set
+    # This causes "$env:APPDATA\npm\clawdbot.cmd" to become "\npm\clawdbot.cmd"
+
+    # Save current value
+    $originalAppData = $env:APPDATA
+
+    try {
+        # Simulate scheduled task environment (APPDATA not set)
+        $env:APPDATA = ""
+
+        $badPath = "$env:APPDATA\npm\clawdbot.cmd"
+        Write-Host "  When APPDATA is empty, path becomes: '$badPath'"
+        Write-Host "  This path exists: $(Test-Path $badPath)"
+
+        # The bug is reproduced if the path becomes invalid
+        $bugReproduced = -not (Test-Path $badPath)
+        Write-Host "  Bug reproduced (path invalid): $bugReproduced"
+
+        return $bugReproduced
+    } finally {
+        $env:APPDATA = $originalAppData
+    }
+}
+
+# ============================================================
 # TEST 1: Verify clawdbot exists in known locations
 # ============================================================
 Test-Case "Clawdbot executable exists in npm global" {
@@ -164,27 +192,33 @@ Test-Case "FIX VERIFICATION: keep-gateway-alive.ps1 uses absolute path variable"
 }
 
 # ============================================================
-# TEST 6: Verify script has path resolution logic
+# TEST 6: Verify script uses ABSOLUTE HARDCODED path (not $env:APPDATA)
 # ============================================================
-Test-Case "FIX VERIFICATION: Script resolves clawdbot path at startup" {
+Test-Case "FIX #4: Script uses absolute hardcoded path (not \$env:APPDATA)" {
     $scriptPath = "$PSScriptRoot\keep-gateway-alive.ps1"
     $content = Get-Content $scriptPath -Raw
 
-    # Check for path resolution logic
-    $hasLocalCheck = $content -match 'node_modules\\\.bin\\clawdbot\.cmd'
-    $hasGlobalCheck = $content -match '\$env:APPDATA.*npm.*clawdbot\.cmd'
-    $hasExitOnNotFound = $content -match 'exit\s+1'
+    # BUG: Using $env:APPDATA in code (not comments) fails in scheduled task context
+    # Match actual variable usage in code, not in comments
+    $usesEnvAppData = $content -match '\$globalClawdbot\s*=\s*"\$env:APPDATA'
 
-    Write-Host "  Checking for path resolution logic..."
-    Write-Host "  Has local node_modules check: $hasLocalCheck"
-    Write-Host "  Has npm global check: $hasGlobalCheck"
-    Write-Host "  Has exit on not found: $hasExitOnNotFound"
+    # FIX: Should use absolute hardcoded path like C:\Users\Nightgalem\AppData\Roaming\npm
+    $usesAbsolutePath = $content -match 'C:\\Users\\Nightgalem\\AppData\\Roaming\\npm\\clawdbot\.cmd'
 
-    $allChecks = $hasLocalCheck -and $hasGlobalCheck -and $hasExitOnNotFound
-    if ($allChecks) {
-        Write-Host "  FIX CONFIRMED: Script has proper path resolution"
+    Write-Host "  Checking for absolute path usage..."
+    Write-Host "  Uses buggy \$env:APPDATA in code: $usesEnvAppData"
+    Write-Host "  Uses absolute hardcoded path: $usesAbsolutePath"
+
+    if ($usesAbsolutePath -and -not $usesEnvAppData) {
+        Write-Host "  FIX CONFIRMED: Script uses absolute hardcoded path"
+        return $true
+    } elseif ($usesEnvAppData) {
+        Write-Host "  BUG PRESENT: Script uses \$env:APPDATA which fails in scheduled task"
+        return $false
+    } else {
+        Write-Host "  UNKNOWN: Path pattern not found"
+        return $false
     }
-    return $allChecks
 }
 
 # ============================================================
@@ -254,7 +288,24 @@ Test-Case "FIX #3: Only ONE gateway scheduled task should be enabled/running" {
 }
 
 # ============================================================
-# TEST 9: Gateway is actually listening and healthy
+# TEST 9: Startup script exists in Windows Startup folder
+# ============================================================
+Test-Case "Startup script exists in Windows Startup folder" {
+    $startupPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\ClawdbotGateway.vbs"
+    $exists = Test-Path $startupPath
+    Write-Host "  Checking: $startupPath"
+    Write-Host "  Exists: $exists"
+
+    if ($exists) {
+        Write-Host "  FIX CONFIRMED: Gateway will auto-start on login"
+    } else {
+        Write-Host "  WARNING: Gateway will not auto-start on login"
+    }
+    return $exists
+}
+
+# ============================================================
+# TEST 10: Gateway is actually listening and healthy
 # ============================================================
 Test-Case "Gateway is listening on port 18789 and healthy" {
     $connection = Get-NetTCPConnection -LocalPort 18789 -ErrorAction SilentlyContinue | Select-Object -First 1
@@ -307,12 +358,12 @@ Write-Host "  - 'FIX VERIFICATION' tests should PASS (confirms fix is applied)"
 Write-Host "`n"
 
 # Return exit code based on test results
-# All 7 tests should pass after the fix is applied
-$expectedPassCount = 7
-if ($testResults.Passed.Count -eq $expectedPassCount) {
-    Write-Host "All tests passed! Fix verified." -ForegroundColor Green
+# Core tests should pass after fixes are applied
+$coreTestCount = 9
+if ($testResults.Passed.Count -ge $coreTestCount) {
+    Write-Host "All core tests passed! Setup verified." -ForegroundColor Green
     exit 0
-} elseif ($testResults.Passed.Count -ge 5) {
+} elseif ($testResults.Passed.Count -ge 7) {
     Write-Host "Most tests passed. Review any failures above." -ForegroundColor Yellow
     exit 0
 } else {

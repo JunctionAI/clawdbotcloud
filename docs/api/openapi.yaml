@@ -1,0 +1,1574 @@
+openapi: 3.1.0
+info:
+  title: Clawdbot/Ally API
+  description: |
+    AI-powered personal assistant API for building conversational experiences,
+    managing user context with persistent memory, and extending functionality
+    through a modular skills system.
+    
+    ## Authentication
+    
+    All API requests require authentication via one of:
+    - **API Key:** `Authorization: Bearer <api_key>`
+    - **JWT Token:** `Authorization: Bearer <jwt_token>`
+    - **OAuth2:** Standard OAuth2 bearer token
+    
+    ## Rate Limits
+    
+    Rate limits vary by plan tier. See the Rate Limits section for details.
+  version: 1.0.0
+  contact:
+    name: Clawdbot API Support
+    email: api-support@clawdbot.com
+    url: https://docs.clawdbot.com
+  license:
+    name: Proprietary
+    url: https://clawdbot.com/terms
+  termsOfService: https://clawdbot.com/terms
+
+servers:
+  - url: https://api.clawdbot.com/v1
+    description: Production server
+  - url: https://api-staging.clawdbot.com/v1
+    description: Staging server
+  - url: http://localhost:3001/api
+    description: Local development
+
+tags:
+  - name: Chat
+    description: Send messages and receive AI responses
+  - name: Memory
+    description: Store and retrieve user context
+  - name: Skills
+    description: Manage agent capabilities
+  - name: Agents
+    description: Agent management and provisioning
+  - name: Webhooks
+    description: Event notifications and callbacks
+  - name: System
+    description: Health checks and status endpoints
+
+security:
+  - ApiKeyAuth: []
+  - BearerAuth: []
+
+paths:
+  # ===================
+  # HEALTH & STATUS
+  # ===================
+  /health:
+    get:
+      summary: Health check
+      description: Check API server health status
+      tags: [System]
+      security: []
+      responses:
+        '200':
+          description: Server is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: healthy
+                  timestamp:
+                    type: string
+                    format: date-time
+                  version:
+                    type: string
+                    example: "1.0.0"
+                  environment:
+                    type: string
+                    example: production
+
+  /status:
+    get:
+      summary: API status
+      description: Get API service status and version
+      tags: [System]
+      security: []
+      responses:
+        '200':
+          description: Service status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusResponse'
+
+  # ===================
+  # CHAT API
+  # ===================
+  /chat/messages:
+    post:
+      summary: Send a message
+      description: |
+        Send a message to an agent and receive a response.
+        
+        The message is processed by the agent's configured model,
+        with access to enabled skills and stored memory.
+      tags: [Chat]
+      operationId: sendMessage
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MessageRequest'
+      responses:
+        '200':
+          description: Message response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /chat/stream:
+    post:
+      summary: Stream a message response
+      description: |
+        Send a message and receive a streaming response via Server-Sent Events (SSE).
+        
+        Useful for long-form responses where you want to display
+        text as it's being generated.
+      tags: [Chat]
+      operationId: streamMessage
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MessageRequest'
+      responses:
+        '200':
+          description: Streaming response
+          content:
+            text/event-stream:
+              schema:
+                type: string
+                description: |
+                  Server-sent events with the following format:
+                  
+                  ```
+                  event: message
+                  data: {"delta": "Hello", "finish_reason": null}
+                  
+                  event: message
+                  data: {"delta": " world", "finish_reason": null}
+                  
+                  event: done
+                  data: {"finish_reason": "stop", "usage": {"tokens": 42}}
+                  ```
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /chat/history:
+    get:
+      summary: Get conversation history
+      description: Retrieve past messages for a user or conversation
+      tags: [Chat]
+      operationId: getChatHistory
+      parameters:
+        - name: agent_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Agent ID
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: User ID
+        - name: conversation_id
+          in: query
+          schema:
+            type: string
+          description: Specific conversation ID
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 50
+            maximum: 100
+          description: Number of messages to return
+        - name: before
+          in: query
+          schema:
+            type: string
+            format: date-time
+          description: Return messages before this timestamp
+      responses:
+        '200':
+          description: Conversation history
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  messages:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Message'
+                  has_more:
+                    type: boolean
+                  cursor:
+                    type: string
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /chat/messages/{message_id}:
+    delete:
+      summary: Delete a message
+      description: Remove a specific message from history
+      tags: [Chat]
+      operationId: deleteMessage
+      parameters:
+        - name: message_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Message deleted
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  # ===================
+  # MEMORY API
+  # ===================
+  /memory:
+    get:
+      summary: Get all memory
+      description: Retrieve all stored memory for a user
+      tags: [Memory]
+      operationId: getMemory
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: agent_id
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User memory
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Memory'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+    delete:
+      summary: Clear all memory
+      description: Delete all stored memory for a user
+      tags: [Memory]
+      operationId: clearMemory
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: agent_id
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Memory cleared
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /memory/facts:
+    post:
+      summary: Add a fact
+      description: Store a new fact in user memory
+      tags: [Memory]
+      operationId: addFact
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [user_id, agent_id, fact]
+              properties:
+                user_id:
+                  type: string
+                agent_id:
+                  type: string
+                fact:
+                  type: string
+                  maxLength: 1000
+                category:
+                  type: string
+                  enum: [preference, personal, work, general]
+                source:
+                  type: string
+                  description: Where this fact was learned from
+      responses:
+        '201':
+          description: Fact created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fact'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  /memory/facts/{fact_id}:
+    delete:
+      summary: Remove a fact
+      description: Delete a specific fact from memory
+      tags: [Memory]
+      operationId: deleteFact
+      parameters:
+        - name: fact_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Fact deleted
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /memory/entities:
+    get:
+      summary: List entities
+      description: Get all stored entities (people, projects, companies)
+      tags: [Memory]
+      operationId: listEntities
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: agent_id
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: type
+          in: query
+          schema:
+            type: string
+            enum: [person, project, company, location, other]
+      responses:
+        '200':
+          description: Entity list
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  entities:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Entity'
+                  total:
+                    type: integer
+
+  /memory/entities/{entity_id}:
+    get:
+      summary: Get entity
+      description: Get details for a specific entity
+      tags: [Memory]
+      operationId: getEntity
+      parameters:
+        - name: entity_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Entity details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entity'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    put:
+      summary: Update entity
+      description: Update an existing entity
+      tags: [Memory]
+      operationId: updateEntity
+      parameters:
+        - name: entity_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EntityUpdate'
+      responses:
+        '200':
+          description: Entity updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entity'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    delete:
+      summary: Delete entity
+      description: Remove an entity from memory
+      tags: [Memory]
+      operationId: deleteEntity
+      parameters:
+        - name: entity_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Entity deleted
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /memory/search:
+    post:
+      summary: Search memory
+      description: |
+        Search across stored memory using semantic similarity.
+        
+        Returns relevant facts and entities matching the query.
+      tags: [Memory]
+      operationId: searchMemory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [user_id, agent_id, query]
+              properties:
+                user_id:
+                  type: string
+                agent_id:
+                  type: string
+                query:
+                  type: string
+                  description: Search query
+                limit:
+                  type: integer
+                  default: 10
+                  maximum: 50
+                threshold:
+                  type: number
+                  description: Minimum similarity score (0-1)
+                  default: 0.7
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          enum: [fact, entity]
+                        content:
+                          type: string
+                        score:
+                          type: number
+                        metadata:
+                          type: object
+
+  # ===================
+  # SKILLS API
+  # ===================
+  /skills:
+    get:
+      summary: List available skills
+      description: Get all skills available for an agent based on their tier
+      tags: [Skills]
+      operationId: listSkills
+      parameters:
+        - name: agent_id
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [enabled, disabled, all]
+            default: all
+        - name: category
+          in: query
+          schema:
+            type: string
+            enum: [productivity, communication, research, automation, custom]
+      responses:
+        '200':
+          description: Skills list
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  skills:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Skill'
+                  total:
+                    type: integer
+
+  /skills/{skill_id}:
+    get:
+      summary: Get skill details
+      description: Get detailed information about a specific skill
+      tags: [Skills]
+      operationId: getSkill
+      parameters:
+        - name: skill_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Skill details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SkillDetails'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /skills/{skill_id}/enable:
+    post:
+      summary: Enable a skill
+      description: Enable a skill for an agent
+      tags: [Skills]
+      operationId: enableSkill
+      parameters:
+        - name: skill_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [agent_id]
+              properties:
+                agent_id:
+                  type: string
+                config:
+                  type: object
+                  description: Initial skill configuration
+      responses:
+        '200':
+          description: Skill enabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Skill'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '403':
+          description: Skill not available for tier
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /skills/{skill_id}/disable:
+    post:
+      summary: Disable a skill
+      description: Disable a skill for an agent
+      tags: [Skills]
+      operationId: disableSkill
+      parameters:
+        - name: skill_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [agent_id]
+              properties:
+                agent_id:
+                  type: string
+      responses:
+        '200':
+          description: Skill disabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Skill'
+
+  /skills/{skill_id}/config:
+    put:
+      summary: Update skill configuration
+      description: Update the configuration for an enabled skill
+      tags: [Skills]
+      operationId: updateSkillConfig
+      parameters:
+        - name: skill_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [agent_id, config]
+              properties:
+                agent_id:
+                  type: string
+                config:
+                  type: object
+                  description: Skill-specific configuration
+      responses:
+        '200':
+          description: Configuration updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Skill'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  # ===================
+  # AGENTS API
+  # ===================
+  /agents:
+    get:
+      summary: List agents
+      description: List all agents for the authenticated account
+      tags: [Agents]
+      operationId: listAgents
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [active, provisioning, error, stopped]
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+      responses:
+        '200':
+          description: Agents list
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  agents:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Agent'
+                  total:
+                    type: integer
+
+    post:
+      summary: Create agent
+      description: Create a new agent (triggers provisioning)
+      tags: [Agents]
+      operationId: createAgent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AgentCreate'
+      responses:
+        '202':
+          description: Agent creation started
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  agent_id:
+                    type: string
+                  deployment_id:
+                    type: string
+                  status:
+                    type: string
+                    example: provisioning
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  /agents/{agent_id}:
+    get:
+      summary: Get agent
+      description: Get details for a specific agent
+      tags: [Agents]
+      operationId: getAgent
+      parameters:
+        - name: agent_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Agent details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentDetails'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    put:
+      summary: Update agent
+      description: Update agent configuration
+      tags: [Agents]
+      operationId: updateAgent
+      parameters:
+        - name: agent_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AgentUpdate'
+      responses:
+        '200':
+          description: Agent updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Agent'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    delete:
+      summary: Delete agent
+      description: Delete an agent and all associated data
+      tags: [Agents]
+      operationId: deleteAgent
+      parameters:
+        - name: agent_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Agent deleted
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /agents/{agent_id}/status:
+    get:
+      summary: Get agent health
+      description: Get current health and status of an agent
+      tags: [Agents]
+      operationId: getAgentStatus
+      parameters:
+        - name: agent_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Agent health status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentHealth'
+
+  /agents/{agent_id}/restart:
+    post:
+      summary: Restart agent
+      description: Restart an agent instance
+      tags: [Agents]
+      operationId: restartAgent
+      parameters:
+        - name: agent_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '202':
+          description: Restart initiated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: restarting
+                  estimated_time:
+                    type: integer
+                    description: Estimated restart time in seconds
+
+  # ===================
+  # PROVISIONING API
+  # ===================
+  /provision:
+    post:
+      summary: Provision new agent
+      description: |
+        Manually trigger agent provisioning.
+        
+        Requires admin API key authentication.
+      tags: [Agents]
+      operationId: provisionAgent
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [customer_id, tier, email]
+              properties:
+                customer_id:
+                  type: string
+                  description: Customer UUID
+                tier:
+                  type: string
+                  enum: [starter, professional, enterprise]
+                email:
+                  type: string
+                  format: email
+      responses:
+        '202':
+          description: Provisioning started
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  deployment_id:
+                    type: string
+                  status:
+                    type: string
+                  request_id:
+                    type: string
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+
+  /provision/status/{deployment_id}:
+    get:
+      summary: Get provision status
+      description: Check the status of an ongoing provisioning
+      tags: [Agents]
+      operationId: getProvisionStatus
+      parameters:
+        - name: deployment_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Deployment status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  deployment_id:
+                    type: string
+                  status:
+                    type: string
+                    enum: [pending, in_progress, completed, failed]
+                  progress:
+                    type: integer
+                    minimum: 0
+                    maximum: 100
+                  logs:
+                    type: string
+                  error:
+                    type: string
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /provision/list:
+    get:
+      summary: List deployments
+      description: List all deployments for the account
+      tags: [Agents]
+      operationId: listDeployments
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [pending, in_progress, completed, failed]
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+      responses:
+        '200':
+          description: Deployments list
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  deployments:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        agent_id:
+                          type: string
+                        status:
+                          type: string
+                        created_at:
+                          type: string
+                          format: date-time
+                  count:
+                    type: integer
+
+  # ===================
+  # WEBHOOKS
+  # ===================
+  /webhooks/stripe:
+    post:
+      summary: Stripe webhook
+      description: |
+        Receive Stripe webhook events.
+        
+        Events handled:
+        - `checkout.session.completed` → Provision new agent
+        - `customer.subscription.updated` → Update tier
+        - `customer.subscription.deleted` → Suspend agent
+        - `invoice.payment_failed` → Handle payment failure
+      tags: [Webhooks]
+      operationId: handleStripeWebhook
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Stripe webhook event payload
+      responses:
+        '200':
+          description: Webhook received
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  received:
+                    type: boolean
+
+  /webhooks:
+    get:
+      summary: List webhook endpoints
+      description: List configured webhook endpoints for an account
+      tags: [Webhooks]
+      operationId: listWebhooks
+      responses:
+        '200':
+          description: Webhook endpoints
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  webhooks:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Webhook'
+
+    post:
+      summary: Create webhook endpoint
+      description: Register a new webhook endpoint
+      tags: [Webhooks]
+      operationId: createWebhook
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebhookCreate'
+      responses:
+        '201':
+          description: Webhook created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Webhook'
+
+  /webhooks/{webhook_id}:
+    delete:
+      summary: Delete webhook
+      description: Remove a webhook endpoint
+      tags: [Webhooks]
+      operationId: deleteWebhook
+      parameters:
+        - name: webhook_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Webhook deleted
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: Admin API key for server-to-server communication
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT token or API key
+
+  schemas:
+    # Message schemas
+    MessageRequest:
+      type: object
+      required: [agent_id, message]
+      properties:
+        agent_id:
+          type: string
+          description: Target agent ID
+        message:
+          type: string
+          description: Message content
+          maxLength: 10000
+        user_id:
+          type: string
+          description: User identifier
+        conversation_id:
+          type: string
+          description: Existing conversation to continue
+        context:
+          type: object
+          properties:
+            channel:
+              type: string
+              enum: [api, whatsapp, telegram, slack, discord, web]
+            metadata:
+              type: object
+        attachments:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                enum: [image, file, audio]
+              url:
+                type: string
+                format: uri
+              name:
+                type: string
+
+    MessageResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        agent_id:
+          type: string
+        response:
+          type: string
+        conversation_id:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        tokens_used:
+          type: integer
+        metadata:
+          type: object
+          properties:
+            model:
+              type: string
+            latency_ms:
+              type: integer
+            skills_used:
+              type: array
+              items:
+                type: string
+
+    Message:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum: [user, assistant, system]
+        content:
+          type: string
+        attachments:
+          type: array
+          items:
+            type: object
+        created_at:
+          type: string
+          format: date-time
+        metadata:
+          type: object
+
+    # Memory schemas
+    Memory:
+      type: object
+      properties:
+        user_id:
+          type: string
+        agent_id:
+          type: string
+        facts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Fact'
+        entities:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entity'
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    Fact:
+      type: object
+      properties:
+        id:
+          type: string
+        content:
+          type: string
+        category:
+          type: string
+        source:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+
+    Entity:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+          enum: [person, project, company, location, other]
+        description:
+          type: string
+        attributes:
+          type: object
+          additionalProperties: true
+        relations:
+          type: array
+          items:
+            type: object
+            properties:
+              entity_id:
+                type: string
+              relation_type:
+                type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    EntityUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        attributes:
+          type: object
+          additionalProperties: true
+
+    # Skills schemas
+    Skill:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        category:
+          type: string
+          enum: [productivity, communication, research, automation, custom]
+        enabled:
+          type: boolean
+        tier_required:
+          type: string
+          enum: [starter, professional, enterprise]
+        config:
+          type: object
+
+    SkillDetails:
+      allOf:
+        - $ref: '#/components/schemas/Skill'
+        - type: object
+          properties:
+            documentation:
+              type: string
+            config_schema:
+              type: object
+              description: JSON Schema for skill configuration
+            examples:
+              type: array
+              items:
+                type: object
+                properties:
+                  prompt:
+                    type: string
+                  response:
+                    type: string
+
+    # Agent schemas
+    Agent:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        tier:
+          type: string
+          enum: [starter, professional, enterprise]
+        status:
+          type: string
+          enum: [provisioning, active, error, stopped]
+        skills:
+          type: array
+          items:
+            type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    AgentDetails:
+      allOf:
+        - $ref: '#/components/schemas/Agent'
+        - type: object
+          properties:
+            deployment_url:
+              type: string
+              format: uri
+            config:
+              type: object
+            usage:
+              type: object
+              properties:
+                messages_today:
+                  type: integer
+                tasks_completed:
+                  type: integer
+                time_saved_minutes:
+                  type: integer
+
+    AgentCreate:
+      type: object
+      required: [name, tier]
+      properties:
+        name:
+          type: string
+        tier:
+          type: string
+          enum: [starter, professional, enterprise]
+        config:
+          type: object
+        skills:
+          type: array
+          items:
+            type: string
+          description: Initial skills to enable
+
+    AgentUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+        config:
+          type: object
+
+    AgentHealth:
+      type: object
+      properties:
+        agent_id:
+          type: string
+        status:
+          type: string
+          enum: [healthy, degraded, down]
+        uptime_seconds:
+          type: integer
+        last_active:
+          type: string
+          format: date-time
+        checks:
+          type: object
+          properties:
+            api:
+              type: string
+              enum: [pass, fail]
+            database:
+              type: string
+              enum: [pass, fail]
+            memory:
+              type: string
+              enum: [pass, fail]
+
+    # Webhook schemas
+    Webhook:
+      type: object
+      properties:
+        id:
+          type: string
+        url:
+          type: string
+          format: uri
+        events:
+          type: array
+          items:
+            type: string
+        secret:
+          type: string
+          description: Signing secret for verification
+        enabled:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+
+    WebhookCreate:
+      type: object
+      required: [url, events]
+      properties:
+        url:
+          type: string
+          format: uri
+          description: HTTPS URL to receive webhook events
+        events:
+          type: array
+          items:
+            type: string
+            enum:
+              - message.created
+              - message.completed
+              - memory.updated
+              - agent.status_changed
+              - skill.enabled
+              - skill.disabled
+          description: Events to subscribe to
+
+    # Common schemas
+    StatusResponse:
+      type: object
+      properties:
+        service:
+          type: string
+        status:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        version:
+          type: string
+
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: false
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
+        meta:
+          type: object
+          properties:
+            request_id:
+              type: string
+            timestamp:
+              type: string
+              format: date-time
+
+  responses:
+    BadRequest:
+      description: Invalid request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            success: false
+            error:
+              code: VALIDATION_ERROR
+              message: Invalid request body
+              details:
+                field: message
+                issue: Required field missing
+
+    Unauthorized:
+      description: Authentication required
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            success: false
+            error:
+              code: UNAUTHORIZED
+              message: Invalid or missing authentication
+
+    Forbidden:
+      description: Insufficient permissions
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            success: false
+            error:
+              code: FORBIDDEN
+              message: Insufficient permissions for this action
+
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            success: false
+            error:
+              code: NOT_FOUND
+              message: Resource not found
+
+    RateLimited:
+      description: Rate limit exceeded
+      headers:
+        Retry-After:
+          schema:
+            type: integer
+          description: Seconds until rate limit resets
+        X-RateLimit-Limit:
+          schema:
+            type: integer
+          description: Request limit per window
+        X-RateLimit-Remaining:
+          schema:
+            type: integer
+          description: Remaining requests in window
+        X-RateLimit-Reset:
+          schema:
+            type: integer
+          description: Unix timestamp when limit resets
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            success: false
+            error:
+              code: RATE_LIMIT_EXCEEDED
+              message: Rate limit exceeded. Please try again in 60 seconds.
+              details:
+                limit: 100
+                remaining: 0
+                reset_at: "2026-01-27T10:31:00Z"
+
+    InternalError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            success: false
+            error:
+              code: INTERNAL_ERROR
+              message: An unexpected error occurred

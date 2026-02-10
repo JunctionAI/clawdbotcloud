@@ -1,0 +1,112 @@
+{
+  "skills": [
+    {
+      "id": "research",
+      "name": "Research",
+      "emoji": "🔍",
+      "description": "Web searching, data gathering, fact-finding",
+      "capabilities": [
+        "web_search",
+        "web_fetch",
+        "data_extraction",
+        "source_verification",
+        "competitive_analysis"
+      ]
+    },
+    {
+      "id": "coding",
+      "name": "Coding",
+      "emoji": "💻",
+      "description": "Writing scripts, fixing bugs, software development",
+      "capabilities": [
+        "script_writing",
+        "bug_fixing",
+        "code_review",
+        "api_integration",
+        "automation"
+      ]
+    },
+    {
+      "id": "writing",
+      "name": "Writing",
+      "emoji": "✍️",
+      "description": "Content creation, emails, documentation",
+      "capabilities": [
+        "content_creation",
+        "email_drafting",
+        "documentation",
+        "copywriting",
+        "editing"
+      ]
+    },
+    {
+      "id": "calendar",
+      "name": "Calendar",
+      "emoji": "📅",
+      "description": "Scheduling, reminders, time management",
+      "capabilities": [
+        "event_scheduling",
+        "reminders",
+        "availability_check",
+        "meeting_coordination",
+        "deadline_tracking"
+      ]
+    },
+    {
+      "id": "social",
+      "name": "Social",
+      "emoji": "📱",
+      "description": "Posting to platforms, engagement, community",
+      "capabilities": [
+        "social_posting",
+        "engagement_monitoring",
+        "content_scheduling",
+        "community_management",
+        "influencer_outreach"
+      ]
+    },
+    {
+      "id": "analysis",
+      "name": "Analysis",
+      "emoji": "📊",
+      "description": "Data analysis, reports, insights",
+      "capabilities": [
+        "data_analysis",
+        "report_generation",
+        "trend_identification",
+        "metrics_tracking",
+        "visualization"
+      ]
+    },
+    {
+      "id": "coordination",
+      "name": "Coordination",
+      "emoji": "🎯",
+      "description": "Task orchestration, oversight, delegation",
+      "capabilities": [
+        "task_delegation",
+        "progress_monitoring",
+        "priority_management",
+        "cross_agent_communication",
+        "escalation_handling"
+      ]
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "emoji": "🎬",
+      "description": "Image/video generation, creative assets",
+      "capabilities": [
+        "image_generation",
+        "video_creation",
+        "asset_management",
+        "creative_direction",
+        "brand_consistency"
+      ]
+    }
+  ],
+  "meta": {
+    "lastUpdated": "2026-02-10T14:00:00+13:00",
+    "version": "1.0"
+  }
+}

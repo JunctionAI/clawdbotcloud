@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your trial ends in 3 days</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f8f9fa; color: #333333;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #f8f9fa;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="background-color: #ffffff; border-radius: 16px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+          <!-- Header -->
+          <tr>
+            <td style="padding: 48px 48px 32px; text-align: center;">
+              <div style="font-size: 32px; font-weight: 700; color: #6366f1; margin-bottom: 8px;">Ally</div>
+              <div style="font-size: 14px; color: #9ca3af; letter-spacing: 2px;">LIFE, HANDLED.</div>
+            </td>
+          </tr>
+          
+          <!-- Main Content -->
+          <tr>
+            <td style="padding: 0 48px 24px;">
+              <h1 style="margin: 0 0 24px; font-size: 24px; font-weight: 600; color: #1f2937; line-height: 1.3;">
+                Hey {{firstName}}, your trial ends in 3 days
+              </h1>
+              <p style="margin: 0 0 20px; font-size: 16px; line-height: 1.6; color: #4b5563;">
+                I wanted to reach out before things change. We've had a good run together — and I've got the receipts to prove it.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Stats Card -->
+          <tr>
+            <td style="padding: 0 48px 32px;">
+              <div style="padding: 32px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); border-radius: 16px; color: #ffffff;">
+                <h2 style="margin: 0 0 24px; font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9;">What we've done together</h2>
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="33%" style="text-align: center; padding: 0 8px;">
+                      <div style="font-size: 36px; font-weight: 700; margin-bottom: 4px;">{{tasksCompleted}}</div>
+                      <div style="font-size: 13px; opacity: 0.85;">tasks handled</div>
+                    </td>
+                    <td width="33%" style="text-align: center; padding: 0 8px; border-left: 1px solid rgba(255,255,255,0.2); border-right: 1px solid rgba(255,255,255,0.2);">
+                      <div style="font-size: 36px; font-weight: 700; margin-bottom: 4px;">{{timeSaved}}</div>
+                      <div style="font-size: 13px; opacity: 0.85;">hours saved</div>
+                    </td>
+                    <td width="33%" style="text-align: center; padding: 0 8px;">
+                      <div style="font-size: 36px; font-weight: 700; margin-bottom: 4px;">{{conversations}}</div>
+                      <div style="font-size: 13px; opacity: 0.85;">conversations</div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+          
+          <!-- Value Examples -->
+          <tr>
+            <td style="padding: 0 48px 32px;">
+              <h2 style="margin: 0 0 16px; font-size: 16px; font-weight: 600; color: #1f2937;">Some highlights from your trial:</h2>
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                {{#each highlights}}
+                <tr>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6;">
+                    <table role="presentation" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td style="vertical-align: top; padding-right: 12px;">
+                          <div style="font-size: 16px;">{{icon}}</div>
+                        </td>
+                        <td style="font-size: 15px; line-height: 1.5; color: #4b5563;">{{text}}</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                {{/each}}
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Pricing -->
+          <tr>
+            <td style="padding: 0 48px 32px;">
+              <div style="padding: 24px; background-color: #f0fdf4; border-radius: 12px; border: 1px solid #bbf7d0;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                      <div style="font-weight: 600; color: #166534; font-size: 16px; margin-bottom: 4px;">Keep the momentum going</div>
+                      <div style="font-size: 14px; color: #15803d;">{{planName}} — just {{amount}}/{{billingPeriod}}</div>
+                    </td>
+                    <td style="text-align: right; vertical-align: middle;">
+                      <a href="{{upgradeUrl}}" style="display: inline-block; padding: 12px 24px; background-color: #22c55e; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 14px; border-radius: 8px;">Upgrade now</a>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+          
+          <!-- What Changes -->
+          <tr>
+            <td style="padding: 0 48px 32px;">
+              <h2 style="margin: 0 0 16px; font-size: 16px; font-weight: 600; color: #1f2937;">What happens after your trial?</h2>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #6b7280;">
+                If you upgrade, everything continues seamlessly — all your preferences, history, and setup stay exactly as they are. If you don't, you'll still have access to the free tier with basic features. No pressure, but I'd love to keep helping you at full capacity. 💜
+              </p>
+            </td>
+          </tr>
+          
+          <!-- CTA -->
+          <tr>
+            <td style="padding: 0 48px 48px; text-align: center;">
+              <a href="{{upgradeUrl}}" style="display: inline-block; padding: 16px 32px; background-color: #6366f1; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 10px; margin-right: 12px;">Upgrade to {{planName}}</a>
+              <a href="{{comparePlansUrl}}" style="display: inline-block; padding: 16px 24px; background-color: transparent; color: #6366f1; text-decoration: none; font-weight: 600; font-size: 16px; border: 2px solid #6366f1; border-radius: 10px;">Compare plans</a>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 32px 48px; background-color: #f9fafb; border-radius: 0 0 16px 16px; border-top: 1px solid #e5e7eb;">
+              <p style="margin: 0 0 8px; font-size: 14px; color: #9ca3af; text-align: center;">
+                Questions about plans? Just reply — I'm happy to help you choose.
+              </p>
+              <p style="margin: 0; font-size: 12px; color: #d1d5db; text-align: center;">
+                {{companyName}} · {{companyAddress}}<br>
+                <a href="{{unsubscribeUrl}}" style="color: #9ca3af;">Unsubscribe</a> · <a href="{{preferencesUrl}}" style="color: #9ca3af;">Email preferences</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

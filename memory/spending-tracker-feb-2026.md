@@ -152,3 +152,27 @@ _(Same format)_
 
 **Total spent today:** $0
 
+
+## 2026-02-05
+
+- **$2.56** @ Smales Farm Parking (Automobile Parking Lots and Gara) - 10:56
+- **$5.02** @ Render.com (Computer Software Stores) - 02:07
+
+**Total spent today:** $0
+
+
+## 2026-02-09
+
+- **$9.99** @ Uber * Pending (Other Services not elsewhere cla) - 19:12
+- **$16.99** @ Apple.com/bill (D-Goods: Large Digital Goods) - 03:07
+
+**Total spent today:** $0
+
+
+## 2026-02-09
+
+- **$9.99** @ Uber * Pending (Other Services not elsewhere cla) - 19:12
+- **$16.99** @ Apple.com/bill (D-Goods: Large Digital Goods) - 03:07
+
+**Total spent today:** $0
+

@@ -1,1 +1,142 @@
-[]
+{
+  "activities": [
+    {
+      "id": "act-020",
+      "timestamp": "2026-02-10T20:01:00+13:00",
+      "agent": "junction-dev",
+      "type": "task-completed",
+      "message": "Website updated: removed cursor dot, fixed marquee, updated copy",
+      "priority": "medium",
+      "project": "junction"
+    },
+    {
+      "id": "act-019",
+      "timestamp": "2026-02-10T19:50:00+13:00",
+      "agent": "fury",
+      "type": "discussion",
+      "message": "Team discussion: Junction business model, human-in-loop structure, budget planning",
+      "priority": "high",
+      "project": "junction"
+    },
+    {
+      "id": "act-018",
+      "timestamp": "2026-02-10T19:45:00+13:00",
+      "agent": "junction-dev",
+      "type": "task-completed",
+      "message": "Full service details added to website - all 10 services, AI advantage, human-in-loop",
+      "priority": "high",
+      "project": "junction"
+    },
+    {
+      "id": "act-017",
+      "timestamp": "2026-02-10T19:40:00+13:00",
+      "agent": "fury",
+      "type": "task-completed",
+      "message": "Client #001 Onboarding Brief complete - Junction is our first client",
+      "priority": "high",
+      "project": "junction"
+    },
+    {
+      "id": "act-016",
+      "timestamp": "2026-02-10T19:35:00+13:00",
+      "agent": "shuri",
+      "type": "task-completed",
+      "message": "SEO Keyword Strategy complete - MASSIVE opportunity, no competition for AI agency NZ",
+      "priority": "critical",
+      "project": "junction"
+    },
+    {
+      "id": "act-015",
+      "timestamp": "2026-02-10T19:32:00+13:00",
+      "agent": "prep",
+      "type": "system",
+      "message": "Tom: 'Let's fucking go. Not 90 days - 2 weeks. Build build build.'",
+      "priority": "critical",
+      "project": "junction"
+    },
+    {
+      "id": "act-014",
+      "timestamp": "2026-02-10T19:25:00+13:00",
+      "agent": "fury",
+      "type": "task-completed",
+      "message": "Service Operations Blueprint complete (36KB) - all 11 services documented",
+      "priority": "high",
+      "project": "junction"
+    },
+    {
+      "id": "act-013",
+      "timestamp": "2026-02-10T19:12:00+13:00",
+      "agent": "fury",
+      "type": "task-completed",
+      "message": "Client Playbook Template created - onboarding, ops, escalation, handoffs",
+      "priority": "high",
+      "project": "junction"
+    },
+    {
+      "id": "act-012",
+      "timestamp": "2026-02-10T19:03:00+13:00",
+      "agent": "fury",
+      "type": "discussion",
+      "message": "Tom briefed team on vision: thousands of AI employees, build autonomously, create history",
+      "priority": "critical",
+      "project": "mission-control"
+    },
+    {
+      "id": "act-011",
+      "timestamp": "2026-02-10T18:22:00+13:00",
+      "agent": "jarvis",
+      "type": "discussion",
+      "message": "First agent team discussion - coordination protocols, knowledge compounding, autonomous loops",
+      "priority": "high",
+      "project": "mission-control"
+    },
+    {
+      "id": "act-010",
+      "timestamp": "2026-02-10T18:12:00+13:00",
+      "agent": "prep",
+      "type": "system",
+      "message": "Persistent agent sessions created - JARVIS, SHURI, FURY, Junction Content now live",
+      "priority": "high",
+      "project": "mission-control"
+    },
+    {
+      "id": "act-009",
+      "timestamp": "2026-02-10T18:07:00+13:00",
+      "agent": "prep",
+      "type": "system",
+      "message": "Tom's founding message logged to MEMORY.md - building toward thousands of AI employees",
+      "priority": "critical",
+      "project": "mission-control"
+    },
+    {
+      "id": "act-008",
+      "timestamp": "2026-02-10T18:00:00+13:00",
+      "agent": "junction-dev",
+      "type": "task-completed",
+      "message": "Junction website v3 deployed with premium animations",
+      "priority": "high",
+      "project": "junction"
+    },
+    {
+      "id": "act-007",
+      "timestamp": "2026-02-10T17:50:00+13:00",
+      "agent": "prep",
+      "type": "system",
+      "message": "Seedance 2 access message drafted for China contact",
+      "priority": "high",
+      "project": "alternate"
+    },
+    {
+      "id": "act-006",
+      "timestamp": "2026-02-10T17:47:00+13:00",
+      "agent": "shuri",
+      "type": "task-completed",
+      "message": "Video gen research complete - Vidu AI (~10 sec), Pika, Runway alternatives found",
+      "priority": "critical",
+      "project": "alternate"
+    }
+  ],
+  "meta": {
+    "lastUpdated": "2026-02-10T20:01:00+13:00"
+  }
+}

@@ -1,0 +1,23 @@
+'use client';
+
+import { motion, useScroll, useSpring } from 'framer-motion';
+
+// Simplified scroll progress - removed side indicator for performance
+export default function ScrollProgress() {
+  const { scrollYProgress } = useScroll();
+  
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  return (
+    <motion.div
+      className="fixed top-0 left-0 right-0 h-1 z-[60] origin-left bg-gray-200"
+      style={{ scaleX, willChange: 'transform' }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500" />
+    </motion.div>
+  );
+}

@@ -1,0 +1,102 @@
+{
+  "id": "2026-02-10-morning",
+  "type": "morning",
+  "date": "2026-02-10T04:19:31.602Z",
+  "status": "completed",
+  "attendees": [
+    {
+      "id": "jarvis",
+      "name": "JARVIS",
+      "emoji": "🤖",
+      "role": "Senior Agent",
+      "contribution": null,
+      "mood": "neutral"
+    },
+    {
+      "id": "shuri",
+      "name": "SHURI",
+      "emoji": "🔬",
+      "role": "Research & Development",
+      "contribution": null,
+      "mood": "neutral"
+    },
+    {
+      "id": "fury",
+      "name": "FURY",
+      "emoji": "👁️",
+      "role": "Coordinator",
+      "contribution": null,
+      "mood": "neutral"
+    },
+    {
+      "id": "prep",
+      "name": "PREP",
+      "emoji": "⚡",
+      "role": "Main Agent",
+      "contribution": null,
+      "mood": "neutral"
+    },
+    {
+      "id": "alternate-agent",
+      "name": "ALTERNATE Campaign Agent",
+      "emoji": "🎬",
+      "role": "Campaign Specialist",
+      "contribution": null,
+      "mood": "neutral"
+    },
+    {
+      "id": "junction-agent",
+      "name": "Junction Media Agent",
+      "emoji": "🏢",
+      "role": "Agency Specialist",
+      "contribution": null,
+      "mood": "neutral"
+    },
+    {
+      "id": "personal-agent",
+      "name": "Personal Life Agent",
+      "emoji": "🧠",
+      "role": "Life Management",
+      "contribution": null,
+      "mood": "neutral"
+    }
+  ],
+  "agenda": {
+    "contentPerformance": null,
+    "socialMentions": null,
+    "ideasGenerated": [],
+    "issuesRaised": []
+  },
+  "discussion": [],
+  "actionItems": [
+    {
+      "id": "action-1770697178047",
+      "title": "Review content analytics",
+      "description": "Check YouTube and social media performance from yesterday",
+      "assignee": "shuri",
+      "priority": "high",
+      "status": "pending",
+      "createdAt": "2026-02-10T04:19:38.047Z",
+      "createdBy": "jarvis"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "lesson-1770697178458",
+      "content": "Shorter videos tend to get more engagement on TikTok",
+      "category": "content",
+      "learnedBy": "alternate-agent",
+      "appliesTo": "all",
+      "timestamp": "2026-02-10T04:19:38.458Z"
+    }
+  ],
+  "relationshipChanges": [],
+  "metrics": {
+    "duration": 0,
+    "participationRate": 0,
+    "ideasCount": 0,
+    "actionsCount": 1
+  },
+  "createdAt": "2026-02-10T04:19:31.602Z",
+  "completedAt": "2026-02-10T04:19:43.156Z"
+}

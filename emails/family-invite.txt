@@ -1,0 +1,44 @@
+ALLY — LIFE, HANDLED.
+
+💜 {{inviterName}} invited you to their Ally Family Plan
+
+You've got a spot waiting for you — no payment required.
+
+---
+
+WHAT YOU'LL GET:
+
+🤖 YOUR OWN PERSONAL AI ASSISTANT
+Ally learns your preferences and helps you manage life — calendar, emails, tasks, and more.
+
+🔒 COMPLETELY PRIVATE
+Your data, conversations, and preferences are 100% separate from {{inviterName}}'s. They just cover the bill.
+
+✨ FULL PREMIUM FEATURES
+Unlimited conversations, calendar sync, email integration, reminders, and everything else Ally Pro offers.
+
+---
+
+Accept your invitation: {{acceptInviteUrl}}
+
+This invitation expires {{expirationDate}}
+
+---
+
+{{#if personalNote}}
+NOTE FROM {{inviterName}}:
+"{{personalNote}}"
+
+---
+{{/if}}
+
+WHAT IS ALLY?
+
+Ally is your personal AI assistant that actually handles things for you — not just answers questions. Think calendar management, email triage, reminders, research, and so much more. It's like having a super-capable friend who's always available and never forgets anything.
+
+---
+
+Questions? Reply to this email or visit our help center: {{helpUrl}}
+
+{{companyName}} · {{companyAddress}}
+Unsubscribe: {{unsubscribeUrl}}

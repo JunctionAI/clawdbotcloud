@@ -1,0 +1,446 @@
+{
+  "agent": "alternate-agent",
+  "project": "ALTERNATE",
+  "releaseDate": "2026-02-14",
+  "tasks": [
+    {
+      "id": "alt-001",
+      "title": "Create AI-Tom avatar",
+      "description": "Build AI avatar matching @neonsentinel in Higgsfield Influencer Studio",
+      "status": "blocked",
+      "blocker": "Need photos of Tom OR decision to use movie character",
+      "priority": "critical",
+      "day": 1,
+      "estimatedMinutes": 30,
+      "output": "AI avatar saved to Higgsfield"
+    },
+    {
+      "id": "alt-002",
+      "title": "Create Film Critic avatar",
+      "description": "Build intellectual-looking AI influencer for movie reviews",
+      "status": "ready",
+      "priority": "high",
+      "day": 1,
+      "estimatedMinutes": 20,
+      "output": "AI avatar saved to Higgsfield"
+    },
+    {
+      "id": "alt-003",
+      "title": "Create Superfan avatar",
+      "description": "Build excited young person AI influencer for discovery content",
+      "status": "ready",
+      "priority": "high",
+      "day": 1,
+      "estimatedMinutes": 20,
+      "output": "AI avatar saved to Higgsfield"
+    },
+    {
+      "id": "alt-004",
+      "title": "Generate Times Square billboard",
+      "description": "ALTERNATE poster on massive NYC digital billboard, night, neon reflections",
+      "status": "blocked",
+      "blocker": "Need final poster file",
+      "priority": "critical",
+      "day": 1,
+      "estimatedMinutes": 15,
+      "prompt": "ALTERNATE movie poster on massive digital billboard in Times Square New York, night time, neon lights reflecting, crowds walking past, shot from street level, photorealistic",
+      "output": "autonomous/output/marketing/billboard-nyc.png"
+    },
+    {
+      "id": "alt-005",
+      "title": "Generate Shibuya billboard",
+      "description": "ALTERNATE poster on Tokyo billboard, rain, neon",
+      "status": "blocked",
+      "blocker": "Need final poster file",
+      "priority": "high",
+      "day": 1,
+      "estimatedMinutes": 15,
+      "prompt": "ALTERNATE movie poster on giant billboard at Shibuya Crossing Tokyo, rainy night, neon reflections on wet streets, crowds with umbrellas, cyberpunk atmosphere",
+      "output": "autonomous/output/marketing/billboard-tokyo.png"
+    },
+    {
+      "id": "alt-006",
+      "title": "Generate London Underground poster",
+      "description": "ALTERNATE poster in tube station",
+      "status": "blocked",
+      "blocker": "Need final poster file",
+      "priority": "high",
+      "day": 1,
+      "estimatedMinutes": 15,
+      "prompt": "ALTERNATE movie poster on London Underground platform wall, commuters waiting, fluorescent lighting, candid phone photo aesthetic",
+      "output": "autonomous/output/marketing/billboard-london.png"
+    },
+    {
+      "id": "alt-007",
+      "title": "Generate fan discovery photo - NYC",
+      "description": "Phone-quality photo of someone seeing billboard",
+      "status": "blocked",
+      "blocker": "Needs alt-004 completed first",
+      "priority": "high",
+      "day": 1,
+      "estimatedMinutes": 15,
+      "prompt": "Person's hand holding phone photographing ALTERNATE movie billboard in Times Square, screen showing the billboard, slightly blurry, candid tourist photo quality",
+      "output": "autonomous/output/marketing/fan-discovery-nyc.png"
+    },
+    {
+      "id": "alt-008",
+      "title": "Generate fake Variety headline",
+      "description": "Screenshot-style trade publication announcement",
+      "status": "ready",
+      "priority": "high",
+      "day": 1,
+      "estimatedMinutes": 20,
+      "prompt": "Screenshot of Variety website article, headline 'Mystery Studio Drops Psychedelic Epic With Zero Marketing', browser chrome visible, realistic web design, entertainment trade publication style",
+      "output": "autonomous/output/marketing/fake-variety.png"
+    },
+    {
+      "id": "alt-009",
+      "title": "Generate LAX arrival shot 1",
+      "description": "Candid paparazzi shot of movie character arriving",
+      "status": "ready",
+      "priority": "medium",
+      "day": 1,
+      "estimatedMinutes": 15,
+      "prompt": "Paparazzi photo of @neonsentinel arriving at LAX airport, sunglasses, casual clothes, bodyguard partially visible, motion blur, flash photography, candid celebrity arrival",
+      "output": "autonomous/output/marketing/lax-arrival-1.png"
+    },
+    {
+      "id": "alt-010",
+      "title": "Generate LAX arrival shot 2",
+      "description": "Different angle of arrival",
+      "status": "ready",
+      "priority": "medium",
+      "day": 1,
+      "estimatedMinutes": 15,
+      "output": "autonomous/output/marketing/lax-arrival-2.png"
+    },
+    {
+      "id": "alt-011",
+      "title": "AI-Tom teaser video script",
+      "description": "Write 10-second cryptic teaser script",
+      "status": "ready",
+      "priority": "high",
+      "day": 1,
+      "estimatedMinutes": 10,
+      "output": "Script for approval"
+    },
+    {
+      "id": "alt-012",
+      "title": "Generate AI-Tom teaser video",
+      "description": "Talking head video: 'Something's coming...'",
+      "status": "blocked",
+      "blocker": "Needs alt-001 and alt-011 completed",
+      "priority": "high",
+      "day": 1,
+      "estimatedMinutes": 30,
+      "output": "autonomous/output/marketing/teaser-tom-1.mp4"
+    },
+    {
+      "id": "alt-013",
+      "title": "Superfan reaction script",
+      "description": "Write excited discovery reaction script",
+      "status": "ready",
+      "priority": "medium",
+      "day": 1,
+      "estimatedMinutes": 10,
+      "output": "Script for approval"
+    },
+    {
+      "id": "alt-014",
+      "title": "Generate Superfan discovery video",
+      "description": "AI influencer discovers and reacts to billboard",
+      "status": "blocked",
+      "blocker": "Needs alt-003 and alt-013 completed",
+      "priority": "medium",
+      "day": 1,
+      "estimatedMinutes": 30,
+      "output": "autonomous/output/marketing/superfan-discovery.mp4"
+    },
+    {
+      "id": "alt-015",
+      "title": "Write Reddit speculation post",
+      "description": "Draft confused fan post for r/movies",
+      "status": "ready",
+      "priority": "medium",
+      "day": 1,
+      "estimatedMinutes": 10,
+      "output": "Text for approval"
+    },
+    {
+      "id": "alt-016",
+      "title": "Generate main movie poster",
+      "description": "Hero poster art if not provided",
+      "status": "blocked",
+      "blocker": "Check if Tom has final poster",
+      "priority": "critical",
+      "day": 2,
+      "estimatedMinutes": 30,
+      "output": "autonomous/output/marketing/poster-main.png"
+    },
+    {
+      "id": "alt-017",
+      "title": "Generate IMAX poster variant",
+      "description": "IMAX-branded version of poster",
+      "status": "blocked",
+      "blocker": "Needs alt-016 or provided poster",
+      "priority": "high",
+      "day": 2,
+      "estimatedMinutes": 20,
+      "output": "autonomous/output/marketing/poster-imax.png"
+    },
+    {
+      "id": "alt-018",
+      "title": "Generate character poster - Tom",
+      "description": "Individual character poster for @neonsentinel",
+      "status": "ready",
+      "priority": "high",
+      "day": 2,
+      "estimatedMinutes": 20,
+      "prompt": "Movie character poster, @neonsentinel with orange visor, dramatic lighting, cyberpunk aesthetic, movie poster composition, tagline space at bottom",
+      "output": "autonomous/output/marketing/poster-char-tom.png"
+    },
+    {
+      "id": "alt-019",
+      "title": "Generate character poster - Trent",
+      "description": "Individual character poster for @trent",
+      "status": "ready",
+      "priority": "high",
+      "day": 2,
+      "estimatedMinutes": 20,
+      "prompt": "Movie character poster, @trent with red hair in medieval knight armor, dramatic lighting, epic fantasy aesthetic, movie poster composition",
+      "output": "autonomous/output/marketing/poster-char-trent.png"
+    },
+    {
+      "id": "alt-020",
+      "title": "Generate character poster - Zac",
+      "description": "Individual character poster for @zac",
+      "status": "ready",
+      "priority": "high",
+      "day": 2,
+      "estimatedMinutes": 20,
+      "output": "autonomous/output/marketing/poster-char-zac.png"
+    },
+    {
+      "id": "alt-021",
+      "title": "Create AI-Zac avatar",
+      "description": "Build AI avatar for secondary talking head",
+      "status": "blocked",
+      "blocker": "Decision on realistic vs movie character",
+      "priority": "high",
+      "day": 2,
+      "estimatedMinutes": 20,
+      "output": "AI avatar saved to Higgsfield"
+    },
+    {
+      "id": "alt-022",
+      "title": "Create AI-Trent avatar",
+      "description": "Build AI avatar for secondary talking head",
+      "status": "blocked",
+      "blocker": "Decision on realistic vs movie character",
+      "priority": "high",
+      "day": 2,
+      "estimatedMinutes": 20,
+      "output": "AI avatar saved to Higgsfield"
+    },
+    {
+      "id": "alt-023",
+      "title": "Create Tech Enthusiast avatar",
+      "description": "Build AI influencer for tech angle coverage",
+      "status": "ready",
+      "priority": "high",
+      "day": 2,
+      "estimatedMinutes": 20,
+      "output": "AI avatar saved to Higgsfield"
+    },
+    {
+      "id": "alt-024",
+      "title": "Generate BTS set photo 1",
+      "description": "Fake behind-the-scenes with lighting rigs",
+      "status": "ready",
+      "priority": "medium",
+      "day": 2,
+      "estimatedMinutes": 15,
+      "prompt": "Behind the scenes film set photo, professional lighting rigs, film crew silhouettes, camera equipment, monitors showing footage, candid production still",
+      "output": "autonomous/output/marketing/bts-1.png"
+    },
+    {
+      "id": "alt-025",
+      "title": "Generate BTS set photo 2",
+      "description": "Fake craft services / casual set moment",
+      "status": "ready",
+      "priority": "medium",
+      "day": 2,
+      "estimatedMinutes": 15,
+      "output": "autonomous/output/marketing/bts-2.png"
+    },
+    {
+      "id": "alt-026",
+      "title": "Generate BTS set photo 3",
+      "description": "Director reviewing footage on monitor",
+      "status": "ready",
+      "priority": "medium",
+      "day": 2,
+      "estimatedMinutes": 15,
+      "output": "autonomous/output/marketing/bts-3.png"
+    },
+    {
+      "id": "alt-027",
+      "title": "Generate test screening audience",
+      "description": "Audience watching film with mixed reactions",
+      "status": "ready",
+      "priority": "medium",
+      "day": 2,
+      "estimatedMinutes": 15,
+      "prompt": "Movie theater audience watching film, diverse reactions - some shocked, some emotional, some amazed, screen glow on faces, candid screening photo",
+      "output": "autonomous/output/marketing/test-screening.png"
+    },
+    {
+      "id": "alt-028",
+      "title": "Film Critic teaser script",
+      "description": "Write mysterious 'heard interesting things' script",
+      "status": "ready",
+      "priority": "medium",
+      "day": 2,
+      "estimatedMinutes": 10,
+      "output": "Script for approval"
+    },
+    {
+      "id": "alt-029",
+      "title": "Generate Film Critic teaser video",
+      "description": "AI critic hints at the project",
+      "status": "blocked",
+      "blocker": "Needs alt-002 and alt-028 completed",
+      "priority": "medium",
+      "day": 2,
+      "estimatedMinutes": 30,
+      "output": "autonomous/output/marketing/critic-teaser.mp4"
+    },
+    {
+      "id": "alt-030",
+      "title": "AI-Tom Day 2 script",
+      "description": "Write 'We made something different' talking head",
+      "status": "ready",
+      "priority": "high",
+      "day": 2,
+      "estimatedMinutes": 10,
+      "output": "Script for approval"
+    },
+    {
+      "id": "alt-031",
+      "title": "Generate AI-Tom Day 2 video",
+      "description": "Talking head building anticipation",
+      "status": "blocked",
+      "blocker": "Needs alt-001 and alt-030",
+      "priority": "high",
+      "day": 2,
+      "estimatedMinutes": 30,
+      "output": "autonomous/output/marketing/tom-day2.mp4"
+    },
+    {
+      "id": "alt-032",
+      "title": "Generate fake celebrity endorsement",
+      "description": "Screenshot of celeb praising early screener",
+      "status": "ready",
+      "priority": "medium",
+      "day": 2,
+      "estimatedMinutes": 15,
+      "prompt": "Twitter screenshot, verified account, tweet saying 'Just saw an early screener of something. I'm not allowed to say what but... wow. February 14th.', realistic Twitter UI",
+      "output": "autonomous/output/marketing/fake-endorsement.png"
+    },
+    {
+      "id": "alt-033",
+      "title": "Tech Enthusiast teaser script",
+      "description": "Write 'the tech behind this is insane' script",
+      "status": "ready",
+      "priority": "medium",
+      "day": 2,
+      "estimatedMinutes": 10,
+      "output": "Script for approval"
+    },
+    {
+      "id": "alt-034",
+      "title": "Generate Tech Enthusiast video",
+      "description": "AI influencer covers tech angle",
+      "status": "blocked",
+      "blocker": "Needs alt-023 and alt-033",
+      "priority": "medium",
+      "day": 2,
+      "estimatedMinutes": 30,
+      "output": "autonomous/output/marketing/tech-teaser.mp4"
+    },
+    {
+      "id": "alt-035",
+      "title": "Write TikTok POV script",
+      "description": "'POV you see this poster and have no idea what's happening'",
+      "status": "ready",
+      "priority": "medium",
+      "day": 2,
+      "estimatedMinutes": 10,
+      "output": "Script/concept for approval"
+    },
+    {
+      "id": "alt-036",
+      "title": "Generate red carpet setup 1",
+      "description": "TCL Chinese Theatre premiere setup",
+      "status": "ready",
+      "priority": "high",
+      "day": 3,
+      "estimatedMinutes": 20,
+      "prompt": "Red carpet premiere setup at TCL Chinese Theatre Hollywood, ALTERNATE movie step-and-repeat backdrop, velvet ropes, photographer pit, evening setup, no people yet",
+      "output": "autonomous/output/marketing/redcarpet-setup-1.png"
+    },
+    {
+      "id": "alt-037",
+      "title": "Generate red carpet setup 2",
+      "description": "Different angle of premiere setup",
+      "status": "ready",
+      "priority": "high",
+      "day": 3,
+      "estimatedMinutes": 20,
+      "output": "autonomous/output/marketing/redcarpet-setup-2.png"
+    },
+    {
+      "id": "alt-038",
+      "title": "Generate fake Eventbrite sold out",
+      "description": "Sold out premiere ticket screenshot",
+      "status": "ready",
+      "priority": "medium",
+      "day": 3,
+      "estimatedMinutes": 15,
+      "prompt": "Eventbrite event page screenshot, 'ALTERNATE World Premiere' event, 'SOLD OUT' badge, February 14 date, TCL Chinese Theatre location, realistic UI",
+      "output": "autonomous/output/marketing/eventbrite-soldout.png"
+    },
+    {
+      "id": "alt-039",
+      "title": "Generate press junket interview still",
+      "description": "Hotel room interview setup",
+      "status": "ready",
+      "priority": "medium",
+      "day": 3,
+      "estimatedMinutes": 15,
+      "prompt": "Press junket interview photo, two people in hotel room setting, professional lighting, ALTERNATE movie poster visible in background, press tour aesthetic",
+      "output": "autonomous/output/marketing/press-junket.png"
+    },
+    {
+      "id": "alt-040",
+      "title": "Create teaser video cut 1",
+      "description": "30 sec action-heavy teaser from film footage",
+      "status": "ready",
+      "priority": "critical",
+      "day": 3,
+      "estimatedMinutes": 60,
+      "output": "autonomous/output/marketing/teaser-30sec.mp4"
+    }
+  ],
+  "stats": {
+    "total": 40,
+    "ready": 22,
+    "blocked": 18,
+    "inProgress": 0,
+    "complete": 0
+  },
+  "meta": {
+    "lastUpdated": "2026-02-09T19:45:00+13:00",
+    "note": "First 40 tasks (Days 1-3). Full 100+ list continues in queue-alternate-extended.json"
+  }
+}

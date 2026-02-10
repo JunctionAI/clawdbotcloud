@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-02T23:44:00+13:00",
+    "lastUpdated": "2026-02-10T12:40:00+13:00",
     "version": "1.0",
     "description": "Fast-tier operational state - loaded every session before anything else"
   },
@@ -53,10 +53,13 @@
     },
     "discord": {
       "connected": true,
-      "currentChannel": "active"
+      "currentChannel": "active",
+      "note": "Primary communication channel as of Feb 10"
     },
     "telegram": {
-      "connected": true
+      "connected": false,
+      "disabledAt": "2026-02-10T12:15:00+13:00",
+      "reason": "Tom requested all updates go to Discord only"
     },
     "whatsapp": {
       "connected": true,
@@ -77,316 +80,56 @@
     "email": null,
     "moltbook": "2026-01-31T12:26:00+13:00",
     "wise": "2026-01-31T11:40:00+13:00",
-    "calendar": null,
+    "calendar": "2026-02-10T12:10:00+13:00",
     "weather": null
   },
   "activeProjects": [
-    "PG Investments - Chairman meeting prep (PRIMARY FOCUS - potential $150k+ marketing role)",
-    "TWG Klaviyo project - awaiting Andi Garnett discovery call response",
-    "DBH - stable base income ($52k/year, 20h/week)",
+    "DBH - stable base income ($4k/month, 4h/day core hours) - PRIMARY",
+    "TWG Klaviyo project - website work in progress",
+    "Agency positioning - $10k/month price point, attracting not chasing",
     "Apps portfolio - 7 apps in development (low pressure, evenings/weekends)",
-    "Jakob Clawdbot support - ongoing (as needed)",
-    "Spending tracker - daily 9pm check-ins"
+    "Jakob Clawdbot support - ongoing (as needed)"
   ],
   "pendingItems": [
-    "⏰ PG Chairman meeting - Wednesday Feb 5 breakfast (8-10am) - CRITICAL",
-    "⏰ Baycorp setup - reminder set Monday 9am",
-    "TWG discovery call - waiting for Andi Garnett response",
+    "TWG website changes - Tom working on this now",
     "Genesis payment setup - browser open, needs password"
   ],
   "recentDecisions": [
     {
+      "date": "2026-02-10",
+      "decision": "Agency price point set at $10,000/month",
+      "rationale": "Time is in high demand, need to be selective. Every second is valuable. Attracting not chasing."
+    },
+    {
+      "date": "2026-02-10",
+      "decision": "Telegram disabled - Discord only for updates",
+      "rationale": "Consolidate communications to one channel"
+    },
+    {
+      "date": "2026-02-10",
+      "decision": "ALTERNATE movie paused - needs alignment call",
+      "rationale": "Was an experiment, assets ready but campaign on hold"
+    },
+    {
       "date": "2026-02-01",
       "decision": "PG Bedrock Path chosen over Q1 Scaling Plan",
-      "rationale": "PG marketing role ($150k+ at 10-20h/week) + DBH ($52k) = $200k+ stable base. Better Maslow alignment (safety→esteem→actualization), less burnout than grinding Clawdbot setups, high-tier network platform for $500k+ in 2-3 years. setupclaw.com becomes backup, not primary path."
-    },
-    {
-      "date": "2026-01-31",
-      "decision": "Integrated WhatsApp + Supermemory.ai",
-      "rationale": "WhatsApp for message routing, Supermemory for semantic memory + user profile learning"
-    },
-    {
-      "date": "2026-01-31",
-      "decision": "Implemented STATE.json for fast-tier memory",
-      "rationale": "Solve state blindness - load operational state every session"
-    },
-    {
-      "date": "2026-01-30",
-      "decision": "Always use reply-all for emails",
-      "rationale": "Respectful to all involved - learned from PG Investments email mistake"
-    },
-    {
-      "date": "2026-01-29",
-      "decision": "HTML email formatting mandatory for client emails",
-      "rationale": "Plain text formatting failed - Tom's reputation as email agency depends on professional formatting"
+      "rationale": "PG marketing role ($150k+ at 10-20h/week) + DBH ($52k) = $200k+ stable base. Better Maslow alignment (safety→esteem→actualization), less burnout than grinding Clawdbot setups, high-tier network platform for $500k+ in 2-3 years."
     }
   ],
+  "currentContext": {
+    "phase": "Demand shift - every second in demand",
+    "focus": "DBH core hours + selective high-value clients",
+    "strategy": "Attract don't chase, compound skill until $10k is demanded",
+    "vision": "Business celebrity trajectory through AI application mastery",
+    "insight": "Unique value = deep understanding of applying AI across wide range of businesses"
+  },
   "systemConfig": {
     "workspace": "C:\\Users\\Nightgalem\\clawd",
     "timezone": "Pacific/Auckland (GMT+13)",
-    "model": "anthropic/claude-sonnet-4-5",
+    "model": "anthropic/claude-opus-4-5",
     "gitInitialized": true
   },
   "automationSystems": {
-    "financialDashboard": {
-      "script": "scripts/financial-dashboard.js",
-      "description": "Comprehensive financial command center - Xero + Wise integration",
-      "features": [
-        "balance",
-        "runway",
-        "invoices",
-        "overdue alerts",
-        "revenue",
-        "goal progress"
-      ],
-      "usage": "node scripts/financial-dashboard.js [--json]",
-      "lastUpdated": "2026-02-03T02:42:00+13:00"
-    },
-    "morningBriefing": {
-      "script": "scripts/morning-briefing.js",
-      "description": "Automated comprehensive morning briefing",
-      "features": [
-        "reminders",
-        "priorities",
-        "calendar",
-        "financials",
-        "email intelligence"
-      ],
-      "usage": "node scripts/morning-briefing.js",
-      "autoRun": "8am heartbeat",
-      "lastUpdated": "2026-02-03T09:00:00+13:00"
-    },
-    "supermemoryEnhanced": {
-      "script": "scripts/supermemory-enhanced-sync.js",
-      "description": "Enhanced Supermemory sync with strategic insights",
-      "features": [
-        "financial insights",
-        "project tracking",
-        "decision logging",
-        "goal progress"
-      ],
-      "usage": "node scripts/supermemory-enhanced-sync.js",
-      "autoRun": "9pm heartbeat",
-      "lastUpdated": "2026-02-03T02:50:00+13:00"
-    },
-    "xeroTokenRefresh": {
-      "script": "scripts/xero-refresh-token.js",
-      "description": "Auto-refresh Xero API tokens",
-      "usage": "node scripts/xero-refresh-token.js",
-      "lastUpdated": "2026-02-03T02:38:00+13:00"
-    },
-    "emailIntelligence": {
-      "script": "scripts/email-intelligence.js",
-      "setupScript": "scripts/gmail-setup.js",
-      "description": "Email monitoring and intelligence system with critical sender detection",
-      "features": [
-        "Critical sender detection (PG Investments, Andi Garnett, DBH, Jakob, Ella)",
-        "Auto-summarization (key points, action items, deadlines)",
-        "Priority scoring (urgent/important matrix)",
-        "Real-time monitoring",
-        "Morning briefing integration"
-      ],
-      "criticalSenders": [
-        "PG Investments",
-        "Andi Garnett (TWG)",
-        "DBH (accounts@dbh.co.nz)",
-        "Jakob",
-        "Ella"
-      ],
-      "usage": {
-        "setup": "node scripts/gmail-setup.js",
-        "test": "node scripts/email-intelligence.js test",
-        "monitor": "node scripts/email-intelligence.js monitor",
-        "count": "node scripts/email-intelligence.js count"
-      },
-      "integration": {
-        "morningBriefing": "Automatically runs during 8am briefing",
-        "heartbeat": "Check 4x daily (8am, 12pm, 4pm, 8pm)",
-        "alerts": "Discord/Telegram/WhatsApp for critical senders"
-      },
-      "statePath": "email-intelligence-state.json",
-      "briefingCachePath": "email-briefing-cache.json",
-      "lastUpdated": "2026-02-03T09:00:00+13:00",
-      "note": "Perfect information at perfect times - never miss critical emails"
-    },
-    "projectTracker": {
-      "script": "scripts/project-tracker.js",
-      "description": "Track progress on active projects, alert on milestones",
-      "features": [
-        "project status",
-        "milestone tracking",
-        "deadline alerts",
-        "Supermemory sync"
-      ],
-      "usage": "node scripts/project-tracker.js [--sync]",
-      "lastUpdated": "2026-02-03T03:15:00+13:00"
-    },
-    "goalDashboard": {
-      "script": "scripts/goal-dashboard.js",
-      "description": "Real-time tracking against $1M 2026 goal",
-      "features": [
-        "Q1/year progress",
-        "revenue model breakdown",
-        "burn rate",
-        "strategic insights"
-      ],
-      "usage": "node scripts/goal-dashboard.js",
-      "lastUpdated": "2026-02-03T03:18:00+13:00"
-    },
-    "relationshipCRM": {
-      "script": "scripts/relationship-crm.js",
-      "description": "Track people, conversations, follow-ups",
-      "features": [
-        "contact database",
-        "follow-up tracking",
-        "meeting reminders",
-        "Supermemory sync"
-      ],
-      "usage": "node scripts/relationship-crm.js [--sync]",
-      "lastUpdated": "2026-02-03T03:20:00+13:00"
-    },
-    "controlCenter": {
-      "script": "scripts/control-center.js",
-      "description": "Master dashboard - runs all systems",
-      "features": [
-        "comprehensive overview",
-        "all systems status",
-        "sub-agent monitoring"
-      ],
-      "usage": "node scripts/control-center.js",
-      "lastUpdated": "2026-02-03T03:25:00+13:00"
-    },
-    "appDeployment": {
-      "script": "scripts/app-deployment-automation.js",
-      "description": "Automate app deployment, marketing, analytics",
-      "features": [
-        "deployment checklist",
-        "Meta ads setup",
-        "kill criteria ($1k/60d)",
-        "analytics tracking"
-      ],
-      "usage": "node scripts/app-deployment-automation.js",
-      "lastUpdated": "2026-02-03T03:28:00+13:00"
-    },
-    "informationPipeline": {
-      "script": "scripts/info-extraction-pipeline.js",
-      "description": "Intelligence extraction & delivery pipeline - perfect information at perfect times",
-      "features": [
-        "Twitter/X monitoring",
-        "Article digestion",
-        "Book/PDF extraction",
-        "Insight scoring & ranking",
-        "Morning briefing integration",
-        "Real-time alerts"
-      ],
-      "usage": "node scripts/info-extraction-pipeline.js run",
-      "components": {
-        "twitter": "scripts/x-twitter-monitor.js",
-        "articles": "scripts/article-digest.js",
-        "books": "scripts/book-digest.js"
-      },
-      "config": {
-        "twitterFrequency": "4h",
-        "articleFrequency": "6h",
-        "morningBriefing": "8am",
-        "alertThreshold": "8/10"
-      },
-      "autoRun": "every 4 hours (heartbeat)",
-      "lastUpdated": "2026-02-02T13:51:21.690Z"
-    },
-    "networkMonetization": {
-      "script": "scripts/network-monetization-dashboard.js",
-      "description": "Turn network and connections into revenue opportunities automatically",
-      "goal": "$5k-20k/month from network-driven opportunities",
-      "components": {
-        "linkedinIntelligence": "scripts/linkedin-intelligence.js",
-        "opportunityScanner": "scripts/opportunity-scanner.js",
-        "relationshipCRMEnhanced": "scripts/relationship-crm-enhanced.js",
-        "referralSystem": "scripts/referral-system.js",
-        "dashboard": "scripts/network-monetization-dashboard.js"
-      },
-      "features": [
-        "LinkedIn connection analysis (value scoring, job changes)",
-        "Opportunity detection (consulting, speaking, partnerships, advisor roles)",
-        "Enhanced CRM (net worth estimation, decision-maker mapping)",
-        "Referral system (10% commission, auto-thank, leaderboard)",
-        "Strategic networking recommendations",
-        "Content strategy for attracting high-value connections"
-      ],
-      "usage": {
-        "setup": "node scripts/setup-network-monetization.js",
-        "linkedinAnalysis": "node scripts/linkedin-intelligence.js",
-        "opportunityScan": "node scripts/opportunity-scanner.js",
-        "enhancedCRM": "node scripts/relationship-crm-enhanced.js",
-        "referralDashboard": "node scripts/referral-system.js",
-        "masterDashboard": "node scripts/network-monetization-dashboard.js",
-        "addReferral": "node scripts/referral-system.js add --referrer=\"Name\" --referrer-email=\"email\" --client=\"Client\" --value=10000"
-      },
-      "dataStructure": {
-        "linkedin": "data/linkedin/ (connections, opportunities, tracking)",
-        "opportunities": "data/opportunities/ (all opportunities, sources, tracking)",
-        "relationships": "data/relationships/ (CRM, followups)",
-        "referrals": "data/referrals/ (referrals, referrers, payments)"
-      },
-      "revenueModel": {
-        "consulting": "$5k-50k per project (1-2/month)",
-        "speaking": "$1k-10k per talk (1-2/month)",
-        "partnerships": "$5k-20k per partnership (2-3 active)",
-        "advisor": "0.25-1% equity + $2k-5k/month (1-2 roles)",
-        "referrals": "10% commission (target $2k-5k/month)"
-      },
-      "workflow": {
-        "morning": "Check dashboard, review top 10 actions, prioritize 2-3",
-        "daily": "Execute actions, log referrals, update statuses",
-        "evening": "Update progress, plan next day",
-        "weekly": "Review leaderboard, pay commissions, adjust strategy"
-      },
-      "documentation": "NETWORK-MONETIZATION-SYSTEM.md",
-      "setupScript": "scripts/setup-network-monetization.js",
-      "testScript": "scripts/test-network-monetization.js",
-      "lastUpdated": "2026-02-03T03:30:00+13:00",
-      "status": "Ready for production - awaiting LinkedIn data import"
-    },
-    "promptInjectionProtection": {
-      "script": "scripts/prompt-injection-protection.js",
-      "description": "Security-first external content validation",
-      "features": [
-        "Prompt injection detection",
-        "Risk scoring (0-10)",
-        "Auto-block high-risk content",
-        "User confirmation for suspicious content",
-        "Pattern-based detection"
-      ],
-      "totalScans": 7,
-      "blocked": 1,
-      "lastUpdated": "2026-02-03T08:52:28.254Z"
-    },
-    "expectationFramework": {
-      "script": "scripts/expectation-framework.cjs",
-      "description": "Working relationship definition and boundaries",
-      "features": [
-        "Proactivity level setting",
-        "Approval requirements by category",
-        "Off-limits areas definition",
-        "Weekly calibration check-ins"
-      ],
-      "proactivityLevel": "high",
-      "lastUpdated": "2026-02-03T08:52:28.542Z"
-    },
-    "trendMonitor": {
-      "script": "scripts/trend-monitor.cjs",
-      "description": "Proactive trend monitoring + autonomous feature building",
-      "features": [
-        "Twitter/X trend monitoring",
-        "Autonomous feature design",
-        "Prototype building",
-        "GitHub PR creation",
-        "Morning brief integration"
-      ],
-      "lastScan": null,
-      "trendsFound": 0,
-      "lastUpdated": "2026-02-03T09:00:00+13:00"
-    },
     "missionControl": {
       "script": "scripts/mission-control.js",
       "description": "Kanban dashboard tracking all autonomous tasks",
@@ -398,103 +141,7 @@
         "Task management API"
       ],
       "url": "http://localhost:3100",
-      "lastUpdated": "2026-02-03T23:45:16.329Z"
-    },
-    "modelOrchestrator": {
-      "script": "scripts/model-orchestrator.cjs",
-      "description": "Multi-model orchestration system with cost optimization",
-      "features": [
-        "Intelligent model routing",
-        "Cost tracking per model",
-        "Budget alerts",
-        "Quality monitoring",
-        "Auto-optimization"
-      ],
-      "monthlySpend": 0,
-      "monthlySavings": 0,
-      "lastUpdated": "2026-02-03T09:00:00+13:00"
-    },
-    "localModels": {
-      "script": "scripts/local-models.cjs",
-      "description": "Local model integration framework with privacy-first routing",
-      "features": [
-        "Ollama integration",
-        "Privacy detection (PII, financial data)",
-        "Cost optimization",
-        "Mac Studio optimization",
-        "Auto-routing logic"
-      ],
-      "lastUpdated": "2026-02-03T09:00:00+13:00"
-    },
-    "unknownUnknowns": {
-      "script": "scripts/unknown-unknowns.cjs",
-      "description": "Capability discovery system - surfaces unknown unknowns",
-      "features": [
-        "Profile-based capability discovery",
-        "Interview mode for needs assessment",
-        "Comprehensive capability map",
-        "Weekly discovery reports"
-      ],
-      "totalDiscoveries": 0,
-      "implemented": 0,
-      "lastDiscovery": null,
-      "lastUpdated": "2026-02-03T09:00:00+13:00"
-    },
-    "agencyWorkflow": {
-      "script": "scripts/agency-workflow.cjs",
-      "description": "Agency-style workflow system for CRO, testing, optimization",
-      "features": [
-        "Audit → Research → Ideation → Wireframes → Testing → Report",
-        "Multi-variant testing with screenshots",
-        "Automated comparison reports",
-        "Hypothesis tracking"
-      ],
-      "activeProjects": 0,
-      "totalProjects": 0,
-      "lastUpdated": "2026-02-03T09:00:00+13:00"
+      "lastUpdated": "2026-02-10T06:32:27.431Z"
     }
-  },
-  "subAgents": {
-    "active": [
-      {
-        "label": "pg-research",
-        "task": "Deep research on PG Investments for Wednesday meeting",
-        "status": "running",
-        "spawnedAt": "2026-02-03T02:52:00+13:00"
-      },
-      {
-        "label": "email-intelligence",
-        "task": "Build email monitoring and intelligence system",
-        "status": "completed",
-        "spawnedAt": "2026-02-03T03:00:00+13:00",
-        "completedAt": "2026-02-03T09:00:00+13:00"
-      },
-      {
-        "label": "info-extraction",
-        "task": "Build information extraction and intelligence pipeline",
-        "status": "running",
-        "spawnedAt": "2026-02-03T03:02:00+13:00"
-      },
-      {
-        "label": "network-monetization",
-        "task": "Build network monetization and opportunity detection system",
-        "status": "completed",
-        "spawnedAt": "2026-02-03T03:04:00+13:00",
-        "completedAt": "2026-02-03T03:30:00+13:00",
-        "deliverables": [
-          "scripts/linkedin-intelligence.js",
-          "scripts/opportunity-scanner.js",
-          "scripts/relationship-crm-enhanced.js",
-          "scripts/referral-system.js",
-          "scripts/network-monetization-dashboard.js",
-          "scripts/setup-network-monetization.js",
-          "scripts/test-network-monetization.js",
-          "NETWORK-MONETIZATION-SYSTEM.md (14KB documentation)",
-          "TASK-COMPLETE-NETWORK-MONETIZATION.md"
-        ],
-        "goal": "$5k-20k/month from network-driven opportunities",
-        "status_detail": "All components built, tested, and documented. Ready for production use."
-      }
-    ]
   }
 }
