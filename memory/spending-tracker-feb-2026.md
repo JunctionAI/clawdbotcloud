@@ -387,3 +387,12 @@ _(Same format)_
 
 **Total spent today:** $0
 
+
+## 2026-02-15
+
+- **$19.87** @ Mobil K'road (Service Stations (with or withou) - 12:35
+- **$20.30** @ Novelty Trading (Fast Food Restaurants) - 02:56
+- **$10.18** @ Goblin Bar (Bars, Cocktail Lounges, Discothe) - 01:07
+
+**Total spent today:** $0
+
