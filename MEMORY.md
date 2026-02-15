@@ -1,6 +1,6 @@
 # MEMORY.md — Long-Term Memory
 
-*Last updated: 2026-02-10*
+*Last updated: 2026-02-15 (Weekly Review)*
 
 ---
 
@@ -95,6 +95,13 @@ Tom's message to the team:
 - "Bổ máu" (blood nourishment) resonates
 - Facebook is #1 platform for diaspora
 - Testimonial-style videos work best
+
+### Agent Operations (Feb 15 Weekly Review)
+- Valentine's weekend = low availability (predict ahead)
+- 70+ checks without response = need weekend throttling
+- Pre-authorization system needed ("If X, execute Y without asking")
+- Date consistency across docs critical (single source of truth)
+- Fake credentials/testimonials on websites = instant liability
 
 ---
 

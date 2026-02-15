@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-10T12:40:00+13:00",
+    "lastUpdated": "2026-02-15T20:00:00+13:00",
     "version": "1.0",
     "description": "Fast-tier operational state - loaded every session before anything else"
   },
@@ -77,11 +77,12 @@
     }
   },
   "lastChecks": {
-    "email": null,
+    "email": "2026-02-12T13:41:00+13:00",
     "moltbook": "2026-01-31T12:26:00+13:00",
     "wise": "2026-01-31T11:40:00+13:00",
-    "calendar": "2026-02-10T12:10:00+13:00",
-    "weather": null
+    "calendar": "2026-02-15T19:55:00+13:00",
+    "weather": null,
+    "weeklyReview": "2026-02-15T20:00:00+13:00"
   },
   "activeProjects": [
     "DBH - stable base income ($4k/month, 4h/day core hours) - PRIMARY",
@@ -91,8 +92,9 @@
     "Jakob Clawdbot support - ongoing (as needed)"
   ],
   "pendingItems": [
-    "TWG website changes - Tom working on this now",
-    "Genesis payment setup - browser open, needs password"
+    "ALTERNATE launch - 70+ checks, blocked on YouTube/extras handles/vertical exports",
+    "Junction git push - fake content removed in commit 9808d0b, needs push",
+    "TWG website changes - Tom working on this"
   ],
   "recentDecisions": [
     {
@@ -106,9 +108,9 @@
       "rationale": "Consolidate communications to one channel"
     },
     {
-      "date": "2026-02-10",
-      "decision": "ALTERNATE movie paused - needs alignment call",
-      "rationale": "Was an experiment, assets ready but campaign on hold"
+      "date": "2026-02-12",
+      "decision": "ALTERNATE movie ACTIVE - full production push",
+      "rationale": "Seedance sorted. Release target Feb 14. Tom grinding with Zach until 3:30am daily."
     },
     {
       "date": "2026-02-01",
@@ -117,11 +119,12 @@
     }
   ],
   "currentContext": {
-    "phase": "Demand shift - every second in demand",
-    "focus": "DBH core hours + selective high-value clients",
-    "strategy": "Attract don't chase, compound skill until $10k is demanded",
-    "vision": "Business celebrity trajectory through AI application mastery",
-    "insight": "Unique value = deep understanding of applying AI across wide range of businesses"
+    "phase": "VISION SET - Building the next Pixar",
+    "focus": "AI services → Creative production company",
+    "strategy": "1000 agents, massive margins, reinvest into human creativity",
+    "vision": "Creative production as public benefit. Storytelling for humanity.",
+    "insight": "AI handles operations. Humans handle creation. This is the mega company.",
+    "mandate": "Meetings every 15 min. Updates every hour. BUILD."
   },
   "systemConfig": {
     "workspace": "C:\\Users\\Nightgalem\\clawd",
@@ -141,7 +144,7 @@
         "Task management API"
       ],
       "url": "http://localhost:3100",
-      "lastUpdated": "2026-02-10T06:32:27.431Z"
+      "lastUpdated": "2026-02-14T18:32:36.476Z"
     }
   }
 }
