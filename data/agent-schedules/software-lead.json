@@ -1,0 +1,63 @@
+{
+  "agent": "SOFTWARE-LEAD",
+  "role": "Software Team Lead",
+  "team": "software",
+  "status": "active",
+  "purpose": "Self-improvement loop — scrape X, find innovations, integrate into Clawdbot",
+  "currentTask": {
+    "id": "sw-001",
+    "title": "Set up X API integration for daily scraping",
+    "status": "in-progress"
+  },
+  "queue": [
+    {
+      "id": "sw-002",
+      "title": "Build daily X scraper for AI tools/innovations",
+      "priority": "high",
+      "blockedBy": null,
+      "estimatedMinutes": 120,
+      "notes": "Track: new AI tools, Clawdbot mentions, procedures, innovations"
+    },
+    {
+      "id": "sw-003",
+      "title": "Create daily digest system",
+      "priority": "high",
+      "blockedBy": "sw-002",
+      "estimatedMinutes": 60,
+      "notes": "Summarize findings, flag actionable improvements"
+    },
+    {
+      "id": "sw-004",
+      "title": "Build integration pipeline for Clawdbot improvements",
+      "priority": "medium",
+      "blockedBy": "sw-003",
+      "estimatedMinutes": 90,
+      "notes": "When we find a useful tool/skill, auto-integrate or flag for integration"
+    },
+    {
+      "id": "sw-005",
+      "title": "Set up daily improvement report to Tom",
+      "priority": "medium",
+      "blockedBy": "sw-004",
+      "estimatedMinutes": 30,
+      "notes": "What we learned, what we integrated, what's coming"
+    }
+  ],
+  "blocked": [],
+  "completed": [],
+  "dailyLoop": {
+    "morning": "Scrape X for overnight AI news/tools",
+    "midday": "Analyze and identify actionable improvements",
+    "evening": "Report to Tom: what we found, what we integrated"
+  },
+  "trackingTopics": [
+    "AI tools and agents",
+    "Clawdbot mentions and updates",
+    "Automation workflows",
+    "New APIs and integrations",
+    "Marketing automation innovations",
+    "Voice AI developments",
+    "Video generation tools"
+  ],
+  "lastActive": "2026-02-12T13:13:00+13:00"
+}

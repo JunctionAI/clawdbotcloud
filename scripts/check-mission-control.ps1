@@ -1,5 +1,5 @@
 $body = @{
-    path = "tasks:listPending"
+    path = "tasks:list"
     args = @{}
 } | ConvertTo-Json -Compress
 

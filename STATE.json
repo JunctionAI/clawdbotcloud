@@ -82,7 +82,7 @@
     "wise": "2026-01-31T11:40:00+13:00",
     "calendar": "2026-02-15T19:55:00+13:00",
     "weather": null,
-    "weeklyReview": "2026-02-15T20:00:00+13:00"
+    "weeklyReview": "2026-02-15T20:10:00+13:00"
   },
   "activeProjects": [
     "DBH - stable base income ($4k/month, 4h/day core hours) - PRIMARY",
@@ -92,9 +92,10 @@
     "Jakob Clawdbot support - ongoing (as needed)"
   ],
   "pendingItems": [
-    "ALTERNATE launch - 70+ checks, blocked on YouTube/extras handles/vertical exports",
-    "Junction git push - fake content removed in commit 9808d0b, needs push",
-    "TWG website changes - Tom working on this"
+    "ALTERNATE launch - 70+ checks, still blocked on YouTube upload confirmation + extras handles",
+    "Junction git push - CRITICAL: fake content removed in commit 9808d0b but still live on site!",
+    "TWG website changes - Tom working on this",
+    "Pre-authorization protocols - Build system for autonomous execution during weekends"
   ],
   "recentDecisions": [
     {

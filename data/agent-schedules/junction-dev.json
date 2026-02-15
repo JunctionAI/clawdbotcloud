@@ -1,0 +1,33 @@
+{
+  "agent": "JUNCTION-DEV",
+  "role": "Web Development",
+  "team": "JUNCTION",
+  "status": "idle",
+  "currentTask": null,
+  "queue": [
+    {
+      "id": "jd-001",
+      "title": "Fix animated counters on junction-v3",
+      "priority": "high",
+      "blockedBy": null,
+      "estimatedMinutes": 30
+    },
+    {
+      "id": "jd-002",
+      "title": "Remove fake press logos (TechCrunch, Forbes etc)",
+      "priority": "high",
+      "blockedBy": null,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "jd-003",
+      "title": "Update testimonial section with real quotes",
+      "priority": "medium",
+      "blockedBy": "tom",
+      "reason": "Need approved testimonial from DBH"
+    }
+  ],
+  "blocked": [],
+  "completed": [],
+  "lastActive": "2026-02-12T12:00:00+13:00"
+}

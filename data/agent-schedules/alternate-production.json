@@ -1,0 +1,31 @@
+{
+  "agent": "ALTERNATE-PRODUCTION",
+  "role": "Film Production Support",
+  "team": "ALTERNATE",
+  "status": "active",
+  "currentTask": {
+    "id": "ap-001",
+    "title": "Support tonight's clip generation session",
+    "status": "scheduled",
+    "scheduledFor": "2026-02-12T21:30:00+13:00"
+  },
+  "queue": [
+    {
+      "id": "ap-002",
+      "title": "Organize generated clips for editing",
+      "priority": "high",
+      "blockedBy": "clips",
+      "reason": "Waiting for tonight's generation session"
+    },
+    {
+      "id": "ap-003",
+      "title": "Prepare polishing checklist for Friday",
+      "priority": "medium",
+      "blockedBy": null,
+      "estimatedMinutes": 20
+    }
+  ],
+  "blocked": [],
+  "completed": [],
+  "lastActive": "2026-02-12T12:00:00+13:00"
+}

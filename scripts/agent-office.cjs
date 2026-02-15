@@ -961,6 +961,23 @@ function getHTML() {
       0%, 100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.2); }
       50% { box-shadow: 0 0 40px rgba(245, 158, 11, 0.4); }
     }
+
+    /* Meeting/Speaking styles */
+    .task-bubble.speaking {
+      opacity: 1 !important;
+      transform: translateX(-50%) translateY(-5px) scale(1.1) !important;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+      animation: speak-bounce 0.5s ease infinite;
+    }
+
+    @keyframes speak-bounce {
+      0%, 100% { transform: translateX(-50%) translateY(-5px) scale(1.1); }
+      50% { transform: translateX(-50%) translateY(-8px) scale(1.15); }
+    }
+
+    .meeting-btn {
+      font-weight: bold !important;
+    }
   </style>
 </head>
 <body>
@@ -971,6 +988,7 @@ function getHTML() {
       <div class="view-toggle">
         <button class="view-btn active" onclick="setView('office')">🏢 Office</button>
         <button class="view-btn" onclick="setView('standups')">🎙️ Standups</button>
+        <button class="view-btn meeting-btn" onclick="callMeeting()" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">📢 Call Meeting</button>
       </div>
       <div class="stat">Agents: <span class="stat-value" id="agent-count">0</span></div>
       <div class="stat">Active: <span class="stat-value" id="active-count">0</span></div>
@@ -1595,6 +1613,106 @@ function getHTML() {
       if (str.endsWith('h')) return num * 3600;
       if (str.endsWith('d')) return num * 86400;
       return 0;
+    }
+
+    // Meeting room functionality
+    let meetingActive = false;
+    const meetingPhrases = [
+      "Let's align on priorities",
+      "Great progress team!",
+      "What's blocking us?",
+      "I'll take that action",
+      "Ship it! 🚀",
+      "Let's iterate on this",
+      "Good insight!",
+      "Agreed 👍",
+      "Let me research that",
+      "We're on track",
+      "Focus on impact",
+      "Let's sync later"
+    ];
+
+    function callMeeting() {
+      if (meetingActive) {
+        endMeeting();
+        return;
+      }
+      
+      meetingActive = true;
+      const btn = document.querySelector('.meeting-btn');
+      btn.textContent = '🔴 End Meeting';
+      btn.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+      
+      // Move all agents to meeting room
+      const meetingPositions = [
+        { x: 680, y: 110 },
+        { x: 750, y: 110 },
+        { x: 820, y: 110 },
+        { x: 680, y: 180 },
+        { x: 750, y: 180 },
+        { x: 820, y: 180 },
+        { x: 680, y: 250 },
+        { x: 750, y: 250 },
+        { x: 820, y: 250 },
+      ];
+      
+      agentsData.forEach((agent, index) => {
+        const el = document.getElementById('agent-' + agent.id);
+        if (el) {
+          const pos = meetingPositions[index % meetingPositions.length];
+          el.classList.add('walking');
+          el.style.transition = 'left 1.5s ease, top 1.5s ease';
+          el.style.left = pos.x + 'px';
+          el.style.top = pos.y + 'px';
+          
+          agentPositions[agent.id] = { x: pos.x + 25, y: pos.y + 25 };
+          
+          setTimeout(() => {
+            el.classList.remove('walking');
+            drawRelationshipLines();
+          }, 1500);
+        }
+      });
+      
+      // Start agents "talking"
+      setTimeout(() => {
+        startMeetingChat();
+      }, 2000);
+    }
+    
+    function startMeetingChat() {
+      if (!meetingActive) return;
+      
+      // Random agent says something
+      const randomAgent = agentsData[Math.floor(Math.random() * agentsData.length)];
+      const el = document.getElementById('agent-' + randomAgent.id);
+      if (el) {
+        const bubble = el.querySelector('.task-bubble');
+        if (bubble) {
+          const phrase = meetingPhrases[Math.floor(Math.random() * meetingPhrases.length)];
+          bubble.textContent = phrase;
+          bubble.classList.add('speaking');
+          
+          setTimeout(() => {
+            bubble.classList.remove('speaking');
+          }, 3000);
+        }
+      }
+      
+      // Schedule next chat
+      if (meetingActive) {
+        setTimeout(startMeetingChat, 2000 + Math.random() * 2000);
+      }
+    }
+    
+    function endMeeting() {
+      meetingActive = false;
+      const btn = document.querySelector('.meeting-btn');
+      btn.textContent = '📢 Call Meeting';
+      btn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+      
+      // Move agents back to their work positions
+      initAgents();
     }
 
     // Random movement for idle agents

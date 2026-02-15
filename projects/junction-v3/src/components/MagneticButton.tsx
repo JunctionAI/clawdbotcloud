@@ -43,7 +43,7 @@ export default function MagneticButton({
       onMouseLeave={handleMouseLeave}
       animate={{ x: position.x, y: position.y }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-      className={`inline-block ${className}`}
+      className="inline-block overflow-hidden rounded-full"
       style={{ willChange: 'transform' }}
     >
       {href ? (
@@ -57,7 +57,9 @@ export default function MagneticButton({
           {children}
         </motion.a>
       ) : (
-        children
+        <div className={className}>
+          {children}
+        </div>
       )}
     </motion.div>
   );

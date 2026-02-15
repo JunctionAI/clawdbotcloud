@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "date": "2026-02-14",
+    "time": "09:00",
+    "type": "morning",
+    "coordinator": "fury",
+    "attendees": ["jarvis", "shuri", "fury", "prep", "alternate-agent", "junction-agent", "personal-agent"],
+    "holiday": "Valentine's Day 💝"
+  },
+  "review": {
+    "yesterdayCompleted": [
+      {
+        "title": "DBH Vietnamese Influencer Filming",
+        "agent": "prep",
+        "completedAt": "2026-02-13 14:00-18:00",
+        "deliverables": ["Fresh video content for Deer Blood, Calcium, Ginkgo"],
+        "impact": "High-trust content for Vietnamese diaspora audience (NZ/AU). Prep doc worked flawlessly."
+      },
+      {
+        "title": "Real DBH Case Study Created",
+        "agent": "fury",
+        "completedAt": "2026-02-13 07:49",
+        "deliverables": ["projects/junction/case-studies/dbh-case-study-draft.md"],
+        "impact": "Authentic results documentation. Replaces fabricated testimonials."
+      },
+      {
+        "title": "Evening Standup Executed",
+        "agent": "fury",
+        "completedAt": "2026-02-13 17:00",
+        "deliverables": ["data/mission-control/standups/2026-02-13-evening.json"],
+        "impact": "Identified ALTERNATE date confusion (Feb 14 vs Feb 15)"
+      }
+    ],
+    "inProgressTasks": [
+      {
+        "taskId": "task-005",
+        "title": "Junction Client #001 Sprint",
+        "agent": "fury",
+        "status": "Day 5 of 14",
+        "progress": "35%",
+        "notes": "Content calendar created, LinkedIn posts drafted, email sequence outlined"
+      },
+      {
+        "taskId": "task-002",
+        "title": "AI Curve Website Section",
+        "agent": "junction-dev",
+        "status": "In Progress"
+      }
+    ],
+    "stillBlocked": [
+      {
+        "taskId": "task-003",
+        "title": "ALTERNATE - Seedance 2 Access",
+        "daysBlocked": 4,
+        "impact": "Entire ALTERNATE video generation paused",
+        "recommendation": "Consider Vidu AI as alternative - we researched this already"
+      }
+    ]
+  },
+  "todayPriorities": [
+    {
+      "priority": 1,
+      "task": "ALTERNATE Launch Status Check",
+      "owner": "Tom + alternate-agent",
+      "urgency": "CRITICAL",
+      "notes": "Is launch TODAY (Feb 14, Valentine's) or TOMORROW (Feb 15)? Date confusion unresolved."
+    },
+    {
+      "priority": 2,
+      "task": "Process Vietnamese Influencer Content",
+      "owner": "prep",
+      "urgency": "HIGH",
+      "notes": "Edit yesterday's footage, prepare for social distribution"
+    },
+    {
+      "priority": 3,
+      "task": "LinkedIn Posts - Need Tom's Review",
+      "owner": "junction-content",
+      "urgency": "MEDIUM",
+      "notes": "3 posts drafted and waiting"
+    },
+    {
+      "priority": 4,
+      "task": "Continue Junction Sprint",
+      "owner": "fury",
+      "urgency": "MEDIUM",
+      "notes": "Day 5 - maintain momentum"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "block-001",
+      "severity": "CRITICAL",
+      "issue": "ALTERNATE release date STILL unclear",
+      "needsFromTom": "Launch today (Feb 14) or tomorrow (Feb 15)?",
+      "daysUnresolved": 1,
+      "impact": "Cannot execute launch sequence without knowing THE DATE"
+    },
+    {
+      "id": "block-002",
+      "severity": "HIGH",
+      "issue": "Seedance 2 access blocked 4+ days",
+      "needsFromTom": "Decision: Wait longer OR switch to Vidu AI?",
+      "recommendation": "Vidu AI can do ~10 sec videos. ALTERNATE production can continue.",
+      "impact": "All video generation paused"
+    },
+    {
+      "id": "block-003",
+      "severity": "MEDIUM",
+      "issue": "LinkedIn posts pending approval",
+      "needsFromTom": "Review 3 drafted posts, approve for publishing",
+      "impact": "Professional presence delayed"
+    },
+    {
+      "id": "block-004",
+      "severity": "MEDIUM",
+      "issue": "Extras Instagram handles missing",
+      "needsFromTom": "Get list from Zach for launch tagging",
+      "impact": "Reduced viral potential"
+    }
+  ],
+  "agentReports": {
+    "prep": {
+      "status": "✅ Operational",
+      "insight": "DBH filming prep system WORKS. Comprehensive doc = smooth execution. Template this for future shoots."
+    },
+    "fury": {
+      "status": "✅ Operational",
+      "insight": "Junction sprint at Day 5. Solid progress but need client-facing work to start generating revenue."
+    },
+    "alternate-agent": {
+      "status": "⚠️ Partially Blocked",
+      "insight": "Launch execution plan ready but date confusion creating paralysis. Need decision TODAY."
+    },
+    "junction-content": {
+      "status": "✅ Ready",
+      "insight": "Content backlog created. Blocked on publishing access/approval."
+    },
+    "shuri": {
+      "status": "✅ Operational",
+      "insight": "Lessons learned system running. Agent memory compounding working."
+    },
+    "jarvis": {
+      "status": "✅ Operational",
+      "insight": "Infrastructure stable. No technical blockers."
+    },
+    "personal-agent": {
+      "status": "✅ Operational",
+      "insight": "Valentine's Day - reminder if Tom has any personal plans."
+    }
+  },
+  "ideasFromTeam": [
+    {
+      "idea": "Valentine's Day = perfect ALTERNATE launch thematic",
+      "agent": "alternate-agent",
+      "rationale": "Film about alternate lives/choices + love = Valentine's meta narrative. IF launching today, lean into this angle HARD."
+    },
+    {
+      "idea": "DBH filming prep template → Reuse for all future shoots",
+      "agent": "prep",
+      "rationale": "Yesterday proved comprehensive prep docs = smooth execution. Create template for repeat success."
+    },
+    {
+      "idea": "Junction needs outbound motion THIS WEEKEND",
+      "agent": "fury",
+      "rationale": "Website live, case study done, content ready. Next step: reach out to potential clients. 2-week sprint deadline approaching."
+    }
+  ],
+  "lessonsLogged": [
+    {
+      "lesson": "Blocking decisions must be escalated with alternatives, not just waited on",
+      "context": "Seedance 2 access blocked 4 days. Vidu AI alternative existed from Day 1.",
+      "agent": "fury",
+      "action": "New rule: If blocked >48h, escalate WITH recommended alternative"
+    },
+    {
+      "lesson": "Pre-filming prep docs are force multipliers",
+      "context": "DBH filming ran smoothly because prep doc covered everything",
+      "agent": "prep",
+      "action": "Template this approach for all future shoots"
+    }
+  ],
+  "nextStandup": "2026-02-14 17:00 (evening)"
+}

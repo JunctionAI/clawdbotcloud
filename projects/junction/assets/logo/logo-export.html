@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Logo Export</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #0F172A; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+    .logo { display: flex; align-items: center; gap: 16px; padding: 40px; }
+    .mark { width: 64px; height: 64px; }
+    .wordmark { display: flex; align-items: baseline; gap: 6px; }
+    .junction { font-size: 36px; font-weight: 800; color: #FFFFFF; letter-spacing: -0.02em; }
+    .media { font-size: 36px; font-weight: 400; color: #9CA3AF; letter-spacing: -0.02em; }
+  </style>
+</head>
+<body>
+  <div class="logo" id="logo">
+    <div class="mark">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#3B82F6"/>
+            <stop offset="50%" style="stop-color:#8B5CF6"/>
+            <stop offset="100%" style="stop-color:#EC4899"/>
+          </linearGradient>
+        </defs>
+        <path d="M25 8 Q8 8 8 25" stroke="url(#grad)" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <path d="M55 8 Q72 8 72 25" stroke="url(#grad)" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <path d="M25 72 Q8 72 8 55" stroke="url(#grad)" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <path d="M55 72 Q72 72 72 55" stroke="url(#grad)" stroke-width="8" stroke-linecap="round" fill="none"/>
+      </svg>
+    </div>
+    <div class="wordmark">
+      <span class="junction">Junction</span>
+      <span class="media">Media</span>
+    </div>
+  </div>
+</body>
+</html>

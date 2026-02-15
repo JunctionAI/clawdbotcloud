@@ -1,0 +1,32 @@
+<svg width="400" height="100" viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="50%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#EC4899"/>
+    </linearGradient>
+    <linearGradient id="gradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="50%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#EC4899"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Junction Mark - Four curved connectors -->
+  <g transform="translate(10, 10)">
+    <!-- Top Left -->
+    <path d="M25 5 Q5 5 5 25" stroke="url(#gradient1)" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <!-- Top Right -->
+    <path d="M55 5 Q75 5 75 25" stroke="url(#gradient1)" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <!-- Bottom Left -->
+    <path d="M25 75 Q5 75 5 55" stroke="url(#gradient2)" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <!-- Bottom Right -->
+    <path d="M55 75 Q75 75 75 55" stroke="url(#gradient2)" stroke-width="8" stroke-linecap="round" fill="none"/>
+  </g>
+  
+  <!-- Junction Text -->
+  <text x="110" y="58" font-family="Inter, system-ui, sans-serif" font-size="42" font-weight="800" fill="#1F2937">Junction</text>
+  
+  <!-- Media Text -->
+  <text x="305" y="58" font-family="Inter, system-ui, sans-serif" font-size="42" font-weight="400" fill="#6B7280">Media</text>
+</svg>

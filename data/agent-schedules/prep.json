@@ -1,0 +1,38 @@
+{
+  "agent": "PREP",
+  "role": "Coordination & Operations",
+  "status": "active",
+  "currentTask": {
+    "id": "prep-001",
+    "title": "Morning briefing & dashboard setup",
+    "status": "in-progress"
+  },
+  "queue": [
+    {
+      "id": "prep-002",
+      "title": "Document today's progress in daily log",
+      "priority": "medium",
+      "blockedBy": null,
+      "estimatedMinutes": 10,
+      "status": "pending"
+    },
+    {
+      "id": "prep-003",
+      "title": "Update STATE.json with current context",
+      "priority": "medium",
+      "blockedBy": null,
+      "estimatedMinutes": 5,
+      "status": "pending"
+    },
+    {
+      "id": "prep-004",
+      "title": "9pm habit tracking check",
+      "priority": "low",
+      "blockedBy": null,
+      "scheduledFor": "2026-02-12T21:00:00+13:00",
+      "status": "scheduled"
+    }
+  ],
+  "completed": [],
+  "lastActive": "2026-02-12T11:57:00+13:00"
+}

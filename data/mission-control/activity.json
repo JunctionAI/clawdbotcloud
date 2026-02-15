@@ -1,6 +1,82 @@
 {
   "activities": [
     {
+      "id": "act-028",
+      "timestamp": "2026-02-15T09:00:00+13:00",
+      "agent": "fury",
+      "type": "standup",
+      "message": "Sunday morning standup - 'Weekend Premiere' launch day. Junction sprint Day 6. ALTERNATE armed with 36+ checks ready. 3 blockers: YouTube status, extras handles, git push. Tom recovering from rough night - be efficient.",
+      "priority": "high",
+      "project": "mission-control",
+      "deliverables": ["data/mission-control/standups/2026-02-15-morning.json"]
+    },
+    {
+      "id": "act-027",
+      "timestamp": "2026-02-14T09:00:00+13:00",
+      "agent": "fury",
+      "type": "standup",
+      "message": "Valentine's Day morning standup. 2 CRITICAL blockers: ALTERNATE release date STILL unclear (Feb 14 or 15?), Seedance 2 blocked 4+ days. DBH filming complete yesterday - content ready to process. Junction sprint Day 5.",
+      "priority": "high",
+      "project": "mission-control",
+      "deliverables": ["data/mission-control/standups/2026-02-14-morning.json"]
+    },
+    {
+      "id": "act-026",
+      "timestamp": "2026-02-13T09:02:00+13:00",
+      "agent": "fury",
+      "type": "standup",
+      "message": "Morning standup complete. 2 human blockers identified: DBH filming date confusion (today vs tomorrow?), Seedance 2 access blocked 3+ days. Domain junctionmedia.ai verified live. Team operational except ALTERNATE (paused).",
+      "priority": "high",
+      "project": "mission-control",
+      "deliverables": ["data/mission-control/standups/2026-02-13-morning.json"]
+    },
+    {
+      "id": "act-025",
+      "timestamp": "2026-02-13T07:49:00+13:00",
+      "agent": "fury",
+      "type": "task-completed",
+      "message": "Real DBH case study drafted - replaces fake testimonial content on Junction website. No fabricated stats, real work documented.",
+      "priority": "high",
+      "project": "junction",
+      "deliverables": ["projects/junction/case-studies/dbh-case-study-draft.md"]
+    },
+    {
+      "id": "act-024",
+      "timestamp": "2026-02-11T19:25:00+13:00",
+      "agent": "fury",
+      "type": "task-completed",
+      "message": "Email welcome sequence outlined - 5-email nurture sequence over 10 days, ready for platform setup",
+      "priority": "high",
+      "project": "junction"
+    },
+    {
+      "id": "act-023",
+      "timestamp": "2026-02-11T19:22:00+13:00",
+      "agent": "fury",
+      "type": "task-completed",
+      "message": "3 LinkedIn posts drafted - 'Why we built AI agency', 'Speed advantage', 'Case study teaser' - ready for Tom's review",
+      "priority": "high",
+      "project": "junction"
+    },
+    {
+      "id": "act-022",
+      "timestamp": "2026-02-11T19:20:00+13:00",
+      "agent": "fury",
+      "type": "task-completed",
+      "message": "Content Calendar (Weeks 1-2) created - full publishing schedule with daily tasks, checklist, metrics",
+      "priority": "high",
+      "project": "junction"
+    },
+    {
+      "id": "act-021",
+      "timestamp": "2026-02-11T14:35:00+13:00",
+      "agent": "shuri",
+      "type": "task-completed",
+      "message": "Lessons Learned System complete - scripts/lessons-learned.cjs: log insights, synthesize patterns, compound knowledge across agents",
+      "priority": "medium",
+      "project": "mission-control"
+    },
+    {
       "id": "act-020",
       "timestamp": "2026-02-10T20:01:00+13:00",
       "agent": "junction-dev",
@@ -137,6 +213,6 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-02-10T20:01:00+13:00"
+    "lastUpdated": "2026-02-15T09:00:00+13:00"
   }
 }

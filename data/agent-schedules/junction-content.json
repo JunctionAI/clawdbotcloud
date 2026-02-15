@@ -1,0 +1,67 @@
+{
+  "agent": "JUNCTION-CONTENT",
+  "role": "Content Production",
+  "status": "active",
+  "currentTask": null,
+  "queue": [
+    {
+      "id": "jc-001",
+      "title": "Write LinkedIn Post #1 draft",
+      "priority": "high",
+      "blockedBy": null,
+      "estimatedMinutes": 20,
+      "status": "pending",
+      "notes": "Topic: Why we built an AI marketing agency"
+    },
+    {
+      "id": "jc-002",
+      "title": "Write LinkedIn Post #2 draft",
+      "priority": "high",
+      "blockedBy": null,
+      "estimatedMinutes": 20,
+      "status": "pending",
+      "notes": "Topic: Speed advantage"
+    },
+    {
+      "id": "jc-003",
+      "title": "Write LinkedIn Post #3 draft",
+      "priority": "medium",
+      "blockedBy": null,
+      "estimatedMinutes": 20,
+      "status": "pending",
+      "notes": "Topic: Case study teaser"
+    },
+    {
+      "id": "jc-004",
+      "title": "Draft email welcome sequence (5 emails)",
+      "priority": "medium",
+      "blockedBy": null,
+      "estimatedMinutes": 60,
+      "status": "pending"
+    },
+    {
+      "id": "jc-005",
+      "title": "Write blog post #4: How AI Changes Marketing",
+      "priority": "low",
+      "blockedBy": null,
+      "estimatedMinutes": 45,
+      "status": "pending"
+    }
+  ],
+  "blocked": [
+    {
+      "id": "jc-blocked-001",
+      "title": "Publish blog posts to website",
+      "blockedBy": "tom",
+      "reason": "Domain connection needed"
+    }
+  ],
+  "completed": [
+    {
+      "id": "jc-done-001",
+      "title": "3 SEO blog posts drafted",
+      "completedAt": "2026-02-11T11:20:00+13:00"
+    }
+  ],
+  "lastActive": "2026-02-11T19:30:00+13:00"
+}

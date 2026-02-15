@@ -1,0 +1,60 @@
+{
+  "agent": "TWG-RIBBONROSE",
+  "role": "Email/Klaviyo Specialist",
+  "team": "clients",
+  "status": "active",
+  "currentTask": null,
+  "queue": [
+    {
+      "id": "rr-001",
+      "title": "Create Klaviyo account for Ribbon Rose",
+      "priority": "high",
+      "blockedBy": null,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "rr-002",
+      "title": "Share Klaviyo access to Jon (owner) + TWG team (admin)",
+      "priority": "high",
+      "blockedBy": "rr-001",
+      "estimatedMinutes": 10
+    },
+    {
+      "id": "rr-003",
+      "title": "Review Feb clearance + Feb promo EDMs as design reference",
+      "priority": "medium",
+      "blockedBy": null,
+      "estimatedMinutes": 30
+    },
+    {
+      "id": "rr-004",
+      "title": "Create March EDM design concept for alignment",
+      "priority": "medium",
+      "blockedBy": "rr-003",
+      "estimatedMinutes": 60
+    },
+    {
+      "id": "rr-005",
+      "title": "Set up Looker Studio integration with Klaviyo",
+      "priority": "low",
+      "blockedBy": "rr-001",
+      "estimatedMinutes": 45
+    }
+  ],
+  "blocked": [
+    {
+      "id": "rr-blocked-001",
+      "title": "First Software intro for CMS integration",
+      "blockedBy": "andi",
+      "reason": "Andi to tee up intro"
+    },
+    {
+      "id": "rr-blocked-002",
+      "title": "March promo details",
+      "blockedBy": "andi",
+      "reason": "Andi to share from Jon"
+    }
+  ],
+  "completed": [],
+  "lastActive": "2026-02-12T12:52:00+13:00"
+}

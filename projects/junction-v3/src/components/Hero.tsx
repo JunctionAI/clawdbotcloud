@@ -1,38 +1,15 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { useRef } from 'react';
-import AnimatedCounter from './AnimatedCounter';
-import MagneticButton from './MagneticButton';
+import { MagneticButton, HoverLift, Float } from './animations/MicroInteractions';
+import { SplitText, CountingText } from './animations/TextAnimations';
+import { ParallaxLayer } from './animations/Parallax';
+import { StaggerReveal, StaggerItem } from './animations/ScrollReveal';
 import { GradientOrbs, AnimatedGrid } from './AnimatedBackground';
+import { EASE } from '@/lib/animations';
 
-// Simplified character reveal - no blur filter (expensive), simpler animation
-function SplitText({ 
-  children, 
-  className = '',
-  delay = 0,
-}: { 
-  children: string; 
-  className?: string;
-  delay?: number;
-}) {
-  return (
-    <motion.span 
-      className={`inline-block ${className}`}
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.6,
-        delay,
-        ease: [0.215, 0.61, 0.355, 1],
-      }}
-    >
-      {children}
-    </motion.span>
-  );
-}
-
-// Animated stat card - simplified hover effects
+// Animated stat card with premium effects
 function StatCard({ value, suffix, label, sublabel, index }: {
   value: number;
   suffix: string;
@@ -41,42 +18,57 @@ function StatCard({ value, suffix, label, sublabel, index }: {
   index: number;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ 
-        duration: 0.6, 
-        delay: 1.2 + index * 0.1,
-        ease: [0.215, 0.61, 0.355, 1],
-      }}
-      whileHover={{ y: -4, transition: { duration: 0.2 } }}
-      className="relative group"
-    >
-      <div className="relative glass-card rounded-2xl p-8 border border-white/50 group-hover:border-primary-200/50 transition-colors duration-300">
-        <div className="relative">
-          <div className="text-4xl md:text-5xl font-black gradient-text mb-2">
-            <AnimatedCounter end={value} suffix={suffix} />
+    <HoverLift lift={8}>
+      <motion.div
+        initial={{ opacity: 0, y: 40, scale: 0.95 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ 
+          duration: 0.6, 
+          delay: 1.2 + index * 0.1,
+          ease: EASE.smooth,
+        }}
+        className="relative group"
+      >
+        <div className="relative glass-card rounded-2xl p-8 border border-white/50 group-hover:border-primary-200/50 transition-all duration-300">
+          {/* Subtle glow on hover */}
+          <motion.div
+            className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          />
+          <div className="relative">
+            <div className="text-4xl md:text-5xl font-black gradient-text mb-2">
+              {suffix === '∞' ? (
+                <span>0<span className="ml-1">{suffix}</span></span>
+              ) : (
+                <CountingText value={value} suffix={suffix} duration={2000} />
+              )}
+            </div>
+            <div className="text-gray-900 font-bold text-lg">{label}</div>
+            <div className="text-gray-500 text-sm mt-1">{sublabel}</div>
           </div>
-          <div className="text-gray-900 font-bold text-lg">{label}</div>
-          <div className="text-gray-500 text-sm mt-1">{sublabel}</div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </HoverLift>
   );
 }
 
-// Animated badge - simplified
+// Premium animated badge
 function ScarcityBadge() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
+      initial={{ opacity: 0, y: 20, scale: 0.9 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.6, delay: 0.2, ease: EASE.snappy }}
       className="inline-flex items-center gap-3 bg-gradient-to-r from-primary-50/90 to-accent-50/90 backdrop-blur-md border border-primary-200/50 rounded-full px-6 py-3 mb-10 shadow-lg"
+      whileHover={{ scale: 1.02 }}
     >
+      {/* Animated pulse dot */}
       <span className="relative flex h-3 w-3">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-        <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+        <motion.span 
+          className="absolute inline-flex h-full w-full rounded-full bg-green-400"
+          animate={{ scale: [1, 1.5, 1], opacity: [0.75, 0, 0.75] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+        />
+        <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" />
       </span>
       <span className="text-sm font-bold text-primary-700">
         Limited Capacity — Only 2 Partnership Spots Remaining
@@ -92,43 +84,63 @@ export default function Hero() {
     offset: ['start start', 'end start'],
   });
 
-  // Simplified scroll transforms
+  // Smooth parallax transforms
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const y = useTransform(scrollYProgress, [0, 0.5], [0, 50]);
+  const y = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
+  
+  const smoothY = useSpring(y, { stiffness: 100, damping: 30 });
+  const smoothScale = useSpring(scale, { stiffness: 100, damping: 30 });
 
   return (
     <section 
       ref={containerRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
-      {/* Simplified backgrounds */}
-      <GradientOrbs />
+      {/* Parallax background elements */}
+      <ParallaxLayer speed={0.2} direction="down" className="absolute inset-0 z-0">
+        <GradientOrbs />
+      </ParallaxLayer>
       <AnimatedGrid />
 
       {/* Main content with scroll effects */}
       <motion.div 
-        style={{ opacity, y, willChange: 'transform, opacity' }}
-        className="relative max-w-7xl mx-auto px-6 py-20 text-center"
+        style={{ 
+          opacity, 
+          y: smoothY, 
+          scale: smoothScale,
+          willChange: 'transform, opacity',
+        }}
+        className="relative max-w-7xl mx-auto px-6 py-20 text-center z-10"
       >
         <ScarcityBadge />
 
-        {/* Main headline - simplified animation */}
+        {/* Main headline with split text animation */}
         <div className="mb-8">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 leading-[1.1] tracking-tight">
             <div className="overflow-hidden pb-2">
-              <SplitText delay={0.3}>Evolve Your Business</SplitText>
+              <SplitText delay={0.3} staggerDelay={0.02}>
+                Evolve Your Business
+              </SplitText>
             </div>
             <div className="overflow-hidden pb-2 mt-2">
-              <SplitText delay={0.5} className="gradient-text">At The Speed of AI</SplitText>
+              <motion.span
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.8, ease: EASE.smooth }}
+                className="gradient-text block"
+              >
+                At The Speed of AI
+              </motion.span>
             </div>
           </h1>
         </div>
 
-        {/* Subheadline */}
+        {/* Subheadline with blur reveal */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.6 }}
+          initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ delay: 0.8, duration: 0.6, ease: EASE.smooth }}
           className="max-w-3xl mx-auto mb-12"
         >
           <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
@@ -137,11 +149,11 @@ export default function Hero() {
           </p>
         </motion.div>
 
-        {/* CTA Buttons - FIXED VISIBILITY */}
+        {/* CTA Buttons with magnetic effect */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
+          transition={{ duration: 0.6, delay: 1.0, ease: EASE.smooth }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"
         >
           <MagneticButton 
@@ -149,18 +161,36 @@ export default function Hero() {
             className="group relative px-10 py-5 rounded-full font-bold text-lg overflow-hidden"
             strength={0.3}
           >
-            {/* Solid visible background - FIXED */}
-            <span className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-[length:200%_100%] animate-gradient-x" />
+            {/* Animated gradient background */}
+            <motion.span 
+              className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-[length:200%_100%]"
+              animate={{ backgroundPosition: ['0% 50%', '200% 50%'] }}
+              transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+            />
             
-            {/* Strong shadow for visibility */}
+            {/* Shine effect */}
+            <motion.span
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full"
+              animate={{ x: ['0%', '200%'] }}
+              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+            />
+            
+            {/* Shadow */}
             <span className="absolute inset-0 rounded-full shadow-xl shadow-blue-500/50" />
             
-            {/* White text for contrast */}
+            {/* Text */}
             <span className="relative text-white flex items-center gap-2">
               Apply for Partnership
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <motion.svg 
+                className="w-5 h-5" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+                animate={{ x: [0, 4, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              </motion.svg>
             </span>
           </MagneticButton>
           
@@ -185,38 +215,38 @@ export default function Hero() {
           </MagneticButton>
         </motion.div>
 
-        {/* Stats grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        {/* Stats grid with stagger animation */}
+        <StaggerReveal staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
             { value: 10, suffix: 'x', label: 'Productivity', sublabel: 'AI-Powered Output' },
             { value: 24, suffix: '/7', label: 'Daily Optimization', sublabel: 'Not Monthly Reports' },
             { value: 0, suffix: '∞', label: 'Iterations', sublabel: 'Unlimited Revisions' },
           ].map((stat, index) => (
-            <StatCard key={index} {...stat} index={index} />
+            <StaggerItem key={index} direction="up">
+              <StatCard {...stat} index={index} />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerReveal>
 
-        {/* Scroll indicator - simplified */}
+        {/* Scroll indicator with floating animation */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 0.6 }}
+          transition={{ delay: 1.8, duration: 0.6 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            className="flex flex-col items-center gap-2 text-gray-400"
-          >
-            <span className="text-xs uppercase tracking-widest font-medium">Scroll to explore</span>
-            <div className="w-6 h-10 rounded-full border-2 border-gray-300 flex justify-center pt-2">
-              <motion.div
-                className="w-1.5 h-1.5 rounded-full bg-primary-500"
-                animate={{ y: [0, 12, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-              />
+          <Float duration={2} distance={8}>
+            <div className="flex flex-col items-center gap-2 text-gray-400">
+              <span className="text-xs uppercase tracking-widest font-medium">Scroll to explore</span>
+              <div className="w-6 h-10 rounded-full border-2 border-gray-300 flex justify-center pt-2">
+                <motion.div
+                  className="w-1.5 h-1.5 rounded-full bg-primary-500"
+                  animate={{ y: [0, 12, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                />
+              </div>
             </div>
-          </motion.div>
+          </Float>
         </motion.div>
       </motion.div>
     </section>

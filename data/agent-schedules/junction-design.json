@@ -1,0 +1,26 @@
+{
+  "agent": "JUNCTION-DESIGN",
+  "role": "Design & Creative",
+  "team": "JUNCTION",
+  "status": "idle",
+  "currentTask": null,
+  "queue": [
+    {
+      "id": "jdes-001",
+      "title": "Create LinkedIn post graphics",
+      "priority": "medium",
+      "blockedBy": null,
+      "estimatedMinutes": 45
+    },
+    {
+      "id": "jdes-002",
+      "title": "Design lead magnet PDF (AI Readiness Checklist)",
+      "priority": "medium",
+      "blockedBy": null,
+      "estimatedMinutes": 60
+    }
+  ],
+  "blocked": [],
+  "completed": [],
+  "lastActive": "2026-02-11T19:00:00+13:00"
+}

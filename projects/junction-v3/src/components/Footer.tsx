@@ -27,16 +27,29 @@ export default function Footer() {
             className="flex items-center gap-3 group"
             whileHover={{ scale: 1.02 }}
           >
+            {/* Junction Mark */}
             <motion.div 
-              className="relative w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center overflow-hidden"
+              className="relative w-10 h-10"
               whileHover={{ rotate: [0, -5, 5, 0] }}
               transition={{ duration: 0.5 }}
             >
-              <span className="text-white font-black text-xl">J</span>
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                <defs>
+                  <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{stopColor: '#3B82F6'}}/>
+                    <stop offset="50%" style={{stopColor: '#8B5CF6'}}/>
+                    <stop offset="100%" style={{stopColor: '#EC4899'}}/>
+                  </linearGradient>
+                </defs>
+                <path d="M25 8 Q8 8 8 25" stroke="url(#footerLogoGradient)" strokeWidth="8" strokeLinecap="round" fill="none"/>
+                <path d="M55 8 Q72 8 72 25" stroke="url(#footerLogoGradient)" strokeWidth="8" strokeLinecap="round" fill="none"/>
+                <path d="M25 72 Q8 72 8 55" stroke="url(#footerLogoGradient)" strokeWidth="8" strokeLinecap="round" fill="none"/>
+                <path d="M55 72 Q72 72 72 55" stroke="url(#footerLogoGradient)" strokeWidth="8" strokeLinecap="round" fill="none"/>
+              </svg>
             </motion.div>
-            <div className="flex flex-col">
-              <span className="text-xl font-black text-white tracking-tight">Junction</span>
-              <span className="text-xs text-gray-500 -mt-1 font-medium">MEDIA</span>
+            <div className="flex items-baseline gap-1.5">
+              <span className="text-xl font-extrabold text-white tracking-tight">Junction</span>
+              <span className="text-xl font-normal text-gray-400">Media</span>
             </div>
           </motion.a>
 

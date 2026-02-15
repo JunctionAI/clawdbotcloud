@@ -1,0 +1,27 @@
+{
+  "agent": "DBH-CONTENT",
+  "role": "Content & Marketing",
+  "team": "DBH",
+  "status": "active",
+  "currentTask": null,
+  "queue": [
+    {
+      "id": "dbh-001",
+      "title": "Prep content for Vietnamese influencer shoot",
+      "priority": "high",
+      "blockedBy": null,
+      "scheduledFor": "2026-02-13T14:00:00+13:00",
+      "estimatedMinutes": 60
+    },
+    {
+      "id": "dbh-002",
+      "title": "Product shot list for Friday filming",
+      "priority": "medium",
+      "blockedBy": null,
+      "estimatedMinutes": 30
+    }
+  ],
+  "blocked": [],
+  "completed": [],
+  "lastActive": "2026-02-12T12:00:00+13:00"
+}

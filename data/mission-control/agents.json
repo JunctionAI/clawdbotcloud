@@ -1,174 +1,244 @@
 {
   "agents": [
     {
+      "id": "prep",
+      "name": "PREP",
+      "emoji": "🎯",
+      "role": "Command Lead",
+      "focus": "Coordination, orchestration, primary interface",
+      "status": "active",
+      "skills": ["research", "coding", "writing", "calendar", "social", "analysis", "coordination", "media"],
+      "level": "main",
+      "team": "command",
+      "currentTask": "Coordinating all teams, vision implementation",
+      "tasksCompleted": 12
+    },
+    {
+      "id": "junction-content",
+      "name": "JUNCTION-CONTENT",
+      "emoji": "✍️",
+      "role": "Content Lead",
+      "focus": "SEO, LinkedIn, email sequences, case studies",
+      "status": "active",
+      "skills": ["writing", "social", "research"],
+      "level": "lead",
+      "team": "junction",
+      "currentTask": "5 content tasks queued",
+      "tasksCompleted": 4
+    },
+    {
+      "id": "junction-dev",
+      "name": "JUNCTION-DEV",
+      "emoji": "💻",
+      "role": "Web Developer",
+      "focus": "Website builds, fixes, deployment",
+      "status": "idle",
+      "skills": ["coding", "research"],
+      "level": "specialist",
+      "team": "junction",
+      "currentTask": null,
+      "tasksCompleted": 2
+    },
+    {
+      "id": "junction-design",
+      "name": "JUNCTION-DESIGN",
+      "emoji": "🎨",
+      "role": "Design & Creative",
+      "focus": "Graphics, lead magnets, visual assets",
+      "status": "idle",
+      "skills": ["media", "writing"],
+      "level": "specialist",
+      "team": "junction",
+      "currentTask": null,
+      "tasksCompleted": 0
+    },
+    {
+      "id": "alternate-marketing",
+      "name": "ALTERNATE-MARKETING",
+      "emoji": "📢",
+      "role": "Marketing Lead",
+      "focus": "Launch strategy, social copy, viral tactics",
+      "status": "active",
+      "skills": ["social", "writing", "media"],
+      "level": "lead",
+      "team": "alternate",
+      "currentTask": "Launch prep - 5 tasks queued",
+      "tasksCompleted": 0
+    },
+    {
+      "id": "alternate-production",
+      "name": "ALTERNATE-PRODUCTION",
+      "emoji": "🎥",
+      "role": "Production Support",
+      "focus": "Clip organization, polish, render support",
+      "status": "scheduled",
+      "skills": ["media", "coordination"],
+      "level": "specialist",
+      "team": "alternate",
+      "currentTask": "Tonight 9:30pm session with Zach",
+      "tasksCompleted": 0
+    },
+    {
+      "id": "vision-team",
+      "name": "VISION-TEAM",
+      "emoji": "🌟",
+      "role": "Strategy Lead",
+      "focus": "Next Pixar - creative company strategy",
+      "status": "active",
+      "skills": ["research", "analysis", "writing", "coordination"],
+      "level": "lead",
+      "team": "vision",
+      "currentTask": "Creative company structure design",
+      "tasksCompleted": 0
+    },
+    {
+      "id": "dbh-content",
+      "name": "DBH-CONTENT",
+      "emoji": "💊",
+      "role": "Content & Marketing",
+      "focus": "Product content, influencer support",
+      "status": "active",
+      "skills": ["writing", "social", "media"],
+      "level": "specialist",
+      "team": "dbh",
+      "currentTask": "Prep for Vietnamese influencer shoot",
+      "tasksCompleted": 0
+    },
+    {
+      "id": "twg-ribbonrose",
+      "name": "TWG-RIBBONROSE",
+      "emoji": "🎀",
+      "role": "Email/Klaviyo",
+      "focus": "Ribbon Rose Klaviyo migration + EDM campaigns",
+      "status": "active",
+      "skills": ["writing", "coding"],
+      "level": "specialist",
+      "team": "twg",
+      "currentTask": "Klaviyo setup + March EDM prep",
+      "tasksCompleted": 0
+    },
+    {
+      "id": "software-lead",
+      "name": "SOFTWARE-LEAD",
+      "emoji": "⚙️",
+      "role": "Team Lead",
+      "focus": "Self-improvement loop — find and integrate new tools",
+      "status": "active",
+      "skills": ["coding", "research", "analysis"],
+      "level": "lead",
+      "team": "software",
+      "currentTask": "Setting up X API daily scraper",
+      "tasksCompleted": 0
+    },
+    {
+      "id": "software-scraper",
+      "name": "SOFTWARE-SCRAPER",
+      "emoji": "🔍",
+      "role": "X/API Scraper",
+      "focus": "Daily X scraping for AI tools, innovations, Clawdbot updates",
+      "status": "active",
+      "skills": ["coding", "research"],
+      "level": "specialist",
+      "team": "software",
+      "currentTask": "Building daily scrape pipeline",
+      "tasksCompleted": 0
+    },
+    {
       "id": "jarvis",
       "name": "JARVIS",
       "emoji": "🤖",
       "role": "Senior Agent",
-      "focus": "Full-stack capabilities, complex problem solving",
-      "status": "active",
-      "skills": ["research", "coding", "writing", "calendar", "social", "analysis", "coordination", "media"],
+      "focus": "Complex problem solving, supervision",
+      "status": "standby",
+      "skills": ["research", "coding", "writing", "analysis", "coordination"],
       "level": "senior",
-      "team": "core",
-      "capabilities": ["All skills enabled", "Complex multi-step tasks", "Strategic decision making", "Agent supervision"],
+      "team": "command",
       "currentTask": null,
-      "tasksCompleted": 0,
-      "createdAt": "2026-02-10T14:00:00+13:00"
+      "tasksCompleted": 5
     },
     {
       "id": "shuri",
       "name": "SHURI",
       "emoji": "🔬",
       "role": "Research & Development",
-      "focus": "Research, analysis, and technical implementation",
-      "status": "active",
+      "focus": "Deep research, data analysis",
+      "status": "standby",
       "skills": ["research", "analysis", "coding"],
       "level": "specialist",
-      "team": "core",
-      "capabilities": ["Deep research dives", "Data analysis and visualization", "Technical implementation", "Pattern recognition"],
+      "team": "command",
       "currentTask": null,
-      "tasksCompleted": 0,
-      "createdAt": "2026-02-10T14:00:00+13:00"
+      "tasksCompleted": 2
     },
     {
       "id": "fury",
       "name": "FURY",
       "emoji": "👁️",
-      "role": "Coordinator",
-      "focus": "Task orchestration, oversight, and delegation",
-      "status": "active",
+      "role": "Task Coordinator",
+      "focus": "Delegation, monitoring, cross-agent coordination",
+      "status": "standby",
       "skills": ["coordination", "analysis"],
       "level": "manager",
-      "team": "core",
-      "capabilities": ["Task delegation", "Progress monitoring", "Priority management", "Cross-agent coordination"],
+      "team": "command",
       "currentTask": null,
-      "tasksCompleted": 0,
-      "createdAt": "2026-02-10T14:00:00+13:00"
-    },
-    {
-      "id": "prep",
-      "name": "PREP",
-      "emoji": "⚡",
-      "role": "Main Agent",
-      "focus": "Primary interface, all capabilities enabled",
-      "status": "active",
-      "skills": ["research", "coding", "writing", "calendar", "social", "analysis", "coordination", "media"],
-      "level": "main",
-      "team": "core",
-      "capabilities": ["All skills enabled", "Direct user interaction", "Task execution", "Agent spawning"],
-      "currentTask": null,
-      "tasksCompleted": 0,
-      "createdAt": "2026-02-10T14:00:00+13:00"
-    },
-    {
-      "id": "alternate-agent",
-      "name": "ALTERNATE Campaign Agent",
-      "emoji": "🎬",
-      "role": "Campaign Specialist",
-      "focus": "Film marketing, content production, social media",
-      "project": "ALTERNATE",
-      "status": "paused",
-      "skills": ["social", "media", "writing"],
-      "level": "specialist",
-      "team": "alternate",
-      "capabilities": ["Higgsfield image generation", "Higgsfield video generation", "AI influencer creation", "Social media content"],
-      "currentTask": null,
-      "tasksCompleted": 0,
-      "createdAt": "2026-02-09T19:40:00+13:00"
-    },
-    {
-      "id": "junction-lead",
-      "name": "Junction Lead",
-      "emoji": "🏢",
-      "role": "Agency Lead",
-      "focus": "Junction strategy, client acquisition, team coordination",
-      "project": "Junction",
-      "status": "active",
-      "skills": ["writing", "coordination", "analysis"],
-      "level": "lead",
-      "team": "junction",
-      "capabilities": ["Client acquisition strategy", "Team coordination", "Service packaging", "Content direction"],
-      "currentTask": null,
-      "tasksCompleted": 0,
-      "createdAt": "2026-02-10T18:03:00+13:00"
-    },
-    {
-      "id": "junction-dev",
-      "name": "Junction Developer",
-      "emoji": "💻",
-      "role": "Web Developer",
-      "focus": "Website builds, animations, technical implementation",
-      "project": "Junction",
-      "status": "active",
-      "skills": ["coding", "research"],
-      "level": "specialist",
-      "team": "junction",
-      "capabilities": ["React/Next.js development", "Framer Motion animations", "Vercel deployment", "Website optimization"],
-      "currentTask": "Premium animation upgrade for junction-v3",
-      "tasksCompleted": 0,
-      "createdAt": "2026-02-10T18:03:00+13:00"
-    },
-    {
-      "id": "junction-content",
-      "name": "Junction Content",
-      "emoji": "📹",
-      "role": "Content Creator",
-      "focus": "Scripts, AI influencer content, case studies",
-      "project": "Junction",
-      "status": "active",
-      "skills": ["writing", "media", "social"],
-      "level": "specialist",
-      "team": "junction",
-      "higgsfield": {
-        "influencer": "@Tom Influencer",
-        "canGenerate": true
-      },
-      "capabilities": ["Script writing from voice notes", "Higgsfield content production", "Case study creation", "Social content"],
-      "currentTask": null,
-      "tasksCompleted": 0,
-      "createdAt": "2026-02-10T18:03:00+13:00"
-    },
-    {
-      "id": "personal-agent",
-      "name": "Personal Life Agent",
-      "emoji": "🧠",
-      "role": "Life Management",
-      "focus": "Calendar, finances, health, admin tasks",
-      "project": "Personal",
-      "status": "active",
-      "skills": ["calendar", "analysis", "writing"],
-      "level": "specialist",
-      "team": "personal",
-      "capabilities": ["Calendar management", "Financial tracking", "Email monitoring", "Habit tracking"],
-      "currentTask": null,
-      "tasksCompleted": 0,
-      "createdAt": "2026-02-09T19:40:00+13:00"
+      "tasksCompleted": 3
     }
   ],
   "teams": {
-    "core": {
-      "name": "Core Team",
-      "description": "Main agents handling cross-cutting work",
-      "members": ["jarvis", "shuri", "fury", "prep"]
+    "command": {
+      "name": "🎯 COMMAND",
+      "emoji": "🎯",
+      "description": "Coordination & Operations",
+      "color": "#00d4ff",
+      "members": ["prep", "jarvis", "shuri", "fury"]
     },
     "junction": {
-      "name": "Junction Media",
-      "description": "Agency sub-team - development, content, client acquisition",
-      "members": ["junction-lead", "junction-dev", "junction-content"]
+      "name": "🚀 JUNCTION",
+      "emoji": "🚀",
+      "description": "Agency Client Work",
+      "color": "#00ff88",
+      "members": ["junction-content", "junction-dev", "junction-design"]
     },
     "alternate": {
-      "name": "ALTERNATE Film",
-      "description": "Film campaign and marketing",
-      "members": ["alternate-agent"]
+      "name": "🎬 ALTERNATE",
+      "emoji": "🎬",
+      "description": "Film Production & Marketing (Launch Feb 14!)",
+      "color": "#ff6b6b",
+      "members": ["alternate-marketing", "alternate-production"]
     },
-    "personal": {
-      "name": "Personal",
-      "description": "Life management and admin",
-      "members": ["personal-agent"]
+    "vision": {
+      "name": "🌟 VISION",
+      "emoji": "🌟",
+      "description": "Creative Company Strategy (Next Pixar)",
+      "color": "#ffd93d",
+      "members": ["vision-team"]
+    },
+    "dbh": {
+      "name": "💊 DBH",
+      "emoji": "💊",
+      "description": "Deep Blue Health Support (Mon-Fri 2-6pm)",
+      "color": "#6bcfff",
+      "members": ["dbh-content"]
+    },
+    "twg": {
+      "name": "🎀 TWG CLIENTS",
+      "emoji": "🎀",
+      "description": "The Web Guys — Ribbon Rose + others",
+      "color": "#f472b6",
+      "members": ["twg-ribbonrose"]
+    },
+    "software": {
+      "name": "⚙️ SOFTWARE",
+      "emoji": "⚙️",
+      "description": "Self-improvement loop — X scraping, tool integration",
+      "color": "#a855f7",
+      "members": ["software-lead", "software-scraper"]
     }
   },
   "meta": {
-    "lastUpdated": "2026-02-10T18:03:00+13:00",
-    "version": "4.0"
+    "lastUpdated": "2026-02-12T12:24:00+13:00",
+    "version": "5.0",
+    "totalAgents": 11,
+    "activeAgents": 6,
+    "vision": "Building the next Pixar - AI services funding creative production for humanity"
   }
 }

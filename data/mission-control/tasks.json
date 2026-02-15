@@ -4,12 +4,18 @@
       "id": "task-001",
       "title": "Write First SEO Blog Posts",
       "description": "Create blog content targeting AI marketing agency NZ keywords - we own this space",
-      "status": "in-progress",
+      "status": "complete",
       "priority": "critical",
       "assignee": "junction-content",
       "project": "junction",
       "tags": ["content", "seo", "priority"],
-      "createdAt": "2026-02-10T19:36:00+13:00"
+      "createdAt": "2026-02-10T19:36:00+13:00",
+      "completedAt": "2026-02-11T11:20:00+13:00",
+      "deliverables": [
+        "2026-02-11-ai-marketing-agency-nz-complete-guide.md",
+        "2026-02-11-ai-marketing-auckland-transforming-business-growth.md",
+        "2026-02-11-marketing-automation-nz-ultimate-guide.md"
+      ]
     },
     {
       "id": "task-002",
@@ -26,24 +32,28 @@
       "id": "task-003",
       "title": "ALTERNATE - Seedance 2 Access",
       "description": "Get access to Seedance 2 via China contact for faster video generation",
-      "status": "blocked",
+      "status": "paused",
       "priority": "high",
       "assignee": "alternate-agent",
       "project": "alternate",
       "tags": ["video", "blocked"],
       "createdAt": "2026-02-10T17:50:00+13:00",
-      "dueDate": "2026-02-14"
+      "dueDate": "2026-02-14",
+      "pausedAt": "2026-02-11T11:30:00+13:00",
+      "pauseReason": "Waiting on Seedance 2 access via Zach's China contact. ENTIRE ALTERNATE CAMPAIGN PAUSED until unblocked."
     },
     {
       "id": "task-004",
       "title": "Connect junctionmedia.ai Domain",
       "description": "Hook up the domain to junction-v3.vercel.app",
-      "status": "pending",
+      "status": "complete",
       "priority": "high",
       "assignee": "junction-dev",
       "project": "junction",
       "tags": ["website", "launch"],
-      "createdAt": "2026-02-10T20:00:00+13:00"
+      "createdAt": "2026-02-10T20:00:00+13:00",
+      "completedAt": "2026-02-12T17:00:00+13:00",
+      "note": "Site live at junctionmedia.ai - verified 2026-02-13"
     },
     {
       "id": "task-005",
@@ -60,36 +70,41 @@
       "id": "task-006",
       "title": "DBH Friday Filming",
       "description": "Vietnamese influencer arrives 2pm Friday - Deer Blood, Calcium, Ginkgo",
-      "status": "ready",
+      "status": "in-progress",
       "priority": "high",
       "assignee": "prep",
       "project": "dbh",
       "tags": ["filming", "friday"],
       "createdAt": "2026-02-10T16:34:00+13:00",
-      "dueDate": "2026-02-14"
+      "dueDate": "2026-02-14",
+      "prepDocCreated": "2026-02-12T20:15:00+13:00",
+      "deliverables": ["data/mission-control/dbh-friday-filming-prep.md"]
     },
     {
       "id": "task-007",
       "title": "ALTERNATE 1-Day Trailer Blitz",
       "description": "Once Seedance unblocked - create trailers for Friday/Saturday release",
-      "status": "blocked",
+      "status": "paused",
       "priority": "high",
       "assignee": "alternate-agent",
       "project": "alternate",
       "tags": ["video", "marketing"],
       "createdAt": "2026-02-10T18:00:00+13:00",
-      "dueDate": "2026-02-14"
+      "dueDate": "2026-02-14",
+      "pausedAt": "2026-02-11T11:30:00+13:00",
+      "pauseReason": "ALTERNATE campaign paused - awaiting Seedance 2 access"
     },
     {
       "id": "task-008",
       "title": "Design Queue System",
       "description": "Set up design brief queue - AI generates briefs, designer pulls from queue",
-      "status": "pending",
+      "status": "complete",
       "priority": "medium",
       "assignee": "fury",
       "project": "junction",
       "tags": ["ops", "design"],
-      "createdAt": "2026-02-10T19:15:00+13:00"
+      "createdAt": "2026-02-10T19:15:00+13:00",
+      "completedAt": "2026-02-11T11:45:00+13:00"
     },
     {
       "id": "task-009",
@@ -106,16 +121,41 @@
       "id": "task-010",
       "title": "Lessons Learned System",
       "description": "Build agent knowledge compounding - log insights, synthesize improvements",
-      "status": "pending",
+      "status": "complete",
       "priority": "medium",
       "assignee": "shuri",
       "project": "mission-control",
       "tags": ["infrastructure", "agents"],
-      "createdAt": "2026-02-10T18:25:00+13:00"
+      "createdAt": "2026-02-10T18:25:00+13:00",
+      "completedAt": "2026-02-11T14:35:00+13:00",
+      "deliverables": [
+        "scripts/lessons-learned.cjs",
+        "data/lessons-learned/lessons.json"
+      ]
+    },
+    {
+      "id": "task-011",
+      "title": "Remove Fake Website Content",
+      "description": "Remove fake certifications, press mentions, and testimonials from junctionmedia.ai",
+      "status": "review",
+      "priority": "critical",
+      "assignee": "fury",
+      "project": "junction",
+      "tags": ["website", "credibility", "urgent"],
+      "createdAt": "2026-02-14T15:50:00+13:00",
+      "completedAt": "2026-02-14T15:55:00+13:00",
+      "note": "Code changes committed locally. NEEDS PUSH to deploy. Removed: fake press (TechCrunch, Forbes), fake certs (SOC2, ISO27001, Partner badges), fake testimonial (Sarah Chen). Replaced with real DBH results and honest badges.",
+      "deliverables": [
+        "src/app/page.tsx - disabled FeaturedIn, changed TrustBadges",
+        "src/components/TrustBadges.tsx - cleaned to legitimate signals only",
+        "src/components/CaseStudy.tsx - replaced fake testimonial with real results",
+        "src/components/LogoCloud.tsx - removed fake client names"
+      ],
+      "blocker": "Git push needs credentials - manual push required"
     }
   ],
   "meta": {
-    "lastUpdated": "2026-02-10T20:03:00+13:00",
+    "lastUpdated": "2026-02-14T15:55:00+13:00",
     "version": "3.0"
   }
 }

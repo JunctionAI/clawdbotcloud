@@ -1,5 +1,19 @@
 # HEARTBEAT.md
 
+## 🚨 30-MIN BLOCKER PING (Priority)
+
+**Every 30 minutes, ping Tom with human blocker list UNLESS:**
+- DBH hours (Mon-Fri 2-6pm)
+- In a meeting or dinner
+- Late night (after 11pm)
+- Just pinged <25 min ago
+
+**When he's free again → send blocker list immediately.**
+
+Format: Short, no tables. List blockers with time estimates.
+
+---
+
 ## Proactive Check Routines
 
 **Rotate through these checks, 2-3 times per day:**

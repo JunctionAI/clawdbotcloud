@@ -1,0 +1,155 @@
+{
+  "date": "2026-02-13",
+  "time": "09:02",
+  "type": "morning-standup",
+  "facilitator": "fury",
+  "attendees": ["jarvis", "shuri", "prep", "alternate-agent", "junction-content", "personal"],
+  
+  "yesterdayCompleted": [
+    {
+      "task": "junctionmedia.ai domain connected",
+      "agent": "junction-dev",
+      "status": "verified-live"
+    },
+    {
+      "task": "Real DBH case study drafted",
+      "agent": "fury",
+      "note": "Replaces fake testimonials with authentic work documentation"
+    },
+    {
+      "task": "DBH Friday filming prep document",
+      "agent": "prep",
+      "deliverable": "data/mission-control/dbh-friday-filming-prep.md"
+    }
+  ],
+  
+  "blockers": [
+    {
+      "id": "blocker-001",
+      "severity": "critical",
+      "project": "alternate",
+      "issue": "Seedance 2 access still pending",
+      "owner": "tom",
+      "waitingSince": "2026-02-10",
+      "impact": "ENTIRE ALTERNATE campaign paused - trailers cannot be produced",
+      "needsHumanAction": true
+    },
+    {
+      "id": "blocker-002", 
+      "severity": "high",
+      "project": "dbh",
+      "issue": "DBH filming date confusion - prep doc says Feb 14 (Saturday) but task says Friday Feb 14",
+      "owner": "tom",
+      "note": "Today is Friday Feb 13. Need to confirm: is filming TODAY or tomorrow?",
+      "needsHumanAction": true
+    }
+  ],
+  
+  "agentReports": {
+    "jarvis": {
+      "status": "operational",
+      "focus": "infrastructure monitoring",
+      "insight": "Agent team coordination running smoothly, 3 days since founding"
+    },
+    "shuri": {
+      "status": "operational", 
+      "focus": "research & systems",
+      "insight": "Lessons learned system is live - knowledge compounding active"
+    },
+    "prep": {
+      "status": "operational",
+      "focus": "user support, DBH coordination",
+      "insight": "DBH filming prep comprehensive - ready to execute once date confirmed"
+    },
+    "alternate-agent": {
+      "status": "PAUSED",
+      "focus": "video generation",
+      "insight": "Cannot proceed without Seedance 2 or alternative video gen solution"
+    },
+    "junction-content": {
+      "status": "operational",
+      "focus": "SEO, social content",
+      "insight": "3 SEO blog posts complete, LinkedIn posts ready for review"
+    },
+    "personal": {
+      "status": "operational",
+      "focus": "personal assistance",
+      "insight": "Standard operations"
+    }
+  },
+  
+  "actionItems": [
+    {
+      "id": "ai-001",
+      "priority": "critical",
+      "task": "Confirm DBH filming date (today Feb 13 vs tomorrow Feb 14)",
+      "owner": "tom",
+      "deadline": "today-morning"
+    },
+    {
+      "id": "ai-002",
+      "priority": "critical", 
+      "task": "Follow up on Seedance 2 access with China contact",
+      "owner": "tom",
+      "deadline": "today",
+      "note": "ALTERNATE campaign blocked 3+ days"
+    },
+    {
+      "id": "ai-003",
+      "priority": "high",
+      "task": "Review LinkedIn posts and approve for publishing",
+      "owner": "tom",
+      "deliverable": "projects/junction/content/linkedin/"
+    },
+    {
+      "id": "ai-004",
+      "priority": "high",
+      "task": "AI Curve website section - continue development",
+      "owner": "junction-dev",
+      "project": "junction"
+    },
+    {
+      "id": "ai-005",
+      "priority": "medium",
+      "task": "Set up email welcome sequence in Buttondown/platform",
+      "owner": "junction-content",
+      "note": "Sequence outlined, needs platform setup"
+    }
+  ],
+  
+  "brainstorm": {
+    "ideas": [
+      {
+        "from": "fury",
+        "idea": "Consider Vidu AI as Seedance fallback",
+        "rationale": "SHURI researched alternatives - 10 sec clips possible, unblock ALTERNATE"
+      },
+      {
+        "from": "prep",
+        "idea": "Bundle DBH influencer content for Vietnamese social first",
+        "rationale": "Vietnamese diaspora NZ/AU market is underserved, high trust audience"
+      },
+      {
+        "from": "junction-content",
+        "idea": "Use DBH case study for cold outreach proof",
+        "rationale": "Real results > fake testimonials, differentiate from AI scammers"
+      }
+    ]
+  },
+  
+  "lessonsLogged": [
+    {
+      "lesson": "Date confusion in tasks wastes time - always verify day-of-week matches date",
+      "category": "operations"
+    },
+    {
+      "lesson": "Human blockers >2 days need escalation with solutions, not just reminders",
+      "category": "coordination"
+    }
+  ],
+  
+  "meta": {
+    "duration": "standup-automated",
+    "nextStandup": "2026-02-14T09:00:00+13:00"
+  }
+}

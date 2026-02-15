@@ -1,0 +1,66 @@
+{
+  "agent": "VISION-TEAM",
+  "role": "Creative Company Strategy",
+  "status": "active",
+  "purpose": "Build the next Pixar — AI services funding creative production for humanity",
+  "meetingCadence": "every 15 minutes",
+  "updateCadence": "every hour",
+  "currentTask": {
+    "id": "vision-001",
+    "title": "Initial vision synthesis and discussion",
+    "status": "in-progress",
+    "startedAt": "2026-02-12T12:07:00+13:00"
+  },
+  "queue": [
+    {
+      "id": "vision-002",
+      "title": "Define creative company structure",
+      "priority": "high",
+      "blockedBy": null,
+      "notes": "How does the creative hub work? Teams? Global distribution?"
+    },
+    {
+      "id": "vision-003",
+      "title": "Map revenue to reinvestment model",
+      "priority": "high",
+      "blockedBy": null,
+      "notes": "Junction profits → Creative company funding formula"
+    },
+    {
+      "id": "vision-004",
+      "title": "Design the 'creative UBI' program",
+      "priority": "high",
+      "blockedBy": null,
+      "notes": "Not just money — a hub for creativity to flourish"
+    },
+    {
+      "id": "vision-005",
+      "title": "Post-ALTERNATE production pipeline",
+      "priority": "medium",
+      "blockedBy": null,
+      "notes": "Next week we produce again. What's the system?"
+    },
+    {
+      "id": "vision-006",
+      "title": "Talent recruitment strategy",
+      "priority": "medium",
+      "blockedBy": null,
+      "notes": "Who do we hire? Creatives worldwide. How do we find them?"
+    },
+    {
+      "id": "vision-007",
+      "title": "NYC expansion research",
+      "priority": "low",
+      "blockedBy": null,
+      "notes": "Better people, greater collaborations. What does NYC look like?"
+    }
+  ],
+  "keyInsights": [
+    "AI handles operations. Humans handle creation.",
+    "Storytelling is uniquely human — AI amplifies, doesn't replace.",
+    "The butterfly effect of reality can now be visualized and defined.",
+    "This is about public benefit, not just personal wealth.",
+    "ALTERNATE is the beginning, not a one-off."
+  ],
+  "lastActive": "2026-02-12T12:07:00+13:00"
+}

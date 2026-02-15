@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "date": "2026-02-15",
+    "time": "09:00",
+    "type": "morning",
+    "coordinator": "fury",
+    "attendees": ["jarvis", "shuri", "fury", "prep", "alternate-agent", "junction-agent", "personal-agent"],
+    "note": "Sunday - 'Weekend Premiere' day. Tom recovering from rough Valentine's night."
+  },
+  "review": {
+    "yesterdayCompleted": [
+      {
+        "title": "Junction Fake Content Removal",
+        "agent": "fury",
+        "completedAt": "2026-02-14T15:55:00+13:00",
+        "deliverables": [
+          "Removed fake press (TechCrunch, Forbes, Wired)",
+          "Removed fake certifications (SOC 2 Type II, ISO 27001)",
+          "Removed fake partner badges",
+          "Removed fake testimonial (Sarah Chen)",
+          "Added real DBH results",
+          "Commit: 9808d0b"
+        ],
+        "impact": "CRITICAL - Removed liability from fake credentials",
+        "status": "NEEDS GIT PUSH TO GO LIVE"
+      },
+      {
+        "title": "ALTERNATE Campaign Monitoring",
+        "agent": "alternate-agent",
+        "completedAt": "2026-02-14",
+        "deliverables": ["27 hourly status checks", "All marketing assets maintained armed"],
+        "impact": "Maintained perfect launch readiness despite no Tom availability"
+      }
+    ],
+    "yesterdayNotShipped": [
+      {
+        "title": "ALTERNATE Film Launch",
+        "reason": "Tom unavailable all day - Valentine's Day Saturday",
+        "recommendation": "Launch today - Sunday Feb 15 'Weekend Premiere'"
+      }
+    ]
+  },
+  "currentStatus": {
+    "sprint": {
+      "name": "Junction Client #001 Sprint",
+      "day": 6,
+      "totalDays": 14,
+      "status": "in-progress"
+    },
+    "agents": {
+      "alternate-agent": {
+        "status": "ARMED",
+        "note": "All marketing assets ready. 36+ checks in holding pattern. Awaiting YouTube/final cut confirmation."
+      },
+      "junction-agent": {
+        "status": "BLOCKED",
+        "note": "Git push pending - website changes not live"
+      },
+      "fury": {
+        "status": "ACTIVE",
+        "note": "Running standup, coordinating launch"
+      },
+      "prep": {
+        "status": "ACTIVE",
+        "note": "Main session operational"
+      },
+      "jarvis": {
+        "status": "STANDBY",
+        "note": "Available for infrastructure tasks"
+      },
+      "shuri": {
+        "status": "STANDBY",
+        "note": "Available for research/optimization"
+      },
+      "personal-agent": {
+        "status": "ACTIVE",
+        "note": "Tom recovering - be mindful of energy"
+      }
+    }
+  },
+  "blockers": [
+    {
+      "id": "block-001",
+      "severity": "CRITICAL",
+      "issue": "ALTERNATE: YouTube/Final Cut Status Unknown",
+      "owner": "alternate-agent",
+      "needsFromTom": "Is the film uploaded? Is YouTube premiere scheduled?",
+      "daysSince": 2,
+      "impact": "Cannot launch ALTERNATE without this"
+    },
+    {
+      "id": "block-002",
+      "severity": "HIGH",
+      "issue": "40+ Extras Instagram Handles Missing",
+      "owner": "alternate-agent",
+      "needsFromTom": "Get list from Zach",
+      "impact": "Reduces viral reach - tagging strategy blocked"
+    },
+    {
+      "id": "block-003",
+      "severity": "HIGH",
+      "issue": "Junction Website Changes Not Live",
+      "owner": "fury/junction-agent",
+      "needsFromTom": "Run 'git push' (commit 9808d0b)",
+      "impact": "Fake credentials still showing on production site"
+    },
+    {
+      "id": "block-004",
+      "severity": "MEDIUM",
+      "issue": "Seedance 2 Access",
+      "owner": "alternate-agent",
+      "needsFromTom": "Update from Zach's China contact",
+      "daysSince": 5,
+      "impact": "Entire ALTERNATE campaign paused for post-launch content"
+    }
+  ],
+  "todayPriorities": [
+    {
+      "priority": 1,
+      "task": "ALTERNATE 'Weekend Premiere' Launch",
+      "owner": "alternate-agent + Tom",
+      "window": "11am-2pm optimal, 6-9pm backup",
+      "depends": "YouTube upload confirmation"
+    },
+    {
+      "priority": 2,
+      "task": "Push Junction Website Changes",
+      "owner": "Tom (git push)",
+      "command": "git push",
+      "impact": "Remove fake credentials from live site"
+    },
+    {
+      "priority": 3,
+      "task": "Collect Extras Instagram Handles",
+      "owner": "Tom (from Zach)",
+      "impact": "Enable tagging strategy for viral reach"
+    }
+  ],
+  "ideasFromTeam": [
+    {
+      "idea": "Pre-schedule ALL ALTERNATE Posts",
+      "agent": "fury",
+      "priority": "HIGH",
+      "rationale": "If YouTube is ready, pre-schedule everything. Launch day = chaos. Buffer/Later = execution certainty."
+    },
+    {
+      "idea": "Evening Launch Angle: 'Sunday Movie Night'",
+      "agent": "alternate-agent",
+      "priority": "MEDIUM",
+      "rationale": "If morning window missed, 6-9pm 'Sunday movie night' framing works well"
+    },
+    {
+      "idea": "Tom Recovery - Light Touch Today",
+      "agent": "personal-agent",
+      "priority": "HIGH",
+      "rationale": "Rough night (4am vomiting). Be efficient with blockers, don't overwhelm."
+    }
+  ],
+  "actionItems": [
+    {
+      "id": "action-001",
+      "task": "Confirm YouTube premiere status with Tom",
+      "owner": "alternate-agent via main session",
+      "dueBy": "10:00am",
+      "status": "pending"
+    },
+    {
+      "id": "action-002", 
+      "task": "Execute git push for Junction website",
+      "owner": "Tom",
+      "dueBy": "11:00am",
+      "status": "pending"
+    },
+    {
+      "id": "action-003",
+      "task": "If YouTube ready: Pre-schedule social posts",
+      "owner": "alternate-agent",
+      "dueBy": "11:30am",
+      "status": "pending"
+    },
+    {
+      "id": "action-004",
+      "task": "Execute ALTERNATE launch sequence",
+      "owner": "alternate-agent + fury",
+      "dueBy": "2:00pm",
+      "depends": "YouTube confirmation",
+      "status": "pending"
+    }
+  ],
+  "lessonsLearned": [
+    {
+      "lesson": "Holiday/weekend launches need explicit confirmation T-1 evening",
+      "context": "27 checks on Valentine's Day with zero responses. Set expectations day before.",
+      "agent": "alternate-agent"
+    },
+    {
+      "lesson": "Human recovery = adjust urgency",
+      "context": "Tom's rough night means efficiency over volume. Get blockers done, don't nag.",
+      "agent": "personal-agent"
+    }
+  ],
+  "collaborationRating": {
+    "overall": 7.0,
+    "notes": "Strong readiness posture. All systems green for launch. Today is execution day.",
+    "focus": "Clear blockers fast, execute ALTERNATE launch"
+  }
+}

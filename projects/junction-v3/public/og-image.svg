@@ -1,0 +1,47 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="30%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="70%" cy="60%" r="40%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <ellipse cx="350" cy="200" rx="400" ry="300" fill="url(#glow1)"/>
+  <ellipse cx="900" cy="400" rx="350" ry="250" fill="url(#glow2)"/>
+  
+  <!-- Logo Mark -->
+  <g transform="translate(100, 180)">
+    <path d="M30 8 Q8 8 8 30" stroke="url(#textGrad)" stroke-width="10" stroke-linecap="round" fill="none"/>
+    <path d="M70 8 Q92 8 92 30" stroke="url(#textGrad)" stroke-width="10" stroke-linecap="round" fill="none"/>
+    <path d="M30 92 Q8 92 8 70" stroke="url(#textGrad)" stroke-width="10" stroke-linecap="round" fill="none"/>
+    <path d="M70 92 Q92 92 92 70" stroke="url(#textGrad)" stroke-width="10" stroke-linecap="round" fill="none"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="220" y="255" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="800" fill="#0f172a">Junction Media</text>
+  
+  <!-- Tagline -->
+  <text x="100" y="380" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="700" fill="url(#textGrad)">AI-Powered Marketing</text>
+  <text x="100" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="700" fill="url(#textGrad)">That Moves The Needle</text>
+  
+  <!-- Subtitle -->
+  <text x="100" y="530" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#64748b">24/7 AI Agents + Senior Human Strategists</text>
+  
+  <!-- Website -->
+  <text x="100" y="580" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#94a3b8">junctionmedia.co.nz</text>
+</svg>

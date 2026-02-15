@@ -176,3 +176,214 @@ _(Same format)_
 
 **Total spent today:** $0
 
+
+## 2026-02-11
+
+- **+$2674.30** 💰 Income from Deep Blue Health (INV-0138) - 16:18
+
+**No spending today**
+
+
+## 2026-02-11
+
+- **$2674.30** - Received money from Deep Blue Healt with reference INV-0138 DeepBlueHeal - 16:18
+
+**Total spent today:** $0
+
+
+## 2026-02-12
+
+- **$0.01** @ Parkmate Nz (Automobile Parking Lots and Gara) - 19:30
+- **$574.98** - Received money from HALL-TAYLOR,T with reference  - 14:33
+- **$17.00** @ Dbs*The Olympic (Clubs Country Clubs, Membership) - 12:39
+
+**Total spent today:** $0
+
+
+## 2026-02-12
+
+- **$0.01** @ Parkmate Nz (Automobile Parking Lots and Gara) - 19:30
+- **$574.98** - Received money from HALL-TAYLOR,T with reference  - 14:33
+- **$17.00** @ Dbs*The Olympic (Clubs Country Clubs, Membership) - 12:39
+
+**Total spent today:** $0
+
+
+## 2026-02-12
+
+- **$0.01** @ Parkmate Nz (Automobile Parking Lots and Gara) - 19:30
+- **$574.98** - Received money from HALL-TAYLOR,T with reference  - 14:33
+- **$17.00** @ Dbs*The Olympic (Clubs Country Clubs, Membership) - 12:39
+
+**Total spent today:** $0
+
+
+## 2026-02-12
+
+- **$0.01** @ Parkmate Nz (Automobile Parking Lots and Gara) - 19:30
+- **$574.98** - Received money from HALL-TAYLOR,T with reference  - 14:33
+- **$17.00** @ Dbs*The Olympic (Clubs Country Clubs, Membership) - 12:39
+
+**Total spent today:** $0
+
+
+## 2026-02-12
+
+- **$0.01** @ Parkmate Nz (Automobile Parking Lots and Gara) - 19:30
+- **$574.98** - Received money from HALL-TAYLOR,T with reference  - 14:33
+- **$17.00** @ Dbs*The Olympic (Clubs Country Clubs, Membership) - 12:39
+
+**Total spent today:** $0
+
+
+## 2026-02-13
+
+- **$27.00** @ Woolworths Nz/4 Williamso (Grocery Stores, Supermarkets) - 19:40
+- **$259.71** → BARNABY HOPE-SIMCOCK (Transfer) - 07:56
+
+**Total spent today:** $0
+
+
+## 2026-02-13
+
+- **$27.00** @ Woolworths Nz/4 Williamso (Grocery Stores, Supermarkets) - 19:40
+- **$259.71** → BARNABY HOPE-SIMCOCK (Transfer) - 07:56
+
+**Total spent today:** $0
+
+
+## 2026-02-13
+
+- **$27.00** @ Woolworths Nz/4 Williamso (Grocery Stores, Supermarkets) - 19:40
+- **$259.71** → BARNABY HOPE-SIMCOCK (Transfer) - 07:56
+
+**Total spent today:** $0
+
+
+## 2026-02-13
+
+- **$27.00** @ Woolworths Nz/4 Williamso (Grocery Stores, Supermarkets) - 19:40
+- **$259.71** → BARNABY HOPE-SIMCOCK (Transfer) - 07:56
+
+**Total spent today:** $0
+
+
+## 2026-02-13
+
+- **$27.00** @ Woolworths Nz/4 Williamso (Grocery Stores, Supermarkets) - 19:40
+- **$259.71** → BARNABY HOPE-SIMCOCK (Transfer) - 07:56
+
+**Total spent today:** $0
+
+
+## 2026-02-13
+
+- **$170.57** @ Chatcut Inc (Computer Software Stores) - 22:21
+- **$27.00** @ Woolworths Nz/4 Williamso (Grocery Stores, Supermarkets) - 19:40
+- **$259.71** → BARNABY HOPE-SIMCOCK (Transfer) - 07:56
+
+**Total spent today:** $0
+
+
+## 2026-02-14
+
+- **$25.29** @ Dnh*Godaddy.com Nzd (Computer Network/Information Ser) - 02:21
+- **$99.88** @ Figma (Computer Programming, Data Proce) - 02:12
+
+**Total spent today:** $0
+
+
+## 2026-02-14
+
+- **$25.29** @ Dnh*Godaddy.com Nzd (Computer Network/Information Ser) - 02:21
+- **$99.88** @ Figma (Computer Programming, Data Proce) - 02:12
+
+**Total spent today:** $0
+
+
+## 2026-02-14
+
+- **$29.99** @ Glengarry Wines (Package Stores, Beer, Wine, Liqu) - 16:33
+- **$12.75** @ Deli Bake (Bakeries) - 14:26
+- **$25.29** @ Dnh*Godaddy.com Nzd (Computer Network/Information Ser) - 02:21
+- **$99.88** @ Figma (Computer Programming, Data Proce) - 02:12
+
+**Total spent today:** $0
+
+
+## 2026-02-14
+
+- **$29.99** @ Glengarry Wines (Package Stores, Beer, Wine, Liqu) - 16:33
+- **$12.75** @ Deli Bake (Bakeries) - 14:26
+- **$25.29** @ Dnh*Godaddy.com Nzd (Computer Network/Information Ser) - 02:21
+- **$99.88** @ Figma (Computer Programming, Data Proce) - 02:12
+
+**Total spent today:** $0
+
+
+## 2026-02-14
+
+- **$29.99** @ Glengarry Wines (Package Stores, Beer, Wine, Liqu) - 16:33
+- **$12.75** @ Deli Bake (Bakeries) - 14:26
+- **$25.29** @ Dnh*Godaddy.com Nzd (Computer Network/Information Ser) - 02:21
+- **$99.88** @ Figma (Computer Programming, Data Proce) - 02:12
+
+**Total spent today:** $0
+
+
+## 2026-02-14
+
+- **$29.99** @ Glengarry Wines (Package Stores, Beer, Wine, Liqu) - 16:33
+- **$12.75** @ Deli Bake (Bakeries) - 14:26
+- **$25.29** @ Dnh*Godaddy.com Nzd (Computer Network/Information Ser) - 02:21
+- **$99.88** @ Figma (Computer Programming, Data Proce) - 02:12
+
+**Total spent today:** $0
+
+
+## 2026-02-14
+
+- **$29.99** @ Glengarry Wines (Package Stores, Beer, Wine, Liqu) - 16:33
+- **$12.75** @ Deli Bake (Bakeries) - 14:26
+- **$25.29** @ Dnh*Godaddy.com Nzd (Computer Network/Information Ser) - 02:21
+- **$99.88** @ Figma (Computer Programming, Data Proce) - 02:12
+
+**Total spent today:** $0
+
+
+## 2026-02-14
+
+- **$29.99** @ Glengarry Wines (Package Stores, Beer, Wine, Liqu) - 16:33
+- **$12.75** @ Deli Bake (Bakeries) - 14:26
+- **$25.29** @ Dnh*Godaddy.com Nzd (Computer Network/Information Ser) - 02:21
+- **$99.88** @ Figma (Computer Programming, Data Proce) - 02:12
+
+**Total spent today:** $0
+
+
+## 2026-02-14
+
+- **$29.99** @ Glengarry Wines (Package Stores, Beer, Wine, Liqu) - 16:33
+- **$12.75** @ Deli Bake (Bakeries) - 14:26
+- **$25.29** @ Dnh*Godaddy.com Nzd (Computer Network/Information Ser) - 02:21
+- **$99.88** @ Figma (Computer Programming, Data Proce) - 02:12
+
+**Total spent today:** $0
+
+
+## 2026-02-15
+
+- **$20.30** @ Novelty Trading (Fast Food Restaurants) - 02:56
+- **$10.18** @ Goblin Bar (Bars, Cocktail Lounges, Discothe) - 01:07
+
+**Total spent today:** $0
+
+
+## 2026-02-15
+
+- **$19.87** @ Mobil K'road (Service Stations (with or withou) - 12:35
+- **$20.30** @ Novelty Trading (Fast Food Restaurants) - 02:56
+- **$10.18** @ Goblin Bar (Bars, Cocktail Lounges, Discothe) - 01:07
+
+**Total spent today:** $0
+

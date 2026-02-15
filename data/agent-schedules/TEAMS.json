@@ -1,0 +1,45 @@
+{
+  "teams": [
+    {
+      "name": "COMMAND",
+      "emoji": "🎯",
+      "purpose": "Coordination & Operations",
+      "lead": "PREP",
+      "agents": ["PREP"],
+      "color": "#00d4ff"
+    },
+    {
+      "name": "JUNCTION",
+      "emoji": "🚀",
+      "purpose": "Agency Client Work",
+      "lead": "JUNCTION-CONTENT",
+      "agents": ["JUNCTION-CONTENT", "JUNCTION-DEV", "JUNCTION-DESIGN"],
+      "color": "#00ff88"
+    },
+    {
+      "name": "ALTERNATE",
+      "emoji": "🎬",
+      "purpose": "Film Production & Marketing",
+      "lead": "ALTERNATE-MARKETING",
+      "agents": ["ALTERNATE-MARKETING", "ALTERNATE-PRODUCTION"],
+      "color": "#ff6b6b"
+    },
+    {
+      "name": "VISION",
+      "emoji": "🌟",
+      "purpose": "Creative Company Strategy (Next Pixar)",
+      "lead": "VISION-TEAM",
+      "agents": ["VISION-TEAM"],
+      "color": "#ffd93d"
+    },
+    {
+      "name": "DBH",
+      "emoji": "💊",
+      "purpose": "Deep Blue Health Support",
+      "lead": null,
+      "agents": ["DBH-CONTENT", "DBH-ADS"],
+      "color": "#6bcfff"
+    }
+  ],
+  "updatedAt": "2026-02-12T12:20:00+13:00"
+}

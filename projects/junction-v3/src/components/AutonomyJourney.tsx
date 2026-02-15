@@ -42,7 +42,7 @@ function ExponentialCurve() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   
   return (
-    <div ref={ref} className="relative w-full h-[400px] md:h-[500px]">
+    <div ref={ref} className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
       {/* SVG Curve */}
       <svg 
         viewBox="0 0 800 400" 

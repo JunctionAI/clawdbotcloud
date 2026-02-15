@@ -61,16 +61,12 @@ function FloatingTriangle({ className = '', delay = 0 }: { className?: string; d
   );
 }
 
+// TEMPORARILY DISABLED - causing z-index rendering issues
 // Simplified - only 4 shapes total, no scroll-linked transforms, simpler animations
+// Hidden on small/medium screens to avoid overlapping UI elements
 export default function FloatingShapes() {
-  return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0" style={{ willChange: 'auto' }}>
-      <FloatingRing className="top-[15%] left-[5%]" delay={0.5} />
-      <FloatingTriangle className="top-[25%] right-[8%]" delay={0.7} />
-      <FloatingRing className="top-[60%] right-[5%]" delay={0.9} />
-      <FloatingTriangle className="top-[75%] left-[8%]" delay={1.1} />
-    </div>
-  );
+  // Disabled to fix rendering bug
+  return null;
 }
 
 // Keep exports for compatibility but simplified

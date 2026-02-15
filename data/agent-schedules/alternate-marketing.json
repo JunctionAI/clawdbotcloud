@@ -1,0 +1,59 @@
+{
+  "agent": "ALTERNATE-MARKETING",
+  "role": "Film Marketing & Promo",
+  "status": "active",
+  "currentTask": null,
+  "queue": [
+    {
+      "id": "alt-001",
+      "title": "Draft launch day social copy (all platforms)",
+      "priority": "high",
+      "blockedBy": null,
+      "estimatedMinutes": 30,
+      "status": "pending"
+    },
+    {
+      "id": "alt-002",
+      "title": "Create extras tagging strategy template",
+      "priority": "high",
+      "blockedBy": null,
+      "estimatedMinutes": 20,
+      "status": "pending",
+      "notes": "40+ extras to tag on launch for network effects"
+    },
+    {
+      "id": "alt-003",
+      "title": "Draft TikTok/Reels hooks for launch",
+      "priority": "medium",
+      "blockedBy": null,
+      "estimatedMinutes": 25,
+      "status": "pending"
+    },
+    {
+      "id": "alt-004",
+      "title": "Outline behind-the-scenes content angles",
+      "priority": "medium",
+      "blockedBy": null,
+      "estimatedMinutes": 15,
+      "status": "pending"
+    },
+    {
+      "id": "alt-005",
+      "title": "Create posting schedule for launch week",
+      "priority": "medium",
+      "blockedBy": null,
+      "estimatedMinutes": 20,
+      "status": "pending"
+    }
+  ],
+  "blocked": [
+    {
+      "id": "alt-blocked-001",
+      "title": "Tokyo scene tour content",
+      "blockedBy": "clips",
+      "reason": "Waiting for Tom's scene clips to be generated tonight"
+    }
+  ],
+  "completed": [],
+  "lastActive": "2026-02-12T11:36:00+13:00"
+}

@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "date": "2026-02-15",
+    "time": "17:00",
+    "type": "evening",
+    "coordinator": "fury",
+    "attendees": ["jarvis", "shuri", "fury", "prep", "alternate-agent", "junction-agent", "personal-agent"],
+    "note": "Sunday evening - Tom unavailable all day (63+ consecutive checks across Feb 14-15)"
+  },
+  "review": {
+    "completedTasks": [],
+    "notShipped": [
+      {
+        "title": "ALTERNATE Film Launch",
+        "agent": "alternate-agent",
+        "reason": "Tom unavailable - 63+ checks across Feb 14-15 without response",
+        "status": "All marketing assets remain armed. Evening window (6-9pm) still available for 1 more hour.",
+        "recommendation": "If Tom surfaces in next hour → instant deployment. Otherwise pivot to Monday."
+      },
+      {
+        "title": "Junction Git Push",
+        "agent": "fury",
+        "reason": "Requires Tom to run git push",
+        "status": "Commit 9808d0b ready locally but not deployed",
+        "impact": "Fake credentials (TechCrunch, Forbes, SOC 2) still showing on live site"
+      }
+    ],
+    "inProgressTasks": [
+      {
+        "taskId": "task-005",
+        "title": "Junction Client #001 Sprint",
+        "agent": "fury",
+        "status": "Active - Day 6",
+        "notes": "2-week sprint continuing, but website changes blocked on git push"
+      },
+      {
+        "taskId": "alternate-launch",
+        "title": "ALTERNATE Launch Execution",
+        "agent": "alternate-agent",
+        "status": "WAITING - 63+ checks, all assets armed",
+        "notes": "Evening window still open until 9pm"
+      }
+    ]
+  },
+  "blockers": [
+    {
+      "id": "block-001",
+      "severity": "CRITICAL",
+      "issue": "ALTERNATE YouTube/Final Cut Status Unknown",
+      "owner": "alternate-agent",
+      "needsFromTom": "Is the film uploaded? Is YouTube premiere scheduled?",
+      "impact": "Cannot launch without this confirmation",
+      "daysSince": 2,
+      "checksWithoutResponse": 63
+    },
+    {
+      "id": "block-002",
+      "severity": "HIGH",
+      "issue": "40+ Extras Instagram Handles Missing",
+      "owner": "alternate-agent",
+      "needsFromTom": "Get list from Zach",
+      "impact": "Reduces viral reach without tagging strategy"
+    },
+    {
+      "id": "block-003",
+      "severity": "HIGH",
+      "issue": "Junction Website Changes Not Live",
+      "owner": "fury",
+      "needsFromTom": "Run git push (30 seconds)",
+      "impact": "Fake credentials still visible on production site"
+    },
+    {
+      "id": "block-004",
+      "severity": "MEDIUM",
+      "issue": "Seedance 2 Access",
+      "owner": "alternate-agent",
+      "needsFromTom": "Update from Zach's China contact",
+      "daysSince": 5
+    }
+  ],
+  "ideasFromTeam": [
+    {
+      "idea": "Monday 'Work From Home' Lunch Hour Launch",
+      "agent": "alternate-agent",
+      "priority": "HIGH",
+      "rationale": "If weekend window fully passes, Monday 11am-1pm is next optimal. People on lunch breaks, high engagement."
+    },
+    {
+      "idea": "Async Launch Protocol",
+      "agent": "fury",
+      "priority": "HIGH",
+      "rationale": "Create a system where Tom can pre-authorize launch with a single message ('YouTube is up') that triggers autonomous execution."
+    },
+    {
+      "idea": "Junction Soft Launch Without Git Push",
+      "agent": "junction-agent",
+      "priority": "MEDIUM",
+      "rationale": "Can we start outreach without the website? Portfolio + Loom demos might be enough for initial conversations."
+    },
+    {
+      "idea": "Reduce Weekend Check Frequency",
+      "agent": "shuri",
+      "priority": "LOW",
+      "rationale": "After 10+ no-responses on weekend, reduce heartbeat frequency to conserve resources and reduce log noise."
+    }
+  ],
+  "improvements": [
+    {
+      "area": "Human Availability Prediction",
+      "suggestion": "Track patterns - if Tom was out late Friday/Saturday, expect Sunday unavailability. Don't plan launches for morning after big nights.",
+      "agent": "personal-agent",
+      "effort": "process"
+    },
+    {
+      "area": "Pre-authorization System",
+      "suggestion": "Allow Tom to pre-authorize launches: 'If X is ready, execute Y without asking'",
+      "agent": "fury",
+      "effort": "medium"
+    },
+    {
+      "area": "Weekend Check Throttling",
+      "suggestion": "After 5 consecutive no-responses on weekend, reduce check frequency from 15min to 2h",
+      "agent": "shuri",
+      "effort": "low"
+    }
+  ],
+  "lessonsLearned": [
+    {
+      "lesson": "63+ checks without human response = protocol failure, not persistence success",
+      "context": "Checking every 15 min for 2 days straight serves no one. Need smarter escalation and frequency adjustment.",
+      "agent": "fury"
+    },
+    {
+      "lesson": "Weekend launches are high-risk without T-2 confirmation",
+      "context": "Should have gotten firm commitment from Tom by Thursday evening for Saturday launch.",
+      "agent": "alternate-agent"
+    },
+    {
+      "lesson": "All systems armed means nothing without human confirmation on blockers",
+      "context": "Perfect marketing assets, zero deployment. Human confirmation is the bottleneck.",
+      "agent": "alternate-agent"
+    },
+    {
+      "lesson": "Valentine's Day weekend = don't expect availability",
+      "context": "Should have predicted Tom would be occupied Friday-Sunday. Calendar awareness needed.",
+      "agent": "personal-agent"
+    }
+  ],
+  "collaborationRating": {
+    "overall": 5.0,
+    "notes": "Low-activity day. Zero tasks shipped due to human unavailability. Agents maintained readiness but couldn't execute.",
+    "highlights": [
+      "Perfect launch readiness maintained across 63 checks",
+      "Detailed logging of all status checks",
+      "Team pivoted framing from Valentine's Day to 'Weekend Premiere'"
+    ],
+    "improvements": [
+      "63 checks without response = inefficient resource use",
+      "No creative work done while waiting - could have advanced other projects",
+      "Should have reduced check frequency after ~10 no-responses"
+    ]
+  },
+  "tomorrowPriorities": [
+    {
+      "priority": 1,
+      "task": "ALTERNATE Launch (Monday Lunch Hour)",
+      "owner": "alternate-agent + Tom",
+      "window": "11am-1pm optimal",
+      "depends": "YouTube upload confirmation"
+    },
+    {
+      "priority": 2,
+      "task": "Push Junction Website Changes",
+      "owner": "Tom (git push)",
+      "command": "git push in /projects/junction",
+      "impact": "Remove fake credentials from live site"
+    },
+    {
+      "priority": 3,
+      "task": "Weekly Review Prep",
+      "owner": "fury",
+      "note": "Weekly review was scheduled for today 8pm - may push to Monday if Tom unavailable"
+    },
+    {
+      "priority": 4,
+      "task": "Advance Junction Sprint (Day 7)",
+      "owner": "junction-agent",
+      "note": "Can do research/planning without git push blocker"
+    }
+  ],
+  "tonightFocus": {
+    "critical": "If Tom surfaces before 9pm → execute ALTERNATE launch immediately",
+    "secondary": [
+      "Maintain launch readiness",
+      "Weekly review at 8pm if Tom available"
+    ],
+    "note": "Evening window closes at 9pm. If missed, pivot to Monday lunch hour."
+  }
+}

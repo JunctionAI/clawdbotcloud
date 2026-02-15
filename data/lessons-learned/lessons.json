@@ -1,0 +1,45 @@
+{
+  "lessons": [
+    {
+      "id": "lesson-1770773633882-vh6hpp",
+      "agent": "fury",
+      "lesson": "Junction Client #001 onboarding: Define all deliverables upfront with clear acceptance criteria - prevents scope creep",
+      "category": "process",
+      "project": "junction",
+      "context": null,
+      "status": "new",
+      "createdAt": "2026-02-11T01:33:53.882Z",
+      "appliedAt": null,
+      "synthesizedIn": null
+    },
+    {
+      "id": "lesson-1770773634202-fddjpx",
+      "agent": "junction-content",
+      "lesson": "AI marketing NZ keywords have zero competition - massive SEO opportunity when you own a new category",
+      "category": "insight",
+      "project": "junction",
+      "context": null,
+      "status": "new",
+      "createdAt": "2026-02-11T01:33:54.202Z",
+      "appliedAt": null,
+      "synthesizedIn": null
+    },
+    {
+      "id": "lesson-1770773634512-6vjogq",
+      "agent": "shuri",
+      "lesson": "Mission Control Convex deployment needs functions deployed - check-mission-control.ps1 fails without tasks:listPending function",
+      "category": "technical",
+      "project": "mission-control",
+      "context": null,
+      "status": "new",
+      "createdAt": "2026-02-11T01:33:54.512Z",
+      "appliedAt": null,
+      "synthesizedIn": null
+    }
+  ],
+  "meta": {
+    "created": "2026-02-11T01:33:46.239Z",
+    "version": "1.0",
+    "lastUpdated": "2026-02-11T01:33:54.513Z"
+  }
+}

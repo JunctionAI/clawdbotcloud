@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Junction Media Logo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      padding: 60px;
+    }
+    
+    .logo-section {
+      padding: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .dark { background: #0F172A; }
+    .light { background: #FFFFFF; border: 1px solid #E5E7EB; }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .mark {
+      width: 80px;
+      height: 80px;
+      position: relative;
+    }
+    
+    .mark svg {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .wordmark {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    
+    .wordmark .junction {
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    
+    .wordmark .media {
+      font-size: 42px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+    
+    .dark .junction { color: #FFFFFF; }
+    .dark .media { color: #9CA3AF; }
+    .light .junction { color: #1F2937; }
+    .light .media { color: #6B7280; }
+    
+    .label {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #6B7280;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    /* Small version */
+    .small .mark { width: 40px; height: 40px; }
+    .small .wordmark .junction { font-size: 24px; }
+    .small .wordmark .media { font-size: 24px; }
+    .small .wordmark { gap: 4px; }
+    .small .logo { gap: 12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Dark Background - Primary -->
+    <div>
+      <div class="label">Primary - Dark Background</div>
+      <div class="logo-section dark">
+        <div class="logo">
+          <div class="mark">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#3B82F6"/>
+                  <stop offset="50%" style="stop-color:#8B5CF6"/>
+                  <stop offset="100%" style="stop-color:#EC4899"/>
+                </linearGradient>
+              </defs>
+              <!-- Top Left -->
+              <path d="M25 8 Q8 8 8 25" stroke="url(#grad1)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <!-- Top Right -->
+              <path d="M55 8 Q72 8 72 25" stroke="url(#grad1)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <!-- Bottom Left -->
+              <path d="M25 72 Q8 72 8 55" stroke="url(#grad1)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <!-- Bottom Right -->
+              <path d="M55 72 Q72 72 72 55" stroke="url(#grad1)" stroke-width="8" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="wordmark">
+            <span class="junction">Junction</span>
+            <span class="media">Media</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Light Background -->
+    <div>
+      <div class="label">Light Background</div>
+      <div class="logo-section light">
+        <div class="logo">
+          <div class="mark">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#3B82F6"/>
+                  <stop offset="50%" style="stop-color:#8B5CF6"/>
+                  <stop offset="100%" style="stop-color:#EC4899"/>
+                </linearGradient>
+              </defs>
+              <!-- Top Left -->
+              <path d="M25 8 Q8 8 8 25" stroke="url(#grad2)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <!-- Top Right -->
+              <path d="M55 8 Q72 8 72 25" stroke="url(#grad2)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <!-- Bottom Left -->
+              <path d="M25 72 Q8 72 8 55" stroke="url(#grad2)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <!-- Bottom Right -->
+              <path d="M55 72 Q72 72 72 55" stroke="url(#grad2)" stroke-width="8" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="wordmark">
+            <span class="junction">Junction</span>
+            <span class="media">Media</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Small Version Dark -->
+    <div>
+      <div class="label">Small Version - Dark</div>
+      <div class="logo-section dark small">
+        <div class="logo">
+          <div class="mark">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#3B82F6"/>
+                  <stop offset="50%" style="stop-color:#8B5CF6"/>
+                  <stop offset="100%" style="stop-color:#EC4899"/>
+                </linearGradient>
+              </defs>
+              <path d="M25 8 Q8 8 8 25" stroke="url(#grad3)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M55 8 Q72 8 72 25" stroke="url(#grad3)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M25 72 Q8 72 8 55" stroke="url(#grad3)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M55 72 Q72 72 72 55" stroke="url(#grad3)" stroke-width="8" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="wordmark">
+            <span class="junction">Junction</span>
+            <span class="media">Media</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Icon Only -->
+    <div>
+      <div class="label">Icon Only (Favicon / App Icon)</div>
+      <div class="logo-section dark" style="gap: 40px;">
+        <div style="width: 64px; height: 64px;">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#3B82F6"/>
+                <stop offset="50%" style="stop-color:#8B5CF6"/>
+                <stop offset="100%" style="stop-color:#EC4899"/>
+              </linearGradient>
+            </defs>
+            <path d="M25 8 Q8 8 8 25" stroke="url(#grad4)" stroke-width="8" stroke-linecap="round" fill="none"/>
+            <path d="M55 8 Q72 8 72 25" stroke="url(#grad4)" stroke-width="8" stroke-linecap="round" fill="none"/>
+            <path d="M25 72 Q8 72 8 55" stroke="url(#grad4)" stroke-width="8" stroke-linecap="round" fill="none"/>
+            <path d="M55 72 Q72 72 72 55" stroke="url(#grad4)" stroke-width="8" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <div style="width: 32px; height: 32px;">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#3B82F6"/>
+                <stop offset="50%" style="stop-color:#8B5CF6"/>
+                <stop offset="100%" style="stop-color:#EC4899"/>
+              </linearGradient>
+            </defs>
+            <path d="M25 8 Q8 8 8 25" stroke="url(#grad5)" stroke-width="10" stroke-linecap="round" fill="none"/>
+            <path d="M55 8 Q72 8 72 25" stroke="url(#grad5)" stroke-width="10" stroke-linecap="round" fill="none"/>
+            <path d="M25 72 Q8 72 8 55" stroke="url(#grad5)" stroke-width="10" stroke-linecap="round" fill="none"/>
+            <path d="M55 72 Q72 72 72 55" stroke="url(#grad5)" stroke-width="10" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</body>
+</html>

@@ -1,0 +1,204 @@
+{
+  "meta": {
+    "date": "2026-02-12",
+    "time": "17:00",
+    "type": "evening",
+    "coordinator": "fury",
+    "attendees": ["jarvis", "shuri", "fury", "prep", "alternate-agent", "junction-agent", "personal-agent"]
+  },
+  "review": {
+    "completedTasks": [
+      {
+        "title": "ALTERNATE Launch Day Social Copy",
+        "agent": "alternate-agent",
+        "completedAt": "14:55",
+        "deliverables": ["projects/alternate/launch-day-social-copy.md"],
+        "impact": "Ready for Feb 14 release - TikTok, Twitter thread, IG captions all drafted"
+      },
+      {
+        "title": "ALTERNATE Release Checklist",
+        "agent": "alternate-agent",
+        "completedAt": "14:55",
+        "deliverables": ["memory/alternate-release-checklist.md"],
+        "impact": "Full launch day playbook with timing, posts, extras tagging strategy"
+      },
+      {
+        "title": "Junction Website Fixes Draft",
+        "agent": "junction-agent",
+        "completedAt": "15:30",
+        "deliverables": ["projects/junction/website-fixes-draft.md"],
+        "impact": "Overclaim fixes ready for deployment"
+      },
+      {
+        "title": "VISION.md Documentation",
+        "agent": "prep",
+        "completedAt": "12:30",
+        "deliverables": ["VISION.md"],
+        "impact": "Tom's 'Next Pixar' vision fully documented for team alignment"
+      }
+    ],
+    "inProgressTasks": [
+      {
+        "taskId": "task-002",
+        "title": "AI Curve Website Section",
+        "agent": "junction-dev",
+        "status": "Active",
+        "notes": "Updating autonomy section with AI curve visual"
+      },
+      {
+        "taskId": "task-005",
+        "title": "Junction Client #001 Sprint",
+        "agent": "fury",
+        "status": "Active - Day 3",
+        "notes": "2-week sprint continuing"
+      }
+    ],
+    "majorUnblock": {
+      "title": "SEEDANCE 2 ACCESS SORTED! ✅",
+      "impact": "ALTERNATE campaign now FULL SPEED AHEAD",
+      "unblockDetails": "China contact came through - Feb 14 release back on track"
+    },
+    "pendingTasks": [
+      {
+        "taskId": "task-004",
+        "title": "Connect junctionmedia.ai Domain",
+        "notes": "Ready to execute when Tom confirms"
+      },
+      {
+        "taskId": "task-009",
+        "title": "LinkedIn Content",
+        "notes": "Need credentials or Tom to post"
+      }
+    ]
+  },
+  "blockers": [
+    {
+      "id": "block-001",
+      "issue": "Domain connection pending",
+      "owner": "junction-dev",
+      "needsFromTom": "Approval to connect junctionmedia.ai to Vercel",
+      "impact": "medium"
+    },
+    {
+      "id": "block-002",
+      "issue": "LinkedIn publishing access",
+      "owner": "junction-content",
+      "needsFromTom": "Either credentials or Tom to post the 3 drafted posts",
+      "impact": "medium"
+    },
+    {
+      "id": "block-003",
+      "issue": "40+ extras Instagram handles list",
+      "owner": "alternate-agent",
+      "needsFromTom": "Get list from Zach tonight for launch day tagging",
+      "impact": "high"
+    }
+  ],
+  "ideasForTomorrow": [
+    {
+      "idea": "Pre-schedule ALL ALTERNATE launch posts now while in grind session",
+      "agent": "alternate-agent",
+      "priority": "critical",
+      "rationale": "Tomorrow is full DBH day - no time. Schedule tonight = stress-free launch"
+    },
+    {
+      "idea": "Create behind-the-scenes content during tonight's session",
+      "agent": "alternate-agent",
+      "priority": "high",
+      "rationale": "BTS content performs well, capture the creative process"
+    },
+    {
+      "idea": "Draft press outreach for ALTERNATE",
+      "agent": "alternate-agent",
+      "priority": "medium",
+      "rationale": "Have pitch ready for AI/film journalists"
+    },
+    {
+      "idea": "DBH Friday shot list - finalize before tomorrow",
+      "agent": "prep",
+      "priority": "high",
+      "rationale": "Vietnamese influencer filming at 2pm, need clear plan"
+    }
+  ],
+  "improvements": [
+    {
+      "area": "Vision Clarity",
+      "suggestion": "The 'Next Pixar' vision should inform all decisions - add vision check to daily standups",
+      "agent": "fury",
+      "effort": "low"
+    },
+    {
+      "area": "Release Automation",
+      "suggestion": "Build automated post scheduling for major launches",
+      "agent": "shuri",
+      "effort": "medium"
+    },
+    {
+      "area": "Blocker Escalation",
+      "suggestion": "Create real-time blocker board Tom can check anytime",
+      "agent": "jarvis",
+      "effort": "medium"
+    }
+  ],
+  "lessonsLearned": [
+    {
+      "lesson": "Seedance block resolved faster than expected - sometimes 'waiting on others' resolves overnight",
+      "context": "Was ready to escalate but Zach's contact came through",
+      "agent": "alternate-agent"
+    },
+    {
+      "lesson": "Document vision immediately when Tom has clarity moments",
+      "context": "12:07pm vision statement captured in real-time = no lost context",
+      "agent": "prep"
+    },
+    {
+      "lesson": "Power cuts happen - keep offline-capable task lists",
+      "context": "Morning lost to power cut, but recovered by 11:30am",
+      "agent": "fury"
+    }
+  ],
+  "collaborationRating": {
+    "overall": 8.0,
+    "notes": "Strong day. ALTERNATE unblocked is huge. Vision documented. Marketing prep complete. Ready for launch push tonight.",
+    "highlights": [
+      "SEEDANCE UNBLOCKED - biggest win",
+      "Full marketing material suite ready for Feb 14",
+      "Vision documented while fresh"
+    ],
+    "improvements": [
+      "Tomorrow (full DBH) will be tight for ALTERNATE - need to front-load prep tonight"
+    ]
+  },
+  "tomorrowPriorities": [
+    {
+      "priority": 1,
+      "task": "ALTERNATE - Generate all clips in tonight's grind session",
+      "owner": "alternate-agent + Tom + Zach"
+    },
+    {
+      "priority": 2,
+      "task": "DBH Friday Prep - Shot list for Vietnamese influencer",
+      "owner": "prep"
+    },
+    {
+      "priority": 3,
+      "task": "Connect domain if approved (quick win)",
+      "owner": "junction-dev"
+    },
+    {
+      "priority": 4,
+      "task": "Continue SEO content pipeline",
+      "owner": "junction-content"
+    }
+  ],
+  "tonightFocus": {
+    "session": "ALTERNATE Grind (9:30pm-3:30am)",
+    "goals": [
+      "Generate ALL clips for Tom's end scene",
+      "Collect 40+ extras handles from Zach",
+      "Capture BTS content",
+      "Pre-schedule launch posts if possible"
+    ],
+    "note": "This is THE night. Feb 14 is 2 days away. Full send."
+  }
+}
