@@ -774,41 +774,14 @@ export default function ServicesGrid() {
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-3xl rounded-3xl" />
             
             <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-gray-100 shadow-2xl">
-              <div className="grid md:grid-cols-3 gap-8 items-center">
-                {/* Traditional cost */}
-                <div className="text-center md:text-left">
-                  <p className="text-sm text-gray-500 uppercase tracking-wider mb-2">Traditional Agency Cost</p>
-                  <p className="text-3xl md:text-4xl font-black text-gray-300 line-through decoration-red-400 decoration-2">
-                    $30k - $50k
-                  </p>
-                  <p className="text-sm text-gray-400 mt-1">per month</p>
-                </div>
-                
-                {/* Divider */}
-                <div className="hidden md:flex items-center justify-center">
-                  <div className="w-px h-20 bg-gradient-to-b from-transparent via-gray-300 to-transparent" />
-                  <div className="mx-4">
-                    <svg className="w-8 h-8 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </div>
-                  <div className="w-px h-20 bg-gradient-to-b from-transparent via-gray-300 to-transparent" />
-                </div>
-                
-                {/* Junction price */}
-                <div className="text-center md:text-right">
-                  <p className="text-sm text-primary-600 font-semibold uppercase tracking-wider mb-2">Junction Partnership</p>
-                  <p className="text-4xl md:text-5xl font-black gradient-text">
-                    $10k
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1 font-medium">per month · all-inclusive</p>
-                </div>
-              </div>
-              
-              {/* Bottom CTA */}
-              <div className="mt-8 pt-8 border-t border-gray-100 text-center">
-                <p className="text-gray-600 mb-4">
-                  All 12 services. One team. One invoice. <span className="font-semibold text-gray-900">Unified execution.</span>
+              <div className="text-center">
+                <p className="text-sm text-primary-600 font-semibold uppercase tracking-wider mb-4">One Partnership</p>
+                <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
+                  All 12 services. One team. Unified execution.
+                </h3>
+                <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+                  We don&apos;t sell services piecemeal. We become your fractional marketing department — 
+                  strategy and execution unified under one roof.
                 </p>
                 <motion.a
                   href="#apply"

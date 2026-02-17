@@ -19,8 +19,8 @@ const painPoints = [
   },
   {
     icon: "🤖",
-    title: "Your competitors are using AI. You're not.",
-    description: "They're showing up in AI search results, featured snippets, and LLM citations. They're moving faster. The gap widens every month you wait.",
+    title: "AI is changing how people find businesses",
+    description: "ChatGPT, Perplexity, AI search — the discovery landscape is shifting. Brands that adapt early will capture the attention.",
     color: "from-rose-500 to-pink-500",
   },
   {
