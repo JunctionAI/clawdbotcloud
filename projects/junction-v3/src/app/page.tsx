@@ -37,9 +37,9 @@ const Footer = lazy(() => import('@/components/Footer'));
 // SOCIAL PROOF COMPONENTS - Dynamic imports
 // ========================================
 const LogoCloud = lazy(() => import('@/components/LogoCloud'));
-const Testimonials = lazy(() => import('@/components/Testimonials'));
+// const Testimonials = lazy(() => import('@/components/Testimonials')); // DISABLED: fabricated testimonials
 const TrustBadges = lazy(() => import('@/components/TrustBadges'));
-const FeaturedIn = lazy(() => import('@/components/FeaturedIn'));
+// const FeaturedIn = lazy(() => import('@/components/FeaturedIn')); // DISABLED: fake press mentions
 const ResultsMetrics = lazy(() => import('@/components/ResultsMetrics'));
 
 // ========================================
@@ -171,10 +171,10 @@ export default function Home() {
             <CaseStudy />
           </Suspense>
           
-          {/* SOCIAL PROOF #5: Testimonials - peer validation */}
-          <Suspense fallback={<SectionSkeleton />}>
+          {/* SOCIAL PROOF #5: Testimonials - DISABLED: remove fabricated testimonials */}
+          {/* <Suspense fallback={<SectionSkeleton />}>
             <Testimonials variant="carousel" />
-          </Suspense>
+          </Suspense> */}
           
           {/* SOCIAL PROOF #6: Featured in publications - DISABLED: remove fake press mentions */}
           {/* <Suspense fallback={<MarqueeSkeleton />}>

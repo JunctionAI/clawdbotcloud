@@ -808,15 +808,15 @@ export default function ServicesGrid() {
               {/* Bottom CTA */}
               <div className="mt-8 pt-8 border-t border-gray-100 text-center">
                 <p className="text-gray-600 mb-4">
-                  All 12 services. One team. One invoice. <span className="font-semibold text-gray-900">70% savings.</span>
+                  All 12 services. One team. One invoice. <span className="font-semibold text-gray-900">Unified execution.</span>
                 </p>
                 <motion.a
-                  href="#contact"
+                  href="#apply"
                   className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Start Your Partnership
+                  Apply to Work With Us
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>

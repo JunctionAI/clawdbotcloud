@@ -42,11 +42,7 @@ export default function CTA() {
           transition={{ duration: 0.5 }}
         >
           <span className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-10 border border-white/20">
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-            </span>
-            <span className="text-sm font-semibold text-white">Only 2 spots available this quarter</span>
+            <span className="text-sm font-semibold text-white">Now Accepting Applications</span>
           </span>
         </motion.div>
 
@@ -57,9 +53,9 @@ export default function CTA() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <span className="block">Ready to</span>
+          <span className="block">Work</span>
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Get in Touch?
+            With Us
           </span>
         </motion.h2>
 
@@ -67,10 +63,9 @@ export default function CTA() {
           className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.2 }}
         >
-          We work with businesses ready to evolve. Limited capacity ensures every 
-          partner gets the attention they deserve.
+          We&apos;re selective because depth matters. Every partner gets our full attention,
+          not a junior account manager who Googles your product before each call.
         </motion.p>
 
         {/* Form */}
@@ -108,7 +103,7 @@ export default function CTA() {
               className="w-full relative py-6 rounded-2xl font-bold text-lg text-white overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 hover:from-blue-500 hover:via-purple-500 hover:to-blue-500 transition-all duration-200 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40"
             >
               <span className="relative flex items-center justify-center gap-3">
-                Get in Touch
+                Submit Application
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

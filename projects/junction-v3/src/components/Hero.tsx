@@ -51,8 +51,8 @@ function StatCard({ value, suffix, label, sublabel, index }: {
   );
 }
 
-// Premium animated badge
-function ScarcityBadge() {
+// Premium animated badge - Boutique positioning
+function StatusBadge() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20, scale: 0.9 }}
@@ -61,17 +61,8 @@ function ScarcityBadge() {
       className="inline-flex items-center gap-3 bg-gradient-to-r from-primary-50/90 to-accent-50/90 backdrop-blur-md border border-primary-200/50 rounded-full px-6 py-3 mb-10 shadow-lg"
       whileHover={{ scale: 1.02 }}
     >
-      {/* Animated pulse dot */}
-      <span className="relative flex h-3 w-3">
-        <motion.span 
-          className="absolute inline-flex h-full w-full rounded-full bg-green-400"
-          animate={{ scale: [1, 1.5, 1], opacity: [0.75, 0, 0.75] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-        />
-        <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" />
-      </span>
       <span className="text-sm font-bold text-primary-700">
-        Limited Capacity — Only 2 Partnership Spots Remaining
+        By Application Only
       </span>
     </motion.div>
   );
@@ -113,14 +104,14 @@ export default function Hero() {
         }}
         className="relative max-w-7xl mx-auto px-6 py-20 text-center z-10"
       >
-        <ScarcityBadge />
+        <StatusBadge />
 
         {/* Main headline with split text animation */}
         <div className="mb-8">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 leading-[1.1] tracking-tight">
             <div className="overflow-hidden pb-2">
               <SplitText delay={0.3} staggerDelay={0.02}>
-                Evolve Your Business
+                AI-Native Marketing
               </SplitText>
             </div>
             <div className="overflow-hidden pb-2 mt-2">
@@ -130,7 +121,7 @@ export default function Hero() {
                 transition={{ delay: 0.6, duration: 0.8, ease: EASE.smooth }}
                 className="gradient-text block"
               >
-                At The Speed of AI
+                Operations
               </motion.span>
             </div>
           </h1>
@@ -144,8 +135,8 @@ export default function Hero() {
           className="max-w-3xl mx-auto mb-12"
         >
           <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
-            Your dedicated AI growth partner. Autonomous agents working 24/7 
-            synthesizing strategy into domination.
+            We build integrated AI marketing systems for select businesses.
+            Strategy, execution, and optimization — unified.
           </p>
         </motion.div>
 
@@ -180,7 +171,7 @@ export default function Hero() {
             
             {/* Text */}
             <span className="relative text-white flex items-center gap-2">
-              Apply for Partnership
+              Apply to Work With Us
               <motion.svg 
                 className="w-5 h-5" 
                 fill="none" 
@@ -200,7 +191,7 @@ export default function Hero() {
             strength={0.3}
           >
             <span className="flex items-center gap-2">
-              See How It Works
+              Our Approach
               <motion.svg 
                 className="w-5 h-5" 
                 fill="none" 
