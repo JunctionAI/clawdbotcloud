@@ -166,10 +166,10 @@ export default function Home() {
             <SectionDivider variant="gradient" />
           </Suspense>
           
-          {/* SOCIAL PROOF #4: Enhanced case study with metrics */}
-          <Suspense fallback={<SectionSkeleton />}>
+          {/* CASE STUDY: Disabled per Tom's request - still in progress */}
+          {/* <Suspense fallback={<SectionSkeleton />}>
             <CaseStudy />
-          </Suspense>
+          </Suspense> */}
           
           {/* SOCIAL PROOF #5: Testimonials - DISABLED: remove fabricated testimonials */}
           {/* <Suspense fallback={<SectionSkeleton />}>

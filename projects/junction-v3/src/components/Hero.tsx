@@ -111,7 +111,7 @@ export default function Hero() {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 leading-[1.1] tracking-tight">
             <div className="overflow-hidden pb-2">
               <SplitText delay={0.3} staggerDelay={0.02}>
-                AI-Native Marketing
+                Tom Hall-Taylor
               </SplitText>
             </div>
             <div className="overflow-hidden pb-2 mt-2">
@@ -119,9 +119,9 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.8, ease: EASE.smooth }}
-                className="gradient-text block"
+                className="gradient-text block text-4xl md:text-5xl lg:text-6xl"
               >
-                Operations
+                AI-Native Marketing Operations
               </motion.span>
             </div>
           </h1>
@@ -135,8 +135,8 @@ export default function Hero() {
           className="max-w-3xl mx-auto mb-12"
         >
           <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
-            We build integrated AI marketing systems for select businesses.
-            Strategy, execution, and optimization — unified.
+            Educator. Consultant. Selective partnerships only.<br />
+            I help brands operate at the cutting edge — building systems that work harder than any traditional agency ever could.
           </p>
         </motion.div>
 
@@ -209,9 +209,9 @@ export default function Hero() {
         {/* Stats grid with stagger animation */}
         <StaggerReveal staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
-            { value: 10, suffix: 'x', label: 'Productivity', sublabel: 'AI-Powered Output' },
-            { value: 24, suffix: '/7', label: 'Daily Optimization', sublabel: 'Not Monthly Reports' },
-            { value: 0, suffix: '∞', label: 'Iterations', sublabel: 'Unlimited Revisions' },
+            { value: 15, suffix: '+', label: 'Years Experience', sublabel: 'Marketing & Strategy' },
+            { value: 1, suffix: '', label: 'Partnership Slot', sublabel: 'Currently Available' },
+            { value: 100, suffix: '%', label: 'AI-Native', sublabel: 'Built for the Future' },
           ].map((stat, index) => (
             <StaggerItem key={index} direction="up">
               <StatCard {...stat} index={index} />

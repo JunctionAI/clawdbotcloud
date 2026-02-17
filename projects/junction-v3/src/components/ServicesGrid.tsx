@@ -155,10 +155,10 @@ const services = [
     accentColor: "#d946ef",
     illustration: "branding"
   },
-  // Wide - OpenCore
+  // Wide - OpenClaw
   {
-    id: "opencore",
-    title: "OpenCore Setup",
+    id: "OpenClaw",
+    title: "OpenClaw Setup",
     subtitle: "Deploy Your Own AI Infrastructure",
     description: "Custom autonomous systems tailored to your business operations.",
     expandedDescription: "We build and deploy AI agent systems that handle repetitive tasks, freeing your team to focus on high-value work.",
@@ -168,7 +168,7 @@ const services = [
     size: "wide",
     gradient: "from-cyan-500 to-blue-600",
     accentColor: "#06b6d4",
-    illustration: "opencore"
+    illustration: "OpenClaw"
   },
   // Standard - Training
   {
@@ -351,7 +351,7 @@ const ServiceIllustration = ({ type, className = "" }: { type: string; className
         <path d="M170 65 Q180 75 175 85" stroke="#d946ef" strokeWidth="6" strokeLinecap="round" transform="rotate(35 170 75)" />
       </svg>
     ),
-    opencore: (
+    OpenClaw: (
       <svg viewBox="0 0 200 200" className={className} fill="none">
         {/* Central AI core */}
         <circle cx="100" cy="100" r="30" stroke="#06b6d4" strokeWidth="4" fill="none" />

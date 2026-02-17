@@ -41,8 +41,9 @@ export default function CTA() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <span className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-10 border border-white/20">
-            <span className="text-sm font-semibold text-white">Now Accepting Applications</span>
+          <span className="inline-flex items-center gap-3 bg-emerald-500/20 backdrop-blur-sm rounded-full px-6 py-3 mb-10 border border-emerald-400/30">
+            <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+            <span className="text-sm font-semibold text-emerald-300">1 Partnership Slot Available</span>
           </span>
         </motion.div>
 
@@ -53,9 +54,9 @@ export default function CTA() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <span className="block">Work</span>
+          <span className="block">Let&apos;s</span>
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            With Us
+            Talk
           </span>
         </motion.h2>
 
@@ -64,8 +65,8 @@ export default function CTA() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
         >
-          We&apos;re selective because depth matters. Every partner gets our full attention,
-          not a junior account manager who Googles your product before each call.
+          I work with a small number of partners at any given time. 
+          This isn&apos;t about scale — it&apos;s about depth. If we work together, you get my full attention.
         </motion.p>
 
         {/* Form */}
