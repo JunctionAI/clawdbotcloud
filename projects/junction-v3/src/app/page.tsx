@@ -29,7 +29,7 @@ const AIAdvantage = lazy(() => import('@/components/AIAdvantage'));
 const HumanInLoop = lazy(() => import('@/components/HumanInLoop'));
 const TheModel = lazy(() => import('@/components/TheModel'));
 const AutonomyJourney = lazy(() => import('@/components/AutonomyJourney'));
-const CaseStudy = lazy(() => import('@/components/CaseStudy'));
+// const CaseStudy = lazy(() => import('@/components/CaseStudy')); // DISABLED: case study in progress
 const CTA = lazy(() => import('@/components/CTA'));
 const Footer = lazy(() => import('@/components/Footer'));
 
