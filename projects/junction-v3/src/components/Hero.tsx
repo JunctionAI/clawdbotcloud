@@ -210,7 +210,7 @@ export default function Hero() {
         <StaggerReveal staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
             { value: 15, suffix: '+', label: 'Years Experience', sublabel: 'Marketing & Strategy' },
-            { value: 1, suffix: '', label: 'Partnership Slot', sublabel: 'Currently Available' },
+            { value: 3, suffix: '', label: 'Spots Open', sublabel: 'Applications Reviewed Personally' },
             { value: 100, suffix: '%', label: 'AI-Native', sublabel: 'Built for the Future' },
           ].map((stat, index) => (
             <StaggerItem key={index} direction="up">

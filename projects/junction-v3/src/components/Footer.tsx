@@ -55,16 +55,13 @@ export default function Footer() {
 
           {/* Links */}
           <div className="flex items-center gap-8">
-            {['Privacy', 'Terms'].map((link) => (
-              <motion.a
-                key={link}
-                href={`#${link.toLowerCase()}`}
-                className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
-                whileHover={{ y: -2 }}
-              >
-                {link}
-              </motion.a>
-            ))}
+            <motion.a
+              href="mailto:tom@junctionmedia.ai"
+              className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
+              whileHover={{ y: -2 }}
+            >
+              tom@junctionmedia.ai
+            </motion.a>
           </div>
 
           {/* Copyright */}
@@ -90,7 +87,7 @@ export default function Footer() {
           viewport={{ once: true }}
           className="mt-8 text-center text-gray-600 text-sm"
         >
-          Built with AI. Driven by results.
+          Working with select clients who value craft over scale.
         </motion.p>
       </div>
     </footer>
