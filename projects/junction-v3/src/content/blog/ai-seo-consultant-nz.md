@@ -60,7 +60,7 @@ Matching your content to search intent is no longer optional — it's the founda
 
 ### 3. AI-Assisted Content at Scale (Done Right)
 
-There's a right way and a wrong way to use AI for SEO content.
+There's a right way and a wrong way to use AI for SEO content. For a fuller picture of how content marketing compounds, see the [content marketing NZ guide](/blog/content-marketing-nz).
 
 **Wrong way:** Generate 50 blog posts with ChatGPT, publish, hope for rankings. This used to work briefly. Now it's a fast track to Helpful Content penalties.
 
@@ -155,3 +155,7 @@ We work with a small number of NZ businesses. If you're serious about building o
 ---
 
 *Tom Hall-Taylor is an Auckland-based AI marketing consultant and fractional CMO. He works with select NZ businesses to build AI-native marketing operations. [Apply to work with him →](/#apply)*
+
+---
+
+**Related reading:** [SEO agency Auckland: why most are stuck in 2019](/blog/seo-agency-auckland) · [Content marketing NZ: the compounding strategy most businesses ignore](/blog/content-marketing-nz) · [Digital marketing strategy NZ: how to build one that compounds](/blog/digital-marketing-strategy-nz)

@@ -199,7 +199,7 @@ These are ad spend figures only — management and strategy are separate. And th
 - You need senior-level strategy, not just execution
 - You want AI systems built properly, not bolted on
 
-**The fractional model:** For many NZ businesses, the best answer is a fractional marketing lead who owns strategy and oversight, with in-house or contractor support for execution. Senior thinking at a fraction of the full-time cost.
+**The fractional model:** For many NZ businesses, the best answer is a [fractional marketing director](/blog/fractional-marketing-director-nz) who owns strategy and oversight, with in-house or contractor support for execution. Senior thinking at a fraction of the full-time cost.
 
 ---
 
@@ -216,3 +216,7 @@ That's what we build at Junction Media — not just a social presence, but a soc
 ---
 
 *Tom Hall-Taylor is an AI marketing consultant and fractional CMO based in Auckland, New Zealand. Junction Media works with select businesses to build AI-native marketing systems. [Apply to work with us](/#apply).*
+
+---
+
+**Related reading:** [Paid social advertising NZ: what actually works in 2026](/blog/paid-social-advertising-nz) · [Content marketing NZ: the compounding strategy most businesses ignore](/blog/content-marketing-nz) · [Digital marketing strategy NZ: how to build one that compounds](/blog/digital-marketing-strategy-nz)

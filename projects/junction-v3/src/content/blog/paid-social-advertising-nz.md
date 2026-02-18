@@ -185,3 +185,7 @@ Junction runs paid social for NZ businesses using an AI-native approach — fast
 We work as a fractional marketing partner, not a traditional retainer agency. That means you get senior strategic thinking without the bloated overhead.
 
 If you're spending money on paid social and not sure it's working, [let's talk](/#apply).
+
+---
+
+**Related reading:** [Google Ads Auckland: when to DIY, when to hire](/blog/google-ads-auckland-consultant) · [Performance marketing NZ: what it actually means](/blog/performance-marketing-nz) · [Conversion rate optimization NZ: turn your existing traffic into revenue](/blog/conversion-rate-optimization-nz)

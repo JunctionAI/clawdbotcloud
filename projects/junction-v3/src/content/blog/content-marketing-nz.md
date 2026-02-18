@@ -219,7 +219,7 @@ You don't need a complex system to start. Here's what matters:
 
 **Commit to a publishing cadence.** Once per week is better than twice per month. Twice per month is better than "whenever we can." Pick a cadence you can sustain for 12 months, not the one that sounds most impressive.
 
-**Spend 20% of your production time on distribution.** Every piece of content should be shared — email list, social, internal linking. Distribution is where most businesses fail.
+**Spend 20% of your production time on distribution.** Every piece of content should be shared — [email list](/blog/email-marketing-nz), social, internal linking. Distribution is where most businesses fail.
 
 **Measure at 90-day intervals, not weekly.** Weekly traffic numbers are noise. Quarterly trends are signal.
 
@@ -228,3 +228,7 @@ You don't need a complex system to start. Here's what matters:
 ---
 
 *Tom Hall-Taylor is an AI marketing consultant and fractional CMO based in Auckland, New Zealand. Junction Media builds AI-native content systems for select NZ businesses. If you're ready to build content that compounds — [apply to work with us](/#apply).*
+
+---
+
+**Related reading:** [AI SEO consultant NZ: what's changed and what works](/blog/ai-seo-consultant-nz) · [SEO agency Auckland: why most are stuck in 2019](/blog/seo-agency-auckland) · [Digital marketing strategy NZ: how to build one that compounds](/blog/digital-marketing-strategy-nz)

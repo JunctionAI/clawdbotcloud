@@ -11,7 +11,7 @@ author: "Tom Hall-Taylor"
 
 Most NZ businesses have heard of AI marketing. Most think it means using ChatGPT to write their social media captions.
 
-That's not AI marketing. That's a slightly faster copywriter.
+That's not AI marketing. That's a slightly faster copywriter. The real distinction is between [AI tools and AI systems](/blog/ai-systems-vs-ai-tools) — and agents sit firmly in the systems category.
 
 AI marketing agents are a different category entirely. They're autonomous systems that handle real marketing tasks — without being given step-by-step instructions every time. They observe, decide, act, and learn. And in 2026, they're not hypothetical. They're deployable. And the NZ businesses building them now are establishing compounding advantages that will be very difficult to compete against in 2–3 years.
 
@@ -132,3 +132,7 @@ The NZ businesses at the front of this are a small group. That's the opportunity
 ---
 
 **Tom Hall-Taylor** is an AI marketing consultant and fractional CMO based in Auckland, NZ. He builds AI agent systems for select NZ businesses. [Apply to work together →](/#apply)
+
+---
+
+**Related reading:** [5 AI marketing systems every NZ business should have](/blog/5-ai-marketing-systems-nz-businesses) · [Marketing automation Auckland: what's actually possible in 2026](/blog/marketing-automation-auckland) · [AI marketing for ecommerce NZ](/blog/ai-marketing-ecommerce-nz)

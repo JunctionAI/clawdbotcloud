@@ -108,7 +108,7 @@ This is a comparison worth making clearly:
 | Cost | $3-8k/month | $3-15k/month |
 | Best for | Strategy + direction | Execution of specific channels |
 
-Many businesses run a fractional marketing director *alongside* agencies — the director provides the strategic brief and oversight, the agencies execute it. This is often the best structure for NZ businesses at the $5M-$20M revenue range.
+Many businesses run a fractional marketing director *alongside* agencies — the director provides the strategic brief and oversight, the agencies execute it. This is often the best structure for NZ businesses at the $5M-$20M revenue range. For a detailed look at how these models compare, read the [AI marketing consultant vs. agency breakdown](/blog/ai-marketing-consultant-vs-agency-nz).
 
 ---
 
@@ -158,4 +158,4 @@ I work with 3-5 clients at any one time. If you're a NZ business ready to build 
 
 *[Apply to work with Tom →](/#apply)*
 
-*Related: [What is a Fractional CMO in NZ?](/blog/what-is-a-fractional-cmo-nz) | [How to hire a Fractional CMO in NZ](/blog/how-to-hire-fractional-cmo-nz)*
+*Related: [What is a Fractional CMO in NZ?](/blog/what-is-a-fractional-cmo-nz) | [How to hire a Fractional CMO in NZ](/blog/how-to-hire-fractional-cmo-nz) | [Digital marketing strategy NZ](/blog/digital-marketing-strategy-nz)*
