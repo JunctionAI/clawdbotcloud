@@ -123,6 +123,36 @@ export const viewport: Viewport = {
 };
 
 // ========================================
+// JSON-LD STRUCTURED DATA
+// ========================================
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Tom Hall-Taylor",
+  url: "https://www.junctionmedia.ai",
+  jobTitle: "AI-Native Marketing Operator",
+  description:
+    "Building AI marketing systems for select businesses. Strategy and execution, unified. By application only.",
+  email: "tom@junctionmedia.ai",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Auckland",
+    addressCountry: "NZ",
+  },
+  sameAs: [
+    "https://www.linkedin.com/in/tomhalltaylor",
+    "https://twitter.com/tomhalltaylor",
+  ],
+  knowsAbout: [
+    "AI Marketing Systems",
+    "Marketing Automation",
+    "Digital Marketing",
+    "AI Strategy",
+    "Growth Marketing",
+  ],
+};
+
+// ========================================
 // ROOT LAYOUT
 // ========================================
 export default function RootLayout({
@@ -133,6 +163,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
         {/* Preconnect to critical origins */}
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         

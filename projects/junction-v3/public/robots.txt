@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://junctionmedia.co.nz/sitemap.xml
+Sitemap: https://www.junctionmedia.ai/sitemap.xml

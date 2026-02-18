@@ -6,7 +6,7 @@ import { MetadataRoute } from 'next';
 // Automatically generates sitemap.xml for SEO
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://junctionmedia.co.nz';
+  const baseUrl = 'https://www.junctionmedia.ai';
   
   return [
     {
