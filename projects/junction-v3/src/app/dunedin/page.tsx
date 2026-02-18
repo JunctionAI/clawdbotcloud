@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+﻿import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -44,9 +44,9 @@ export default function DunedinPage() {
           <span className="text-gray-500">Dunedin</span>
         </h1>
         <p className="text-xl text-gray-600 leading-relaxed mb-8">
-          I&apos;m Tom Hall-Taylor — an NZ-based AI marketing consultant and fractional CMO. 
+          I&apos;m Tom Hall-Taylor â€” an NZ-based AI marketing consultant and fractional CMO. 
           I work with select Dunedin and Otago businesses to build marketing systems that 
-          compound over time — not campaigns that stop the moment the budget runs out.
+          compound over time â€” not campaigns that stop the moment the budget runs out.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
@@ -70,26 +70,26 @@ export default function DunedinPage() {
         <div className="grid sm:grid-cols-2 gap-6">
           {[
             {
-              title: 'Fractional CMO',
+              title: 'Fractional CMO', link: '/services/fractional-cmo',
               desc: 'Senior marketing strategy without a full-time hire. I embed in your business, own the marketing function, and drive results measured in revenue.'
             },
             {
-              title: 'AI Marketing Systems',
-              desc: 'Build AI-powered systems that handle content, ads, SEO, and reporting at scale — compounding advantage over time.'
+              title: 'AI Marketing Systems', link: '/services/ai-marketing-systems',
+              desc: 'Build AI-powered systems that handle content, ads, SEO, and reporting at scale â€” compounding advantage over time.'
             },
             {
-              title: 'Paid Advertising',
+              title: 'Paid Advertising', link: '/services/google-ads-nz',
               desc: 'Meta Ads and Google Ads managed with AI optimisation. Data-driven, not set-and-forget.'
             },
             {
-              title: 'Growth Strategy',
-              desc: 'Clear positioning, channel strategy, and 90-day roadmaps built around your business model — not a generic playbook.'
+              title: 'Growth Strategy', link: '/services/',
+              desc: 'Clear positioning, channel strategy, and 90-day roadmaps built around your business model â€” not a generic playbook.'
             },
           ].map((service) => (
-            <div key={service.title} className="p-6 border border-gray-100 rounded-2xl">
+            <Link key={service.title} href={service.link ?? '/#apply'} className="p-6 border border-gray-100 rounded-2xl hover:border-gray-400 transition-colors block">
               <h3 className="font-semibold text-gray-900 mb-2">{service.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">{service.desc}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -102,17 +102,17 @@ export default function DunedinPage() {
             Dunedin is one of New Zealand&apos;s most interesting business cities. The University of Otago 
             creates a constant pipeline of talent. The city has a punching-above-its-weight tech 
             scene, a thriving professional services sector, and businesses across manufacturing, 
-            tourism, agriculture, and health — many of which have been underserved by marketing 
+            tourism, agriculture, and health â€” many of which have been underserved by marketing 
             agencies focused on Auckland or offshore markets.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            I work with a maximum of 3–5 clients at any time. That constraint is deliberate — it&apos;s 
+            I work with a maximum of 3â€“5 clients at any time. That constraint is deliberate â€” it&apos;s 
             how I provide the kind of deep strategic involvement that actually changes outcomes. 
             You work directly with me, not an account manager in a 50-person agency machine.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            And because I&apos;ve built AI systems to handle execution — content production, reporting, 
-            ad optimisation — I can deliver what a full agency team delivers at a significantly 
+            And because I&apos;ve built AI systems to handle execution â€” content production, reporting, 
+            ad optimisation â€” I can deliver what a full agency team delivers at a significantly 
             lower cost. That matters in a regional market where every dollar has to work harder.
           </p>
         </div>
@@ -125,10 +125,10 @@ export default function DunedinPage() {
           <p className="text-3xl font-bold text-gray-900 mb-2">+30%</p>
           <p className="text-gray-500 text-sm mb-4">Above previous store record</p>
           <p className="text-gray-600 leading-relaxed">
-            Deep Blue Health — a New Zealand supplement brand — hit their best-ever revenue month 
+            Deep Blue Health â€” a New Zealand supplement brand â€” hit their best-ever revenue month 
             in November 2025. We built AI-native marketing systems spanning Google Ads, Meta Ads, 
             SEO, content, and customer support. The result: 30% above their previous all-time 
-            record — not from a lucky campaign, but from a compounding system.
+            record â€” not from a lucky campaign, but from a compounding system.
           </p>
         </div>
       </section>
@@ -143,20 +143,20 @@ export default function DunedinPage() {
           </p>
           <ul className="space-y-3 list-none">
             <li className="flex gap-3">
-              <span className="text-gray-400 shrink-0">—</span>
+              <span className="text-gray-400 shrink-0">â€”</span>
               <span><strong className="text-gray-900">University city dynamics:</strong> Large student population with distinct needs and behaviour patterns. Strong talent supply. High proportion of educated, digitally active consumers.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-gray-400 shrink-0">—</span>
+              <span className="text-gray-400 shrink-0">â€”</span>
               <span><strong className="text-gray-900">Tourism asset:</strong> Otago Peninsula, wildlife tourism, heritage buildings, and a distinctive cultural identity create genuine marketing differentiation for the right businesses.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-gray-400 shrink-0">—</span>
-              <span><strong className="text-gray-900">Tech and professional services growth:</strong> Dunedin has a growing reputation as a viable tech hub — lower cost base than Auckland, strong university pipeline, quality of life advantage.</span>
+              <span className="text-gray-400 shrink-0">â€”</span>
+              <span><strong className="text-gray-900">Tech and professional services growth:</strong> Dunedin has a growing reputation as a viable tech hub â€” lower cost base than Auckland, strong university pipeline, quality of life advantage.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-gray-400 shrink-0">—</span>
-              <span><strong className="text-gray-900">Strong community feel:</strong> Local trust and reputation carry significant weight. Being known in Dunedin&apos;s business community is a genuine competitive advantage — which means referral and relationship marketing performs exceptionally well.</span>
+              <span className="text-gray-400 shrink-0">â€”</span>
+              <span><strong className="text-gray-900">Strong community feel:</strong> Local trust and reputation carry significant weight. Being known in Dunedin&apos;s business community is a genuine competitive advantage â€” which means referral and relationship marketing performs exceptionally well.</span>
             </li>
           </ul>
         </div>
@@ -169,19 +169,19 @@ export default function DunedinPage() {
           {[
             {
               q: 'Are you based in Dunedin?',
-              a: 'I\'m based in Auckland but work with businesses across New Zealand, including Dunedin and the Otago region. Most work happens remotely — video calls, shared dashboards, and direct Slack/comms access. Geography isn\'t a constraint for modern marketing work.'
+              a: 'I\'m based in Auckland but work with businesses across New Zealand, including Dunedin and the Otago region. Most work happens remotely â€” video calls, shared dashboards, and direct Slack/comms access. Geography isn\'t a constraint for modern marketing work.'
             },
             {
               q: 'What does working with you look like?',
-              a: 'I work on monthly retainer with a 3-month minimum. We start with a deep-dive strategy session, then I build a 90-day roadmap and execute against it — with weekly check-ins and full visibility. You\'re not getting a report once a month; you\'re getting a partner in the business.'
+              a: 'I work on monthly retainer with a 3-month minimum. We start with a deep-dive strategy session, then I build a 90-day roadmap and execute against it â€” with weekly check-ins and full visibility. You\'re not getting a report once a month; you\'re getting a partner in the business.'
             },
             {
               q: 'How is this different from a Dunedin marketing agency?',
-              a: 'I run a lean operation with 3–5 clients at a time. No account managers, no overhead padding costs. You work directly with me — someone who has actually delivered results for NZ businesses. I also use AI systems for execution, which means you get agency-level output at a fraction of agency cost.'
+              a: 'I run a lean operation with 3â€“5 clients at a time. No account managers, no overhead padding costs. You work directly with me â€” someone who has actually delivered results for NZ businesses. I also use AI systems for execution, which means you get agency-level output at a fraction of agency cost.'
             },
             {
               q: 'What size of business is the right fit?',
-              a: 'Generally businesses with $500k–$10M+ in revenue that have a proven offer and are ready to scale marketing. Too early-stage and the strategic work is premature. But if you\'re past product-market fit and trying to build acquisition at scale — that\'s the conversation.'
+              a: 'Generally businesses with $500kâ€“$10M+ in revenue that have a proven offer and are ready to scale marketing. Too early-stage and the strategic work is premature. But if you\'re past product-market fit and trying to build acquisition at scale â€” that\'s the conversation.'
             },
           ].map((faq) => (
             <div key={faq.q}>
@@ -221,7 +221,7 @@ export default function DunedinPage() {
           <h2 className="text-3xl font-bold mb-4">Ready to build something real?</h2>
           <p className="text-gray-600 mb-8 max-w-lg mx-auto">
             I&apos;m selective about who I work with. If you&apos;re a Dunedin or Otago business serious 
-            about building AI-native marketing that compounds — apply below.
+            about building AI-native marketing that compounds â€” apply below.
           </p>
           <Link
             href="/#apply"
@@ -236,7 +236,7 @@ export default function DunedinPage() {
       {/* Footer */}
       <footer className="border-t border-gray-100 px-6 py-8">
         <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-sm">© 2026 Junction Media. Auckland, New Zealand.</p>
+          <p className="text-gray-500 text-sm">Â© 2026 Junction Media. Auckland, New Zealand.</p>
           <div className="flex gap-6">
             <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm transition-colors">Home</Link>
             <Link href="/blog" className="text-gray-400 hover:text-gray-600 text-sm transition-colors">Blog</Link>

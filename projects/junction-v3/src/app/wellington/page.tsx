@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+﻿import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -44,7 +44,7 @@ export default function WellingtonPage() {
           <span className="text-gray-500">Wellington</span>
         </h1>
         <p className="text-xl text-gray-600 leading-relaxed mb-8">
-          I&apos;m Tom Hall-Taylor — an AI marketing consultant and fractional CMO based in New Zealand. 
+          I&apos;m Tom Hall-Taylor â€” an AI marketing consultant and fractional CMO based in New Zealand. 
           I work with select Wellington businesses to build marketing operations that compound over time, 
           not campaigns that stop when the budget runs out.
         </p>
@@ -70,26 +70,26 @@ export default function WellingtonPage() {
         <div className="grid sm:grid-cols-2 gap-6">
           {[
             {
-              title: 'Fractional CMO',
+              title: 'Fractional CMO', link: '/services/fractional-cmo',
               desc: 'Senior marketing strategy without a full-time hire. I embed in your Wellington business, own the marketing function, and drive measurable results.'
             },
             {
-              title: 'AI Marketing Systems',
-              desc: 'Build AI-powered systems for content, ads, SEO, and reporting — so your marketing compounds month over month, not just campaign to campaign.'
+              title: 'AI Marketing Systems', link: '/services/ai-marketing-systems',
+              desc: 'Build AI-powered systems for content, ads, SEO, and reporting â€” so your marketing compounds month over month, not just campaign to campaign.'
             },
             {
-              title: 'Paid Advertising',
+              title: 'Paid Advertising', link: '/services/google-ads-nz',
               desc: 'Meta Ads and Google Ads with AI optimisation. Data-driven strategy, not set-and-forget management.'
             },
             {
-              title: 'Growth Strategy',
-              desc: 'Clear positioning, channel strategy, and 90-day roadmaps built around your Wellington business — not a generic playbook.'
+              title: 'Growth Strategy', link: '/services/',
+              desc: 'Clear positioning, channel strategy, and 90-day roadmaps built around your Wellington business â€” not a generic playbook.'
             },
           ].map((service) => (
-            <div key={service.title} className="p-6 border border-gray-100 rounded-2xl">
+            <Link key={service.title} href={service.link ?? '/#apply'} className="p-6 border border-gray-100 rounded-2xl hover:border-gray-400 transition-colors block">
               <h3 className="font-semibold text-gray-900 mb-2">{service.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">{service.desc}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -106,10 +106,10 @@ export default function WellingtonPage() {
           <p className="text-gray-600 leading-relaxed">
             The challenge: Wellington businesses often punch above their weight in quality, but 
             underinvest in marketing systems that would help them reach the right people consistently. 
-            The opportunity is there — most Wellington competitors are still running marketing the old way.
+            The opportunity is there â€” most Wellington competitors are still running marketing the old way.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            I work remotely with Wellington clients (and across NZ) — with weekly video check-ins 
+            I work remotely with Wellington clients (and across NZ) â€” with weekly video check-ins 
             and full visibility into what&apos;s happening. Geography doesn&apos;t limit the quality of the work.
           </p>
         </div>
@@ -138,7 +138,7 @@ export default function WellingtonPage() {
         </div>
         <p className="text-gray-500 text-sm mt-4">
           Based in Auckland. Working with businesses throughout New Zealand and beyond.{' '}
-          <Link href="/new-zealand" className="underline hover:text-gray-700">View NZ overview →</Link>
+          <Link href="/new-zealand" className="underline hover:text-gray-700">View NZ overview â†’</Link>
         </p>
       </section>
 
@@ -149,7 +149,7 @@ export default function WellingtonPage() {
           <p className="text-3xl font-bold text-gray-900 mb-2">+30%</p>
           <p className="text-gray-500 text-sm mb-4">Above previous store record</p>
           <p className="text-gray-600 leading-relaxed">
-            Deep Blue Health — a New Zealand supplement brand — hit their best revenue month ever 
+            Deep Blue Health â€” a New Zealand supplement brand â€” hit their best revenue month ever 
             in November 2025. We built AI-native marketing systems across Google Ads, Meta Ads, 
             SEO, content, and customer support. That was the result: 30% above their previous 
             all-time record.
@@ -165,11 +165,11 @@ export default function WellingtonPage() {
             'Wellington businesses spending on marketing without a clear strategic direction',
             'Founders who are doing the marketing themselves and need to hand it off properly',
             'Businesses scaling past $1M who need senior marketing leadership without a full-time hire',
-            'Companies that want to use AI seriously — not just as a buzzword',
+            'Companies that want to use AI seriously â€” not just as a buzzword',
             'Teams that have tried agencies and found them too expensive and too disconnected',
           ].map((item, i) => (
             <div key={i} className="flex gap-3">
-              <span className="text-gray-400 mt-0.5">→</span>
+              <span className="text-gray-400 mt-0.5">â†’</span>
               <p className="text-gray-600">{item}</p>
             </div>
           ))}
@@ -183,15 +183,15 @@ export default function WellingtonPage() {
           {[
             {
               q: 'Do you work with Wellington businesses remotely?',
-              a: 'Yes — I\'m Auckland-based but work with businesses across New Zealand. All strategy sessions are via video call, and day-to-day work happens asynchronously. The model works well remotely — many of my best client relationships have been entirely digital.'
+              a: 'Yes â€” I\'m Auckland-based but work with businesses across New Zealand. All strategy sessions are via video call, and day-to-day work happens asynchronously. The model works well remotely â€” many of my best client relationships have been entirely digital.'
             },
             {
               q: 'What does an engagement look like?',
-              a: 'Monthly retainer, starting with a strategy session to understand your business, goals, and current marketing state. From there I build a 90-day roadmap and execute against it — with weekly check-ins and full transparency into what\'s happening.'
+              a: 'Monthly retainer, starting with a strategy session to understand your business, goals, and current marketing state. From there I build a 90-day roadmap and execute against it â€” with weekly check-ins and full transparency into what\'s happening.'
             },
             {
               q: 'How is this different from a Wellington marketing agency?',
-              a: 'Agencies typically serve 20-50+ clients. I work with 3-5 at a time — maximum. You deal directly with me, not an account manager. And because I use AI systems for execution, I can deliver senior-level results at a lower cost than a full-service agency.'
+              a: 'Agencies typically serve 20-50+ clients. I work with 3-5 at a time â€” maximum. You deal directly with me, not an account manager. And because I use AI systems for execution, I can deliver senior-level results at a lower cost than a full-service agency.'
             },
             {
               q: 'What\'s the minimum commitment?',
@@ -212,7 +212,7 @@ export default function WellingtonPage() {
           <h2 className="text-3xl font-bold mb-4">Ready to build something real?</h2>
           <p className="text-gray-600 mb-8 max-w-lg mx-auto">
             I&apos;m selective about who I work with. If you&apos;re a Wellington or NZ business serious 
-            about building AI-native marketing — apply below.
+            about building AI-native marketing â€” apply below.
           </p>
           <Link
             href="/#apply"
@@ -227,7 +227,7 @@ export default function WellingtonPage() {
       {/* Footer */}
       <footer className="border-t border-gray-100 px-6 py-8">
         <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-sm">© 2026 Junction Media. Auckland, New Zealand.</p>
+          <p className="text-gray-500 text-sm">Â© 2026 Junction Media. Auckland, New Zealand.</p>
           <div className="flex gap-6">
             <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm transition-colors">Home</Link>
             <Link href="/auckland" className="text-gray-400 hover:text-gray-600 text-sm transition-colors">Auckland</Link>

@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+﻿import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -44,9 +44,9 @@ export default function QueenstownPage() {
           <span className="text-gray-500">Queenstown &amp; Otago</span>
         </h1>
         <p className="text-xl text-gray-600 leading-relaxed mb-8">
-          I&apos;m Tom Hall-Taylor — an NZ-based AI marketing consultant and fractional CMO.
+          I&apos;m Tom Hall-Taylor â€” an NZ-based AI marketing consultant and fractional CMO.
           I work with select Queenstown businesses in luxury hospitality, adventure tourism,
-          and property to build marketing operations that compound over time — matched to
+          and property to build marketing operations that compound over time â€” matched to
           the premium expectations of this market.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
@@ -71,26 +71,26 @@ export default function QueenstownPage() {
         <div className="grid sm:grid-cols-2 gap-6">
           {[
             {
-              title: 'Fractional CMO',
+              title: 'Fractional CMO', link: '/services/fractional-cmo',
               desc: 'Senior marketing strategy without a full-time hire. I embed in your business, own the marketing function, and drive results suited to a high-value clientele.'
             },
             {
-              title: 'AI Marketing Systems',
-              desc: 'Build AI-powered systems that handle content, ads, SEO, and reporting at scale — so your brand compounds authority, not just campaigns.'
+              title: 'AI Marketing Systems', link: '/services/ai-marketing-systems',
+              desc: 'Build AI-powered systems that handle content, ads, SEO, and reporting at scale â€” so your brand compounds authority, not just campaigns.'
             },
             {
-              title: 'Paid Advertising',
+              title: 'Paid Advertising', link: '/services/google-ads-nz',
               desc: 'Precision-targeted Meta Ads and Google Ads managed with AI optimisation. Reach the right high-intent travellers, investors, and buyers.'
             },
             {
-              title: 'Growth Strategy',
+              title: 'Growth Strategy', link: '/services/',
               desc: 'Clear positioning, channel strategy, and 90-day roadmaps built around your business and Queenstown\'s competitive luxury market.'
             },
           ].map((service) => (
-            <div key={service.title} className="p-6 border border-gray-100 rounded-2xl">
+            <Link key={service.title} href={service.link ?? '/#apply'} className="p-6 border border-gray-100 rounded-2xl hover:border-gray-400 transition-colors block">
               <h3 className="font-semibold text-gray-900 mb-2">{service.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">{service.desc}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -100,23 +100,23 @@ export default function QueenstownPage() {
         <h2 className="text-2xl font-bold mb-6">Why Queenstown Businesses Work With Me</h2>
         <div className="space-y-6">
           <p className="text-gray-600 leading-relaxed">
-            Queenstown is New Zealand&apos;s most internationally exposed market. The clientele — 
+            Queenstown is New Zealand&apos;s most internationally exposed market. The clientele â€” 
             wealthy international travellers, high-end property buyers, premium hospitality 
-            seekers — have sophisticated tastes and high expectations. Marketing in this 
+            seekers â€” have sophisticated tastes and high expectations. Marketing in this 
             environment isn&apos;t about volume; it&apos;s about precision, quality, and brand authority. 
             Generic agency output simply doesn&apos;t cut it here.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            I work with a maximum of 3–5 clients at any time. That deliberate cap means you 
-            deal directly with me — not an account manager — and you get marketing strategy 
+            I work with a maximum of 3â€“5 clients at any time. That deliberate cap means you 
+            deal directly with me â€” not an account manager â€” and you get marketing strategy 
             that&apos;s built around the specific dynamics of your business and Queenstown&apos;s 
             competitive luxury market. Whether you&apos;re a high-end lodge, an adventure 
             experience company, or a premium property development, the approach is customised, 
             not templated.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            By deploying AI systems for execution — content production, ad management, 
-            performance analytics — I give Queenstown businesses the marketing depth of a 
+            By deploying AI systems for execution â€” content production, ad management, 
+            performance analytics â€” I give Queenstown businesses the marketing depth of a 
             full team, at a cost that makes commercial sense. For hospitality and tourism 
             businesses where the margin on a premium booking is significant, getting the 
             marketing right has an outsized return.
@@ -131,7 +131,7 @@ export default function QueenstownPage() {
           <p className="text-3xl font-bold text-gray-900 mb-2">+30%</p>
           <p className="text-gray-500 text-sm mb-4">Above previous store record</p>
           <p className="text-gray-600 leading-relaxed">
-            Deep Blue Health — a New Zealand supplement brand — hit their best revenue month ever
+            Deep Blue Health â€” a New Zealand supplement brand â€” hit their best revenue month ever
             in November 2025. We built AI-native marketing systems across Google Ads, Meta Ads,
             SEO, content, and customer support. That was the result: 30% above their previous
             all-time record.
@@ -146,19 +146,19 @@ export default function QueenstownPage() {
           {[
             {
               q: 'Are you based in Queenstown?',
-              a: 'I\'m based in Auckland but work with businesses across New Zealand, including Queenstown and the wider Otago region. Most of our work happens remotely via video calls and shared systems — and I travel to Queenstown for strategy sessions when needed.'
+              a: 'I\'m based in Auckland but work with businesses across New Zealand, including Queenstown and the wider Otago region. Most of our work happens remotely via video calls and shared systems â€” and I travel to Queenstown for strategy sessions when needed.'
             },
             {
               q: 'Do you work with luxury and hospitality businesses specifically?',
-              a: 'Yes — Queenstown\'s market is distinct. I understand the dynamics of high-value tourism, premium hospitality, and the international buyer segment that defines this market. The marketing strategy reflects the premium nature of the clientele.'
+              a: 'Yes â€” Queenstown\'s market is distinct. I understand the dynamics of high-value tourism, premium hospitality, and the international buyer segment that defines this market. The marketing strategy reflects the premium nature of the clientele.'
             },
             {
               q: 'How is this different from a Queenstown marketing agency?',
-              a: 'I work with 3–5 clients at a time — not 30. You deal directly with me, not an account manager. And because I use AI systems for execution, the cost is lower without compromising quality. Think fractional CMO with an AI team behind it.'
+              a: 'I work with 3â€“5 clients at a time â€” not 30. You deal directly with me, not an account manager. And because I use AI systems for execution, the cost is lower without compromising quality. Think fractional CMO with an AI team behind it.'
             },
             {
               q: 'What\'s the minimum commitment?',
-              a: 'I work in 3-month minimum engagements. Marketing compounds over time — 30-day sprints don\'t build the systems and brand authority that actually change a business trajectory in a competitive market like Queenstown.'
+              a: 'I work in 3-month minimum engagements. Marketing compounds over time â€” 30-day sprints don\'t build the systems and brand authority that actually change a business trajectory in a competitive market like Queenstown.'
             },
           ].map((faq) => (
             <div key={faq.q}>
@@ -176,7 +176,7 @@ export default function QueenstownPage() {
           <p className="text-gray-600 mb-8 max-w-lg mx-auto">
             I&apos;m selective about who I work with. If you&apos;re a Queenstown business serious 
             about building AI-native marketing that matches the premium standard of this 
-            market — apply below.
+            market â€” apply below.
           </p>
           <Link
             href="/#apply"
@@ -191,7 +191,7 @@ export default function QueenstownPage() {
       {/* Footer */}
       <footer className="border-t border-gray-100 px-6 py-8">
         <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-sm">© 2026 Junction Media. Auckland, New Zealand.</p>
+          <p className="text-gray-500 text-sm">Â© 2026 Junction Media. Auckland, New Zealand.</p>
           <div className="flex gap-6">
             <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm transition-colors">Home</Link>
             <Link href="/blog" className="text-gray-400 hover:text-gray-600 text-sm transition-colors">Blog</Link>

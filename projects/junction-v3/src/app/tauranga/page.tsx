@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+﻿import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -44,7 +44,7 @@ export default function TaurangaPage() {
           <span className="text-gray-500">Tauranga</span>
         </h1>
         <p className="text-xl text-gray-600 leading-relaxed mb-8">
-          I&apos;m Tom Hall-Taylor — an NZ-based AI marketing consultant and fractional CMO. 
+          I&apos;m Tom Hall-Taylor â€” an NZ-based AI marketing consultant and fractional CMO. 
           I work with select Tauranga and Bay of Plenty businesses to build marketing operations 
           that compound over time, not campaigns that stop when the budget runs out.
         </p>
@@ -70,26 +70,26 @@ export default function TaurangaPage() {
         <div className="grid sm:grid-cols-2 gap-6">
           {[
             {
-              title: 'Fractional CMO',
+              title: 'Fractional CMO', link: '/services/fractional-cmo',
               desc: 'Senior marketing strategy without a full-time hire. I embed in your business, own the marketing function, and drive results.'
             },
             {
-              title: 'AI Marketing Systems',
-              desc: 'Build AI-powered systems that handle content, ads, SEO, and reporting at scale — so you compound, not just campaign.'
+              title: 'AI Marketing Systems', link: '/services/ai-marketing-systems',
+              desc: 'Build AI-powered systems that handle content, ads, SEO, and reporting at scale â€” so you compound, not just campaign.'
             },
             {
-              title: 'Paid Advertising',
+              title: 'Paid Advertising', link: '/services/google-ads-nz',
               desc: 'Meta Ads and Google Ads managed with AI optimisation. Data-driven, not set-and-forget.'
             },
             {
-              title: 'Growth Strategy',
-              desc: 'Clear positioning, channel strategy, and 90-day roadmaps built around your business — not a cookie-cutter playbook.'
+              title: 'Growth Strategy', link: '/services/',
+              desc: 'Clear positioning, channel strategy, and 90-day roadmaps built around your business â€” not a cookie-cutter playbook.'
             },
           ].map((service) => (
-            <div key={service.title} className="p-6 border border-gray-100 rounded-2xl">
+            <Link key={service.title} href={service.link ?? '/#apply'} className="p-6 border border-gray-100 rounded-2xl hover:border-gray-400 transition-colors block">
               <h3 className="font-semibold text-gray-900 mb-2">{service.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">{service.desc}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -99,25 +99,25 @@ export default function TaurangaPage() {
         <h2 className="text-2xl font-bold mb-6">Why Tauranga Businesses Work With Me</h2>
         <div className="space-y-6">
           <p className="text-gray-600 leading-relaxed">
-            Tauranga is one of New Zealand&apos;s fastest-growing cities — and it shows. The Bay of 
+            Tauranga is one of New Zealand&apos;s fastest-growing cities â€” and it shows. The Bay of 
             Plenty economy is diverse and dynamic: a world-class port, the global kiwifruit industry, 
             tourism, a growing tech and professional services sector, and a steady stream of 
             Auckland escapees bringing capital and ambition to the region.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            That growth creates opportunity — but it also creates competition. Businesses that 
+            That growth creates opportunity â€” but it also creates competition. Businesses that 
             were comfortable a few years ago are now competing against new entrants, online 
             challengers, and companies with proper marketing infrastructure. The ones who build 
             compounding marketing systems now will own their category in five years.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            I built Junction Media differently. I work with a maximum of 3–5 clients at any time. 
-            That cap is intentional — it&apos;s how I give each business the attention and strategic depth 
+            I built Junction Media differently. I work with a maximum of 3â€“5 clients at any time. 
+            That cap is intentional â€” it&apos;s how I give each business the attention and strategic depth 
             that actually moves the needle. You deal directly with me, not an account manager in a 
             large agency machine.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            And because I use AI systems for execution — content, reporting, ad management — I can 
+            And because I use AI systems for execution â€” content, reporting, ad management â€” I can 
             deliver what a 10-person agency delivers, at a fraction of the cost. That matters 
             especially in a regional market like Tauranga where marketing budgets are often tighter 
             and ROI expectations are higher.
@@ -132,7 +132,7 @@ export default function TaurangaPage() {
           <p className="text-3xl font-bold text-gray-900 mb-2">+30%</p>
           <p className="text-gray-500 text-sm mb-4">Above previous store record</p>
           <p className="text-gray-600 leading-relaxed">
-            Deep Blue Health — a New Zealand supplement brand — hit their best revenue month ever 
+            Deep Blue Health â€” a New Zealand supplement brand â€” hit their best revenue month ever 
             in November 2025. We built AI-native marketing systems across Google Ads, Meta Ads, 
             SEO, content, and customer support. That was the result: 30% above their previous 
             all-time record.
@@ -147,23 +147,23 @@ export default function TaurangaPage() {
           {[
             {
               q: 'Are you based in Tauranga?',
-              a: 'I\'m based in Auckland but work with businesses across New Zealand, including Tauranga and the wider Bay of Plenty region. Most of our work happens remotely via video calls and shared systems — location isn\'t a constraint for modern marketing strategy.'
+              a: 'I\'m based in Auckland but work with businesses across New Zealand, including Tauranga and the wider Bay of Plenty region. Most of our work happens remotely via video calls and shared systems â€” location isn\'t a constraint for modern marketing strategy.'
             },
             {
               q: 'What does an engagement look like?',
-              a: 'I work on monthly retainer. We start with a strategy session to understand your business, goals, and current marketing state. From there I build a 90-day roadmap and we execute against it — with weekly check-ins and full visibility into what\'s happening.'
+              a: 'I work on monthly retainer. We start with a strategy session to understand your business, goals, and current marketing state. From there I build a 90-day roadmap and we execute against it â€” with weekly check-ins and full visibility into what\'s happening.'
             },
             {
               q: 'How is this different from a Tauranga marketing agency?',
-              a: 'I work with 3–5 clients at a time — not 30. You deal directly with me, not an account manager. And because I use AI systems for execution, the cost is lower without compromising quality. Think fractional CMO with an AI team behind it.'
+              a: 'I work with 3â€“5 clients at a time â€” not 30. You deal directly with me, not an account manager. And because I use AI systems for execution, the cost is lower without compromising quality. Think fractional CMO with an AI team behind it.'
             },
             {
               q: 'What types of Tauranga businesses do you work with?',
-              a: 'I work best with businesses doing $1M–$20M in revenue — established enough to need real marketing leadership, but not yet at the scale of a large enterprise. That includes tourism and hospitality operators, agri-businesses and exporters, professional services firms, and consumer brands growing in the Bay of Plenty and beyond.'
+              a: 'I work best with businesses doing $1Mâ€“$20M in revenue â€” established enough to need real marketing leadership, but not yet at the scale of a large enterprise. That includes tourism and hospitality operators, agri-businesses and exporters, professional services firms, and consumer brands growing in the Bay of Plenty and beyond.'
             },
             {
               q: 'What\'s the minimum commitment?',
-              a: 'I work in 3-month minimum engagements. Marketing compounds over time — 30-day sprints don\'t build the systems that actually change a business.'
+              a: 'I work in 3-month minimum engagements. Marketing compounds over time â€” 30-day sprints don\'t build the systems that actually change a business.'
             },
           ].map((faq) => (
             <div key={faq.q}>
@@ -180,7 +180,7 @@ export default function TaurangaPage() {
           <h2 className="text-3xl font-bold mb-4">Ready to build something real?</h2>
           <p className="text-gray-600 mb-8 max-w-lg mx-auto">
             I&apos;m selective about who I work with. If you&apos;re a Tauranga or Bay of Plenty business 
-            serious about building AI-native marketing — apply below.
+            serious about building AI-native marketing â€” apply below.
           </p>
           <Link
             href="/#apply"
@@ -195,7 +195,7 @@ export default function TaurangaPage() {
       {/* Footer */}
       <footer className="border-t border-gray-100 px-6 py-8">
         <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-sm">© 2026 Junction Media. Auckland, New Zealand.</p>
+          <p className="text-gray-500 text-sm">Â© 2026 Junction Media. Auckland, New Zealand.</p>
           <div className="flex gap-6">
             <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm transition-colors">Home</Link>
             <Link href="/blog" className="text-gray-400 hover:text-gray-600 text-sm transition-colors">Blog</Link>

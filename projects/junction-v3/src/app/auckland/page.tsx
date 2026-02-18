@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+﻿import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -44,7 +44,7 @@ export default function AucklandPage() {
           <span className="text-gray-500">Auckland</span>
         </h1>
         <p className="text-xl text-gray-600 leading-relaxed mb-8">
-          I&apos;m Tom Hall-Taylor — an Auckland-based AI marketing consultant and fractional CMO. 
+          I&apos;m Tom Hall-Taylor â€” an Auckland-based AI marketing consultant and fractional CMO. 
           I work with select businesses to build marketing operations that compound over time, 
           not campaigns that stop when the budget runs out.
         </p>
@@ -70,26 +70,26 @@ export default function AucklandPage() {
         <div className="grid sm:grid-cols-2 gap-6">
           {[
             {
-              title: 'Fractional CMO',
+              title: 'Fractional CMO', link: '/services/fractional-cmo',
               desc: 'Senior marketing strategy without a full-time hire. I embed in your business, own the marketing function, and drive results.'
             },
             {
-              title: 'AI Marketing Systems',
-              desc: 'Build AI-powered systems that handle content, ads, SEO, and reporting at scale — so you compound, not just campaign.'
+              title: 'AI Marketing Systems', link: '/services/ai-marketing-systems',
+              desc: 'Build AI-powered systems that handle content, ads, SEO, and reporting at scale â€” so you compound, not just campaign.'
             },
             {
-              title: 'Paid Advertising',
+              title: 'Paid Advertising', link: '/services/google-ads-nz',
               desc: 'Meta Ads and Google Ads managed with AI optimisation. Data-driven, not set-and-forget.'
             },
             {
-              title: 'Growth Strategy',
-              desc: 'Clear positioning, channel strategy, and 90-day roadmaps built around your business — not a cookie-cutter playbook.'
+              title: 'Growth Strategy', link: '/services/',
+              desc: 'Clear positioning, channel strategy, and 90-day roadmaps built around your business â€” not a cookie-cutter playbook.'
             },
           ].map((service) => (
-            <div key={service.title} className="p-6 border border-gray-100 rounded-2xl">
+            <Link key={service.title} href={service.link ?? '/#apply'} className="p-6 border border-gray-100 rounded-2xl hover:border-gray-400 transition-colors block">
               <h3 className="font-semibold text-gray-900 mb-2">{service.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">{service.desc}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -104,12 +104,12 @@ export default function AucklandPage() {
             clients, moving too slow, charging too much for junior execution dressed up as senior strategy.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            I built Junction Media differently. I work with a maximum of 3–5 clients at any time. 
-            That cap is intentional — It&apos;s how I give each business the attention and strategic depth 
+            I built Junction Media differently. I work with a maximum of 3â€“5 clients at any time. 
+            That cap is intentional â€” It&apos;s how I give each business the attention and strategic depth 
             that actually moves the needle.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            And because I use AI systems for execution — content, reporting, ad management — I can 
+            And because I use AI systems for execution â€” content, reporting, ad management â€” I can 
             deliver what a 10-person agency delivers, at a fraction of the cost.
           </p>
         </div>
@@ -122,7 +122,7 @@ export default function AucklandPage() {
           <p className="text-3xl font-bold text-gray-900 mb-2">+30%</p>
           <p className="text-gray-500 text-sm mb-4">Above previous store record</p>
           <p className="text-gray-600 leading-relaxed">
-            Deep Blue Health — a New Zealand supplement brand — hit their best revenue month ever 
+            Deep Blue Health â€” a New Zealand supplement brand â€” hit their best revenue month ever 
             in November 2025. We built AI-native marketing systems across Google Ads, Meta Ads, 
             SEO, content, and customer support. That was the result: 30% above their previous 
             all-time record.
@@ -137,19 +137,19 @@ export default function AucklandPage() {
           {[
             {
               q: 'Do you only work with Auckland businesses?',
-              a: 'No — I work with businesses across New Zealand and beyond. But I\'m based in Auckland, understand the local market, and many of my clients are Auckland-based or have a strong Auckland presence.'
+              a: 'No â€” I work with businesses across New Zealand and beyond. But I\'m based in Auckland, understand the local market, and many of my clients are Auckland-based or have a strong Auckland presence.'
             },
             {
               q: 'What does an engagement look like?',
-              a: 'I work on monthly retainer. We start with a strategy session to understand your business, goals, and current marketing state. From there I build a 90-day roadmap and we execute against it — with weekly check-ins and full visibility into what\'s happening.'
+              a: 'I work on monthly retainer. We start with a strategy session to understand your business, goals, and current marketing state. From there I build a 90-day roadmap and we execute against it â€” with weekly check-ins and full visibility into what\'s happening.'
             },
             {
               q: 'How is this different from a marketing agency?',
-              a: 'I work with 3–5 clients at a time — not 30. You deal directly with me, not an account manager. And because I use AI systems for execution, the cost is lower without compromising quality. Think fractional CMO with an AI team behind it.'
+              a: 'I work with 3â€“5 clients at a time â€” not 30. You deal directly with me, not an account manager. And because I use AI systems for execution, the cost is lower without compromising quality. Think fractional CMO with an AI team behind it.'
             },
             {
               q: 'What\'s the minimum commitment?',
-              a: 'I work in 3-month minimum engagements. Marketing compounds over time — 30-day sprints don\'t build the systems that actually change a business.'
+              a: 'I work in 3-month minimum engagements. Marketing compounds over time â€” 30-day sprints don\'t build the systems that actually change a business.'
             },
           ].map((faq) => (
             <div key={faq.q}>
@@ -166,7 +166,7 @@ export default function AucklandPage() {
           <h2 className="text-3xl font-bold mb-4">Ready to build something real?</h2>
           <p className="text-gray-600 mb-8 max-w-lg mx-auto">
             I&apos;m selective about who I work with. If you&apos;re an Auckland or NZ business serious 
-            about building AI-native marketing — apply below.
+            about building AI-native marketing â€” apply below.
           </p>
           <Link
             href="/#apply"
@@ -181,7 +181,7 @@ export default function AucklandPage() {
       {/* Footer */}
       <footer className="border-t border-gray-100 px-6 py-8">
         <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-sm">© 2026 Junction Media. Auckland, New Zealand.</p>
+          <p className="text-gray-500 text-sm">Â© 2026 Junction Media. Auckland, New Zealand.</p>
           <div className="flex gap-6">
             <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm transition-colors">Home</Link>
             <Link href="/blog" className="text-gray-400 hover:text-gray-600 text-sm transition-colors">Blog</Link>
