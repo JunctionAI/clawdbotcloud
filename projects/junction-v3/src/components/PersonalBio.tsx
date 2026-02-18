@@ -19,6 +19,7 @@ export default function PersonalBio() {
   return (
     <section
       ref={ref}
+      id="about"
       className="relative py-32 overflow-hidden bg-gray-950"
     >
       {/* Subtle gradient blobs */}

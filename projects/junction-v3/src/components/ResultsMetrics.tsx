@@ -229,7 +229,7 @@ export default function ResultsMetrics({
 
   if (variant === 'hero') {
     return (
-      <section className={`py-32 relative overflow-hidden ${className}`} ref={containerRef}>
+      <section id="results" className={`py-32 relative overflow-hidden ${className}`} ref={containerRef}>
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-50" />
         

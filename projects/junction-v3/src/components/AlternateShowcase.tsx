@@ -28,6 +28,7 @@ export default function AlternateShowcase() {
   return (
     <section
       ref={ref}
+      id="work"
       className="relative py-32 overflow-hidden"
       style={{
         background: 'linear-gradient(135deg, #0a0f1e 0%, #0d1425 40%, #060810 100%)',

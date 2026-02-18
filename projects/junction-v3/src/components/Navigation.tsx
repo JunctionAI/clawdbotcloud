@@ -30,10 +30,10 @@ export default function Navigation() {
   }, []);
 
   const navItems = [
-    { href: '#pain-points', label: 'Why Us' },
-    { href: '#services', label: 'Services' },
-    { href: '#model', label: 'Our Model' },
+    { href: '#about', label: 'About' },
     { href: '#results', label: 'Results' },
+    { href: '#work', label: 'Work' },
+    { href: '#education', label: 'Content' },
   ];
 
   return (
