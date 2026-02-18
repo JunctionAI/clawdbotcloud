@@ -14,33 +14,20 @@ import ScrollProgress from '@/components/ScrollProgress';
 
 // ========================================
 // NON-CRITICAL (Below the fold) - Dynamic imports
-// Code split these to reduce initial bundle size
 // ========================================
 const SmoothScroll = lazy(() => import('@/components/SmoothScroll'));
 const FloatingShapes = lazy(() => import('@/components/FloatingShapes'));
-const LogoMarquee = lazy(() => 
-  import('@/components/MarqueeText').then(mod => ({ default: mod.LogoMarquee }))
-);
-const PainPoints = lazy(() => import('@/components/PainPoints'));
-const SectionDivider = lazy(() => import('@/components/SectionDivider'));
-const JunctionModel = lazy(() => import('@/components/JunctionModel'));
-const ServicesGrid = lazy(() => import('@/components/ServicesGrid'));
-const AIAdvantage = lazy(() => import('@/components/AIAdvantage'));
-const HumanInLoop = lazy(() => import('@/components/HumanInLoop'));
-const TheModel = lazy(() => import('@/components/TheModel'));
-const AutonomyJourney = lazy(() => import('@/components/AutonomyJourney'));
-// const CaseStudy = lazy(() => import('@/components/CaseStudy')); // DISABLED: case study in progress
-const CTA = lazy(() => import('@/components/CTA'));
-const Footer = lazy(() => import('@/components/Footer'));
 
-// ========================================
-// SOCIAL PROOF COMPONENTS - Dynamic imports
-// ========================================
-const LogoCloud = lazy(() => import('@/components/LogoCloud'));
-// const Testimonials = lazy(() => import('@/components/Testimonials')); // DISABLED: fabricated testimonials
-const TrustBadges = lazy(() => import('@/components/TrustBadges'));
-// const FeaturedIn = lazy(() => import('@/components/FeaturedIn')); // DISABLED: fake press mentions
+// New personal brand sections
+const PersonalBio = lazy(() => import('@/components/PersonalBio'));
+const AlternateShowcase = lazy(() => import('@/components/AlternateShowcase'));
+const EducationContent = lazy(() => import('@/components/EducationContent'));
+const WorkWithMe = lazy(() => import('@/components/WorkWithMe'));
+
+// Kept sections
 const ResultsMetrics = lazy(() => import('@/components/ResultsMetrics'));
+const HumanInLoop = lazy(() => import('@/components/HumanInLoop'));
+const Footer = lazy(() => import('@/components/Footer'));
 
 // ========================================
 // LOADING FALLBACKS
@@ -49,24 +36,6 @@ function SectionSkeleton({ height = 'h-96' }: { height?: string }) {
   return (
     <div className={`${height} w-full flex items-center justify-center`}>
       <div className="w-12 h-12 rounded-full border-4 border-blue-200 border-t-blue-500 animate-spin" />
-    </div>
-  );
-}
-
-function MarqueeSkeleton() {
-  return (
-    <div className="h-16 w-full bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100 animate-pulse border-y border-gray-100" />
-  );
-}
-
-function BadgesSkeleton() {
-  return (
-    <div className="py-12 border-y border-gray-100 bg-gray-50/50">
-      <div className="max-w-7xl mx-auto px-6 flex justify-center gap-8">
-        {[1, 2, 3, 4].map((i) => (
-          <div key={i} className="w-16 h-16 rounded-xl bg-gray-200 animate-pulse" />
-        ))}
-      </div>
     </div>
   );
 }
@@ -80,111 +49,59 @@ export default function Home() {
       <SmoothScroll>
         {/* Premium page loader */}
         <PageLoader />
-        
+
         {/* Scroll progress indicator */}
         <ScrollProgress />
-        
-        {/* Floating geometric shapes - lazy loaded */}
+
+        {/* Floating geometric shapes */}
         <Suspense fallback={null}>
           <FloatingShapes />
         </Suspense>
-        
+
         {/* Noise overlay for texture */}
         <NoiseOverlay />
-        
+
         <motion.main
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.5, ease: [0.215, 0.61, 0.355, 1] }}
           className="min-h-screen relative"
         >
-          {/* ABOVE THE FOLD - Critical */}
+          {/* 1. HERO - above the fold */}
           <Navigation />
           <Hero />
-          
-          {/* BELOW THE FOLD - Lazy loaded */}
-          <Suspense fallback={<MarqueeSkeleton />}>
-            <LogoMarquee className="border-y border-gray-100" />
+
+          {/* 2. PERSONAL BIO – Tom's background & story */}
+          <Suspense fallback={<SectionSkeleton height="h-[700px]" />}>
+            <PersonalBio />
           </Suspense>
-          
-          {/* SOCIAL PROOF #1: Client logos - immediate credibility */}
-          <Suspense fallback={<SectionSkeleton height="h-32" />}>
-            <LogoCloud variant="marquee" showTitle={true} />
+
+          {/* 3. RESULTS METRICS – real proof of work */}
+          <Suspense fallback={<SectionSkeleton height="h-[400px]" />}>
+            <ResultsMetrics />
           </Suspense>
-          
-          <Suspense fallback={<SectionSkeleton />}>
-            <PainPoints />
+
+          {/* 4. ALTERNATE SHOWCASE – creative proof */}
+          <Suspense fallback={<SectionSkeleton height="h-[700px]" />}>
+            <AlternateShowcase />
           </Suspense>
-          
-          <Suspense fallback={null}>
-            <SectionDivider variant="decorative" />
-          </Suspense>
-          
-          <Suspense fallback={<SectionSkeleton />}>
-            <JunctionModel />
-          </Suspense>
-          
-          <Suspense fallback={<SectionSkeleton height="h-[600px]" />}>
-            <ServicesGrid />
-          </Suspense>
-          
-          {/* SOCIAL PROOF #2: Trust badges - SIMPLIFIED: only legitimate claims */}
-          <Suspense fallback={<BadgesSkeleton />}>
-            <TrustBadges variant="horizontal" showSecurity={true} showAwards={false} />
-          </Suspense>
-          
-          <Suspense fallback={null}>
-            <SectionDivider variant="gradient" />
-          </Suspense>
-          
-          <Suspense fallback={<SectionSkeleton />}>
-            <AIAdvantage />
-          </Suspense>
-          
-          {/* SOCIAL PROOF #3: Results metrics - proof of capability */}
-          <Suspense fallback={<SectionSkeleton height="h-48" />}>
-            <ResultsMetrics variant="bar" showTitle={true} />
-          </Suspense>
-          
+
+          {/* 5. HUMAN IN LOOP – AI + human approach */}
           <Suspense fallback={<SectionSkeleton />}>
             <HumanInLoop />
           </Suspense>
-          
-          <Suspense fallback={null}>
-            <SectionDivider variant="decorative" />
+
+          {/* 6. EDUCATION & CONTENT – teaching thought leadership */}
+          <Suspense fallback={<SectionSkeleton height="h-[800px]" />}>
+            <EducationContent />
           </Suspense>
-          
-          <Suspense fallback={<SectionSkeleton />}>
-            <TheModel />
+
+          {/* 7. WORK WITH ME – consulting CTA */}
+          <Suspense fallback={<SectionSkeleton height="h-[600px]" />}>
+            <WorkWithMe />
           </Suspense>
-          
-          <Suspense fallback={<SectionSkeleton />}>
-            <AutonomyJourney />
-          </Suspense>
-          
-          <Suspense fallback={null}>
-            <SectionDivider variant="gradient" />
-          </Suspense>
-          
-          {/* CASE STUDY: Disabled per Tom's request - still in progress */}
-          {/* <Suspense fallback={<SectionSkeleton />}>
-            <CaseStudy />
-          </Suspense> */}
-          
-          {/* SOCIAL PROOF #5: Testimonials - DISABLED: remove fabricated testimonials */}
-          {/* <Suspense fallback={<SectionSkeleton />}>
-            <Testimonials variant="carousel" />
-          </Suspense> */}
-          
-          {/* SOCIAL PROOF #6: Featured in publications - DISABLED: remove fake press mentions */}
-          {/* <Suspense fallback={<MarqueeSkeleton />}>
-            <FeaturedIn variant="simple" />
-          </Suspense> */}
-          
-          <Suspense fallback={<SectionSkeleton height="h-64" />}>
-            <CTA />
-          </Suspense>
-          
+
+          {/* 7. FOOTER */}
           <Suspense fallback={<SectionSkeleton height="h-48" />}>
             <Footer />
           </Suspense>

@@ -26,24 +26,25 @@ const inter = Inter({
 export const metadata: Metadata = {
   // Basic Meta
   title: {
-    default: "Junction Media | AI-Powered Marketing That Moves The Needle",
-    template: "%s | Junction Media",
+    default: "Tom Hall-Taylor | AI-Native Marketing Operator",
+    template: "%s | Tom Hall-Taylor",
   },
   description:
-    "The marketing partner that actually moves the needle. AI agents executing 24/7 with senior human oversight. Limited partnerships available.",
+    "AI-native marketing systems for select businesses. Tom Hall-Taylor builds integrated AI marketing operations that create real competitive advantage. By application only.",
   keywords: [
-    "AI marketing agency",
-    "AI marketing",
-    "digital marketing",
-    "performance marketing",
-    "New Zealand marketing",
-    "AI agents",
-    "marketing automation",
-    "growth marketing",
+    "AI marketing operator",
+    "AI marketing systems",
+    "AI marketing New Zealand",
+    "fractional CMO Auckland",
+    "AI marketing consultant NZ",
+    "marketing automation NZ",
+    "AI-native marketing",
+    "Tom Hall-Taylor",
+    "Junction Media",
   ],
 
   // Canonical URL
-  metadataBase: new URL("https://junctionmedia.co.nz"),
+  metadataBase: new URL("https://www.junctionmedia.ai"),
   alternates: {
     canonical: "/",
   },
@@ -52,17 +53,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_NZ",
-    url: "https://junctionmedia.co.nz",
-    siteName: "Junction Media",
-    title: "Junction Media | AI-Powered Marketing",
+    url: "https://www.junctionmedia.ai",
+    siteName: "Tom Hall-Taylor",
+    title: "Tom Hall-Taylor | AI-Native Marketing Operator",
     description:
-      "AI agents + senior human strategists. Marketing that produces revenue, not just reports. 24/7 autonomous execution.",
+      "Building AI marketing systems for select businesses. Strategy and execution, unified. By application only.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Junction Media - AI-Powered Marketing",
+        alt: "Tom Hall-Taylor - AI-Native Marketing Operator",
         type: "image/png",
       },
     ],
@@ -71,11 +72,11 @@ export const metadata: Metadata = {
   // Twitter Card
   twitter: {
     card: "summary_large_image",
-    title: "Junction Media | AI-Powered Marketing",
+    title: "Tom Hall-Taylor | AI-Native Marketing Operator",
     description:
-      "AI agents + senior human strategists. Marketing that produces revenue, not just reports.",
+      "Building AI marketing systems for select businesses. Strategy and execution, unified.",
     images: ["/og-image.png"],
-    creator: "@junctionmedia",
+    creator: "@tomhalltaylor",
   },
 
   // Robots
@@ -102,8 +103,8 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
 
   // Additional meta
-  authors: [{ name: "Junction Media" }],
-  creator: "Junction Media",
+  authors: [{ name: "Tom Hall-Taylor" }],
+  creator: "Tom Hall-Taylor",
   publisher: "Junction Media",
   category: "Marketing",
 };
