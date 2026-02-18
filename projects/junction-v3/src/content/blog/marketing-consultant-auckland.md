@@ -42,7 +42,7 @@ Works across strategy, brand, channels, and execution. Good for businesses that 
 Expert in one discipline — SEO, Google Ads, Meta Ads, email, content. Strong for businesses with a specific channel problem. Risk: they'll often recommend their channel as the solution to every problem.
 
 ### Fractional CMO (Chief Marketing Officer)
-Senior-level strategic leadership on a part-time basis. Typically integrates deeply with the business, sets direction, manages execution, and is measured on business outcomes — not deliverables. Higher cost, higher leverage.
+Senior-level strategic leadership on a part-time basis. Typically integrates deeply with the business, sets direction, manages execution, and is measured on business outcomes — not deliverables. Higher cost, higher leverage. For a detailed breakdown, read [what is a fractional CMO in NZ](/blog/what-is-a-fractional-cmo-nz).
 
 ### AI Marketing Consultant
 Relatively new category. Builds AI-native marketing systems — content engines, autonomous agents, AI-driven SEO, predictive analytics. Especially relevant in 2025–2026 as AI changes how marketing operates. Not just using AI tools — building systems around them.
@@ -191,3 +191,7 @@ Finding the right marketing consultant in Auckland comes down to:
 5. **AI-native capability** is now table stakes, not a bonus
 
 The Auckland consultant market has noise. But the right fit — someone who understands your business, challenges your assumptions, and builds systems that compound — is worth the search.
+
+---
+
+**Related reading:** [How much does marketing cost in NZ? (2026 guide)](/blog/how-much-does-marketing-cost-nz) · [AI marketing consultant vs. agency: which is right for your NZ business?](/blog/ai-marketing-consultant-vs-agency-nz) · [Digital marketing consultant NZ: what they do and whether you need one](/blog/digital-marketing-consultant-nz)

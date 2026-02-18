@@ -192,4 +192,8 @@ If that's what you're looking for, [apply to work with me](/#apply).
 
 ---
 
-*Tom Hall-Taylor is an Auckland-based AI marketing operator and fractional CMO. He works with select NZ businesses on AI-native SEO and marketing systems. His work with Deep Blue Health produced a 30% beat on store sales records in November 2025.*
+*Tom Hall-Taylor is an Auckland-based AI marketing operator and fractional CMO. He works with select NZ businesses on AI-native SEO and marketing systems. His work with [Deep Blue Health](/blog/deep-blue-health-case-study) produced a 30% beat on store sales records in November 2025.*
+
+---
+
+**Related reading:** [AI SEO consultant NZ: what's changed and what works](/blog/ai-seo-consultant-nz) · [Content marketing NZ: the compounding strategy most businesses ignore](/blog/content-marketing-nz) · [Marketing consultant Auckland: what to expect and what to pay](/blog/marketing-consultant-auckland)

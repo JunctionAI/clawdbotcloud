@@ -6,7 +6,7 @@ keywords: ["email marketing NZ", "email marketing New Zealand", "email marketing
 author: "Tom Hall-Taylor"
 ---
 
-Every few years, a platform changes the rules and NZ businesses scramble. Facebook cut organic reach. Google updated its algorithm. TikTok might disappear. The businesses that survive these shifts have one thing in common: they built an email list.
+Every few years, a platform changes the rules and NZ businesses scramble. Facebook cut organic reach. Google updated its algorithm. TikTok might disappear. The businesses that survive these shifts have one thing in common: they built an email list. Email is the owned-audience layer that makes every other channel — [paid social](/blog/paid-social-advertising-nz), [content](/blog/content-marketing-nz), SEO — more valuable.
 
 Email is the only marketing channel you actually own. No algorithm controls who sees your message. No platform can pull the rug. No policy change wipes out your audience overnight. When you send an email to 10,000 subscribers, 10,000 people get it — your delivery isn't throttled to push you toward paid spend.
 
@@ -156,3 +156,7 @@ If you're serious about building email as a proper revenue channel — with AI-n
 ---
 
 *Tom Hall-Taylor is an AI-native marketing consultant and fractional CMO working with select NZ businesses. If you're ready to build email marketing that compounds, [apply to work together](/#apply).*
+
+---
+
+**Related reading:** [Marketing automation Auckland: what AI actually makes possible](/blog/marketing-automation-auckland) · [Lead generation NZ: the AI-native approach that works](/blog/lead-generation-nz) · [Digital marketing strategy NZ: how to build one that compounds](/blog/digital-marketing-strategy-nz)

@@ -56,7 +56,7 @@ AI changes the economics here dramatically. Producing high-quality, search-optim
 
 The compounding effect is real: content published today will still be generating leads in two years. Ads stop working the moment you stop paying.
 
-**NZ benchmark:** Businesses that commit to a serious SEO and content strategy for 12+ months typically see organic leads representing 40–60% of total pipeline within 18 months. The first 6 months feel slow. Month 7–24 feels like a machine turned on.
+**NZ benchmark:** Businesses that commit to a serious SEO and [content marketing](/blog/content-marketing-nz) strategy for 12+ months typically see organic leads representing 40–60% of total pipeline within 18 months. The first 6 months feel slow. Month 7–24 feels like a machine turned on.
 
 ### 2. LinkedIn Outbound With AI Personalisation
 
@@ -148,3 +148,7 @@ If you want to see how this framework applies to your specific business, you can
 *Tom Hall-Taylor is the founder of Junction Media — an AI-native marketing consultancy working with select NZ businesses. He specialises in building lead generation systems for NZ SMBs using AI infrastructure, organic content, and B2B outbound strategy. Junction Media works with a maximum of 3–5 clients at any time.*
 
 [Apply to work with Tom →](/#apply)
+
+---
+
+**Related reading:** [B2B marketing NZ: what works and how to build a pipeline that converts](/blog/b2b-marketing-nz) · [Conversion rate optimization NZ: turn your existing traffic into revenue](/blog/conversion-rate-optimization-nz) · [Email marketing NZ: the complete 2026 guide](/blog/email-marketing-nz)

@@ -157,7 +157,7 @@ No — and trying to be is one of the most common mistakes NZ businesses make. P
 
 **Should I do SEO or paid ads first?**
 
-If you have a 6–12 month runway and a solid website, start with SEO — it compounds. If you need leads in the next 30 days, paid ads are faster. Ideally, you do both: paid ads to generate near-term leads while SEO builds in the background. But if budget is limited, the order matters: SEO first for most established businesses; paid first for businesses with urgent revenue needs.
+If you have a 6–12 month runway and a solid website, start with SEO — it compounds. See [AI SEO consultant NZ](/blog/ai-seo-consultant-nz) for what a modern approach looks like. If you need leads in the next 30 days, paid ads are faster. Ideally, you do both: paid ads to generate near-term leads while SEO builds in the background. But if budget is limited, the order matters: SEO first for most established businesses; paid first for businesses with urgent revenue needs.
 
 ---
 
@@ -176,3 +176,7 @@ The hybrid model — a fractional marketing strategist who builds the system whi
 At Junction Media, we build digital marketing strategies for NZ businesses who are serious about compounding their results over time. We work with a small number of partners — typically 3–5 at once — so every client gets genuine attention, not junior execution.
 
 If you're at the point where you want to stop restarting and start compounding, [apply to work with us](/#apply).
+
+---
+
+**Related reading:** [Growth marketing NZ: the system-first approach to scaling](/blog/growth-marketing-nz) · [Content marketing NZ: the compounding strategy most businesses ignore](/blog/content-marketing-nz) · [AI systems vs AI tools: the distinction worth thousands per month](/blog/ai-systems-vs-ai-tools)

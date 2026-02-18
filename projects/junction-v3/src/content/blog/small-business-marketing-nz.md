@@ -133,7 +133,7 @@ This doesn't require software or complexity. A spreadsheet and a calendar remind
 
 **TikTok/Instagram Reels:** High time investment, unpredictable reach, algorithm-dependent. Worth exploring once you have the basics in place — not as a primary channel when you're resource-constrained.
 
-**SEO from scratch:** SEO compounds over 6–18 months. It's genuinely valuable long-term, but it won't help you get clients next month. Unless you can commit to consistent content for a year, defer this until you have more resources or hire someone who specialises in it.
+**SEO from scratch:** SEO compounds over 6–18 months. It's genuinely valuable long-term, but it won't help you get clients next month. Unless you can commit to consistent content for a year, defer this until you have more resources or hire someone who specialises in it. When you're ready, see the [AI SEO consultant guide](/blog/ai-seo-consultant-nz) for what good looks like.
 
 **Paid ads without a proven offer:** Google Ads and Meta Ads can scale what's already working. They can't save a broken offer or a website that doesn't convert. Get the fundamentals right first.
 
@@ -188,3 +188,7 @@ If you'd like to talk through what this looks like for your specific business, [
 ---
 
 *Junction Media works with a small number of NZ businesses to build AI-powered marketing systems that run with less manual effort. If that's what you're looking for, [learn more about how we work](https://www.junctionmedia.ai).*
+
+---
+
+**Related reading:** [How much does marketing cost in NZ?](/blog/how-much-does-marketing-cost-nz) · [Digital marketing strategy NZ: how to build one that compounds](/blog/digital-marketing-strategy-nz) · [What is a fractional CMO and why NZ businesses are hiring them](/blog/what-is-a-fractional-cmo-nz)
