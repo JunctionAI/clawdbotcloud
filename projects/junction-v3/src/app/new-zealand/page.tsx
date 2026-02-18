@@ -136,6 +136,12 @@ export default function NewZealandPage() {
             { city: 'Dunedin', link: '/dunedin' },
             { city: 'Palmerston North', link: '/palmerston-north' },
             { city: 'Napier', link: '/napier' },
+            { city: 'Rotorua', link: '/rotorua' },
+            { city: 'Whangarei', link: '/whangarei' },
+            { city: 'New Plymouth', link: '/new-plymouth' },
+            { city: 'Nelson', link: '/nelson' },
+            { city: 'Queenstown', link: '/queenstown' },
+            { city: 'Invercargill', link: '/invercargill' },
           ].map(({ city, link }) => (
             <div key={city} className="p-4 border border-gray-100 rounded-xl text-center">
               {link ? (
