@@ -129,6 +129,16 @@ const services = [
     cta: 'Learn more →',
     highlight: false,
   },
+  {
+    title: 'Marketing Automation NZ',
+    slug: '/services/marketing-automation-nz',
+    tagline: 'AI-powered lead nurture and CRM automation for NZ businesses.',
+    description:
+      'End-to-end marketing automation — AI email sequences, CRM integration, behaviour-triggered flows, and lead nurture that converts prospects into customers 24/7. From $800/month.',
+    includes: ['AI email sequences', 'CRM integration', 'Behaviour triggers', 'Lead scoring & nurture'],
+    cta: 'Learn more →',
+    highlight: false,
+  },
 ]
 
 export default function ServicesPage() {
