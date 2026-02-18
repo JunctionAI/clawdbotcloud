@@ -53,7 +53,7 @@ Many NZ businesses hand their Google Ads account to an agency and check in once 
 Effective performance marketing requires testing — different audiences, creative angles, offers, landing pages. Most NZ campaigns run one or two creative variants and draw conclusions after 2 weeks of data. That's not enough signal to make good decisions.
 
 **5. No landing page alignment**  
-The ad promises X. The landing page delivers Y. The customer bounces. You blame the campaign. The campaign wasn't the problem.
+The ad promises X. The landing page delivers Y. The customer bounces. You blame the campaign. The campaign wasn't the problem. [Conversion rate optimization](/blog/conversion-rate-optimization-nz) fixes this before you scale spend.
 
 ## What Actual Performance Marketing Looks Like in 2026
 
@@ -153,3 +153,7 @@ If you're spending money on paid marketing in NZ and not seeing it connect clear
 ---
 
 *Tom Hall-Taylor works with NZ businesses on performance marketing and AI-native growth systems. Based in Auckland. Selective by design.*
+
+---
+
+**Related reading:** [Google Ads Auckland: when to DIY, when to hire](/blog/google-ads-auckland-consultant) · [Paid social advertising NZ: what actually works in 2026](/blog/paid-social-advertising-nz) · [Conversion rate optimization NZ: turn your existing traffic into revenue](/blog/conversion-rate-optimization-nz)

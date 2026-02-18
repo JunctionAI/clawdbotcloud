@@ -38,7 +38,7 @@ The classic growth marketing framework — Acquisition, Activation, Retention, R
 
 In NZ, the highest-ROI acquisition channels are:
 
-- **Organic Search (SEO):** Content that ranks for NZ-specific searches drives inbound leads with no ongoing cost. A blog post that ranks #1 for "AI marketing consultant Auckland" generates leads in perpetuity. This is the primary acquisition channel for relationship-intensive B2B businesses in NZ.
+- **Organic Search (SEO):** Content that ranks for NZ-specific searches drives inbound leads with no ongoing cost. A blog post that ranks #1 for "AI marketing consultant Auckland" generates leads in perpetuity. This is the primary acquisition channel for relationship-intensive B2B businesses in NZ. See the [AI SEO consultant NZ guide](/blog/ai-seo-consultant-nz) for how to build this properly.
 
 - **Referral Networks:** Because NZ is small, a warm introduction is worth 10 cold contacts. Systematizing referrals — not just hoping for them — is a growth lever most NZ businesses underuse. Ask satisfied clients directly. Build partner relationships. Make referring you easy.
 
@@ -158,3 +158,7 @@ If you're ready to build the system rather than run the campaign, [apply to work
 ---
 
 *Tom Hall-Taylor is the founder of Junction Media, an AI-native marketing consultancy working with select NZ businesses. Based in Auckland.*
+
+---
+
+**Related reading:** [Digital marketing strategy NZ: how to build one that compounds](/blog/digital-marketing-strategy-nz) · [Conversion rate optimization NZ: turn your existing traffic into revenue](/blog/conversion-rate-optimization-nz) · [AI systems vs AI tools: the distinction worth thousands per month](/blog/ai-systems-vs-ai-tools)

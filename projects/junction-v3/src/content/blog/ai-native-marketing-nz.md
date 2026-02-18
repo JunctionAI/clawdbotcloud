@@ -61,7 +61,7 @@ Paid advertising is where AI-native approaches create the most visible results f
 - Budget allocation logic (shift spend toward what's working, pull from what's not, automatically)
 - Anomaly alerting (catch problems before they become expensive)
 
-Deep Blue Health — a NZ health supplement brand I work with — saw a **30% revenue increase against their store record** within months of implementing an AI-native ad system. The product didn't change. The distribution didn't change. The system did.
+[Deep Blue Health](/blog/deep-blue-health-case-study) — a NZ health supplement brand I work with — saw a **30% revenue increase against their store record** within months of implementing an AI-native ad system. The product didn't change. The distribution didn't change. The system did.
 
 ### 4. Communication Automation
 Customer lifecycle communication at scale — done well — requires AI:
@@ -132,3 +132,7 @@ If you're thinking about building an AI-native marketing operation and want to t
 ---
 
 *Tom Hall-Taylor is an AI-native marketing operator based in Auckland, New Zealand. He works with a small number of NZ businesses at a time, building marketing systems that compound.*
+
+---
+
+**Related reading:** [AI systems vs AI tools: the distinction worth thousands per month](/blog/ai-systems-vs-ai-tools) · [5 AI marketing systems every NZ business should have](/blog/5-ai-marketing-systems-nz-businesses) · [Marketing AI agents for NZ businesses](/blog/marketing-ai-agent-nz)

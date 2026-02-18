@@ -51,7 +51,7 @@ Removing friction — the single step that would make it easier to say yes — o
 
 ### 3. Misalignment Between Offer and Audience
 
-Ads and landing pages that don't align produce low conversion rates by design. If someone clicks "marketing consultant Auckland" and lands on a generic homepage about your full suite of services, you've immediately broken the intent match. They searched for a specific answer and got a brochure.
+Ads and landing pages that don't align produce low conversion rates by design. If someone clicks "marketing consultant Auckland" and lands on a generic homepage about your full suite of services, you've immediately broken the intent match. This is one reason [Google Ads campaigns](/blog/google-ads-auckland-consultant) need dedicated landing pages — not homepages. They searched for a specific answer and got a brochure.
 
 Message match — ensuring the language in your ad exactly mirrors the language on your landing page — is one of the highest-leverage CRO levers available. It costs nothing to fix.
 
@@ -158,3 +158,7 @@ If that's interesting, [apply to work with us](/#apply).
 ---
 
 *Tom Hall-Taylor is the founder of Junction Media, an AI-native marketing consultancy working with select NZ businesses. Based in Auckland.*
+
+---
+
+**Related reading:** [Google Ads Auckland: when to DIY, when to hire](/blog/google-ads-auckland-consultant) · [Paid social advertising NZ: what actually works in 2026](/blog/paid-social-advertising-nz) · [Lead generation NZ: the AI-native approach that works](/blog/lead-generation-nz)

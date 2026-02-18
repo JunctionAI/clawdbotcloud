@@ -49,7 +49,7 @@ New Zealand has no shortage of digital marketing agencies. Auckland alone has do
 
 The range in quality is significant. At the top end, you'll find agencies with genuine expertise, transparent pricing, and clients willing to refer them. At the bottom, you'll find rebadged freelancers, inflated retainers, and vanity metrics dressed up as strategy.
 
-For most NZ businesses — particularly those in the $1M–$20M revenue range — the agency model raises a practical question: are you paying for a team you need, or a structure you don't?
+For most NZ businesses — particularly those in the $1M–$20M revenue range — the agency model raises a practical question: are you paying for a team you need, or a structure you don't? See the [marketing cost guide](/blog/how-much-does-marketing-cost-nz) for a real breakdown of what different models actually cost.
 
 ---
 
@@ -128,6 +128,10 @@ What we do: build AI-native marketing systems — integrated strategy, content, 
 If you want to understand our model before applying, read [how we work differently from traditional agencies](/blog/ai-marketing-consultant-vs-agency-nz) or see our take on [what AI-native marketing actually means](/blog/ai-native-marketing-nz).
 
 When you're ready, [apply to work with us](/#apply).
+
+---
+
+**Related reading:** [How much does marketing cost in NZ?](/blog/how-much-does-marketing-cost-nz) · [Digital marketing consultant NZ: what they do and whether you need one](/blog/digital-marketing-consultant-nz) · [What is a fractional CMO in NZ?](/blog/what-is-a-fractional-cmo-nz)
 
 ---
 

@@ -60,7 +60,7 @@ Your goal: move identified prospects from "aware" to "actively evaluating."
 **What works:**
 - Case studies with real, specific numbers
 - Long-form content that addresses real objections (not generic "how to" posts)
-- Email nurture sequences that deliver genuine insight
+- [Email nurture sequences](/blog/email-marketing-nz) that deliver genuine insight
 - Webinars and events with value-first positioning
 - One-to-one LinkedIn outreach (personalised, not templated)
 
@@ -241,3 +241,7 @@ The fundamentals:
 B2B marketing in NZ isn't about cracking some secret code. It's about building genuine authority, maintaining relationships, and being visible and credible when your prospect is finally ready to make a move.
 
 That takes time — but it compounds.
+
+---
+
+**Related reading:** [Lead generation NZ: the AI-native approach that works](/blog/lead-generation-nz) · [Content marketing NZ: the compounding strategy most businesses ignore](/blog/content-marketing-nz) · [Digital marketing strategy NZ: how to build one that compounds](/blog/digital-marketing-strategy-nz)

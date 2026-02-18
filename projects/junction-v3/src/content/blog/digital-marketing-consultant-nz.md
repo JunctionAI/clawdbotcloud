@@ -190,4 +190,8 @@ If you're still researching, read our breakdown of [AI marketing systems vs trad
 
 ---
 
+**Related reading:** [Marketing consultant Auckland: what to expect and what to pay](/blog/marketing-consultant-auckland) · [What is a fractional CMO in NZ?](/blog/what-is-a-fractional-cmo-nz) · [How much does marketing cost in NZ?](/blog/how-much-does-marketing-cost-nz)
+
+---
+
 *Tom Hall-Taylor is the founder of Junction Media, an AI-native marketing consultancy working with select NZ businesses. He specialises in building integrated marketing systems that compound over time.*
