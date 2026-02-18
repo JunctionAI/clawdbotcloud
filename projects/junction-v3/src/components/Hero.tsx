@@ -186,7 +186,7 @@ export default function Hero() {
           </MagneticButton>
           
           <MagneticButton 
-            href="#model"
+            href="#about"
             className="group px-10 py-5 rounded-full text-gray-700 font-bold text-lg border-2 border-gray-300 hover:border-primary-400 hover:bg-primary-50/50 transition-all bg-white/80 backdrop-blur-sm"
             strength={0.3}
           >

@@ -320,7 +320,7 @@ export default function ResultsMetrics({
           transition={{ delay: 0.8, duration: 0.6 }}
         >
           <p className="text-gray-500 mb-6">
-            Ready to see what we can do for your business?
+            Interested in building something real?
           </p>
           <motion.a
             href="#apply"
@@ -328,7 +328,7 @@ export default function ResultsMetrics({
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-600 text-white font-bold rounded-full shadow-lg shadow-primary-500/30 hover:shadow-xl hover:shadow-primary-500/40 transition-all"
           >
-            Get Your Growth Audit
+            Apply to Work With Me
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
