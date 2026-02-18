@@ -1,6 +1,16 @@
 {
   "activities": [
     {
+      "id": "act-033",
+      "timestamp": "2026-02-19T09:02:00+13:00",
+      "agent": "fury",
+      "type": "standup",
+      "message": "Thursday morning standup — Day 10 sprint. MASSIVE overnight Junction build: 99+ commits, 121 pages, 75 blog posts, 9 service pages, 11 industry verticals — ALL NOT LIVE (GitHub push blocked). IRD Day 10 overdue CRITICAL. ALTERNATE gorilla competition: 15 clips done, post-production guide ready, March 1 deadline. Top priorities: GitHub push (5 min), GoDaddy DNS (2 min), IRD payment, gorilla edit session (2.5h).",
+      "priority": "critical",
+      "project": "mission-control",
+      "deliverables": ["data/mission-control/standups/2026-02-19-morning.json"]
+    },
+    {
       "id": "act-032",
       "timestamp": "2026-02-18T09:00:00+13:00",
       "agent": "fury",
