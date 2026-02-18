@@ -1,6 +1,6 @@
 # MEMORY.md — Long-Term Memory
 
-*Last updated: 2026-02-15 (Weekly Review)*
+*Last updated: 2026-02-18 (Daily Sync)*
 
 ---
 
@@ -42,22 +42,44 @@ Tom's message to the team:
 
 ## Active Projects
 
-### Junction Media (Priority)
-- **Domain:** junctionmedia.ai
-- **Positioning:** AI-powered agency, $10k/month minimum
-- **Team:** Junction Lead, Junction Dev, Junction Content
-- **Key insight:** Case studies + speed = closes deals
-- **Content workflow:** Questions → Voice note → Script → Higgsfield → Ships
+### Junction Media (PIVOTED Feb 17-18)
+- **Domain:** junctionmedia.ai → www.junctionmedia.ai (Vercel, live)
+- **PIVOT:** No longer standalone agency hunting clients. Now = service delivery engine
+- **Positioning:** Tom Hall-Taylor personal brand — AI-Native Marketing Operator, boutique (3 clients max)
+- **Clients:** ALTERNATE (primary test case), DBH, PG Investments
+- **Site:** V2 live — 22+ pages, 18+ SEO blog posts, 4 city landing pages (Auckland/Wellington/Christchurch/Hamilton/Tauranga)
+- **Pending (Tom):** GoDaddy DNS apex → Vercel A record 76.76.21.21, GitHub push (60+ commits), social handles confirmation, DBH testimonial, 15+ yrs experience stat verify
 
-### ALTERNATE (AI Film)
-- Sci-fi film, AI-generated
-- Release: Feb 14 or 15, 2026
-- Blocked on video generation speed (Seedance 2 access pending)
+### ALTERNATE (MAJOR PIVOT Feb 18 — Full Brand/Business)
+- **PIVOT:** No longer just a film. Now a 3-pillar brand/business
+  1. **Films** — AI-generated films, competitions (Higgsfield gorilla entry)
+  2. **Events & Community** — AI creativity events, community building
+  3. **Products/Merch** — Physical merch from film items, eCom store
+- **Domain:** alternate.film (AVAILABLE, recommended) — register ASAP
+- **Tech:** Shopify + Printful
+- **Partner:** Zach — 50/50 (to be formalised)
+- **Gorilla Competition:** All 15 Higgsfield clips DONE (Kling 3.0, 720p, 5s each). Deadline ~March 1, 2026. Next: download from higgsfield.ai/create/video, edit, submit
+- **Build-in-Public:** 5 episode scripts complete, logo brief ready
+- **Store:** Blocked by Shopify $39/mo (payment crisis). Workaround: Shopify 3-day free trial available
+- **Content strategy:** Documenting ALTERNATE build = Junction's marketing simultaneously
 
 ### Deep Blue Health
 - Vietnamese market focus
 - Products: Deer Blood, Liquid Calcium, Ginkgo Biloba
-- Video filming: Friday Feb 14
+- Video filming: Friday Feb 14 (completed)
+- DBH hours: Mon-Fri 2-6pm (no pings)
+
+### Conway Terminal (web4.ai) — Installed Feb 18
+- MCP server for AI agents: Linux sandboxes, USDC payments, domain reg
+- API Key: cnwy_k_Ya3LNK9o0NZxNCeFtz9Y-0U3e-s9w3wi
+- Wallet: 0x25b00B17b50ef0a958263941d23183eE7E1Ad3ff (Base network)
+- Needs $10 USDC to activate credits. Test script: scripts/test-conway.js
+
+### Payment Crisis (Day 9+ as of Feb 18)
+- **IRD payment: CRITICAL** — 7+ days overdue, tax authority, penalty risk
+- Figma: 9 days overdue
+- Miro: 10 days overdue
+- **Tomorrow priority:** IRD FIRST
 
 ---
 
@@ -109,6 +131,14 @@ Tom's message to the team:
 - **DBH filming happened** — Vietnamese influencer content captured Feb 14
 - **Protocol failure identified:** No weekend throttling, no pre-auth system
 - **Next step:** Build pre-authorization protocols for autonomous execution
+
+### Feb 17-18, 2026 — The Pivot
+- Created TOM-MANIFESTO.md and TOM-VISION-2026.md
+- **Major pivot:** NOT building agency. Max 3 projects. Three-layer model (DBH safety / Junction esteem / apps creation)
+- **ALTERNATE → Full brand** (Films + Events + Merch) with Junction as service engine
+- **Junction V2 shipped** — 22+ pages, personal brand, 18 blog posts — all deployed autonomous
+- **Conway Terminal installed** — web4.ai MCP tool, needs $10 USDC to go live
+- **Tom vulnerable moment noted** (addiction, negative self-talk Feb 17 evening) — handle with care
 
 ---
 

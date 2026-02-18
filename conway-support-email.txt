@@ -1,0 +1,20 @@
+Hi Conway Terminal team,
+
+I'm a paying customer using the Conway Terminal MCP (API key: cnwy_k_Ya3LNK9o0NZxNCeFtz9Y-0U3e-s9w3wi, wallet: 0x25b00B17b50ef0a958263941d23183eE7E1Ad3ff).
+
+I attempted to top up my Conway credits tonight but unfortunately sent ETH on unsupported networks instead of USDC on Base. This was due to confusion navigating the crypto interface. I understand this is my error, but I'm reaching out to ask if you're able to manually credit my account given the funds are now sitting in your wallet address.
+
+Transactions sent to 0x25b00B17b50ef0a958263941d23183eE7E1Ad3ff:
+
+1. Arbitrum ETH (~$0.01): https://arbiscan.io/tx/0x93a33375ff2e1ac97b823b458c74f44112a8e27d588708073aefcfdaae12562e
+2. Arbitrum ETH (~$20): https://arbiscan.io/tx/0xe7c9e78cd27a4d816f0b9c3adf0d4d2c0281561704802fb403b544b578ad489d
+3. Ethereum mainnet ETH (~$8): https://etherscan.io/tx/0x91b4957d1b1f0dc9ad14af64444b80f1ce88649b068768207f4639fd844910b1
+
+Total: approximately $28 USD in ETH across Ethereum mainnet and Arbitrum.
+
+I'm keen to get started with Conway Terminal and am sending the correct amount (USDC on Base) separately. Any credit or goodwill gesture would be greatly appreciated but I understand if it's not possible given the network constraints.
+
+Thanks for building something genuinely exciting.
+
+Tom Hall-Taylor
+tom@junctionmedia.ai

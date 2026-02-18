@@ -134,6 +134,8 @@ export default function NewZealandPage() {
             { city: 'Hamilton', link: '/hamilton' },
             { city: 'Tauranga', link: '/tauranga' },
             { city: 'Dunedin', link: '/dunedin' },
+            { city: 'Palmerston North', link: '/palmerston-north' },
+            { city: 'Napier', link: '/napier' },
           ].map(({ city, link }) => (
             <div key={city} className="p-4 border border-gray-100 rounded-xl text-center">
               {link ? (

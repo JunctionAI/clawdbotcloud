@@ -1,0 +1,11 @@
+aevalsrc=0.05*sin(2*PI*60*t):d=15:s=44100[wind1];
+aevalsrc=0.05*sin(2*PI*60*t):d=15:s=44100[wind2base];
+aevalsrc=if(between(mod(t,2),0,0.3),0.4*sin(2*PI*80*t),0):d=15:s=44100[perc1];
+aevalsrc=0.07*sin(2*PI*60*t):d=15:s=44100[wind3base];
+aevalsrc=if(between(mod(t,1.5),0,0.4),0.6*sin(2*PI*100*t),0):d=15:s=44100[perc2];
+aevalsrc=0.08*sin(2*PI*40*t):d=15:s=44100[rumble];
+aevalsrc=0.03*sin(2*PI*60*t)*max(0,(10-t)/10):d=10:s=44100[wind4];
+aevalsrc=0.3*sin(2*PI*120*t)+0.2*sin(2*PI*240*t)+0.1*sin(2*PI*360*t):d=5:s=44100[swell];
+[wind2base][perc1]amix=inputs=2:duration=first[seg2];
+[wind3base][perc2]amix=inputs=2:duration=first[seg3];
+[wind1][seg2][seg3][rumble][wind4][swell]concat=n=6:v=0:a=1[aout]
