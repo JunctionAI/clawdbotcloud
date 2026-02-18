@@ -119,6 +119,16 @@ const services = [
     cta: 'Learn more →',
     highlight: false,
   },
+  {
+    title: 'Web Design NZ',
+    slug: '/services/web-design-nz',
+    tagline: 'Conversion-focused websites built to generate leads.',
+    description:
+      'Web design and development for NZ businesses built on Next.js or Webflow. Mobile-first, performance-optimised, and designed around converting visitors — not just impressing them. From $3,000 one-off or included in the full partnership.',
+    includes: ['Conversion-first strategy', 'Next.js or Webflow build', 'Mobile-first design', 'SEO foundation built in'],
+    cta: 'Learn more →',
+    highlight: false,
+  },
 ]
 
 export default function ServicesPage() {

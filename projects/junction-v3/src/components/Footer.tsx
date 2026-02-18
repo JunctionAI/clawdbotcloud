@@ -54,13 +54,27 @@ export default function Footer() {
           </motion.a>
 
           {/* Links */}
-          <div className="flex items-center gap-8">
+          <div className="flex flex-wrap items-center gap-6">
             <motion.a
               href="mailto:tom@junctionmedia.ai"
               className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
               whileHover={{ y: -2 }}
             >
               tom@junctionmedia.ai
+            </motion.a>
+            <motion.a
+              href="/privacy-policy"
+              className="text-gray-500 hover:text-gray-300 transition-colors text-sm"
+              whileHover={{ y: -2 }}
+            >
+              Privacy Policy
+            </motion.a>
+            <motion.a
+              href="/terms"
+              className="text-gray-500 hover:text-gray-300 transition-colors text-sm"
+              whileHover={{ y: -2 }}
+            >
+              Terms
             </motion.a>
           </div>
 
