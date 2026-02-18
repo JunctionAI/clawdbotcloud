@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { trackEvent } from '@/components/Analytics';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -112,6 +113,7 @@ function ApplicationForm() {
     );
 
     window.location.href = `mailto:tom@junctionmedia.ai?subject=${subject}&body=${body}`;
+    trackEvent('apply_form_submit', { business: form.business, revenue: form.revenue });
     setStatus('submitted');
   };
 

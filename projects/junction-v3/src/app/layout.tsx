@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/animations/CustomCursor";
+import { GoogleAnalytics } from "@/components/Analytics";
 
 // ========================================
 // FONT OPTIMIZATION
@@ -265,6 +266,8 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} antialiased`}>
+        {/* Google Analytics 4 — activates when NEXT_PUBLIC_GA4_ID is set */}
+        <GoogleAnalytics />
         {/* Premium custom cursor (desktop only) */}
         <CustomCursor />
         {children}
