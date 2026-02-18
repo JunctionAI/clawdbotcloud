@@ -139,6 +139,33 @@ Subtitle: "Reality is just a glitch."
 
 ---
 
+## GENERATION STATUS — February 18, 2026
+
+**All 15 clips generated on Higgsfield using Kling 3.0** ✅
+
+| Shot | Description | Status | Media Asset ID |
+|------|-------------|--------|----------------|
+| Shot 1 | ESTABLISH (aerial drone) | ✅ COMPLETED | In history |
+| Shot 2 | GORILLA CLOSE-UP | ✅ COMPLETED | In history |
+| Shot 3 | SOLDIERS ADVANCE | ✅ COMPLETED | In history |
+| Shot 4 | FIRST CONTACT | ✅ COMPLETED | bf4f9d7e... |
+| Shot 5a | CHAOS MONTAGE Cut 1 (rifles) | ✅ COMPLETED | 2611a41e... |
+| Shot 5b | CHAOS MONTAGE Cut 2 (bird's eye) | ✅ COMPLETED | 10bb486c... |
+| Shot 5c | CHAOS MONTAGE Cut 3 (hands) | ✅ COMPLETED | 6cb0b44e... |
+| Shot 6 | THE TIDE TURNS | ✅ COMPLETED | f7de12d1... |
+| Shot 7 | GORILLA ROAR | ✅ COMPLETED | 44d2b09a... |
+| Shot 8 | LAST STAND | ✅ COMPLETED | b382dd7b... |
+| Shot 9a | DEVASTATION Cut 1 (crane) | ✅ COMPLETED | e28b7c73... |
+| Shot 9b | DEVASTATION Cut 2 (ground) | ✅ COMPLETED | 405bbe37... |
+| Shot 10 | THE AFTERMATH | ✅ COMPLETED | acd88d47... |
+| Shot 11 | FINAL CLOSE-UP | ✅ COMPLETED | 0ab67f64... |
+| Shot 12 | TITLE CARD (dark void) | ✅ COMPLETED | 9ee23465... |
+
+**Settings used:** Kling 3.0 / 720p / 16:9 / 5s each
+**Note:** Shot 12 is a cinematic dark void — ALTERNATE title text needs to be added in post-production
+
+---
+
 ## PRODUCTION NOTES
 
 ### Tools Needed

@@ -132,7 +132,7 @@ export default function NewZealandPage() {
             { city: 'Wellington', link: '/wellington' },
             { city: 'Christchurch', link: '/christchurch' },
             { city: 'Hamilton', link: '/hamilton' },
-            { city: 'Tauranga', link: null },
+            { city: 'Tauranga', link: '/tauranga' },
             { city: 'Dunedin', link: null },
           ].map(({ city, link }) => (
             <div key={city} className="p-4 border border-gray-100 rounded-xl text-center">
