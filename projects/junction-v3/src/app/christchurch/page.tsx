@@ -2,23 +2,23 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'AI Marketing Consultant Wellington | Fractional CMO Wellington | Junction Media',
-  description: 'Wellington AI marketing consultant and fractional CMO. Tom Hall-Taylor works with select Wellington businesses to build AI-native marketing operations that compound over time. Auckland-based, serving Wellington and NZ-wide.',
-  keywords: 'AI marketing consultant Wellington, fractional CMO Wellington, marketing consultant Wellington, digital marketing Wellington, AI marketing Wellington, marketing agency Wellington, marketing strategist Wellington, outsourced CMO Wellington',
+  title: 'AI Marketing Consultant Christchurch | Fractional CMO Christchurch | Junction Media',
+  description: 'Christchurch AI marketing consultant and fractional CMO. Tom Hall-Taylor works with select Christchurch businesses to build AI-native marketing operations that compound over time. Auckland-based, serving Christchurch and NZ-wide.',
+  keywords: 'AI marketing consultant Christchurch, fractional CMO Christchurch, marketing consultant Christchurch, digital marketing Christchurch, AI marketing Christchurch, marketing agency Christchurch, marketing strategist Christchurch, outsourced CMO Christchurch',
   openGraph: {
-    title: 'AI Marketing Consultant Wellington | Tom Hall-Taylor | Junction Media',
-    description: 'Wellington AI marketing consultant. Fractional CMO for select businesses ready to build AI-native marketing operations that compound over time.',
-    url: 'https://www.junctionmedia.ai/wellington',
+    title: 'AI Marketing Consultant Christchurch | Tom Hall-Taylor | Junction Media',
+    description: 'Christchurch AI marketing consultant. Fractional CMO for select businesses ready to build AI-native marketing operations that compound over time.',
+    url: 'https://www.junctionmedia.ai/christchurch',
     siteName: 'Junction Media',
     locale: 'en_NZ',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.junctionmedia.ai/wellington',
+    canonical: 'https://www.junctionmedia.ai/christchurch',
   },
 }
 
-export default function WellingtonPage() {
+export default function ChristchurchPage() {
   return (
     <main className="min-h-screen bg-white text-gray-900">
       {/* Navigation */}
@@ -37,15 +37,15 @@ export default function WellingtonPage() {
       {/* Hero */}
       <section className="max-w-3xl mx-auto px-6 pt-20 pb-16">
         <p className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">
-          Wellington, New Zealand
+          Christchurch, New Zealand
         </p>
         <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-6">
           AI Marketing Consultant<br />
-          <span className="text-gray-500">Wellington</span>
+          <span className="text-gray-500">Christchurch</span>
         </h1>
         <p className="text-xl text-gray-600 leading-relaxed mb-8">
           I&apos;m Tom Hall-Taylor — an AI marketing consultant and fractional CMO based in New Zealand. 
-          I work with select Wellington businesses to build marketing operations that compound over time, 
+          I work with select Christchurch businesses to build marketing operations that compound over time, 
           not campaigns that stop when the budget runs out.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
@@ -66,12 +66,12 @@ export default function WellingtonPage() {
 
       {/* What I Do */}
       <section className="max-w-3xl mx-auto px-6 py-16 border-t border-gray-100">
-        <h2 className="text-2xl font-bold mb-8">What I Do for Wellington Businesses</h2>
+        <h2 className="text-2xl font-bold mb-8">What I Do for Christchurch Businesses</h2>
         <div className="grid sm:grid-cols-2 gap-6">
           {[
             {
               title: 'Fractional CMO',
-              desc: 'Senior marketing strategy without a full-time hire. I embed in your Wellington business, own the marketing function, and drive measurable results.'
+              desc: 'Senior marketing strategy without a full-time hire. I embed in your Christchurch business, own the marketing function, and drive measurable results.'
             },
             {
               title: 'AI Marketing Systems',
@@ -83,7 +83,7 @@ export default function WellingtonPage() {
             },
             {
               title: 'Growth Strategy',
-              desc: 'Clear positioning, channel strategy, and 90-day roadmaps built around your Wellington business — not a generic playbook.'
+              desc: 'Clear positioning, channel strategy, and 90-day roadmaps built around your Christchurch business — not a generic playbook.'
             },
           ].map((service) => (
             <div key={service.title} className="p-6 border border-gray-100 rounded-2xl">
@@ -94,23 +94,25 @@ export default function WellingtonPage() {
         </div>
       </section>
 
-      {/* Wellington Context */}
+      {/* Christchurch Context */}
       <section className="max-w-3xl mx-auto px-6 py-16 border-t border-gray-100">
-        <h2 className="text-2xl font-bold mb-6">Wellington Businesses Are in a Unique Position</h2>
+        <h2 className="text-2xl font-bold mb-6">Christchurch&apos;s Marketing Moment</h2>
         <div className="space-y-6">
           <p className="text-gray-600 leading-relaxed">
-            Wellington has a concentrated, educated, and digitally-savvy market. Government, tech, 
-            professional services, hospitality, and retail businesses all compete for attention in a 
-            relatively small but high-value pool of consumers and businesses.
+            Christchurch is in a genuinely exciting phase. Post-rebuild momentum, a growing tech 
+            sector, a thriving food and hospitality scene, and a manufacturing base that punches 
+            above its weight nationally. The city is moving fast — but most businesses&apos; marketing 
+            hasn&apos;t kept up with the pace.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            The challenge: Wellington businesses often punch above their weight in quality, but 
-            underinvest in marketing systems that would help them reach the right people consistently. 
-            The opportunity is there — most Wellington competitors are still running marketing the old way.
+            The opportunity: Christchurch has a strong local economy and a population that actively 
+            supports local businesses. But reaching them consistently — with the right message, 
+            at the right time — requires systems, not just social posts and the occasional ad campaign.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            I work remotely with Wellington clients (and across NZ) — with weekly video check-ins 
-            and full visibility into what&apos;s happening. Geography doesn&apos;t limit the quality of the work.
+            I work remotely with Christchurch clients — with weekly video check-ins and full 
+            visibility into everything. The best marketing partnerships I&apos;ve had have been remote. 
+            Distance doesn&apos;t limit depth of work.
           </p>
         </div>
       </section>
@@ -162,7 +164,7 @@ export default function WellingtonPage() {
         <h2 className="text-2xl font-bold mb-8">Who This Is For</h2>
         <div className="space-y-4">
           {[
-            'Wellington businesses spending on marketing without a clear strategic direction',
+            'Christchurch businesses spending on marketing without a clear strategic direction',
             'Founders who are doing the marketing themselves and need to hand it off properly',
             'Businesses scaling past $1M who need senior marketing leadership without a full-time hire',
             'Companies that want to use AI seriously — not just as a buzzword',
@@ -182,7 +184,7 @@ export default function WellingtonPage() {
         <div className="space-y-8">
           {[
             {
-              q: 'Do you work with Wellington businesses remotely?',
+              q: 'Do you work with Christchurch businesses remotely?',
               a: 'Yes — I\'m Auckland-based but work with businesses across New Zealand. All strategy sessions are via video call, and day-to-day work happens asynchronously. The model works well remotely — many of my best client relationships have been entirely digital.'
             },
             {
@@ -190,7 +192,7 @@ export default function WellingtonPage() {
               a: 'Monthly retainer, starting with a strategy session to understand your business, goals, and current marketing state. From there I build a 90-day roadmap and execute against it — with weekly check-ins and full transparency into what\'s happening.'
             },
             {
-              q: 'How is this different from a Wellington marketing agency?',
+              q: 'How is this different from a Christchurch marketing agency?',
               a: 'Agencies typically serve 20-50+ clients. I work with 3-5 at a time — maximum. You deal directly with me, not an account manager. And because I use AI systems for execution, I can deliver senior-level results at a lower cost than a full-service agency.'
             },
             {
@@ -211,7 +213,7 @@ export default function WellingtonPage() {
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to build something real?</h2>
           <p className="text-gray-600 mb-8 max-w-lg mx-auto">
-            I&apos;m selective about who I work with. If you&apos;re a Wellington or NZ business serious 
+            I&apos;m selective about who I work with. If you&apos;re a Christchurch or NZ business serious 
             about building AI-native marketing — apply below.
           </p>
           <Link
