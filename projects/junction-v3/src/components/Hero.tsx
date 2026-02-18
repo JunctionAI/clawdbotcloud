@@ -171,7 +171,7 @@ export default function Hero() {
             
             {/* Text */}
             <span className="relative text-white flex items-center gap-2">
-              Apply to Work With Us
+              Apply to Work With Me
               <motion.svg 
                 className="w-5 h-5" 
                 fill="none" 
@@ -191,7 +191,7 @@ export default function Hero() {
             strength={0.3}
           >
             <span className="flex items-center gap-2">
-              Our Approach
+              My Approach
               <motion.svg 
                 className="w-5 h-5" 
                 fill="none" 
