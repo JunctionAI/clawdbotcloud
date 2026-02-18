@@ -20,6 +20,7 @@ const FloatingShapes = lazy(() => import('@/components/FloatingShapes'));
 
 // New personal brand sections
 const PersonalBio = lazy(() => import('@/components/PersonalBio'));
+const HowWeWork = lazy(() => import('@/components/HowWeWork'));
 const AlternateShowcase = lazy(() => import('@/components/AlternateShowcase'));
 const EducationContent = lazy(() => import('@/components/EducationContent'));
 const WorkWithMe = lazy(() => import('@/components/WorkWithMe'));
@@ -76,32 +77,37 @@ export default function Home() {
             <PersonalBio />
           </Suspense>
 
-          {/* 3. RESULTS METRICS – real proof of work */}
+          {/* 3. HOW WE WORK – boutique approach */}
+          <Suspense fallback={<SectionSkeleton height="h-[800px]" />}>
+            <HowWeWork />
+          </Suspense>
+
+          {/* 4. RESULTS METRICS – real proof of work (renumbered) */}
           <Suspense fallback={<SectionSkeleton height="h-[400px]" />}>
             <ResultsMetrics />
           </Suspense>
 
-          {/* 4. ALTERNATE SHOWCASE – creative proof */}
+          {/* 5. ALTERNATE SHOWCASE – creative proof */}
           <Suspense fallback={<SectionSkeleton height="h-[700px]" />}>
             <AlternateShowcase />
           </Suspense>
 
-          {/* 5. HUMAN IN LOOP – AI + human approach */}
+          {/* 6. HUMAN IN LOOP – AI + human approach */}
           <Suspense fallback={<SectionSkeleton />}>
             <HumanInLoop />
           </Suspense>
 
-          {/* 6. EDUCATION & CONTENT – teaching thought leadership */}
+          {/* 7. EDUCATION & CONTENT – teaching thought leadership */}
           <Suspense fallback={<SectionSkeleton height="h-[800px]" />}>
             <EducationContent />
           </Suspense>
 
-          {/* 7. WORK WITH ME – consulting CTA */}
+          {/* 8. WORK WITH ME – consulting CTA */}
           <Suspense fallback={<SectionSkeleton height="h-[600px]" />}>
             <WorkWithMe />
           </Suspense>
 
-          {/* 7. FOOTER */}
+          {/* 9. FOOTER */}
           <Suspense fallback={<SectionSkeleton height="h-48" />}>
             <Footer />
           </Suspense>

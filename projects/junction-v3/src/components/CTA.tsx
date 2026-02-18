@@ -41,9 +41,9 @@ export default function CTA() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <span className="inline-flex items-center gap-3 bg-emerald-500/20 backdrop-blur-sm rounded-full px-6 py-3 mb-10 border border-emerald-400/30">
-            <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-            <span className="text-sm font-semibold text-emerald-300">1 Partnership Slot Available</span>
+          <span className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-10 border border-white/20">
+            <span className="w-2 h-2 bg-blue-400 rounded-full" />
+            <span className="text-sm font-semibold text-blue-300">By Application Only</span>
           </span>
         </motion.div>
 

@@ -135,8 +135,8 @@ export default function Hero() {
           className="max-w-3xl mx-auto mb-12"
         >
           <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
-            Educator. Consultant. Selective partnerships only.<br />
-            I help brands operate at the cutting edge — building systems that work harder than any traditional agency ever could.
+            We build integrated AI marketing systems for select NZ businesses.<br />
+            Strategy, execution, and optimisation — unified.
           </p>
         </motion.div>
 
@@ -171,7 +171,7 @@ export default function Hero() {
             
             {/* Text */}
             <span className="relative text-white flex items-center gap-2">
-              Apply to Work With Me
+              Apply to Work With Us
               <motion.svg 
                 className="w-5 h-5" 
                 fill="none" 
@@ -191,7 +191,7 @@ export default function Hero() {
             strength={0.3}
           >
             <span className="flex items-center gap-2">
-              My Approach
+              Our Approach
               <motion.svg 
                 className="w-5 h-5" 
                 fill="none" 

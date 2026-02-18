@@ -45,10 +45,10 @@ const metrics: Metric[] = [
     color: 'from-orange-400 to-red-400',
   },
   {
-    value: 1,
+    value: 2024,
     suffix: '',
-    label: 'Spot Open',
-    description: 'Apply to work with us',
+    label: 'AI-Native Since',
+    description: 'First-mover in NZ market',
     color: 'from-pink-400 to-rose-500',
   },
   {
