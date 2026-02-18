@@ -77,7 +77,7 @@ This means the "you need a full team" argument for agencies has weakened signifi
 
 ### 2. Integrated Systems Beat Siloed Channels
 
-The old agency model often worked by channel: one team for Google Ads, another for social, another for SEO. Each reporting independently. No unified view of what's actually working.
+The old agency model often worked by channel: one team for [Google Ads](/services/google-ads-nz), another for social, another for [SEO](/services/seo-nz). Each reporting independently. No unified view of what's actually working.
 
 The businesses seeing the best results now are running integrated systems where every channel feeds a single data model — and decisions get made based on the full picture, not channel-by-channel metrics.
 

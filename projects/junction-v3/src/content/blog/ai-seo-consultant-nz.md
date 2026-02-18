@@ -158,4 +158,4 @@ We work with a small number of NZ businesses. If you're serious about building o
 
 ---
 
-**Related reading:** [SEO agency Auckland: why most are stuck in 2019](/blog/seo-agency-auckland) · [Content marketing NZ: the compounding strategy most businesses ignore](/blog/content-marketing-nz) · [Digital marketing strategy NZ: how to build one that compounds](/blog/digital-marketing-strategy-nz)
+**Related reading:** [SEO agency Auckland: why most are stuck in 2019](/blog/seo-agency-auckland) · [Content marketing NZ: the compounding strategy most businesses ignore](/blog/content-marketing-nz) · [Digital marketing strategy NZ: how to build one that compounds](/blog/digital-marketing-strategy-nz) · [SEO services NZ — Junction Media's approach](/services/seo-nz)

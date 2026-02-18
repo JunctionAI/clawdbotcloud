@@ -133,7 +133,7 @@ If you want to understand whether this approach fits your situation, [apply to w
 
 ---
 
-**Related reading:** [Google Ads Auckland — what a good consultant actually does](/blog/google-ads-auckland-consultant) · [Performance marketing NZ: the full picture](/blog/performance-marketing-nz) · [How much does marketing cost in NZ?](/blog/how-much-does-marketing-cost-nz)
+**Related reading:** [Google Ads Auckland — what a good consultant actually does](/blog/google-ads-auckland-consultant) · [Performance marketing NZ: the full picture](/blog/performance-marketing-nz) · [How much does marketing cost in NZ?](/blog/how-much-does-marketing-cost-nz) · [Google Ads management NZ — Junction Media's approach](/services/google-ads-nz)
 
 ---
 

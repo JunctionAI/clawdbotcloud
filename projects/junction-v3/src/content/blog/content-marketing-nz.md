@@ -227,7 +227,7 @@ You don't need a complex system to start. Here's what matters:
 
 ---
 
-*Tom Hall-Taylor is an AI marketing consultant and fractional CMO based in Auckland, New Zealand. Junction Media builds AI-native content systems for select NZ businesses. If you're ready to build content that compounds — [apply to work with us](/#apply).*
+*Tom Hall-Taylor is an AI marketing consultant and fractional CMO based in Auckland, New Zealand. Junction Media builds AI-native content systems for select NZ businesses. If you're ready to build content that compounds — [apply to work with us](/#apply), or explore our [content marketing services NZ](/services/content-marketing-nz).*
 
 ---
 

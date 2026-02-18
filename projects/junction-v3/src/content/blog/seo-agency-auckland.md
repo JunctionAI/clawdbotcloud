@@ -196,4 +196,4 @@ If that's what you're looking for, [apply to work with me](/#apply).
 
 ---
 
-**Related reading:** [AI SEO consultant NZ: what's changed and what works](/blog/ai-seo-consultant-nz) · [Content marketing NZ: the compounding strategy most businesses ignore](/blog/content-marketing-nz) · [Marketing consultant Auckland: what to expect and what to pay](/blog/marketing-consultant-auckland)
+**Related reading:** [AI SEO consultant NZ: what's changed and what works](/blog/ai-seo-consultant-nz) · [Content marketing NZ: the compounding strategy most businesses ignore](/blog/content-marketing-nz) · [Marketing consultant Auckland: what to expect and what to pay](/blog/marketing-consultant-auckland) · [SEO services NZ — Junction Media's approach](/services/seo-nz)
