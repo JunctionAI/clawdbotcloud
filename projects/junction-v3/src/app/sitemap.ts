@@ -390,6 +390,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/auckland/meta-ads-agency`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/christchurch/google-ads-agency`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/hamilton/seo-agency`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/tauranga/seo-agency`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
   ];
 
   // Dynamic blog posts
