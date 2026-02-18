@@ -34,6 +34,7 @@ export default function Navigation() {
     { href: '#results', label: 'Results' },
     { href: '#work', label: 'Work' },
     { href: '#education', label: 'Content' },
+    { href: '/blog', label: 'Blog' },
   ];
 
   return (

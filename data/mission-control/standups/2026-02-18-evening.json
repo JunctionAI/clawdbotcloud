@@ -1,0 +1,209 @@
+﻿{
+  "date": "2026-02-18",
+  "time": "17:00",
+  "timezone": "Pacific/Auckland",
+  "facilitator": "FURY",
+  "type": "evening",
+  "sprint": {
+    "day": 9,
+    "totalDays": 14,
+    "focus": "Personal brand build (post-pivot)"
+  },
+  "attendees": ["FURY", "JARVIS", "SHURI", "PREP", "ALTERNATE", "Junction", "Personal"],
+
+  "shipped_today": [
+    {
+      "agent": "Junction",
+      "items": [
+        "V2 full personal brand rebuild LIVE at www.junctionmedia.ai",
+        "PersonalBio.tsx - Tom's story, philosophy, approach",
+        "AlternateShowcase.tsx - film/side-project credibility section",
+        "WorkWithMe.tsx - boutique CTA with 3 spots available",
+        "EducationContent.tsx - thought leadership / content pillars section",
+        "Navigation updated to V2 section IDs (About/Results/Work/Content)",
+        "OG image bug fixed - social share cards now working",
+        "JSON-LD Person schema added for rich search results",
+        "sitemap.ts + robots.txt domain corrected to www.junctionmedia.ai",
+        "Copy consistency pass: all agency 'us/we/our' -> personal 'me/my/I'",
+        "Hero CTAs: fixed dead anchor links (#model -> #about)",
+        "ResultsMetrics CTA: 'Get Your Growth Audit' -> 'Apply to Work With Me'",
+        "Hero spot count: consistent '3 Spots Open / Applications Reviewed Personally'",
+        "Footer: removed dead anchor links, added email CTA, updated tagline to boutique positioning",
+        "7+ commits deployed to production (Vercel), all builds passed"
+      ]
+    },
+    {
+      "agent": "ALTERNATE",
+      "items": [
+        "Build-in-Public series: ALL 5 EPISODE SCRIPTS COMPLETE",
+        "Ep 1 script: 'Building a Business in 30 Days with AI' (Day 1, 90s TikTok)",
+        "Ep 2 script: 'AI Designed My Merch' (Day 7, product reveal)",
+        "Ep 3 script: 'Setting Up Automated Marketing in 2 Hours' (Day 15)",
+        "Ep 4 script: Dual-ending format (Day 22, sale/no-sale versions)",
+        "Ep 5 script: Finale with data capture template (Day 30)",
+        "Logo brief: 3 Midjourney directions, colour palette, typography, merch applications",
+        "Key insight: Tom can film Ep 1 TODAY using Shopify free 3-day trial + screen record"
+      ]
+    },
+    {
+      "agent": "Personal",
+      "items": [
+        "All critical finance blockers tracked and documented silently during DBH hours",
+        "Consolidated blocker list prepared for 6pm escalation",
+        "Personal admin items compiled for Tom"
+      ]
+    }
+  ],
+
+  "blockers": {
+    "critical": [
+      {
+        "item": "IRD Payment",
+        "days_overdue": 7,
+        "owner": "Tom",
+        "risk": "Government tax debt - penalties and interest accumulating daily",
+        "action": "Pay immediately via IRD myIR portal"
+      },
+      {
+        "item": "GoDaddy DNS for apex junctionmedia.ai",
+        "owner": "Tom",
+        "action": "Add A record 76.76.21.21 at GoDaddy - apex domain still pointing to Squarespace",
+        "impact": "junctionmedia.ai (without www) is broken - only www works"
+      },
+      {
+        "item": "Git push to GitHub",
+        "owner": "Tom",
+        "details": "47+ commits not synced to origin/main. Windows GCM requires interactive browser auth.",
+        "action": "Run `git push` in Junction project folder or auth via browser"
+      }
+    ],
+    "high": [
+      {
+        "item": "Figma payment",
+        "days_overdue": 9,
+        "owner": "Tom",
+        "action": "Update payment method - account at risk of suspension"
+      },
+      {
+        "item": "Miro payment",
+        "days_overdue": 10,
+        "owner": "Tom",
+        "action": "Update payment method - payment declined"
+      },
+      {
+        "item": "ALTERNATE store Day 2",
+        "owner": "Tom",
+        "details": "Shopify $39/mo blocked by payment crisis. Workaround: start free 3-day trial to film Ep 1 NOW.",
+        "action": "Use free trial to film content immediately"
+      }
+    ],
+    "needs_input": [
+      {
+        "item": "Hero stat: '15+ Years Experience'",
+        "owner": "Tom",
+        "action": "Confirm accuracy or provide correct figure"
+      },
+      {
+        "item": "Real DBH testimonial quote",
+        "owner": "Tom",
+        "action": "Provide quote (with client permission) to replace current placeholder"
+      },
+      {
+        "item": "Tom's LinkedIn + X handles",
+        "owner": "Tom",
+        "details": "Currently guessing /in/tomhalltaylor + @tomhalltaylor in EducationContent",
+        "action": "Confirm or correct"
+      },
+      {
+        "item": "ALTERNATE film final cut",
+        "owner": "Tom / Zach",
+        "details": "YouTube upload not confirmed, Zach extras handles not received, vertical exports pending",
+        "action": "Follow up with Zach"
+      }
+    ]
+  },
+
+  "ideas_and_improvements": [
+    {
+      "source": "ALTERNATE",
+      "idea": "Film Ep 1 Build-in-Public TODAY using Shopify free 3-day trial + screen recording a Claude convo. Raw origin content outperforms polished. Can start building audience BEFORE store is live.",
+      "priority": "high",
+      "effort": "low"
+    },
+    {
+      "source": "Junction",
+      "idea": "Junction is now a fully coherent personal brand. The #1 unlock is resolving the GoDaddy DNS + Git push tonight. Once done, the site is genuinely launch-ready. Then focus shifts to getting 3 real case studies/testimonials.",
+      "priority": "high",
+      "effort": "low"
+    },
+    {
+      "source": "FURY",
+      "idea": "Payment crisis is now Day 9. IRD is the most urgent - resolve tonight. Create a Wise recurring transfer or payment method failsafe so subscriptions never cascade again. One payment card with buffer = no more disruption.",
+      "priority": "critical",
+      "effort": "low"
+    },
+    {
+      "source": "Personal",
+      "idea": "Tom's LinkedIn and X presence needs content. Junction site links to these but they appear dormant. Even 1 post per day about the Junction + ALTERNATE journey creates social proof that feeds the site.",
+      "priority": "medium",
+      "effort": "medium"
+    },
+    {
+      "source": "Junction",
+      "idea": "Real DBH case study is the #1 trust signal missing from the site. Stats exist (30%+ sales lift). Getting a 1-2 sentence client quote would unlock the testimonial section and make 'Apply' CTAs far more credible.",
+      "priority": "medium",
+      "effort": "low"
+    }
+  ],
+
+  "tomorrows_priorities": [
+    "1. RESOLVE payments: IRD (critical), Figma, Miro",
+    "2. GoDaddy DNS fix + git push - Junction site fully live in 10 mins",
+    "3. Film ALTERNATE Ep 1 using Shopify free trial (today or tomorrow)",
+    "4. Confirm LinkedIn/X handles + 15yr experience stat for Junction",
+    "5. DBH testimonial quote - ask this week",
+    "6. Start posting on LinkedIn/X to bring Junction site to life"
+  ],
+
+  "collaboration_rating": {
+    "score": 8,
+    "notes": "Exceptional autonomous work day. Junction Agent shipped 7+ production deploys without Tom. ALTERNATE Agent completed full 5-episode content series during blocking period - turned idle time into major asset. Personal Agent tracked all blockers silently during DBH hours, no unnecessary interruptions. All agents respected DBH hours boundary. Key improvement: agents are now generating real deliverables during blocking time instead of just logging status.",
+    "highlights": [
+      "Junction V2 shipped entirely autonomously - Tom woke to a transformed site",
+      "ALTERNATE turned payment crisis downtime into complete content library",
+      "Zero unnecessary Tom pings during DBH hours",
+      "Coordinated blocker list ready for 6pm post-DBH"
+    ]
+  },
+
+  "lessons_learned": [
+    {
+      "lesson": "Blocking time = prep time. When primary execution is blocked, agents should generate parallel deliverables. ALTERNATE completed 5 scripts + logo brief while waiting on Shopify payment.",
+      "agent": "ALTERNATE"
+    },
+    {
+      "lesson": "Ship fast, iterate fast. Junction Agent deployed 7+ times in one day, each build under 40 seconds. Zero ceremony = high throughput.",
+      "agent": "Junction"
+    },
+    {
+      "lesson": "Personal brand copy requires first-person audit. 'We/Us/Our' language persisted from the agency version and required dedicated pass. Future: check all copy for voice consistency when repositioning.",
+      "agent": "Junction"
+    },
+    {
+      "lesson": "Payment cascades are a systemic risk. Day 9 of payment crisis affecting IRD, Figma, Miro, Shopify. One card with a buffer = prevents domino effect on all projects.",
+      "agent": "Personal"
+    },
+    {
+      "lesson": "Free trials unlock content before paid launch. Shopify 3-day trial means Tom can film Ep 1 raw content NOW, ahead of paid store. Same principle applies to other tools.",
+      "agent": "ALTERNATE"
+    }
+  ],
+
+  "meta": {
+    "generatedAt": "2026-02-18T17:00:00+13:00",
+    "generatedBy": "FURY",
+    "paymentCrisisDay": 9,
+    "junctionV2Status": "LIVE",
+    "alternateContentStatus": "5/5 scripts complete + logo brief"
+  }
+}
