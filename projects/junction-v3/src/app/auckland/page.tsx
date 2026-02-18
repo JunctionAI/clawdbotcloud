@@ -44,7 +44,7 @@ export default function AucklandPage() {
           <span className="text-gray-500">Auckland</span>
         </h1>
         <p className="text-xl text-gray-600 leading-relaxed mb-8">
-          I'm Tom Hall-Taylor — an Auckland-based AI marketing consultant and fractional CMO. 
+          I&apos;m Tom Hall-Taylor — an Auckland-based AI marketing consultant and fractional CMO. 
           I work with select businesses to build marketing operations that compound over time, 
           not campaigns that stop when the budget runs out.
         </p>
@@ -99,13 +99,13 @@ export default function AucklandPage() {
         <h2 className="text-2xl font-bold mb-6">Why Auckland Businesses Work With Me</h2>
         <div className="space-y-6">
           <p className="text-gray-600 leading-relaxed">
-            Auckland has a unique market. It's big enough to be competitive, small enough that 
+            Auckland has a unique market. It&apos;s big enough to be competitive, small enough that 
             word of mouth still matters. Traditional agencies in Auckland often serve too many 
             clients, moving too slow, charging too much for junior execution dressed up as senior strategy.
           </p>
           <p className="text-gray-600 leading-relaxed">
             I built Junction Media differently. I work with a maximum of 3–5 clients at any time. 
-            That cap is intentional — it's how I give each business the attention and strategic depth 
+            That cap is intentional — It&apos;s how I give each business the attention and strategic depth 
             that actually moves the needle.
           </p>
           <p className="text-gray-600 leading-relaxed">
@@ -165,7 +165,7 @@ export default function AucklandPage() {
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to build something real?</h2>
           <p className="text-gray-600 mb-8 max-w-lg mx-auto">
-            I'm selective about who I work with. If you're an Auckland or NZ business serious 
+            I&apos;m selective about who I work with. If you&apos;re an Auckland or NZ business serious 
             about building AI-native marketing — apply below.
           </p>
           <Link
@@ -192,3 +192,6 @@ export default function AucklandPage() {
     </main>
   )
 }
+
+
+

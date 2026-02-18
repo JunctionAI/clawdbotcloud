@@ -35,3 +35,19 @@
 *(Tracking starts Feb 3)*
 
 ---
+
+## 2026-02-18
+
+**Porn:** [ ] - Time: — Trigger: 
+**Weed:** [ ] - Time: — Trigger: 
+**Alcohol:** [ ] - Time: — Trigger: 
+**Coffee:** [ ] - Time: — Trigger: 
+
+**Pre-habit feeling:** 
+**Post-habit feeling:** 
+**Did it serve your goals?** [ ]
+**Would $1M version of you do this?** [ ]
+
+*← Tom: fill this in when you get a sec*
+
+---

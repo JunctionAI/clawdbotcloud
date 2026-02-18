@@ -129,7 +129,7 @@ export default function NewZealandPage() {
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {[
             { city: 'Auckland', link: '/auckland' },
-            { city: 'Wellington', link: null },
+            { city: 'Wellington', link: '/wellington' },
             { city: 'Christchurch', link: null },
             { city: 'Hamilton', link: null },
             { city: 'Tauranga', link: null },

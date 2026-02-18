@@ -546,3 +546,15 @@ _(Same format)_
 
 **Total spent today:** $0
 
+
+## 2026-02-18
+
+- **$76.03** @ Woolworths Nz/4 Williamso (Grocery Stores, Supermarkets) - 20:27
+- **$13.70** @ Maki Mono Ponsonby (Fast Food Restaurants) - 14:26
+- **$2310.74** → Tom Hall-Taylor (Transfer, received) - 12:56
+- **$17.22** @ Higgsfield Inc. (Computer Software Stores) - 01:43
+- **$24.91** @ Higgsfield Inc. (Computer Software Stores) - 01:36
+
+**Actual spending today:** $131.86
+**Received:** $2,310.74
+

@@ -85,19 +85,31 @@
     "weeklyReview": "2026-02-15T21:40:00+13:00"
   },
   "activeProjects": [
-    "DBH - stable base income ($4k/month, 4h/day core hours) - PRIMARY",
-    "TWG Klaviyo project - website work in progress",
-    "Agency positioning - $10k/month price point, attracting not chasing",
+    "ALTERNATE Brand (films + events + merch) - TOP PRIORITY - full brand/business pivot Feb 18",
+    "DBH - stable base income ($4k/month, 4h/day core hours) - BASE CLIENT",
+    "PG Investments - base client",
+    "Junction Media - AI service engine (ALTERNATE as first client + DBH + PG)",
     "Apps portfolio - 7 apps in development (low pressure, evenings/weekends)",
     "Jakob Clawdbot support - ongoing (as needed)"
   ],
   "pendingItems": [
-    "ALTERNATE launch - 70+ checks, still blocked on YouTube upload confirmation + extras handles",
-    "Junction git push - CRITICAL: fake content removed in commit 9808d0b but still live on site!",
-    "TWG website changes - Tom working on this",
+    "ALTERNATE eCom setup - domain decision (alternate.ai vs .io) + Shopify store launch",
+    "ALTERNATE film launch - still blocked on YouTube upload + extras handles from Zach + vertical exports",
+    "Higgsfield gorilla competition - first major content output under new brand model",
+    "Zach partnership formalisation - 50/50 TBC, needs legal clarity",
+    "ALTERNATE logo - brief ready, Midjourney prompts written, needs generation",
+    "Build-in-Public Ep 1 - can film TODAY using Shopify free trial",
+    "Junction git push - CRITICAL: 50+ commits not synced to GitHub (browser auth needed)",
+    "GoDaddy DNS - apex junctionmedia.ai → Vercel A record 76.76.21.21",
+    "IRD payment - overdue CRITICAL",
     "Pre-authorization protocols - Build system for autonomous execution during weekends"
   ],
   "recentDecisions": [
+    {
+      "date": "2026-02-18",
+      "decision": "ALTERNATE pivots from film project to full brand/business — three pillars: films, events, merch. Junction = service engine, not standalone agency.",
+      "rationale": "Tom's directive: do it for ourselves. ALTERNATE = Junction's proof of concept and live marketing. Zach as 50/50 partner (TBC). eCom store on Shopify + Printful at alternate.ai or alternate.io."
+    },
     {
       "date": "2026-02-10",
       "decision": "Agency price point set at $10,000/month",
@@ -120,12 +132,14 @@
     }
   ],
   "currentContext": {
-    "phase": "VISION SET - Building the next Pixar",
-    "focus": "AI services → Creative production company",
-    "strategy": "1000 agents, massive margins, reinvest into human creativity",
-    "vision": "Creative production as public benefit. Storytelling for humanity.",
-    "insight": "AI handles operations. Humans handle creation. This is the mega company.",
-    "mandate": "Meetings every 15 min. Updates every hour. BUILD."
+    "phase": "ALTERNATE BRAND PIVOT — Feb 18, 2026",
+    "focus": "Build ALTERNATE (films + events + merch) as full brand/business. Junction = engine.",
+    "strategy": "Do it for ourselves. ALTERNATE = Junction's proof of concept + live marketing case study.",
+    "vision": "ALTERNATE becomes a real brand: AI films, community events, merch store. Junction serves it.",
+    "insight": "Building ALTERNATE in public IS the Junction content strategy. Every result = a case study.",
+    "mandate": "Launch ALTERNATE eCom. Ship Higgsfield film. Film Build-in-Public Ep 1. Formalise Zach deal.",
+    "junctionModel": "NOT a client-hunting agency. Junction = AI service engine for ALTERNATE + DBH + PG.",
+    "pivotDate": "2026-02-18T19:45:00+13:00"
   },
   "systemConfig": {
     "workspace": "C:\\Users\\Nightgalem\\clawd",
