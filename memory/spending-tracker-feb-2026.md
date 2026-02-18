@@ -580,3 +580,13 @@ _(Same format)_
 
 **Total spent today:** $0
 
+
+## 2026-02-19
+
+- **$25.05** @ Moonpay*Uniswap 2974 (Quasi Cash Merchant) - 01:58
+- **$10.00** → Thomas Michael Hall-Taylor (Transfer) - 01:11
+- **$20.03** @ Topper*Uniswap (Quasi Cash Merchant) - 00:43
+- **$16.71** @ Topper*Uniswap (Quasi Cash Merchant) - 00:11
+
+**Total spent today:** $0
+
