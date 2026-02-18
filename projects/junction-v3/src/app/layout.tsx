@@ -125,30 +125,111 @@ export const viewport: Viewport = {
 // ========================================
 // JSON-LD STRUCTURED DATA
 // ========================================
-const personSchema = {
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Tom Hall-Taylor",
-  url: "https://www.junctionmedia.ai",
-  jobTitle: "AI-Native Marketing Operator",
-  description:
-    "Building AI marketing systems for select businesses. Strategy and execution, unified. By application only.",
-  email: "tom@junctionmedia.ai",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Auckland",
-    addressCountry: "NZ",
-  },
-  sameAs: [
-    "https://www.linkedin.com/in/tomhalltaylor",
-    "https://twitter.com/tomhalltaylor",
-  ],
-  knowsAbout: [
-    "AI Marketing Systems",
-    "Marketing Automation",
-    "Digital Marketing",
-    "AI Strategy",
-    "Growth Marketing",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.junctionmedia.ai/#person",
+      name: "Tom Hall-Taylor",
+      url: "https://www.junctionmedia.ai",
+      jobTitle: "AI Marketing Consultant & Fractional CMO",
+      description:
+        "AI-native marketing consultant based in Auckland, NZ. Builds integrated AI marketing systems for select businesses. Fractional CMO services by application only.",
+      email: "tom@junctionmedia.ai",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Auckland",
+        addressRegion: "Auckland",
+        addressCountry: "NZ",
+      },
+      areaServed: [
+        { "@type": "Country", name: "New Zealand" },
+        { "@type": "City", name: "Auckland" },
+      ],
+      sameAs: [
+        "https://www.linkedin.com/in/tomhalltaylor",
+        "https://twitter.com/tomhalltaylor",
+      ],
+      knowsAbout: [
+        "AI Marketing Systems",
+        "Marketing Automation",
+        "Digital Marketing Strategy",
+        "AI Strategy",
+        "Growth Marketing",
+        "Fractional CMO Services",
+        "AI-Native Marketing Operations",
+        "Content Marketing",
+        "Paid Media",
+        "SEO",
+      ],
+      worksFor: {
+        "@id": "https://www.junctionmedia.ai/#organization",
+      },
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.junctionmedia.ai/#organization",
+      name: "Junction Media",
+      url: "https://www.junctionmedia.ai",
+      description:
+        "AI-native marketing consultancy. Fractional CMO and AI marketing systems for select businesses in New Zealand. By application only.",
+      email: "tom@junctionmedia.ai",
+      founder: {
+        "@id": "https://www.junctionmedia.ai/#person",
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Auckland",
+        addressRegion: "Auckland",
+        addressCountry: "NZ",
+      },
+      areaServed: [
+        { "@type": "Country", name: "New Zealand" },
+        { "@type": "City", name: "Auckland" },
+      ],
+      priceRange: "$$$",
+      serviceType: [
+        "AI Marketing Consulting",
+        "Fractional CMO",
+        "AI Marketing Systems",
+        "Growth Marketing",
+        "Marketing Automation",
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "AI Marketing Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Fractional CMO",
+              description:
+                "Embedded AI marketing leadership. Strategy, execution, and optimization — unified. Auckland, NZ.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "AI Marketing Systems",
+              description:
+                "Custom AI marketing operations built for your business. Autonomous agents, content systems, and growth infrastructure.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "AI Marketing Consulting",
+              description:
+                "Strategic consulting for businesses ready to build AI-native marketing operations.",
+            },
+          },
+        ],
+      },
+    },
   ],
 };
 
@@ -166,7 +247,7 @@ export default function RootLayout({
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
         {/* Preconnect to critical origins */}
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
