@@ -32,8 +32,7 @@ export default function Navigation() {
   const navItems = [
     { href: '#about', label: 'About' },
     { href: '#results', label: 'Results' },
-    { href: '#work', label: 'Work' },
-    { href: '#education', label: 'Content' },
+    { href: '/services', label: 'Services' },
     { href: '/blog', label: 'Blog' },
   ];
 
@@ -116,7 +115,7 @@ export default function Navigation() {
             {/* CTA Button */}
             <div className="hidden md:block">
               <MagneticButton
-                href="#apply"
+                href="/apply"
                 className="group relative px-7 py-3 rounded-full text-white font-bold text-sm overflow-hidden"
                 strength={0.4}
               >
@@ -184,7 +183,7 @@ export default function Navigation() {
                   </motion.a>
                 ))}
                 <motion.a
-                  href="#apply"
+                  href="/apply"
                   onClick={() => setMobileMenuOpen(false)}
                   className="mt-2 w-full text-center py-4 rounded-xl bg-gradient-to-r from-primary-500 to-accent-500 text-white font-bold"
                   initial={{ opacity: 0, y: 10 }}
