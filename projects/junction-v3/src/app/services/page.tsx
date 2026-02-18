@@ -59,6 +59,36 @@ const services = [
     cta: 'Apply to work together →',
     highlight: false,
   },
+  {
+    title: 'Google Ads NZ',
+    slug: '/services/google-ads-nz',
+    tagline: 'AI-optimised Google Ads campaigns that actually convert.',
+    description:
+      'Google Ads management for NZ businesses with AI-driven continuous optimisation. From account audit to launch to ongoing improvement — no lock-in contracts after 3 months. You own your account, always.',
+    includes: ['Full account audit', 'Campaign build & launch', 'Weekly optimisation', 'Transparent reporting'],
+    cta: 'Learn more →',
+    highlight: false,
+  },
+  {
+    title: 'SEO NZ',
+    slug: '/services/seo-nz',
+    tagline: 'AI-powered SEO that compounds over time.',
+    description:
+      'AI-native SEO for NZ businesses — technical foundation, content strategy, and authority building working together. Organic traffic that grows every month and keeps delivering after the work is done.',
+    includes: ['Technical SEO audit', 'AI content production', 'Authority building', 'Monthly reporting'],
+    cta: 'Learn more →',
+    highlight: false,
+  },
+  {
+    title: 'Content Marketing NZ',
+    slug: '/services/content-marketing-nz',
+    tagline: 'Content that ranks, converts, and compounds.',
+    description:
+      'AI-assisted content strategy and production for NZ businesses. Consistent publishing, proper SEO structure, and distribution — without you touching a keyboard. From $1,000/month.',
+    includes: ['Content strategy', 'AI-assisted production', 'SEO optimisation', 'Content distribution'],
+    cta: 'Learn more →',
+    highlight: false,
+  },
 ]
 
 export default function ServicesPage() {
