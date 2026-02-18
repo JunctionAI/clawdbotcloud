@@ -97,23 +97,40 @@ function ApplicationForm() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const subject = encodeURIComponent(`Partnership Application — ${form.business || form.name}`);
+    trackEvent('apply_form_submit', { business: form.business, revenue: form.revenue });
+
+    // Try API first
+    try {
+      const res = await fetch('/api/apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const result = await res.json();
+
+      if (result.success) {
+        setStatus('submitted');
+        return;
+      }
+    } catch {
+      // API failed, fall back to mailto
+    }
+
+    // Fallback: open email client
+    const subject = encodeURIComponent(`Partnership Application – ${form.business || form.name}`);
     const body = encodeURIComponent(
       `Hi Tom,\n\nI'd like to apply to work with Junction Media.\n\n` +
       `Name: ${form.name}\n` +
       `Business: ${form.business}\n` +
-      `Website: ${form.website || 'Not provided'}\n` +
-      `Annual Revenue: ${form.revenue}\n` +
-      `How They Heard: ${form.referral}\n\n` +
-      `What I'm looking to build:\n${form.need}\n\n` +
-      `Thanks`
+      `Website: ${form.website}\n` +
+      `Revenue: ${form.revenue}\n` +
+      `Need: ${form.need}\n` +
+      `Referred by: ${form.referral}`
     );
-
     window.location.href = `mailto:tom@junctionmedia.ai?subject=${subject}&body=${body}`;
-    trackEvent('apply_form_submit', { business: form.business, revenue: form.revenue });
     setStatus('submitted');
   };
 
@@ -125,10 +142,9 @@ function ApplicationForm() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-bold text-gray-900 mb-3">Application Opened</h3>
+        <h3 className="text-2xl font-bold text-gray-900 mb-3">Application Received</h3>
         <p className="text-gray-600 max-w-sm mx-auto leading-relaxed">
-          Your email client should have opened with your application pre-filled.
-          Hit send and you&apos;ll hear back within 5 business days.
+          Your application has been submitted. You&apos;ll hear back within 5 business days.
         </p>
         <Link
           href="/"
@@ -261,7 +277,6 @@ function ApplicationForm() {
           Submit Application →
         </button>
         <p className="text-center text-xs text-gray-400 mt-3">
-          This will open your email client with your application pre-filled.
           Applications reviewed personally within 5 business days.
         </p>
       </div>

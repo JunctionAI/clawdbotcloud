@@ -86,12 +86,15 @@ Update in `src/app/page.tsx` and relevant pages:
 
 ## 🔵 NICE TO HAVE (First Month)
 
-### 10. Resend Integration (Apply Form)
-Currently: apply form opens mail client (functional but not ideal)
-Better: server-side form submission via Resend
-- Sign up at resend.com (free tier: 100 emails/day)
-- Add `RESEND_API_KEY` to Vercel env vars
-- Build `/api/apply` route (already scaffolded in `.env.example`)
+### 10. Resend Integration (Apply Form) ✅ BUILT
+The `/api/apply` route is live with mailto fallback.
+To activate email delivery:
+1. Sign up at resend.com (free tier: 100 emails/day)
+2. Go to resend.com > API Keys > Create API Key
+3. Copy the key (starts with `re_`)
+4. In Vercel Dashboard > Settings > Environment Variables
+5. Add: `RESEND_API_KEY` = your key
+6. Redeploy — applications will now arrive directly in tom@junctionmedia.ai
 
 ### 11. LinkedIn Content
 `LINKEDIN-CONTENT-READY.md` has 7 ready-to-post pieces.
