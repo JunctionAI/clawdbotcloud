@@ -24,7 +24,7 @@ This guide is for business owners who want to get it right. Here's the full proc
 
 ## Step 1: Confirm You Actually Need a Fractional CMO
 
-Before you hire, make sure this is the right solution for your problem.
+Before you hire, make sure this is the right solution for your problem. If you're still at the "what even is this?" stage, read [what a fractional CMO actually is](/blog/what-is-a-fractional-cmo-nz) first.
 
 A fractional CMO is the right fit when:
 
@@ -199,6 +199,10 @@ The key checklist:
 ---
 
 I work with 3–5 NZ businesses at a time as a fractional CMO — bringing AI systems as the execution layer. If you're at the stage where you're seriously considering this, [apply to have a conversation](/#apply). I'll be straight with you about whether it's the right fit.
+
+---
+
+**Related reading:** [What is a fractional CMO in NZ?](/blog/what-is-a-fractional-cmo-nz) · [Fractional marketing director NZ: is it right for your business?](/blog/fractional-marketing-director-nz) · [AI marketing consultant vs. agency: which is right for your NZ business?](/blog/ai-marketing-consultant-vs-agency-nz)
 
 ---
 

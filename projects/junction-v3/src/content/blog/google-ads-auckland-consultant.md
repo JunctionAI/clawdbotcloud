@@ -182,7 +182,7 @@ For service businesses in Auckland, well-managed Google Ads typically delivers:
 
 For e-commerce, a 3–5x ROAS (Return on Ad Spend) is a reasonable target once campaigns are optimised. Getting there often takes 60–120 days of active management.
 
-**The honest caveat:** Google Ads works best when your business fundamentals are solid — you have a clear offer, a converting website, and genuine customer demand. Ads amplify what's already working. They can't fix a broken product or website.
+**The honest caveat:** Google Ads works best when your business fundamentals are solid — you have a clear offer, a converting website, and genuine customer demand. Ads amplify what's already working. They can't fix a broken product or website. If your landing pages aren't converting, read the [conversion rate optimization guide](/blog/conversion-rate-optimization-nz) before increasing spend.
 
 ---
 
@@ -193,6 +193,10 @@ I work with a small number of Auckland businesses to build AI-native marketing o
 This isn't for everyone. I work with 3–5 clients maximum, and only take on businesses where I can see a clear path to measurable results.
 
 If that sounds like what you're looking for, [apply to work with me](/#apply).
+
+---
+
+**Related reading:** [Paid social advertising NZ: what actually works in 2026](/blog/paid-social-advertising-nz) · [Performance marketing NZ: what it actually means](/blog/performance-marketing-nz) · [How much does marketing cost in NZ?](/blog/how-much-does-marketing-cost-nz)
 
 ---
 

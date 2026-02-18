@@ -25,7 +25,7 @@ Here's an honest breakdown of how to think about it.
 
 ## The Traditional Agency Model
 
-Agencies sell packaged services. You hire them to run your Google Ads. Or your SEO. Or your social media. They have specialists in each function, a project management layer, and a reporting cadence.
+Agencies sell packaged services. For more on how the agency model works (and where it breaks down), see our [digital marketing agency NZ overview](/blog/digital-marketing-agency-nz). You hire them to run your Google Ads. Or your SEO. Or your social media. They have specialists in each function, a project management layer, and a reporting cadence.
 
 The model works well when:
 
@@ -170,6 +170,10 @@ If you're unsure which model is right for your business, the answer is usually: 
 I work with 3–5 NZ businesses at a time as their embedded AI marketing consultant. Strategy, execution, and AI systems — all under one roof.
 
 If you're at that decision point and want to talk through what makes sense for your situation, [apply to work together](/#apply).
+
+---
+
+**Related reading:** [What is a fractional CMO in NZ?](/blog/what-is-a-fractional-cmo-nz) · [How much does marketing cost in NZ?](/blog/how-much-does-marketing-cost-nz) · [Why I work with 3 clients instead of 30](/blog/why-i-work-with-3-clients)
 
 ---
 

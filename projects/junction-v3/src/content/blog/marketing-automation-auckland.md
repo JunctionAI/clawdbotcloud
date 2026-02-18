@@ -7,7 +7,7 @@ readingTime: 7
 keywords: ["marketing automation Auckland", "marketing automation NZ", "AI marketing automation", "automated marketing systems NZ", "digital marketing automation Auckland"]
 ---
 
-Marketing automation used to mean one thing: scheduling emails and hoping someone opened them.
+Marketing automation used to mean one thing: scheduling emails and hoping someone opened them. In 2026, the businesses pulling ahead aren't just automating delivery — they're building [AI marketing systems](/blog/ai-systems-vs-ai-tools) where every component feeds the next.
 
 In 2026, that definition is embarrassingly outdated.
 
@@ -137,6 +137,10 @@ We work with 3-5 clients at a time, maximum. Each partnership is built around an
 If you're a New Zealand business generating $1M+ and you want to know what an AI-powered marketing operation could look like for you, start with a conversation.
 
 [Apply to work with us →](/#apply)
+
+---
+
+**Related reading:** [5 AI marketing systems every NZ business should have](/blog/5-ai-marketing-systems-nz-businesses) · [Marketing AI agents for NZ businesses](/blog/marketing-ai-agent-nz) · [Email marketing NZ: the complete 2026 guide](/blog/email-marketing-nz)
 
 ---
 

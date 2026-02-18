@@ -176,7 +176,7 @@ Here's a realistic budget range for a New Zealand SME doing $500k–$5M revenue:
 
 The right question isn't "how much does marketing cost?" — it's "what return do I need to make this worthwhile?"
 
-**Example (Deep Blue Health):**
+**Example ([Deep Blue Health](/blog/deep-blue-health-case-study)):**
 - Previous marketing: ad-hoc, no system
 - After AI-native marketing build: +30% above store revenue record in November
 - Marketing investment: $5,000/month
@@ -194,7 +194,7 @@ Marketing isn't a cost. It's leverage. The question is whether you trust the sys
 
 **Choose a traditional agency if:** You have $10k+/month budget, want a full team, and have someone to manage the relationship.
 
-**Choose an AI-native consultant if:** You want senior strategy + full execution without agency overhead, you value speed, and you want someone embedded in your business (not just reporting to you).
+**Choose an AI-native consultant if:** You want senior strategy + full execution without agency overhead, you value speed, and you want someone embedded in your business (not just reporting to you). See the full [AI marketing consultant vs. agency comparison](/blog/ai-marketing-consultant-vs-agency-nz) to decide which model fits you best.
 
 ---
 
@@ -205,6 +205,10 @@ At Junction Media, I work with 3–5 clients at a time. That's a deliberate cap 
 Retainers start at $5,000/month NZD. This includes fractional CMO strategy, AI marketing systems build, and ongoing execution.
 
 I'm not for everyone. But if you're an NZ business serious about growing with AI-powered marketing — and you want a partner, not a vendor — [let's talk](/#apply).
+
+---
+
+**Related reading:** [What is a fractional CMO in NZ?](/blog/what-is-a-fractional-cmo-nz) · [How to hire a fractional CMO without getting burned](/blog/how-to-hire-fractional-cmo-nz) · [Digital marketing agency NZ: why the traditional model is broken](/blog/digital-marketing-agency-nz)
 
 ---
 

@@ -99,7 +99,7 @@ An AI analytics system does this automatically:
 
 Let me make this concrete with an example from a brand I work with.
 
-**Deep Blue Health** is a NZ-based supplement brand. When we started, their marketing looked like this:
+**[Deep Blue Health](/blog/deep-blue-health-case-study)** is a NZ-based supplement brand. When we started, their marketing looked like this:
 - 2–3 Meta ad sets running, refreshed monthly
 - Basic welcome + abandoned cart email sequences
 - No SEO presence
@@ -168,3 +168,7 @@ The window to be on the right side of it is now.
 ---
 
 **Tom Hall-Taylor** is an AI marketing consultant and fractional CMO based in Auckland. He works with a small number of NZ businesses to build AI-native marketing operations that compound. [Apply to work together →](/#apply)
+
+---
+
+**Related reading:** [5 AI marketing systems every NZ business should have](/blog/5-ai-marketing-systems-nz-businesses) · [Email marketing NZ: the complete 2026 guide](/blog/email-marketing-nz) · [Paid social advertising NZ: what actually works](/blog/paid-social-advertising-nz)
