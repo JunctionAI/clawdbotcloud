@@ -1,22 +1,30 @@
 # February 2026 Calendar
 
-## Week of Feb 10-16
+## Week of Feb 17-23
 
-### Thursday Feb 12
-- **11:30am** — Ribbon Rose EDM call (Google Meet: https://meet.google.com/kds-zskx-edz)
-- **11:30am** — Call with Andi
+### Tuesday Feb 17 ← TODAY
+- No calendar events visible (Calendar API needs enabling)
+- **⚠️ ADMIN:** IRD payment overdue (since Feb 13)
+- **⚠️ ADMIN:** Figma past due (Feb 10)
+- **⚠️ ADMIN:** Miro payment declined (Feb 9)
 
-### Friday Feb 13 ← TODAY
-- **Evening** — Grandpa Dave dinner
-- Mum leaves
-- **⚠️ CONFIRM:** Is DBH filming today or tomorrow?
+### Wednesday Feb 18
+- TBD (check calendar when API enabled)
+
+---
+
+## Previous Week (Feb 10-16)
+
+### Monday Feb 16 (Presidents Day)
+- **Midday** — Golf
 
 ### Saturday Feb 14 (Valentine's Day)
-- **2:00pm** — Vietnamese influencer arrives (DBH filming) — **VERIFY DATE**
-- **TBD** — ALTERNATE movie release (if video gen sorted)
+- **2:00pm** — Vietnamese influencer (DBH filming)
 
-### Sunday Feb 15
-- **TBD** — ALTERNATE movie release (backup date)
+### Friday Feb 13
+- **Evening** — Grandpa Dave dinner
+- Mum leaves
 
-### Monday Feb 16
-- **Midday** — Golf
+### Thursday Feb 12
+- **11:30am** — Ribbon Rose EDM call
+- **11:30am** — Call with Andi

@@ -1,0 +1,147 @@
+{
+  "date": "2026-02-16",
+  "type": "evening",
+  "coordinator": "fury",
+  "timestamp": "2026-02-16T17:01:00+13:00",
+  "attendees": ["jarvis", "shuri", "prep", "alternate-agent", "junction-agent", "personal-agent"],
+  
+  "todayReview": {
+    "completedTasks": [
+      "ALTERNATE: 28+ heartbeat checks monitoring launch windows (Presidents Day)",
+      "Personal Agent: Identified 3 payment issues (IRD, Figma, Miro)",
+      "Junction Agent: Documented git push blocker (4 checks)",
+      "Morning standup completed with comprehensive briefing",
+      "Multiple Discord pings to Tom (11am, noon, pre-DBH)"
+    ],
+    "shipped": [],
+    "blocked": [
+      {
+        "item": "ALTERNATE YouTube premiere",
+        "status": "109+ checks across 3 days (Feb 14-16)",
+        "blocker": "Tom confirmation required",
+        "impact": "All marketing assets armed but cannot deploy"
+      },
+      {
+        "item": "Junction git push",
+        "status": "35 commits ahead of origin/main",
+        "blocker": "Tom authorization required",
+        "impact": "Fake testimonials still live on junctionmedia.ai"
+      },
+      {
+        "item": "Payment issues",
+        "status": "3 payment failures in 1 week",
+        "blocker": "Card/account issue needs investigation",
+        "impact": "IRD overdue (Feb 13), Figma/Miro services at risk"
+      },
+      {
+        "item": "Extras Instagram handles",
+        "status": "Waiting on Zach",
+        "blocker": "External dependency",
+        "impact": "Cannot execute extras DM campaign"
+      }
+    ]
+  },
+
+  "agentReports": {
+    "alternate-agent": {
+      "tasksCompleted": ["28 heartbeat checks", "Presidents Day strategy maintained", "Both launch windows monitored"],
+      "tasksBlocked": ["YouTube premiere status unknown", "Extras handles from Zach"],
+      "status": "Armed and waiting"
+    },
+    "junction-agent": {
+      "tasksCompleted": ["4 checks identifying git push blocker", "Documented fake content risk"],
+      "tasksBlocked": ["git push authorization"],
+      "status": "Ready to deploy on confirmation"
+    },
+    "personal-agent": {
+      "tasksCompleted": ["Morning email scan", "Payment issue detection (3 alerts)"],
+      "tasksBlocked": ["Calendar API not enabled"],
+      "status": "Payment escalation pending"
+    },
+    "jarvis": {
+      "tasksCompleted": ["Heartbeat monitoring"],
+      "tasksBlocked": [],
+      "status": "Operational"
+    },
+    "shuri": {
+      "tasksCompleted": ["Heartbeat checks"],
+      "tasksBlocked": ["Mission Control Convex endpoint needs config"],
+      "status": "Ready for research tasks"
+    },
+    "fury": {
+      "tasksCompleted": ["Morning standup", "Coordinated 3 Discord pings", "Evening standup"],
+      "tasksBlocked": [],
+      "status": "Coordinating"
+    }
+  },
+
+  "tomorrowPriorities": [
+    {
+      "priority": 1,
+      "task": "ALTERNATE: Get YouTube confirmation (Day 4 of attempts)",
+      "owner": "alternate-agent",
+      "deadline": "Morning window (9-11am)"
+    },
+    {
+      "priority": 2,
+      "task": "Payment triage: IRD > Figma > Miro",
+      "owner": "personal-agent",
+      "deadline": "Before end of day"
+    },
+    {
+      "priority": 3,
+      "task": "Junction git push (30 sec fix)",
+      "owner": "junction-agent",
+      "deadline": "Any time Tom is available"
+    }
+  ],
+
+  "ideasAndImprovements": [
+    {
+      "idea": "Pre-authorization protocol for weekends",
+      "description": "Tom was unavailable for 3 days straight. Need a system where he can pre-approve certain actions (e.g., 'If ALTERNATE is ready, launch it without asking').",
+      "proposedBy": "fury",
+      "priority": "high"
+    },
+    {
+      "idea": "Heartbeat throttling during non-response periods",
+      "description": "109 checks without response suggests throttling is needed. After 24h no response, reduce to 3x/day checks instead of 30min intervals.",
+      "proposedBy": "alternate-agent",
+      "priority": "medium"
+    },
+    {
+      "idea": "Payment monitoring automation",
+      "description": "Auto-detect payment failures earlier via Wise API / email parsing. 3 failures in one week shouldn't require morning email scan to find.",
+      "proposedBy": "personal-agent",
+      "priority": "medium"
+    }
+  ],
+
+  "lessonsLearned": [
+    {
+      "lesson": "109 checks without human response = protocol failure",
+      "insight": "The bottleneck is human confirmation. If Tom is unavailable for 3 days, we need either pre-authorization or throttling.",
+      "action": "Implement weekend check throttling + pre-auth system"
+    },
+    {
+      "lesson": "Payment cascades need proactive detection",
+      "insight": "IRD overdue since Feb 13, Figma since Feb 10, Miro since Feb 9 — these were only caught in morning email scan",
+      "action": "Add daily payment health check automation"
+    },
+    {
+      "lesson": "Presidents Day timing was excellent... if we'd launched",
+      "insight": "US holiday = higher engagement. The marketing angle was solid. Execution was blocked by human dependency.",
+      "action": "Document good timing windows for future reference"
+    }
+  ],
+
+  "collaborationRating": {
+    "score": 4,
+    "reason": "Agents were coordinated and armed, but 0% human engagement meant 0% execution. Team was ready; system bottleneck was external."
+  },
+
+  "meta": {
+    "createdBy": "fury",
+    "createdAt": "2026-02-16T17:01:00+13:00"
+  }
+}

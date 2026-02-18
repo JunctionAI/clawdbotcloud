@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "date": "2026-02-16",
+    "time": "09:00",
+    "type": "morning",
+    "coordinator": "fury",
+    "attendees": ["jarvis", "shuri", "fury", "prep", "alternate-agent", "junction-agent", "personal-agent"],
+    "note": "Monday Presidents Day - Day 3 of ALTERNATE launch attempts, Sprint Day 7"
+  },
+  "yesterdayReview": {
+    "completedTasks": [],
+    "notShipped": [
+      {
+        "title": "ALTERNATE Film Launch (Sunday)",
+        "agent": "alternate-agent",
+        "reason": "Tom unavailable all day Sunday despite being online 5:45pm-9pm",
+        "totalChecks": 53,
+        "runningTotal": "86+ checks across Feb 14-16"
+      },
+      {
+        "title": "Junction Git Push",
+        "agent": "fury",
+        "reason": "Still awaiting git push command",
+        "impact": "Fake credentials (TechCrunch, Forbes, SOC2) still live on junctionmedia.ai"
+      }
+    ],
+    "weekendSummary": {
+      "feb14": "27 checks - Tom enjoying Valentine's Day",
+      "feb15": "53 checks - Tom recovering, no ALTERNATE confirmation",
+      "totalChecksSinceThursday": "86+"
+    }
+  },
+  "currentStatus": {
+    "sprintDay": 7,
+    "sprintTotal": 14,
+    "project": "Junction Client #001",
+    "agentStatus": [
+      {"agent": "ALTERNATE", "status": "ARMED", "note": "86+ checks, all assets ready for Presidents Day launch"},
+      {"agent": "Junction", "status": "BLOCKED", "note": "Awaiting git push for 3+ days"},
+      {"agent": "FURY", "status": "ACTIVE", "note": "Coordinating standup"},
+      {"agent": "PREP", "status": "ACTIVE", "note": "Main session"},
+      {"agent": "Personal", "status": "FLAGGING", "note": "3 urgent payment issues detected"}
+    ]
+  },
+  "blockers": [
+    {
+      "id": "block-001",
+      "severity": "CRITICAL",
+      "issue": "ALTERNATE YouTube/Final Cut Status Unknown",
+      "owner": "alternate-agent",
+      "needsFromTom": "Is the film ready? Is YouTube premiere scheduled?",
+      "daysSince": 3,
+      "checksWithoutConfirmation": 86
+    },
+    {
+      "id": "block-002",
+      "severity": "HIGH",
+      "issue": "40+ Extras Instagram Handles Missing",
+      "owner": "alternate-agent",
+      "needsFromTom": "Get list from Zach"
+    },
+    {
+      "id": "block-003",
+      "severity": "HIGH",
+      "issue": "Junction Website Fake Content Live",
+      "owner": "fury",
+      "needsFromTom": "Run: cd projects/junction && git push (30 seconds)",
+      "daysSince": 3,
+      "impact": "Fake TechCrunch, Forbes, SOC2 badges still visible"
+    },
+    {
+      "id": "block-004",
+      "severity": "MEDIUM",
+      "issue": "Seedance 2 Access",
+      "owner": "alternate-agent",
+      "needsFromTom": "Update from Zach's China contact",
+      "daysSince": 6
+    },
+    {
+      "id": "block-005",
+      "severity": "URGENT",
+      "issue": "IRD Payment Overdue",
+      "owner": "personal-agent",
+      "needsFromTom": "Payment action required",
+      "detectedDate": "2026-02-13"
+    },
+    {
+      "id": "block-006",
+      "severity": "HIGH",
+      "issue": "Figma Account Past Due",
+      "owner": "personal-agent",
+      "needsFromTom": "Payment action required",
+      "detectedDate": "2026-02-10"
+    },
+    {
+      "id": "block-007",
+      "severity": "HIGH",
+      "issue": "Miro Payment Declined",
+      "owner": "personal-agent",
+      "needsFromTom": "Update payment method",
+      "detectedDate": "2026-02-09"
+    }
+  ],
+  "todayPriorities": [
+    {
+      "priority": 1,
+      "task": "ALTERNATE Presidents Day Launch",
+      "owner": "alternate-agent + Tom",
+      "window": "11am-1pm NZDT (Lunch Hour) — US holiday = higher engagement",
+      "backup": "6-9pm NZDT",
+      "depends": "YouTube upload confirmation"
+    },
+    {
+      "priority": 2,
+      "task": "Resolve Payment Issues",
+      "owner": "personal-agent + Tom",
+      "items": ["IRD overdue", "Figma past due", "Miro declined"]
+    },
+    {
+      "priority": 3,
+      "task": "Push Junction Website Changes",
+      "owner": "Tom",
+      "command": "cd projects/junction && git push"
+    },
+    {
+      "priority": 4,
+      "task": "Junction Sprint Day 7 Work",
+      "owner": "junction-agent",
+      "note": "Advance what can be done without git push — outreach prep, content"
+    }
+  ],
+  "ideasFromTeam": [
+    {
+      "idea": "Presidents Day US Holiday Angle",
+      "agent": "alternate-agent",
+      "priority": "HIGH",
+      "rationale": "US holiday = higher social media engagement. Many Americans off work, browsing. Perfect for film discovery."
+    },
+    {
+      "idea": "One-Touch Launch Authorization",
+      "agent": "fury",
+      "priority": "HIGH",
+      "rationale": "Tom sends 'YouTube is live' → ALTERNATE auto-executes full launch sequence within 15 min. Reduces coordination overhead."
+    },
+    {
+      "idea": "Payment Automation Review",
+      "agent": "personal-agent",
+      "priority": "MEDIUM",
+      "rationale": "3 payment failures in one week suggests card issue. May need to update payment method across all subscriptions."
+    },
+    {
+      "idea": "Weekend Launch Moratorium",
+      "agent": "fury",
+      "priority": "LOW",
+      "rationale": "After 86 checks over 3 days without execution — don't schedule critical launches for weekends without T-2 pre-confirmation."
+    }
+  ],
+  "lessonsLearned": [
+    {
+      "lesson": "86 checks across 3 days without execution = systemic coordination failure",
+      "context": "All systems perfectly armed. Zero deployment. Human confirmation is the single point of failure.",
+      "actionTaken": "Proposing one-touch launch authorization system"
+    },
+    {
+      "lesson": "Payment issues cluster when a card expires/fails",
+      "context": "IRD, Figma, Miro all failed within days — likely same underlying payment method issue.",
+      "actionTaken": "Personal agent flagging all payment failures together for batch resolution"
+    },
+    {
+      "lesson": "Weekend after Valentine's = unpredictable availability",
+      "context": "Should have expected low availability Fri-Sun around major social holiday.",
+      "actionTaken": "Adding holiday awareness to launch planning protocol"
+    }
+  ],
+  "collaborationRating": {
+    "overall": 4.0,
+    "notes": "Third consecutive day of zero execution. Team fully ready, human confirmation remains the bottleneck. Personal agent identified critical payment issues.",
+    "highlights": [
+      "Personal agent caught 3 urgent payment issues",
+      "All ALTERNATE assets remain armed and ready",
+      "Presidents Day angle identified for US engagement"
+    ],
+    "improvements": [
+      "Need pre-authorization system to reduce multi-day delays",
+      "Weekend check frequency should auto-throttle after 10+ no-responses",
+      "Critical blockers spanning 3+ days need escalation protocol"
+    ]
+  }
+}

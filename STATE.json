@@ -82,7 +82,7 @@
     "wise": "2026-01-31T11:40:00+13:00",
     "calendar": "2026-02-15T19:55:00+13:00",
     "weather": null,
-    "weeklyReview": "2026-02-15T20:40:00+13:00"
+    "weeklyReview": "2026-02-15T21:40:00+13:00"
   },
   "activeProjects": [
     "DBH - stable base income ($4k/month, 4h/day core hours) - PRIMARY",
@@ -134,6 +134,29 @@
     "gitInitialized": true
   },
   "automationSystems": {
+    "klaviyoOptimizer": {
+      "scripts": [
+        "scripts/klaviyo/klaviyo-api.js",
+        "scripts/klaviyo/subject-line-optimizer.js",
+        "scripts/klaviyo/quick-optimize.js"
+      ],
+      "description": "Email marketing optimization system based on Anthropic Growth Marketing patterns",
+      "features": [
+        "Klaviyo API integration for campaign data",
+        "Subject line variation generator",
+        "Performance analysis (identify underperformers)",
+        "Experiment memory/logging system",
+        "Self-improving recommendations"
+      ],
+      "memoryFile": "data/email-experiments.json",
+      "credentialsNeeded": "klaviyo-credentials.json (copy from .template)",
+      "createdAt": "2026-02-16T20:30:00+13:00",
+      "usage": {
+        "quick": "node scripts/klaviyo/quick-optimize.js \"Your subject line\"",
+        "batch": "node scripts/klaviyo/subject-line-optimizer.js batch --input=data/campaigns.json",
+        "export": "node scripts/klaviyo/klaviyo-api.js export --days=30"
+      }
+    },
     "missionControl": {
       "script": "scripts/mission-control.js",
       "description": "Kanban dashboard tracking all autonomous tasks",
@@ -145,7 +168,7 @@
         "Task management API"
       ],
       "url": "http://localhost:3100",
-      "lastUpdated": "2026-02-14T18:32:36.476Z"
+      "lastUpdated": "2026-02-16T01:15:41.275Z"
     }
   }
 }

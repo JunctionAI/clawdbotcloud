@@ -154,8 +154,50 @@
       "blocker": "Git push needs credentials - manual push required"
     }
   ],
+  {
+      "id": "task-012",
+      "title": "IRD Payment - URGENT",
+      "description": "Pay outstanding IRD (Inland Revenue) amount immediately. Government debt accumulates penalties and interest.",
+      "status": "pending",
+      "priority": "critical",
+      "assignee": "tom",
+      "project": "personal",
+      "tags": ["payment", "urgent", "tax"],
+      "createdAt": "2026-02-13T00:00:00+13:00",
+      "detectedAt": "2026-02-13T00:00:00+13:00",
+      "daysOverdue": 4,
+      "note": "Detected by personal-agent morning email scan. Tax debt = highest priority."
+    },
+    {
+      "id": "task-013",
+      "title": "Figma Payment Update",
+      "description": "Update Figma payment method - account past due, at risk of suspension.",
+      "status": "pending",
+      "priority": "high",
+      "assignee": "tom",
+      "project": "personal",
+      "tags": ["payment"],
+      "createdAt": "2026-02-10T00:00:00+13:00",
+      "detectedAt": "2026-02-10T00:00:00+13:00",
+      "daysOverdue": 7
+    },
+    {
+      "id": "task-014",
+      "title": "Miro Payment Update",
+      "description": "Update Miro payment method - payment was declined.",
+      "status": "pending",
+      "priority": "high",
+      "assignee": "tom",
+      "project": "personal",
+      "tags": ["payment"],
+      "createdAt": "2026-02-09T00:00:00+13:00",
+      "detectedAt": "2026-02-09T00:00:00+13:00",
+      "daysOverdue": 8
+    }
+  ],
   "meta": {
-    "lastUpdated": "2026-02-14T15:55:00+13:00",
-    "version": "3.0"
+    "lastUpdated": "2026-02-18T06:55:00+13:00",
+    "version": "3.2",
+    "strategicNote": "Feb 17 pivot: Tom is NOT building agency. Max 3 projects. Junction = personal brand/consulting, not 10+ client agency. Outreach list task no longer aligned."
   }
 }

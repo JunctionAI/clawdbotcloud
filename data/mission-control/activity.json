@@ -1,6 +1,46 @@
 {
   "activities": [
     {
+      "id": "act-032",
+      "timestamp": "2026-02-18T09:00:00+13:00",
+      "agent": "fury",
+      "type": "standup",
+      "message": "Wednesday morning standup — Post-pivot day. Major strategic clarity from Feb 17: Tom is NOT building agency, max 3 projects, three-layer model (Backbone/Brand/Creative). Payment crisis continues: IRD 5d+ overdue, Figma 8d, Miro 9d. ALTERNATE store build-in-public strategy active. Junction pivoted to personal brand focus.",
+      "priority": "high",
+      "project": "mission-control",
+      "deliverables": ["data/mission-control/standups/2026-02-18-morning.json"]
+    },
+    {
+      "id": "act-031",
+      "timestamp": "2026-02-18T06:55:00+13:00",
+      "agent": "fury",
+      "type": "work",
+      "message": "Morning heartbeat check. Created ALTERNATE store copy draft (projects/alternate/store-copy-draft.md). Updated mission control with strategic pivot context from Feb 17. Git push still blocked by secrets in history. IRD 5+ days overdue, Figma 8d, Miro 9d.",
+      "priority": "medium",
+      "project": "alternate",
+      "deliverables": ["projects/alternate/store-copy-draft.md"]
+    },
+    {
+      "id": "act-030",
+      "timestamp": "2026-02-17T09:01:00+13:00",
+      "agent": "fury",
+      "type": "standup",
+      "message": "Tuesday morning standup — Day 5 of ALTERNATE launch attempts (120+ checks since Feb 14). Payment crisis: IRD 4d overdue, Figma 7d, Miro 8d. Junction sprint Day 8. Key insight: ALTERNATE is a PRODUCTION blocker, not marketing — need Tom to confirm if film is finished.",
+      "priority": "critical",
+      "project": "mission-control",
+      "deliverables": ["data/mission-control/standups/2026-02-17-morning.json"]
+    },
+    {
+      "id": "act-029",
+      "timestamp": "2026-02-16T09:00:00+13:00",
+      "agent": "fury",
+      "type": "standup",
+      "message": "Monday morning standup — Day 3 of ALTERNATE launch attempts (86+ checks since Feb 14). Presidents Day angle for US engagement. Personal agent flagged 3 urgent payment issues (IRD overdue, Figma/Miro failed). Junction sprint Day 7. 7 blockers total.",
+      "priority": "critical",
+      "project": "mission-control",
+      "deliverables": ["data/mission-control/standups/2026-02-16-morning.json"]
+    },
+    {
       "id": "act-028",
       "timestamp": "2026-02-15T09:00:00+13:00",
       "agent": "fury",
@@ -213,6 +253,6 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-02-15T09:00:00+13:00"
+    "lastUpdated": "2026-02-17T09:01:00+13:00"
   }
 }

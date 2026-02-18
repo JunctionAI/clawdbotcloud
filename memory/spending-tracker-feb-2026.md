@@ -396,3 +396,153 @@ _(Same format)_
 
 **Total spent today:** $0
 
+
+## 2026-02-15
+
+- **$19.87** @ Mobil K'road (Service Stations (with or withou) - 12:35
+- **$20.30** @ Novelty Trading (Fast Food Restaurants) - 02:56
+- **$10.18** @ Goblin Bar (Bars, Cocktail Lounges, Discothe) - 01:07
+
+**Total spent today:** $0
+
+
+## 2026-02-15
+
+- **$19.87** @ Mobil K'road (Service Stations (with or withou) - 12:35
+- **$20.30** @ Novelty Trading (Fast Food Restaurants) - 02:56
+- **$10.18** @ Goblin Bar (Bars, Cocktail Lounges, Discothe) - 01:07
+
+**Total spent today:** $0
+
+
+## 2026-02-15
+
+- **$19.87** @ Mobil K'road (Service Stations (with or withou) - 12:35
+- **$20.30** @ Novelty Trading (Fast Food Restaurants) - 02:56
+- **$10.18** @ Goblin Bar (Bars, Cocktail Lounges, Discothe) - 01:07
+
+**Total spent today:** $0
+
+
+## 2026-02-15
+
+- **$19.87** @ Mobil K'road (Service Stations (with or withou) - 12:35
+- **$20.30** @ Novelty Trading (Fast Food Restaurants) - 02:56
+- **$10.18** @ Goblin Bar (Bars, Cocktail Lounges, Discothe) - 01:07
+
+**Total spent today:** $0
+
+
+## 2026-02-15
+
+- **$19.87** @ Mobil K'road (Service Stations (with or withou) - 12:35
+- **$20.30** @ Novelty Trading (Fast Food Restaurants) - 02:56
+- **$10.18** @ Goblin Bar (Bars, Cocktail Lounges, Discothe) - 01:07
+
+**Total spent today:** $0
+
+
+## 2026-02-16
+
+- **$17.00** @ Woolworths Nz/4 Williamso (Grocery Stores, Supermarkets) - 19:21
+- **$14.92** @ Sushi Break (Fast Food Restaurants) - 14:38
+- **$101.38** → Trent Walker (Transfer) - 08:50
+
+**Total spent today:** $0
+
+
+## 2026-02-16
+
+- **$17.00** @ Woolworths Nz/4 Williamso (Grocery Stores, Supermarkets) - 19:21
+- **$14.92** @ Sushi Break (Fast Food Restaurants) - 14:38
+- **$101.38** → Trent Walker (Transfer) - 08:50
+
+**Total spent today:** $0
+
+
+## 2026-02-16
+
+- **$17.00** @ Woolworths Nz/4 Williamso (Grocery Stores, Supermarkets) - 19:21
+- **$14.92** @ Sushi Break (Fast Food Restaurants) - 14:38
+- **$101.38** → Trent Walker (Transfer) - 08:50
+
+**Total spent today:** $0
+
+
+## 2026-02-16
+
+- **$17.00** @ Woolworths Nz/4 Williamso (Grocery Stores, Supermarkets) - 19:21
+- **$14.92** @ Sushi Break (Fast Food Restaurants) - 14:38
+- **$101.38** → Trent Walker (Transfer) - 08:50
+
+**Total spent today:** $0
+
+
+## 2026-02-16
+
+- **$17.00** @ Woolworths Nz/4 Williamso (Grocery Stores, Supermarkets) - 19:21
+- **$14.92** @ Sushi Break (Fast Food Restaurants) - 14:38
+- **$101.38** → Trent Walker (Transfer) - 08:50
+
+**Total spent today:** $0
+
+
+## 2026-02-17
+
+- **$1363.88** - Received money from Deep Blue Healt with reference INV-0140 DeepBlueHeal - 15:18
+- **$3.99** @ Bp 2go Jervois Road (Service Stations (with or withou) - 14:28
+- **$89.18** @ Bp 2go Jervois Road (Service Stations (with or withou) - 14:27
+- **$13.70** @ Maki Mono Ponsonby (Fast Food Restaurants) - 14:16
+- **$6.90** @ Woolworths Nz/4 Williamso (Grocery Stores, Supermarkets) - 14:15
+- **$428.54** → Gem Visa (Transfer) - 13:00
+
+**Total spent today:** $0
+
+
+## 2026-02-17
+
+- **$1363.88** - Received money from Deep Blue Healt with reference INV-0140 DeepBlueHeal - 15:18
+- **$3.99** @ Bp 2go Jervois Road (Service Stations (with or withou) - 14:28
+- **$89.18** @ Bp 2go Jervois Road (Service Stations (with or withou) - 14:27
+- **$13.70** @ Maki Mono Ponsonby (Fast Food Restaurants) - 14:16
+- **$6.90** @ Woolworths Nz/4 Williamso (Grocery Stores, Supermarkets) - 14:15
+- **$428.54** → Gem Visa (Transfer) - 13:00
+
+**Total spent today:** $0
+
+
+## 2026-02-17
+
+- **$1363.88** - Received money from Deep Blue Healt with reference INV-0140 DeepBlueHeal - 15:18
+- **$3.99** @ Bp 2go Jervois Road (Service Stations (with or withou) - 14:28
+- **$89.18** @ Bp 2go Jervois Road (Service Stations (with or withou) - 14:27
+- **$13.70** @ Maki Mono Ponsonby (Fast Food Restaurants) - 14:16
+- **$6.90** @ Woolworths Nz/4 Williamso (Grocery Stores, Supermarkets) - 14:15
+- **$428.54** → Gem Visa (Transfer) - 13:00
+
+**Total spent today:** $0
+
+
+## 2026-02-17
+
+- **$1363.88** - Received money from Deep Blue Healt with reference INV-0140 DeepBlueHeal - 15:18
+- **$3.99** @ Bp 2go Jervois Road (Service Stations (with or withou) - 14:28
+- **$89.18** @ Bp 2go Jervois Road (Service Stations (with or withou) - 14:27
+- **$13.70** @ Maki Mono Ponsonby (Fast Food Restaurants) - 14:16
+- **$6.90** @ Woolworths Nz/4 Williamso (Grocery Stores, Supermarkets) - 14:15
+- **$428.54** → Gem Visa (Transfer) - 13:00
+
+**Total spent today:** $0
+
+
+## 2026-02-17
+
+- **$1363.88** - Received money from Deep Blue Healt with reference INV-0140 DeepBlueHeal - 15:18
+- **$3.99** @ Bp 2go Jervois Road (Service Stations (with or withou) - 14:28
+- **$89.18** @ Bp 2go Jervois Road (Service Stations (with or withou) - 14:27
+- **$13.70** @ Maki Mono Ponsonby (Fast Food Restaurants) - 14:16
+- **$6.90** @ Woolworths Nz/4 Williamso (Grocery Stores, Supermarkets) - 14:15
+- **$428.54** → Gem Visa (Transfer) - 13:00
+
+**Total spent today:** $0
+

@@ -13,47 +13,49 @@ interface Metric {
   color: string;
 }
 
+// UPDATED 2026-02-18: Replaced unverified inflated stats with real/defensible claims
+// Sources: DBH campaign (30% store record), AI agent stack (24/7 true), client cap (4-5 true)
 const metrics: Metric[] = [
   {
-    value: 500,
-    suffix: '%',
-    label: 'Average ROI',
-    description: 'Return on marketing investment',
+    value: 30,
+    suffix: '%+',
+    label: 'Sales Lift',
+    description: 'DBH — beat store record',
     color: 'from-green-400 to-emerald-500',
-  },
-  {
-    value: 10,
-    suffix: 'x',
-    label: 'Productivity',
-    description: 'Output multiplier with AI',
-    color: 'from-blue-400 to-primary-500',
   },
   {
     value: 24,
     suffix: '/7',
-    label: 'Optimization',
-    description: 'Continuous improvement',
+    label: 'AI Active',
+    description: 'Agents running continuously',
+    color: 'from-blue-400 to-primary-500',
+  },
+  {
+    value: 4,
+    suffix: '-5',
+    label: 'Max Clients',
+    description: 'Selective for depth of focus',
     color: 'from-purple-400 to-accent-500',
   },
   {
-    value: 40,
+    value: 100,
     suffix: '%',
-    label: 'Lower CAC',
-    description: 'Customer acquisition cost',
+    label: 'AI-Native',
+    description: 'Built on frontier models',
     color: 'from-orange-400 to-red-400',
   },
   {
-    value: 156,
-    suffix: '%',
-    label: 'Revenue Growth',
-    description: 'Average client increase',
+    value: 1,
+    suffix: '',
+    label: 'Spot Open',
+    description: 'Apply to work with us',
     color: 'from-pink-400 to-rose-500',
   },
   {
-    value: 3,
-    suffix: 'x',
-    label: 'Faster Results',
-    description: 'Compared to traditional',
+    value: 0,
+    suffix: ' agencies',
+    label: 'Like This in NZ',
+    description: 'First-mover advantage',
     color: 'from-teal-400 to-cyan-500',
   },
 ];

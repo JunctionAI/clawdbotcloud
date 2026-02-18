@@ -1,7 +1,7 @@
 # GEM VISA / Latitude Finance Email Findings
 
-**Search Date:** Tuesday, 10 February 2026
-**Total Emails Found:** 101
+**Search Date:** Tuesday, 17 February 2026
+**Total Emails Found:** 100
 
 ---
 
@@ -9,11 +9,14 @@
 
 - **Statements:** 15
 - **Payment Reminders:** 9
-- **Collection/Overdue Notices:** 32
-- **Other:** 45
+- **Collection/Overdue Notices:** 33
+- **Other:** 43
 
 ## ⚠️ Action Items
 
+- **13 Feb 2026, 04:32 am** - New message(s) from Inland Revenue
+  - Deadline: Thanks,
+- **12 Feb 2026, 03:14 pm** - 【Chevignon New Year, New Outfit】Discover new Garfield Collection & Japan denim outfit! VIP Exclusive, 10% OFF！
 - **9 Feb 2026, 11:05 am** - The Peterson Academy lifestyle collection is here.
 - **6 Feb 2026, 09:52 am** - 📅 You have 1 overdue task
   - Deadline: Jump in and keep your team's work on track, tasks between January 30 and February 6
@@ -98,14 +101,75 @@
 - **9 May 2025, 09:52 am** - Your overdue tasks from the past week - junctionmedia.ai
   - Deadline: tasks before the end of the week, tasks from Elisha Mharie Ballesteros, tasks between May 2 and May 9
   - Amount: $15, $2, $9
-- **2 May 2025, 09:52 am** - Your overdue tasks from the past week - junctionmedia.ai
-  - Deadline: tasks before the end of the week
-  - Amount: $33
 - **7 Apr 2025, 09:40 pm** - 2025 companies annual return is overdue
   - Deadline: FOR:
   - Amount: $787, $907, $6, $942, $904, $792, $131, $3
 
 ## All Correspondence (Newest First)
+
+### ⚽ The Best of The Beautiful Game ⚽
+
+- **Date:** 13 Feb 2026, 05:24 am
+- **From:** FIFA <noreply@mailing.fifa.com>
+- **Account:** tom@junctionmedia.ai
+- **Amounts Mentioned:** $202, $6
+
+**Preview:**
+> Welcome
+
+To The Beautiful Game,
+bringing you the best FIFA content from the world of football.
+
+
+OFFICIAL FIFA WORLD CUP 2026™ SQUISHMALLOWS
+
+SQUISHMALLOWS OFFICIAL MASCOTS HAVE LANDED
+
+
+
+Discover the all-new Squishmallows collection, featurin
+
+---
+
+### New message(s) from Inland Revenue
+
+- **Date:** 13 Feb 2026, 04:32 am
+- **From:** Do Not Reply <alerts@ironline.ird.govt.nz>
+- **Account:** tom@junctionmedia.ai
+- **Deadlines/Due Dates:** Thanks,
+
+**Preview:**
+> Hi Thomas Hall-Taylor
+
+Log in to myIR for Tomhalltaylor to review new message(s):
+
+Payment overdue
+
+Thanks,
+
+Customer Services team
+
+Beware of tax related scams
+
+
+Inland Revenue will never send you an email requesting you to confirm, update o
+
+---
+
+### 【Chevignon New Year, New Outfit】Discover new Garfield Collection & Japan denim outfit! VIP Exclusive, 10% OFF！
+
+- **Date:** 12 Feb 2026, 03:14 pm
+- **From:** CHEVIGNON HK <info@chevignon.edm.srlhk.com>
+- **Account:** tom@junctionmedia.ai
+
+**Preview:**
+> Chevon (Hong Kong) Limited 卓活 (香港) 有限公司
+
+You can unsubscribe from our emails, if you need to.
+
+unsubscribe
+
+---
 
 ### Action needed - your Figma account is past due
 
@@ -552,31 +616,6 @@ I would like to clarify the following points and request that this account be pl
 
 ---
 
-### Women's Organic Tees & Tanks 🍂
-
-- **Date:** 8 Jan 2026, 02:32 pm
-- **From:** AS Colour <asc@ascolour.co.nz>
-- **Account:** tom@junctionmedia.ai
-
-**Preview:**
-> Each piece feels as good as it is responsible!
-
-
-Discover our organic women’s collection, featuring best-selling tees and tanks made from high-grade cotton sourced from farms held to strict environmental standards. Grown without the use of herbicides a
-
----
-
-### New Year Sale: Up to 20% Off
-
-- **Date:** 7 Jan 2026, 11:45 am
-- **From:** Kiwi Sheepskins <support@kiwisheepskins.com>
-- **Account:** tom@junctionmedia.ai
-
-**Preview:**
-> Don’t miss it. Limited-time savings across our finest collections. ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏
-
----
-
 ### Your receipt from X #2338-8154-4565
 
 - **Date:** 3 Jan 2026, 02:36 pm
@@ -811,19 +850,6 @@ Your overdue tasks between December 5 and December 12
 
         Quick Gift: Digital Gift Cards
 Dec 5
-
----
-
-### Your receipt from RealtimeBoard Inc. dba Miro #2610-1741
-
-- **Date:** 9 Dec 2025, 09:38 pm
-- **From:** RealtimeBoard Inc. dba Miro <invoice+statements+acct_1038Ba2tsvpQFpr7@stripe.com>
-- **Account:** tom@junctionmedia.ai
-- **Attachments:** Yes 📎
-- **Amounts Mentioned:** $261, $174, $1
-
-**Preview:**
-> Your receipt from RealtimeBoard Inc. dba Miro #2610-1741  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏
 
 ---
 
@@ -1794,20 +1820,6 @@ Merchant
 NZ Grappler Limited
 
 Invoi
-
----
-
-### Your overdue tasks from the past week - junctionmedia.ai
-
-- **Date:** 2 May 2025, 09:52 am
-- **From:** Asana <no-reply@asana.com>
-- **Account:** tom@junctionmedia.ai
-- **Amounts Mentioned:** $33
-- **Deadlines/Due Dates:** tasks before the end of the week
-
-**Preview:**
-> Update 33 overdue tasks before the end of the week.
-͏ ‌     ﻿ ͏ ‌     ﻿ ͏ ‌     ﻿ ͏ ‌     ﻿ ͏ ‌     ﻿ ͏ ‌     ﻿ ͏ ‌     ﻿ ͏ ‌     ﻿ ͏ ‌     ﻿ ͏ ‌     ﻿ ͏ ‌     ﻿ ͏ ‌     ﻿ ͏ ‌     ﻿ ͏ ‌     ﻿ ͏ ‌     ﻿ ͏ ‌     ﻿ ͏ ‌     ﻿ ͏ ‌     ﻿ ͏ ‌     ﻿ ͏ ‌     ﻿ ͏
 
 ---
 

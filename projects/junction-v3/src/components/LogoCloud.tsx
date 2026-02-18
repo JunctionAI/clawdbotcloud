@@ -128,10 +128,10 @@ export default function LogoCloud({
   ];
   
   const clientsRow2 = [
-    'Limited Availability',
-    '2 Spots Left',
-    'Apply Now',
-    'Select Clients',
+    'By Application Only',
+    'AI-Native Operations',
+    'Apply to Work With Us',
+    'Select Partners',
   ];
 
   if (variant === 'marquee') {

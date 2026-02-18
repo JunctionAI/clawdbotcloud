@@ -1,12 +1,12 @@
 $body = @{
     path = "tasks:list"
     args = @{}
-} | ConvertTo-Json -Compress
+} | ConvertTo-Json
 
 try {
     $response = Invoke-RestMethod -Uri "https://little-ladybug-483.convex.cloud/api/query" -Method POST -ContentType "application/json" -Body $body
     $response | ConvertTo-Json -Depth 10
 } catch {
     Write-Host "Error: $($_.Exception.Message)"
-    Write-Host $_.ErrorDetails.Message
+    Write-Host "Response: $($_.ErrorDetails.Message)"
 }
