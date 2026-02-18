@@ -131,7 +131,7 @@ export default function NewZealandPage() {
             { city: 'Auckland', link: '/auckland' },
             { city: 'Wellington', link: '/wellington' },
             { city: 'Christchurch', link: '/christchurch' },
-            { city: 'Hamilton', link: null },
+            { city: 'Hamilton', link: '/hamilton' },
             { city: 'Tauranga', link: null },
             { city: 'Dunedin', link: null },
           ].map(({ city, link }) => (
