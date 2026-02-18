@@ -8,8 +8,8 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   
   // Allow customization via query params
-  const title = searchParams.get('title') || 'AI-Powered Marketing';
-  const subtitle = searchParams.get('subtitle') || 'That Moves The Needle';
+  const title = searchParams.get('title') || 'AI-Native Marketing';
+  const subtitle = searchParams.get('subtitle') || 'Operations That Scale';
 
   return new ImageResponse(
     (
@@ -73,7 +73,7 @@ export async function GET(request: NextRequest) {
             <path d="M55 72 Q72 72 72 55" stroke="url(#logoGrad)" strokeWidth="8" strokeLinecap="round" fill="none" />
           </svg>
           <span style={{ fontSize: '48px', fontWeight: 800, color: '#0f172a' }}>
-            Junction Media
+            Tom Hall-Taylor
           </span>
         </div>
         
@@ -127,7 +127,7 @@ export async function GET(request: NextRequest) {
               fontWeight: 500,
             }}
           >
-            24/7 AI Agents + Senior Human Strategists
+            AI-Native Marketing · By Application Only
           </span>
         </div>
         
@@ -141,7 +141,7 @@ export async function GET(request: NextRequest) {
             color: '#94a3b8',
           }}
         >
-          junctionmedia.co.nz
+          junctionmedia.ai
         </div>
       </div>
     ),

@@ -60,7 +60,7 @@ export const metadata: Metadata = {
       "Building AI marketing systems for select businesses. Strategy and execution, unified. By application only.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/api/og",
         width: 1200,
         height: 630,
         alt: "Tom Hall-Taylor - AI-Native Marketing Operator",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     title: "Tom Hall-Taylor | AI-Native Marketing Operator",
     description:
       "Building AI marketing systems for select businesses. Strategy and execution, unified.",
-    images: ["/og-image.png"],
+    images: ["/api/og"],
     creator: "@tomhalltaylor",
   },
 
