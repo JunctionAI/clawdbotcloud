@@ -46,7 +46,7 @@ export default function PersonalBio() {
             {[
               "I've spent over a decade in digital marketing — from SEO and paid media to operational leadership at scale. I've worked with brands across e-commerce, health & wellness, and creative industries.",
               "The old playbook is dead. Traditional agencies charging $20k/month for strategy decks and junior account managers are obsolete. The future belongs to operators who understand AI not as a buzzword, but as infrastructure.",
-              "I made that transition early. Now I help select businesses do the same.",
+              "I made that transition early. Now I help select businesses in Auckland, New Zealand — and beyond — do the same.",
             ].map((paragraph, i) => (
               <motion.p
                 key={i}
