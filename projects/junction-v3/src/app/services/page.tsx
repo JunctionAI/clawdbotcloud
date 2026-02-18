@@ -89,6 +89,36 @@ const services = [
     cta: 'Learn more →',
     highlight: false,
   },
+  {
+    title: 'Meta Ads NZ',
+    slug: '/services/meta-ads-nz',
+    tagline: 'Facebook & Instagram advertising that scales.',
+    description:
+      'AI-optimised Meta Ads management for NZ businesses. Creative testing at scale, smart audience strategy, and full-funnel campaign structure — so your ad spend turns into customers, not wasted impressions.',
+    includes: ['Account audit & strategy', 'Creative testing', 'Audience & retargeting', 'Weekly optimisation'],
+    cta: 'Learn more →',
+    highlight: false,
+  },
+  {
+    title: 'Email Marketing NZ',
+    slug: '/services/email-marketing-nz',
+    tagline: 'Klaviyo automation and list growth for NZ businesses.',
+    description:
+      'Email marketing strategy, Klaviyo automation flows, and list growth — built to make email a predictable revenue channel. Welcome series, abandoned cart, post-purchase, win-back. From $600/month.',
+    includes: ['Klaviyo setup & flows', 'Campaign management', 'Segmentation', 'Deliverability management'],
+    cta: 'Learn more →',
+    highlight: false,
+  },
+  {
+    title: 'Social Media NZ',
+    slug: '/services/social-media-nz',
+    tagline: 'Consistent social presence that builds brands.',
+    description:
+      'AI-assisted social media management for NZ businesses. Strategy, content creation, and consistent publishing on Instagram, Facebook, and LinkedIn — without it consuming your time.',
+    includes: ['Channel strategy', 'Content creation', 'Publishing & scheduling', 'Monthly reporting'],
+    cta: 'Learn more →',
+    highlight: false,
+  },
 ]
 
 export default function ServicesPage() {
