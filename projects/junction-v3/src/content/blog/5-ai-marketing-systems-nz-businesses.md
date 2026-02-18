@@ -11,7 +11,7 @@ Most New Zealand businesses have added AI to their marketing stack. A ChatGPT su
 
 None of that is a system.
 
-A system is when your tools talk to each other, feed each other, and compound results without you manually operating each one. The businesses I see pulling ahead in NZ right now aren't using more AI tools — they're building fewer, tighter systems.
+A system is when your tools talk to each other, feed each other, and compound results without you manually operating each one. For the full breakdown of why that distinction matters, see [AI systems vs AI tools](/blog/ai-systems-vs-ai-tools). The businesses I see pulling ahead in NZ right now aren't using more AI tools — they're building fewer, tighter systems.
 
 Here are the five that actually move revenue.
 
@@ -134,6 +134,10 @@ If you're building your first AI marketing system, start with **content intellig
 If you already have content sorted, move to **paid advertising intelligence**. That's where you'll find the fastest ROI uplift — often within 60-90 days.
 
 If you want help building any of these systems for your NZ business, [I work with a small number of clients directly](/apply). Applications are reviewed weekly.
+
+---
+
+**Related reading:** [AI marketing for ecommerce NZ: the full breakdown](/blog/ai-marketing-ecommerce-nz) · [Marketing AI agents for NZ businesses](/blog/marketing-ai-agent-nz) · [How these systems drove a 30% revenue record at Deep Blue Health](/blog/deep-blue-health-case-study)
 
 ---
 

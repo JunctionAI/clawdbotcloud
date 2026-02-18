@@ -19,7 +19,7 @@ I built Junction Media on the opposite premise. Capacity capped at 3-5 partnersh
 
 Most businesses don't need a full-time CMO. They need senior strategic thinking applied consistently. They need someone who understands their market deeply, not someone managing 30 accounts from a dashboard.
 
-That's what a fractional CMO actually is: executive-level marketing leadership, allocated to your business on a part-time or project basis. The key word is *allocated* — not shared in the sense that your attention is split across dozens of clients, but genuinely focused on a small portfolio where depth is possible.
+That's what a [fractional CMO](/blog/what-is-a-fractional-cmo-nz) actually is: executive-level marketing leadership, allocated to your business on a part-time or project basis. The key word is *allocated* — not shared in the sense that your attention is split across dozens of clients, but genuinely focused on a small portfolio where depth is possible.
 
 When I work with a business, I know their numbers. I know their customers. I know what worked last quarter and why the CPL spiked in November. That context compounds over time.
 
@@ -42,7 +42,7 @@ That strategic layer requires genuine context about the business. And context re
 
 ## The Case Study That Changed How I Think
 
-Deep Blue Health came to me in a period where they'd plateau'd. Their marketing was fine — not broken, just not moving.
+[Deep Blue Health](/blog/deep-blue-health-case-study) came to me in a period where they'd plateau'd. Their marketing was fine — not broken, just not moving.
 
 Within the first quarter, we rebuilt their marketing operation from the ground up. New Google Ads structure, Meta campaigns rebuilt with AI-generated creative variants, first proper SEO implementation, and an AI customer support layer that freed up 15 hours a week of team time.
 
@@ -69,6 +69,10 @@ I keep 3-5 active partnerships at any time. When a spot opens, I review applicat
 If you're a founder or marketing lead thinking about what AI-native marketing could do for your business, that's the conversation I'm interested in having.
 
 [Applications reviewed monthly →](/apply)
+
+---
+
+**Related reading:** [What is a fractional CMO? (NZ guide)](/blog/what-is-a-fractional-cmo-nz) · [How to hire a fractional CMO without getting burned](/blog/how-to-hire-fractional-cmo-nz) · [AI systems vs AI tools: the distinction worth thousands per month](/blog/ai-systems-vs-ai-tools)
 
 ---
 

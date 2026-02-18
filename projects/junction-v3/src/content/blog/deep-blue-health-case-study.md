@@ -11,7 +11,7 @@ Deep Blue Health (DBH) is a New Zealand health supplement brand with a solid pro
 
 When we started working together, they weren't struggling — but they'd plateau'd. Their marketing was functional. Google Ads were running. Some social content. A basic email list. The kind of setup that keeps the lights on but doesn't accelerate growth.
 
-The brief was simple: rebuild the marketing operation for compounding performance. Not a campaign. A system.
+The brief was simple: rebuild the marketing operation for compounding performance. Not a campaign. A [system](/blog/ai-systems-vs-ai-tools).
 
 Here's an honest account of what we built and what happened.
 
@@ -105,6 +105,10 @@ If you're a product business with an established customer base, a functional but
 The investment is real. The setup phase involves genuine work and genuine cost. But the leverage on the other side is also real: a marketing system that runs, learns, and compounds.
 
 That's what I build.
+
+---
+
+**Related reading:** [The five AI marketing systems every NZ business should have](/blog/5-ai-marketing-systems-nz-businesses) · [AI marketing for ecommerce NZ: how to build a growth machine](/blog/ai-marketing-ecommerce-nz) · [Why I work with 3 clients instead of 30](/blog/why-i-work-with-3-clients)
 
 [Apply to work together →](/apply)
 

@@ -51,7 +51,7 @@ That's not a stack of tools. That's a system.
 
 ## The Revenue Difference
 
-I'll share a real example.
+I'll share a real example. (For a deeper look at how this plays out in practice, read the [Deep Blue Health case study](/blog/deep-blue-health-case-study).)
 
 Before building this kind of integrated system, a client was spending roughly 30 hours per week across their team on marketing execution — content, ads management, customer queries, reporting.
 
@@ -83,6 +83,10 @@ If the answer is "very little," you're at the tool layer.
 If the answer is "most of it, with some degradation," you're building toward a system.
 
 If you want to close that gap — or if you're already thinking in systems but need someone to build the architecture — that's the conversation I'm interested in.
+
+---
+
+**Related reading:** [5 AI marketing systems every NZ business should have](/blog/5-ai-marketing-systems-nz-businesses) · [What AI-native marketing actually looks like](/blog/ai-native-marketing-nz) · [Marketing automation Auckland: what's actually possible in 2026](/blog/marketing-automation-auckland)
 
 [Book a strategy call →](/apply)
 

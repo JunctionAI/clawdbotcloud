@@ -66,7 +66,7 @@ Ongoing, you should expect:
 
 ## How Is This Different From a Marketing Agency?
 
-This question comes up constantly.
+This question comes up constantly. For a detailed breakdown, read the full [AI marketing consultant vs. agency comparison](/blog/ai-marketing-consultant-vs-agency-nz).
 
 Agencies sell services. They execute specific tasks — SEO, paid ads, content, social. Most agencies don't own strategy. They don't sit in your weekly leadership meetings. They don't push back when the business is heading in the wrong direction.
 
@@ -90,7 +90,7 @@ I run AI systems as the infrastructure layer for every client I work with. It's 
 
 ## What Should You Pay?
 
-In the US, fractional CMOs typically charge $8k–$25k/month depending on scope and seniority.
+For a full breakdown of what you'll actually pay for different marketing models in NZ, see the [marketing cost guide](/blog/how-much-does-marketing-cost-nz). In the US, fractional CMOs typically charge $8k–$25k/month depending on scope and seniority.
 
 In New Zealand, the market is less mature. You'll find a wide range — from freelance marketers calling themselves fractional CMOs at $2k/month, to genuine senior executives at $8k–$15k/month.
 
@@ -119,6 +119,10 @@ If you answered yes to all three, you're in the right territory.
 I work with 3-5 businesses at a time, embedded as their fractional marketing lead. I bring AI systems as infrastructure — which means one person delivering what used to require a small team.
 
 If that sounds like what you need, [apply to work together](/#apply).
+
+---
+
+**Related reading:** [How to hire a fractional CMO in NZ (without getting burned)](/blog/how-to-hire-fractional-cmo-nz) · [Fractional marketing director NZ: is it right for your business?](/blog/fractional-marketing-director-nz) · [Why I work with 3 clients instead of 30](/blog/why-i-work-with-3-clients)
 
 ---
 
