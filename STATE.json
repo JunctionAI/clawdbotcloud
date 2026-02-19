@@ -49,7 +49,11 @@
       "status": "claimed",
       "credentialsPath": "~/.config/moltbook/credentials.json",
       "profileUrl": "https://moltbook.com/u/PrepAgent",
-      "claimedAt": "2026-01-31T12:18:00+13:00"
+      "claimedAt": "2026-01-31T12:18:00+13:00",
+      "scraperScript": "scripts/moltbook-scraper.cjs",
+      "lastScrape": "2026-02-19T12:45:00+13:00",
+      "lastReport": "data/moltbook/latest-report.md",
+      "sandbox": { "name": "clawd-1", "id": "b95c74cc5097d42cfa1804657e735d57" }
     },
     "discord": {
       "connected": true,
@@ -78,7 +82,7 @@
   },
   "lastChecks": {
     "email": "2026-02-12T13:41:00+13:00",
-    "moltbook": "2026-01-31T12:26:00+13:00",
+    "moltbook": "2026-02-19T12:45:00+13:00",
     "wise": "2026-01-31T11:40:00+13:00",
     "calendar": "2026-02-15T19:55:00+13:00",
     "weather": null,
