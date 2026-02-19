@@ -1,192 +1,196 @@
 {
-  "meta": {
-    "lastUpdated": "2026-02-15T20:00:00+13:00",
-    "version": "1.0",
-    "description": "Fast-tier operational state - loaded every session before anything else"
-  },
-  "connectedServices": {
-    "wise": {
-      "connected": true,
-      "profileId": "28947642",
-      "credentialsPath": "wise-credentials.json",
-      "accountType": "business",
-      "lastVerified": "2026-01-31T11:40:00+13:00"
-    },
-    "gog": {
-      "connected": true,
-      "services": [
-        "gmail",
-        "calendar"
-      ],
-      "credentialsPath": "google-credentials.json",
-      "tokenPath": "gmail-token.json",
-      "setupScript": "scripts/gmail-setup.js",
-      "note": "Gmail API for email intelligence - run gmail-setup.js to configure"
-    },
-    "outlook": {
-      "connected": true,
-      "email": "tom@junctionmedia.ai",
-      "credentialsPath": "microsoft-graph-credentials.json",
-      "scriptPath": "scripts/outlook-calendar.js",
-      "services": [
-        "calendar"
-      ],
-      "lastVerified": "2026-02-03T08:00:00+13:00",
-      "calendarScript": {
-        "path": "scripts/outlook-calendar.js",
-        "CRITICAL_FIX": "Script has -1 day offset baked in. Microsoft Graph + Pacific/Auckland has timezone bug that shifts dates +1 day. DO NOT CHANGE THIS. Just pass the date you want and it will appear correctly.",
-        "usage": {
-          "list": "node scripts/outlook-calendar.js list --days=7",
-          "add": "node scripts/outlook-calendar.js add --subject=\"Meeting\" --start=\"2026-02-05T09:00:00\" --end=\"2026-02-05T10:00:00\" --location=\"Office\"",
-          "delete": "node scripts/outlook-calendar.js delete --id=\"EVENT_ID\""
-        }
-      },
-      "note": "Microsoft Graph API - full calendar access. ALWAYS use scripts/outlook-calendar.js for ALL calendar operations. The -1 day fix is permanent."
-    },
-    "moltbook": {
-      "connected": true,
-      "username": "PrepAgent",
-      "status": "claimed",
-      "credentialsPath": "~/.config/moltbook/credentials.json",
-      "profileUrl": "https://moltbook.com/u/PrepAgent",
-      "claimedAt": "2026-01-31T12:18:00+13:00",
-      "scraperScript": "scripts/moltbook-scraper.cjs",
-      "lastScrape": "2026-02-19T12:45:00+13:00",
-      "lastReport": "data/moltbook/latest-report.md",
-      "sandbox": { "name": "clawd-1", "id": "b95c74cc5097d42cfa1804657e735d57" }
-    },
-    "discord": {
-      "connected": true,
-      "currentChannel": "active",
-      "note": "Primary communication channel as of Feb 10"
-    },
-    "telegram": {
-      "connected": false,
-      "disabledAt": "2026-02-10T12:15:00+13:00",
-      "reason": "Tom requested all updates go to Discord only"
-    },
-    "whatsapp": {
-      "connected": true,
-      "phoneNumber": "+642108323870",
-      "mode": "selfChatMode",
-      "linkedAt": "2026-01-31T13:04:00+13:00"
-    },
-    "supermemory": {
-      "connected": true,
-      "containerTag": "tom_halltaylor",
-      "credentialsPath": "supermemory-credentials.json",
-      "scriptPath": "scripts/supermemory-sync.js",
-      "installedAt": "2026-01-31T13:10:00+13:00",
-      "note": "Universal Memory API for personalized AI context"
-    }
-  },
-  "lastChecks": {
-    "email": "2026-02-12T13:41:00+13:00",
-    "moltbook": "2026-02-19T12:45:00+13:00",
-    "wise": "2026-01-31T11:40:00+13:00",
-    "calendar": "2026-02-15T19:55:00+13:00",
-    "weather": null,
-    "weeklyReview": "2026-02-15T21:40:00+13:00"
-  },
-  "activeProjects": [
-    "ALTERNATE Brand (films + events + merch) - TOP PRIORITY - full brand/business pivot Feb 18",
-    "DBH - stable base income ($4k/month, 4h/day core hours) - BASE CLIENT",
-    "PG Investments - base client",
-    "Junction Media - AI service engine (ALTERNATE as first client + DBH + PG)",
-    "Apps portfolio - 7 apps in development (low pressure, evenings/weekends)",
-    "Jakob Clawdbot support - ongoing (as needed)"
-  ],
-  "pendingItems": [
-    "ALTERNATE eCom setup - domain decision (alternate.ai vs .io) + Shopify store launch",
-    "ALTERNATE film launch - still blocked on YouTube upload + extras handles from Zach + vertical exports",
-    "Higgsfield gorilla competition - first major content output under new brand model",
-    "Zach partnership formalisation - 50/50 TBC, needs legal clarity",
-    "ALTERNATE logo - brief ready, Midjourney prompts written, needs generation",
-    "Build-in-Public Ep 1 - can film TODAY using Shopify free trial",
-    "Junction git push - CRITICAL: 50+ commits not synced to GitHub (browser auth needed)",
-    "GoDaddy DNS - apex junctionmedia.ai → Vercel A record 76.76.21.21",
-    "IRD payment - overdue CRITICAL",
-    "Pre-authorization protocols - Build system for autonomous execution during weekends"
-  ],
-  "recentDecisions": [
-    {
-      "date": "2026-02-18",
-      "decision": "ALTERNATE pivots from film project to full brand/business — three pillars: films, events, merch. Junction = service engine, not standalone agency.",
-      "rationale": "Tom's directive: do it for ourselves. ALTERNATE = Junction's proof of concept and live marketing. Zach as 50/50 partner (TBC). eCom store on Shopify + Printful at alternate.ai or alternate.io."
-    },
-    {
-      "date": "2026-02-10",
-      "decision": "Agency price point set at $10,000/month",
-      "rationale": "Time is in high demand, need to be selective. Every second is valuable. Attracting not chasing."
-    },
-    {
-      "date": "2026-02-10",
-      "decision": "Telegram disabled - Discord only for updates",
-      "rationale": "Consolidate communications to one channel"
-    },
-    {
-      "date": "2026-02-12",
-      "decision": "ALTERNATE movie ACTIVE - full production push",
-      "rationale": "Seedance sorted. Release target Feb 14. Tom grinding with Zach until 3:30am daily."
-    },
-    {
-      "date": "2026-02-01",
-      "decision": "PG Bedrock Path chosen over Q1 Scaling Plan",
-      "rationale": "PG marketing role ($150k+ at 10-20h/week) + DBH ($52k) = $200k+ stable base. Better Maslow alignment (safety→esteem→actualization), less burnout than grinding Clawdbot setups, high-tier network platform for $500k+ in 2-3 years."
-    }
-  ],
-  "currentContext": {
-    "phase": "ALTERNATE BRAND PIVOT — Feb 18, 2026",
-    "focus": "Build ALTERNATE (films + events + merch) as full brand/business. Junction = engine.",
-    "strategy": "Do it for ourselves. ALTERNATE = Junction's proof of concept + live marketing case study.",
-    "vision": "ALTERNATE becomes a real brand: AI films, community events, merch store. Junction serves it.",
-    "insight": "Building ALTERNATE in public IS the Junction content strategy. Every result = a case study.",
-    "mandate": "Launch ALTERNATE eCom. Ship Higgsfield film. Film Build-in-Public Ep 1. Formalise Zach deal.",
-    "junctionModel": "NOT a client-hunting agency. Junction = AI service engine for ALTERNATE + DBH + PG.",
-    "pivotDate": "2026-02-18T19:45:00+13:00"
-  },
-  "systemConfig": {
-    "workspace": "C:\\Users\\Nightgalem\\clawd",
-    "timezone": "Pacific/Auckland (GMT+13)",
-    "model": "anthropic/claude-opus-4-5",
-    "gitInitialized": true
-  },
-  "automationSystems": {
-    "klaviyoOptimizer": {
-      "scripts": [
-        "scripts/klaviyo/klaviyo-api.js",
-        "scripts/klaviyo/subject-line-optimizer.js",
-        "scripts/klaviyo/quick-optimize.js"
-      ],
-      "description": "Email marketing optimization system based on Anthropic Growth Marketing patterns",
-      "features": [
-        "Klaviyo API integration for campaign data",
-        "Subject line variation generator",
-        "Performance analysis (identify underperformers)",
-        "Experiment memory/logging system",
-        "Self-improving recommendations"
-      ],
-      "memoryFile": "data/email-experiments.json",
-      "credentialsNeeded": "klaviyo-credentials.json (copy from .template)",
-      "createdAt": "2026-02-16T20:30:00+13:00",
-      "usage": {
-        "quick": "node scripts/klaviyo/quick-optimize.js \"Your subject line\"",
-        "batch": "node scripts/klaviyo/subject-line-optimizer.js batch --input=data/campaigns.json",
-        "export": "node scripts/klaviyo/klaviyo-api.js export --days=30"
-      }
-    },
-    "missionControl": {
-      "script": "scripts/mission-control.js",
-      "description": "Kanban dashboard tracking all autonomous tasks",
-      "features": [
-        "Kanban board (To Do → In Progress → Review → Complete)",
-        "Activity feed",
-        "Web interface (localhost:3100)",
-        "Auto-updates from scripts",
-        "Task management API"
-      ],
-      "url": "http://localhost:3100",
-      "lastUpdated": "2026-02-18T05:19:35.116Z"
-    }
-  }
+    "meta":  {
+                 "lastUpdated":  "2026-02-15T20:00:00+13:00",
+                 "version":  "1.0",
+                 "description":  "Fast-tier operational state - loaded every session before anything else"
+             },
+    "connectedServices":  {
+                              "wise":  {
+                                           "connected":  true,
+                                           "profileId":  "28947642",
+                                           "credentialsPath":  "wise-credentials.json",
+                                           "accountType":  "business",
+                                           "lastVerified":  "2026-01-31T11:40:00+13:00"
+                                       },
+                              "gog":  {
+                                          "connected":  true,
+                                          "services":  [
+                                                           "gmail",
+                                                           "calendar"
+                                                       ],
+                                          "credentialsPath":  "google-credentials.json",
+                                          "tokenPath":  "gmail-token.json",
+                                          "setupScript":  "scripts/gmail-setup.js",
+                                          "note":  "Gmail API for email intelligence - run gmail-setup.js to configure"
+                                      },
+                              "outlook":  {
+                                              "connected":  true,
+                                              "email":  "tom@junctionmedia.ai",
+                                              "credentialsPath":  "microsoft-graph-credentials.json",
+                                              "scriptPath":  "scripts/outlook-calendar.js",
+                                              "services":  [
+                                                               "calendar"
+                                                           ],
+                                              "lastVerified":  "2026-02-03T08:00:00+13:00",
+                                              "calendarScript":  {
+                                                                     "path":  "scripts/outlook-calendar.js",
+                                                                     "CRITICAL_FIX":  "Script has -1 day offset baked in. Microsoft Graph + Pacific/Auckland has timezone bug that shifts dates +1 day. DO NOT CHANGE THIS. Just pass the date you want and it will appear correctly.",
+                                                                     "usage":  {
+                                                                                   "list":  "node scripts/outlook-calendar.js list --days=7",
+                                                                                   "add":  "node scripts/outlook-calendar.js add --subject=\"Meeting\" --start=\"2026-02-05T09:00:00\" --end=\"2026-02-05T10:00:00\" --location=\"Office\"",
+                                                                                   "delete":  "node scripts/outlook-calendar.js delete --id=\"EVENT_ID\""
+                                                                               }
+                                                                 },
+                                              "note":  "Microsoft Graph API - full calendar access. ALWAYS use scripts/outlook-calendar.js for ALL calendar operations. The -1 day fix is permanent."
+                                          },
+                              "moltbook":  {
+                                               "connected":  true,
+                                               "username":  "PrepAgent",
+                                               "status":  "claimed",
+                                               "credentialsPath":  "~/.config/moltbook/credentials.json",
+                                               "profileUrl":  "https://moltbook.com/u/PrepAgent",
+                                               "claimedAt":  "2026-01-31T12:18:00+13:00",
+                                               "scraperScript":  "scripts/moltbook-scraper.cjs",
+                                               "lastScrape":  "2026-02-19T12:45:00+13:00",
+                                               "lastReport":  "data/moltbook/latest-report.md",
+                                               "sandbox":  {
+                                                               "name":  "clawd-1",
+                                                               "id":  "b95c74cc5097d42cfa1804657e735d57"
+                                                           }
+                                           },
+                              "discord":  {
+                                              "connected":  true,
+                                              "currentChannel":  "active",
+                                              "note":  "Primary communication channel as of Feb 10"
+                                          },
+                              "telegram":  {
+                                               "connected":  false,
+                                               "disabledAt":  "2026-02-10T12:15:00+13:00",
+                                               "reason":  "Tom requested all updates go to Discord only"
+                                           },
+                              "whatsapp":  {
+                                               "connected":  true,
+                                               "phoneNumber":  "+642108323870",
+                                               "mode":  "selfChatMode",
+                                               "linkedAt":  "2026-01-31T13:04:00+13:00"
+                                           },
+                              "supermemory":  {
+                                                  "connected":  true,
+                                                  "containerTag":  "tom_halltaylor",
+                                                  "credentialsPath":  "supermemory-credentials.json",
+                                                  "scriptPath":  "scripts/supermemory-sync.js",
+                                                  "installedAt":  "2026-01-31T13:10:00+13:00",
+                                                  "note":  "Universal Memory API for personalized AI context"
+                                              }
+                          },
+    "lastChecks":  {
+                       "email":  "2026-02-12T13:41:00+13:00",
+                       "moltbook":  "2026-02-19T12:45:00+13:00",
+                       "wise":  "2026-01-31T11:40:00+13:00",
+                       "calendar":  "2026-02-15T19:55:00+13:00",
+                       "weather":  null,
+                       "weeklyReview":  "2026-02-15T21:40:00+13:00"
+                   },
+    "activeProjects":  [
+                           "ALTERNATE Brand (films + events + merch) - TOP PRIORITY - full brand/business pivot Feb 18",
+                           "DBH - stable base income ($4k/month, 4h/day core hours) - BASE CLIENT",
+                           "PG Investments - base client",
+                           "Junction Media - AI service engine (ALTERNATE as first client + DBH + PG)",
+                           "Apps portfolio - 7 apps in development (low pressure, evenings/weekends)",
+                           "Jakob Clawdbot support - ongoing (as needed)"
+                       ],
+    "pendingItems":  [
+                         "ALTERNATE eCom setup - domain decision (alternate.ai vs .io) + Shopify store launch",
+                         "ALTERNATE film launch - still blocked on YouTube upload + extras handles from Zach + vertical exports",
+                         "Higgsfield gorilla competition - first major content output under new brand model",
+                         "Zach partnership formalisation - 50/50 TBC, needs legal clarity",
+                         "ALTERNATE logo - brief ready, Midjourney prompts written, needs generation",
+                         "Build-in-Public Ep 1 - can film TODAY using Shopify free trial",
+                         "Junction git push - CRITICAL: 50+ commits not synced to GitHub (browser auth needed)",
+                         "GoDaddy DNS - apex junctionmedia.ai → Vercel A record 76.76.21.21",
+                         "IRD payment - overdue CRITICAL",
+                         "Pre-authorization protocols - Build system for autonomous execution during weekends"
+                     ],
+    "recentDecisions":  [
+                            {
+                                "date":  "2026-02-18",
+                                "decision":  "ALTERNATE pivots from film project to full brand/business — three pillars: films, events, merch. Junction = service engine, not standalone agency.",
+                                "rationale":  "Tom\u0027s directive: do it for ourselves. ALTERNATE = Junction\u0027s proof of concept and live marketing. Zach as 50/50 partner (TBC). eCom store on Shopify + Printful at alternate.ai or alternate.io."
+                            },
+                            {
+                                "date":  "2026-02-10",
+                                "decision":  "Agency price point set at $10,000/month",
+                                "rationale":  "Time is in high demand, need to be selective. Every second is valuable. Attracting not chasing."
+                            },
+                            {
+                                "date":  "2026-02-10",
+                                "decision":  "Telegram disabled - Discord only for updates",
+                                "rationale":  "Consolidate communications to one channel"
+                            },
+                            {
+                                "date":  "2026-02-12",
+                                "decision":  "ALTERNATE movie ACTIVE - full production push",
+                                "rationale":  "Seedance sorted. Release target Feb 14. Tom grinding with Zach until 3:30am daily."
+                            },
+                            {
+                                "date":  "2026-02-01",
+                                "decision":  "PG Bedrock Path chosen over Q1 Scaling Plan",
+                                "rationale":  "PG marketing role ($150k+ at 10-20h/week) + DBH ($52k) = $200k+ stable base. Better Maslow alignment (safety→esteem→actualization), less burnout than grinding Clawdbot setups, high-tier network platform for $500k+ in 2-3 years."
+                            }
+                        ],
+    "currentContext":  {
+                           "phase":  "ALTERNATE BRAND PIVOT — Feb 18, 2026",
+                           "focus":  "Build ALTERNATE (films + events + merch) as full brand/business. Junction = engine.",
+                           "strategy":  "Do it for ourselves. ALTERNATE = Junction\u0027s proof of concept + live marketing case study.",
+                           "vision":  "ALTERNATE becomes a real brand: AI films, community events, merch store. Junction serves it.",
+                           "insight":  "Building ALTERNATE in public IS the Junction content strategy. Every result = a case study.",
+                           "mandate":  "Launch ALTERNATE eCom. Ship Higgsfield film. Film Build-in-Public Ep 1. Formalise Zach deal.",
+                           "junctionModel":  "NOT a client-hunting agency. Junction = AI service engine for ALTERNATE + DBH + PG.",
+                           "pivotDate":  "2026-02-18T19:45:00+13:00",
+                           "junctionStatus":  "ON HOLD � Positioning correct (apply-to-work-with-us, big clients) but needs Tom review before launch. Stop all autonomous building."
+                       },
+    "systemConfig":  {
+                         "workspace":  "C:\\Users\\Nightgalem\\clawd",
+                         "timezone":  "Pacific/Auckland (GMT+13)",
+                         "model":  "anthropic/claude-opus-4-5",
+                         "gitInitialized":  true
+                     },
+    "automationSystems":  {
+                              "klaviyoOptimizer":  {
+                                                       "scripts":  [
+                                                                       "scripts/klaviyo/klaviyo-api.js",
+                                                                       "scripts/klaviyo/subject-line-optimizer.js",
+                                                                       "scripts/klaviyo/quick-optimize.js"
+                                                                   ],
+                                                       "description":  "Email marketing optimization system based on Anthropic Growth Marketing patterns",
+                                                       "features":  [
+                                                                        "Klaviyo API integration for campaign data",
+                                                                        "Subject line variation generator",
+                                                                        "Performance analysis (identify underperformers)",
+                                                                        "Experiment memory/logging system",
+                                                                        "Self-improving recommendations"
+                                                                    ],
+                                                       "memoryFile":  "data/email-experiments.json",
+                                                       "credentialsNeeded":  "klaviyo-credentials.json (copy from .template)",
+                                                       "createdAt":  "2026-02-16T20:30:00+13:00",
+                                                       "usage":  {
+                                                                     "quick":  "node scripts/klaviyo/quick-optimize.js \"Your subject line\"",
+                                                                     "batch":  "node scripts/klaviyo/subject-line-optimizer.js batch --input=data/campaigns.json",
+                                                                     "export":  "node scripts/klaviyo/klaviyo-api.js export --days=30"
+                                                                 }
+                                                   },
+                              "missionControl":  {
+                                                     "script":  "scripts/mission-control.js",
+                                                     "description":  "Kanban dashboard tracking all autonomous tasks",
+                                                     "features":  [
+                                                                      "Kanban board (To Do → In Progress → Review → Complete)",
+                                                                      "Activity feed",
+                                                                      "Web interface (localhost:3100)",
+                                                                      "Auto-updates from scripts",
+                                                                      "Task management API"
+                                                                  ],
+                                                     "url":  "http://localhost:3100",
+                                                     "lastUpdated":  "2026-02-18T05:19:35.116Z"
+                                                 }
+                          }
 }

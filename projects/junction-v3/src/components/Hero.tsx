@@ -111,18 +111,8 @@ export default function Hero() {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 leading-[1.1] tracking-tight">
             <div className="overflow-hidden pb-2">
               <SplitText delay={0.3} staggerDelay={0.02}>
-                Tom Hall-Taylor
-              </SplitText>
-            </div>
-            <div className="overflow-hidden pb-2 mt-2">
-              <motion.span
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.8, ease: EASE.smooth }}
-                className="gradient-text block text-4xl md:text-5xl lg:text-6xl"
-              >
                 AI-Native Marketing Operations
-              </motion.span>
+              </SplitText>
             </div>
           </h1>
         </div>
@@ -135,8 +125,8 @@ export default function Hero() {
           className="max-w-3xl mx-auto mb-12"
         >
           <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
-            We build integrated AI marketing systems for select NZ businesses.<br />
-            Strategy, execution, and optimisation — unified.
+            Selected partnerships. AI systems that replace entire marketing departments.<br />
+            Strategy, execution, and optimisation — unified under one operator.
           </p>
         </motion.div>
 
@@ -209,8 +199,8 @@ export default function Hero() {
         {/* Stats grid with stagger animation */}
         <StaggerReveal staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
-            { value: 15, suffix: '+', label: 'Years Experience', sublabel: 'Marketing & Strategy' },
-            { value: 3, suffix: '', label: 'Spots Open', sublabel: 'Applications Reviewed Personally' },
+            { value: 11, suffix: '+', label: 'Years Experience', sublabel: 'Marketing & Strategy' },
+            { value: 1, suffix: '', label: 'Spot Open', sublabel: 'Applications Reviewed Personally' },
             { value: 100, suffix: '%', label: 'AI-Native', sublabel: 'Built for the Future' },
           ].map((stat, index) => (
             <StaggerItem key={index} direction="up">

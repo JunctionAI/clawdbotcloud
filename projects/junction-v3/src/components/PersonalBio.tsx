@@ -44,9 +44,9 @@ export default function PersonalBio() {
           {/* Left: editorial copy */}
           <div className="lg:col-span-7 space-y-6">
             {[
-              "I've spent over a decade in digital marketing — from SEO and paid media to operational leadership at scale. I've worked with brands across e-commerce, health & wellness, and creative industries.",
+              "11 years in digital marketing — from SEO and paid media to operational leadership at scale. Across e-commerce, health & wellness, and creative industries.",
               "The old playbook is dead. Traditional agencies charging $20k/month for strategy decks and junior account managers are obsolete. The future belongs to operators who understand AI not as a buzzword, but as infrastructure.",
-              "I made that transition early. Now I help select businesses in Auckland, New Zealand — and beyond — do the same.",
+              "That transition happened early here. Junction works with select businesses in Auckland, New Zealand — and beyond.",
             ].map((paragraph, i) => (
               <motion.p
                 key={i}
@@ -90,8 +90,26 @@ export default function PersonalBio() {
             </motion.div>
           </div>
 
-          {/* Right: stat card */}
-          <div className="lg:col-span-5 flex items-start justify-center lg:justify-end">
+          {/* Right: founder photo + stat card */}
+          <div className="lg:col-span-5 flex flex-col items-start justify-center lg:justify-end gap-6">
+            {/* Founder intro */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="w-full max-w-sm flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5"
+            >
+              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-400/40 flex-shrink-0 bg-blue-900/30 flex items-center justify-center">
+                {/* Photo placeholder — replace src with Higgsfield image */}
+                <span className="text-blue-300 text-xl font-black">T</span>
+              </div>
+              <div>
+                <p className="text-white font-bold text-base">Tom Hall-Taylor</p>
+                <p className="text-gray-400 text-sm">Founder & Operator</p>
+                <p className="text-gray-500 text-xs mt-1">Auckland, New Zealand</p>
+              </div>
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, scale: 0.92 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
